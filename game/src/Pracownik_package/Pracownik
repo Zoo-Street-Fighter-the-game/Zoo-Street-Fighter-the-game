@@ -13,6 +13,7 @@ public class Pracownik{
             wybieg.setCzystosc(100);
         }
     }
+    //aisdasdasd
 
     public void nakarmZwierze(Zwierze zwierze, float iloscJedzenia int wartoscKaloryczna){
         poziomGlodu = zwierze.getPoziomGlodu();
