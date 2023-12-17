@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="poprawienie składowych klasy i toStringa">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Pracownik_package/Pracownik" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Pracownik_package/Pracownik" afterDir="false" />
-    </list>
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="poprawienie składowych klasy i toStringa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +135,7 @@
       <workItem from="1702839097735" duration="73000" />
       <workItem from="1702839184370" duration="80000" />
       <workItem from="1702839280410" duration="32000" />
-      <workItem from="1702839342370" duration="8331000" />
+      <workItem from="1702839342370" duration="8875000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -172,7 +169,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702846258843</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="poprawienie składowych klasy i toStringa">
+      <option name="closed" value="true" />
+      <created>1702854676181</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702854676181</updated>
+    </task>
+    <task id="LOCAL-00006" summary="poprawienie składowych klasy i toStringa">
+      <option name="closed" value="true" />
+      <created>1702854687092</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702854687092</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
