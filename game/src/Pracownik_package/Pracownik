@@ -1,0 +1,22 @@
+import Zoo_dzienne.*;
+import Zwierze.*;
+import Wybieg.*;
+
+public class Pracownik{
+
+    public void umyjWybieg(Wybieg wybieg){
+        poziomCzystosci = wybieg.getCzystosc();
+        if(poziomCzystosci < 50) {
+            wybieg.setCzystosc(poziomCzystosci + 50);
+        }
+        else if(poziomCzystosci >=50){
+            wybieg.setCzystosc(100);
+        }
+    }
+
+    public void nakarmZwierze(Zwierze zwierze, float iloscJedzenia int wartoscKaloryczna){
+        poziomGlodu = zwierze.getPoziomGlodu();
+        zwierze.setPoziomGlodu(poziomGlodu + (iloscJedzenia * wartoscKaloryczna));
+    }
+
+}
