@@ -19,6 +19,7 @@ public class Pracownik{
         this.id = id;
         this.jakosUslug = jakoscUslug;
     }
+    //aisdasdasd
 
 
     //METODY KLASY
