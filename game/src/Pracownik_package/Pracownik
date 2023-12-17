@@ -50,7 +50,6 @@ public class Pracownik{
                 "nazwisko: " + getNazwisko()+ "\n" +
                 "id: " + getId() + "\n"+
                 "jakosc uslug: " + getJakoscUslug() + "\n");
-
     }
 
 
