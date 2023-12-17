@@ -1,4 +1,4 @@
-package pomocnicze;
+package Wybieg_package;
 
 import java.util.ArrayList;
 

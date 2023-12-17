@@ -1,6 +1,6 @@
 package Wybieg_package;
 
-public enum rodzaj_wybiegu_enum {
+public enum rodzaj_srodowiska_enum {
     POWIETRZNY,
     WODNY,
     LĄDOWY
