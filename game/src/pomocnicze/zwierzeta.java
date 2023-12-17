@@ -1,13 +1,14 @@
 package pomocnicze;
 
-import Wybieg_package.rodzaj_wybiegu_enum;
+import Wybieg_package.Obserwujacy_interface;
+import Wybieg_package.rodzaj_srodowiska_enum;
 
 public abstract class zwierzeta implements Obserwujacy_interface {
     private float mnoznik_pieniedzy;
     private int wielkosc;
-    private rodzaj_wybiegu_enum rodzaj_zwierzecia;
+    private rodzaj_srodowiska_enum rodzaj_zwierzecia;
 
-    public zwierzeta(float mnoznik_pieniedzy, int wielkosc, rodzaj_wybiegu_enum rodzaj) {
+    public zwierzeta(float mnoznik_pieniedzy, int wielkosc, rodzaj_srodowiska_enum rodzaj) {
         this.mnoznik_pieniedzy = mnoznik_pieniedzy;
         this.wielkosc = wielkosc;
         this.rodzaj_zwierzecia = rodzaj;
@@ -34,12 +35,14 @@ public abstract class zwierzeta implements Obserwujacy_interface {
         this.wielkosc = wielkosc;
     }
 
-    public rodzaj_wybiegu_enum getRodzaj_zwierzecia() {
+    public rodzaj_srodowiska_enum getRodzaj_zwierzecia() {
         return rodzaj_zwierzecia;
     }
 
-    public void setRodzaj_zwierzecia(rodzaj_wybiegu_enum rodzaj_zwierzecia) {
+    public void setRodzaj_zwierzecia(rodzaj_srodowiska_enum rodzaj_zwierzecia) {
         this.rodzaj_zwierzecia = rodzaj_zwierzecia;
     }
+    public void release(){
 
+    }
 }
