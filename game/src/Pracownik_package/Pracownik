@@ -1,6 +1,7 @@
 import Zoo_dzienne.*;
 import Zwierze.*;
 import Wybieg.*;
+import Zasoby.*;
 
 public class Pracownik{
 
@@ -19,15 +20,15 @@ public class Pracownik{
         this.id = id;
         this.jakosUslug = jakoscUslug;
     }
-    //aisdasdasd
+
 
 
     //METODY KLASY
 
-    public void umyjWybieg(Wybieg wybieg, jakoscUslug){
+    public void umyjWybieg(Wybieg wybieg){
         int poziomCzystosci = wybieg.getCzystosc();
 
-        poziomCzystosci += jakoscUslug * poziomCzystosci;
+        poziomCzystosci += getJakoscUslug() * poziomCzystosci;
 
         if(poziomCzystosci >= 100){ //nie moze przekraczac 100 z zalozenia
             poziomCzystosci = 100;
@@ -37,9 +38,9 @@ public class Pracownik{
 
     }
 
-    public void nakarmZwierze(Zwierze zwierze, int jedzenie, int jakoscUslug){
+    public void nakarmZwierze(Zwierze zwierze, int jedzenie){
         int poziomGlodu = zwierze.getPoziomGlodu();
-        poziomGlodu += jedzenie * jakoscUslug;
+        poziomGlodu += jedzenie * getJakoscUslug();
 
         zwierze.setPoziomGlodu(poziomGlodu);
     }
