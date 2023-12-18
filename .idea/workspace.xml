@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="zmiana">
-      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Enum_rodzaj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Ladowe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Obserwujacy_Interfejs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Powietrzne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Wodne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Enum_rodzaj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Ladowe.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Ladowe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Obserwujacy_Interfejs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Powietrzne.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Powietrzne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Wodne.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Wodne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_abstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/pakiet_klasy_np__wybiegi_pkg/cos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/pomocnicze/lew.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/pomocnicze/pingwin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/pomocnicze/zwierzeta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/tests/test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +58,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Zwierzeta__branch",
+    "git-widget-placeholder": "Wybieg__branch",
     "last_opened_file_path": "C:/Users/filip/OneDrive/Dokumenty/GitHub/Zoo_zwierzeta_kopia",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

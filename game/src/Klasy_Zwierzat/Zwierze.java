@@ -1,7 +1,9 @@
 package Klasy_Zwierzat;
 
-import Enum.Enum_rodzaj;
-public abstract class Zwierze implements Obserwujacy_Interfejs{
+import Wybieg_package.rodzaj_srodowiska_enum;
+import Wybieg_package.Obserwujacy_interface;
+
+public abstract class Zwierze implements Obserwujacy_interface{
 
     //pola zwierząt
     private String nazwa;
@@ -13,11 +15,11 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
     private int zadowolenie;
     private int przezyte_dni;
     private int cena;
-    private Enum_rodzaj rodzaj;
     private float mnoznik_pieniedzy;
+    private rodzaj_srodowiska_enum rodzaj_srodowiska;
 
     //konstruktor
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,Enum_rodzaj rodzaj){
+    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,rodzaj_srodowiska_enum rodzaj){
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
@@ -27,7 +29,7 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
         this.zadowolenie = zadowolenie;
         this.przezyte_dni = przezyte_dni;
         this.cena = cena;
-        this.rodzaj=rodzaj;
+        this.rodzaj_srodowiska = rodzaj;
     }
 
     //Settery i gettery
@@ -102,14 +104,6 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
         this.cena = cena;
     }
 
-    public Enum_rodzaj getRodzaj() {
-        return rodzaj;
-    }
-
-    public void setRodzaj (Enum_rodzaj rodzaj) {
-        this.rodzaj = rodzaj;
-    }
-
     public float getMnoznik_pieniedzy() {
         return mnoznik_pieniedzy;
     }
@@ -118,6 +112,14 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
         this.mnoznik_pieniedzy = mnoznik_pieniedzy;
     }
 
+
+    public rodzaj_srodowiska_enum getRodzaj_srodowiska() {
+        return rodzaj_srodowiska;
+    }
+
+    public void setRodzaj_srodowiska(rodzaj_srodowiska_enum rodzaj_srodowiska) {
+        this.rodzaj_srodowiska = rodzaj_srodowiska;
+    }
 
     //Metoda obserwatora
     public void aktualizuj_oberwujacego(float czystosc, float jedzenie) {
@@ -130,9 +132,9 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
     }
 
     //Jeszcze pusta metoda wypuszczania zwierzat
-    public void Release()
+    public void release()
     {
-        //tu bedzie funkcja release
+            //tu bedzie funkcja release
     }
 
     //toString wyswietlajacy info o zwierzeciu
@@ -148,7 +150,7 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
                 ", zadowolenie=" + zadowolenie +
                 ", przezyte_dni=" + przezyte_dni +
                 ", cena=" + cena +
-                ", rodzaj=" + rodzaj +
+                ", rodzaj=" + getRodzaj_srodowiska() +
                 '}';
     }
 }

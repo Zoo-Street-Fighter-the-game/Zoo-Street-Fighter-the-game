@@ -1,6 +1,6 @@
 package Wybieg_package;
 
-import pomocnicze.zwierzeta;
+import Klasy_Zwierzat.Zwierze;
 
 public class Wybieg_bezdomni extends Wybieg_abstract{
 
@@ -29,7 +29,7 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     //                  metody obiektu
     //----------------------------------------------------------
     public void usun_zwierzeta(){
-        for (zwierzeta obiekt : getLista_zwierzat()){
+        for (Zwierze obiekt : getLista_zwierzat()){
             this.usun_zwierze(obiekt);
         }
         getLista_zwierzat().clear();
@@ -40,11 +40,11 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
 
 
     @Override
-    public  void dodaj_zwierze(zwierzeta obiekt) {
+    public  void dodaj_zwierze(Zwierze obiekt) {
         getLista_zwierzat().add(obiekt);
     }
     @Override
-    public  void usun_zwierze(zwierzeta obiekt) {
+    public  void usun_zwierze(Zwierze obiekt) {
         obiekt.release();
         obiekt = null;
         getLista_zwierzat().remove( null);

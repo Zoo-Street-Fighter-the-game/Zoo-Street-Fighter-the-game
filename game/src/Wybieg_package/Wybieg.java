@@ -1,6 +1,6 @@
 package Wybieg_package;
 
-import pomocnicze.zwierzeta;
+import Klasy_Zwierzat.Zwierze;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //==========================================================================
     //                              zmienne
     //--------------------------------------------------------------------------
-    private List<Obserwujacy_interface> Obserwujacy = new ArrayList<>();
+    private List<Obserwujacy_interface> obserwujacy = new ArrayList<>();
     private int wole_miejsce_w_wybiegu;
 
     private rodzaj_srodowiska_enum rodzaj_srodowiska;
@@ -44,18 +44,23 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //                          dodawanie i usuwanie zwierzecia do wybieg
     //---------------------------------------------------------------------------------------
 
-    public void dodaj_zwierze(zwierzeta obiekt){
+
+    public void dodaj_zwierze(Zwierze obiekt){
         if (czy_zwierze_spelnia_wymogi_dodania_do_wybiegu(obiekt)){
             getLista_zwierzat().add(obiekt);
+            dodaj_obserwatora(obiekt);
             setWole_miejsce_w_wybiegu( getWole_miejsce_w_wybiegu() - obiekt.getWielkosc() );
             System.out.println("dodano zwierze do wybiegu");
         }
         else System.out.println(" nie udalo sie dodac zwierzecia");
     }
+
 @Override
-    public  void usun_zwierze(zwierzeta obiekt){
+    public  void usun_zwierze(Zwierze obiekt){
+
         if (getLista_zwierzat().contains(obiekt)){
             setWole_miejsce_w_wybiegu( getWole_miejsce_w_wybiegu() + obiekt.getWielkosc() );
+            usun_obserwatora(obiekt);
             obiekt.release();
             obiekt = null;
             getLista_zwierzat().remove( null);
@@ -71,24 +76,24 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //funkcje majace na celu sprawdzenie czy zwierze spelnia wymogi dodania
     //---------------------------------------------------------------------------------
 
-    public  boolean czy_zwierze_spelnia_wymogi_dodania_do_wybiegu(zwierzeta obiekt){
+    public  boolean czy_zwierze_spelnia_wymogi_dodania_do_wybiegu(Zwierze obiekt){
         return czy_wybieg_ma_ten_rodzaj_zwierzecia(obiekt) &&
                 czy_zwierze_zmiesci_sie(obiekt) &&
                 czy_zwierze_ma_dobry_typ(obiekt);
     }
 
-    public  boolean czy_wybieg_ma_ten_rodzaj_zwierzecia(zwierzeta obiekt){
+    public  boolean czy_wybieg_ma_ten_rodzaj_zwierzecia(Zwierze obiekt){
         if (!getLista_zwierzat().isEmpty()){
             return obiekt.getClass().getName().equals(getRodzaj_zwierzecia_w_wybiegu());
         }
         return true;
     }
 
-    public boolean czy_zwierze_zmiesci_sie(zwierzeta obiekt){
+    public boolean czy_zwierze_zmiesci_sie(Zwierze obiekt){
         return (getWole_miejsce_w_wybiegu() - obiekt.getWielkosc())>=0;
     }
-    public boolean czy_zwierze_ma_dobry_typ(zwierzeta obiekt){
-        return getRodzaj_srodowiska() == obiekt.getRodzaj_zwierzecia();
+    public boolean czy_zwierze_ma_dobry_typ(Zwierze obiekt){
+        return getRodzaj_srodowiska() == obiekt.getRodzaj_srodowiska();
     }
     //---------------------------------------------------------------------------------------
     //========================================================================================
@@ -103,8 +108,8 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //-------------------------------------------------------------------------------------
     public float przychody_z_wybiegu(){
         int przychod = 0;
-        for (zwierzeta obiekt : getLista_zwierzat()){
-            przychod+= 10;
+        for (Zwierze obiekt : getLista_zwierzat()){
+            przychod+= obiekt.getMnoznik_pieniedzy()*10;
         }
         return przychod;
     }
@@ -117,14 +122,14 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //                                  release
     //-------------------------------------------------------------------------------------
     public void release(){
-        Obserwujacy.clear();
+        obserwujacy.clear();
         Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getIstnieje();
-        for (zwierzeta obiekt : getLista_zwierzat()){
+        for (Zwierze obiekt : getLista_zwierzat()){
             lista_bezdomnych.dodaj_zwierze(obiekt);
         }
         getLista_zwierzat().clear();
     }
-
+    //=======================================================================================
 
 
 
@@ -133,17 +138,17 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //---------------------------------------------------------------------------------------
     @Override
     public void dodaj_obserwatora(Obserwujacy_interface o) {
-        Obserwujacy.add(o);
+        obserwujacy.add(o);
     }
 
     @Override
     public void usun_obserwatora(Obserwujacy_interface o) {
-        Obserwujacy.remove(o);
+        obserwujacy.remove(o);
     }
 
     @Override
     public void powiadom_obserwatorow() {
-        for(Obserwujacy_interface o : Obserwujacy){
+        for(Obserwujacy_interface o : obserwujacy){
             o.aktualizuj_oberwujacego(getCzystosc(),getJedzenie());
         }
     }
@@ -166,18 +171,18 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
                 "jedzenie: " + getJedzenie() + " \n" +
                 "ilosc wolnego miejsca: " + getWole_miejsce_w_wybiegu() + " \n" +
                 "Zwierzeta w tym wybiegu : \n");
-        for (zwierzeta obiekt : getLista_zwierzat())
+        for (Zwierze obiekt : getLista_zwierzat())
             status.append(obiekt.toString()).append(" \n");
 
         return status.toString();
     }
 
-    public List<Obserwujacy_interface> getObserwujacy() {
-        return Obserwujacy;
+    public List<Obserwujacy_interface> getobserwujacy() {
+        return obserwujacy;
     }
 
-    public void setObserwujacy(List<Obserwujacy_interface> obserwujacy) {
-        Obserwujacy = obserwujacy;
+    public void setobserwujacy(List<Obserwujacy_interface> obserwujacy) {
+        obserwujacy = obserwujacy;
     }
 
     public int getWole_miejsce_w_wybiegu() {
