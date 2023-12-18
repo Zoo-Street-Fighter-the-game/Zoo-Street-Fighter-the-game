@@ -55,8 +55,12 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
 @Override
     public  void usun_zwierze(zwierzeta obiekt){
         if (getLista_zwierzat().contains(obiekt)){
-            getLista_zwierzat().remove(obiekt);
             setWole_miejsce_w_wybiegu( getWole_miejsce_w_wybiegu() + obiekt.getWielkosc() );
+            obiekt.release();
+            obiekt = null;
+            getLista_zwierzat().remove( null);
+
+            System.gc();
             System.out.println("usunieto zwierze");
         }
         System.out.println("nie udalo sie usunac zwierzecia");
@@ -75,7 +79,7 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
 
     public  boolean czy_wybieg_ma_ten_rodzaj_zwierzecia(zwierzeta obiekt){
         if (!getLista_zwierzat().isEmpty()){
-            return obiekt.getClass().getName() == getRodzaj_zwierzecia_w_wybiegu();
+            return obiekt.getClass().getName().equals(getRodzaj_zwierzecia_w_wybiegu());
         }
         return true;
     }
@@ -134,8 +138,7 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
 
     @Override
     public void usun_obserwatora(Obserwujacy_interface o) {
-        if (Obserwujacy.contains(o))
-            Obserwujacy.remove(o);
+        Obserwujacy.remove(o);
     }
 
     @Override
@@ -156,17 +159,17 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //                                  gettery i settery oraz toString
     //-------------------------------------------------------------------------------------
     public String  toString(){
-        String status =  "Wybieg " + getRodzaj_srodowiska().toString() + " \n" +
+        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " \n" +
                 getWielkosc_wybiegu().toString() + " \n" +
                 "dla : " + getRodzaj_zwierzecia_w_wybiegu() + " \n" +
                 "czystosc: " + getCzystosc() + " \n" +
                 "jedzenie: " + getJedzenie() + " \n" +
                 "ilosc wolnego miejsca: " + getWole_miejsce_w_wybiegu() + " \n" +
-                "Zwierzeta w tym wybiegu : \n";
+                "Zwierzeta w tym wybiegu : \n");
         for (zwierzeta obiekt : getLista_zwierzat())
-            status+= obiekt.toString() + " \n";
+            status.append(obiekt.toString()).append(" \n");
 
-        return status;
+        return status.toString();
     }
 
     public List<Obserwujacy_interface> getObserwujacy() {

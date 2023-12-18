@@ -30,8 +30,7 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     //----------------------------------------------------------
     public void usun_zwierzeta(){
         for (zwierzeta obiekt : getLista_zwierzat()){
-            obiekt.release();
-            obiekt = null;
+            this.usun_zwierze(obiekt);
         }
         getLista_zwierzat().clear();
         System.gc();
@@ -46,7 +45,9 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     }
     @Override
     public  void usun_zwierze(zwierzeta obiekt) {
-        getLista_zwierzat().remove(obiekt);
+        obiekt.release();
+        obiekt = null;
+        getLista_zwierzat().remove( null);
     }
 
     public String toString(){
