@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="zmiana">
-      <change beforePath="$PROJECT_DIR$/game/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/game/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Enum_rodzaj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Ladowe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Obserwujacy_Interfejs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Powietrzne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Wodne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,15 +44,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Zwierzeta__branch",
+    "last_opened_file_path": "C:/Users/filip/OneDrive/Dokumenty/GitHub/Zoo_zwierzeta_kopia",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
