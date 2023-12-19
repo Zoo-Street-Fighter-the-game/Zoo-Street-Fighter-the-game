@@ -1,11 +1,13 @@
 package Klasy_Zwierzat;
 
-import Wybieg_package.rodzaj_srodowiska_enum;
-import Wybieg_package.Obserwujacy_interface;
+import Enum.Enum_rodzaj;
+public abstract class Zwierze implements Obserwujacy_Interfejs{
 
-public abstract class Zwierze implements Obserwujacy_interface{
-
-    //pola zwierząt
+    
+    //===========================================================================
+    //POLA ZWIERZĄT
+    //===========================================================================
+    
     private String nazwa;
     private int zycie;
     private int sila;
@@ -15,11 +17,13 @@ public abstract class Zwierze implements Obserwujacy_interface{
     private int zadowolenie;
     private int przezyte_dni;
     private int cena;
+    private Enum_rodzaj rodzaj;
     private float mnoznik_pieniedzy;
-    private rodzaj_srodowiska_enum rodzaj_srodowiska;
 
-    //konstruktor
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,rodzaj_srodowiska_enum rodzaj){
+    //===========================================================================
+    //KONSTRUKTOR
+    //===========================================================================
+    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,Enum_rodzaj rodzaj){
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
@@ -29,10 +33,12 @@ public abstract class Zwierze implements Obserwujacy_interface{
         this.zadowolenie = zadowolenie;
         this.przezyte_dni = przezyte_dni;
         this.cena = cena;
-        this.rodzaj_srodowiska = rodzaj;
+        this.rodzaj=rodzaj;
     }
 
-    //Settery i gettery
+    //===========================================================================
+    //SETTERY I GETTERY
+    //===========================================================================
     public String getNazwa() {
         return nazwa;
     }
@@ -104,6 +110,14 @@ public abstract class Zwierze implements Obserwujacy_interface{
         this.cena = cena;
     }
 
+    public Enum_rodzaj getRodzaj() {
+        return rodzaj;
+    }
+
+    public void setRodzaj (Enum_rodzaj rodzaj) {
+        this.rodzaj = rodzaj;
+    }
+
     public float getMnoznik_pieniedzy() {
         return mnoznik_pieniedzy;
     }
@@ -113,44 +127,45 @@ public abstract class Zwierze implements Obserwujacy_interface{
     }
 
 
-    public rodzaj_srodowiska_enum getRodzaj_srodowiska() {
-        return rodzaj_srodowiska;
-    }
-
-    public void setRodzaj_srodowiska(rodzaj_srodowiska_enum rodzaj_srodowiska) {
-        this.rodzaj_srodowiska = rodzaj_srodowiska;
-    }
-
+    //===========================================================================
+    //METODY - ZMIANA MNOŻNIKA,KARMIENIE, RELEASE
+    //===========================================================================
+    
     //Metoda obserwatora
     public void aktualizuj_oberwujacego(float czystosc, float jedzenie) {
         this.mnoznik_pieniedzy+= (czystosc-70+jedzenie-70)/10;
     }
 
     //Metoda na karmienie
-    public void Karmienie(int jedzenie){
+    public void karmienie(int jedzenie){
         this.wskaznik_glodu+=jedzenie/2;
     }
 
     //Jeszcze pusta metoda wypuszczania zwierzat
     public void release()
     {
-            //tu bedzie funkcja release
+        //tu bedzie funkcja release
     }
 
+
+    //===========================================================================
+    //TOSTRING WYŚWIETLAJĄCY
+    //===========================================================================
+    
     //toString wyswietlajacy info o zwierzeciu
     @Override
     public String toString() {
         return "Zwierze{" +
-                "nazwa=" + nazwa +
-                ", zycie=" + zycie +
-                ", sila=" + sila +
-                ", wielkosc=" + wielkosc +
-                ", wskaznik_glodu=" + wskaznik_glodu +
-                ", zmeczenie=" + zmeczenie +
-                ", zadowolenie=" + zadowolenie +
-                ", przezyte_dni=" + przezyte_dni +
-                ", cena=" + cena +
-                ", rodzaj=" + getRodzaj_srodowiska() +
+                "nazwa=" + this.getNazwa() +
+                ", zycie=" + this.getZycie() +
+                ", sila=" + this.getSila() +
+                ", wielkosc=" + this.getWielkosc() +
+                ", wskaznik_glodu=" + this.getWskaznik_glodu() +
+                ", zmeczenie=" + this.getZmeczenie() +
+                ", zadowolenie=" + this.getZadowolenie() +
+                ", przezyte_dni=" + this.getPrzezyte_dni() +
+                ", cena=" + this.getCena() +
+                ", rodzaj=" + this.getRodzaj() +
                 '}';
     }
 }
