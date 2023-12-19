@@ -1,4 +1,4 @@
-package Wybieg_package;
+package enumy;
 
 public enum wielkosc_wybiegu_enum {
     MALY(10),

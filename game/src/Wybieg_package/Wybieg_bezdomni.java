@@ -36,6 +36,10 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
         System.gc();
 
     }
+
+    public void koniec_dnia(){
+        usun_zwierzeta();
+    }
     //=========================================================
 
 

@@ -1,4 +1,4 @@
-package Wybieg_package;
+package enumy;
 
 public enum rodzaj_srodowiska_enum {
     POWIETRZNY,

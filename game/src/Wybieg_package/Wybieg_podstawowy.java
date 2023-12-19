@@ -1,11 +1,15 @@
 package Wybieg_package;
 
 import Klasy_Zwierzat.Zwierze;
+import enumy.rodzaj_srodowiska_enum;
+import enumy.wielkosc_wybiegu_enum;
+import interfejsy.Obserwowany_interface;
+import interfejsy.Obserwujacy_interface;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
+public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
 
 
 
@@ -18,7 +22,6 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     private rodzaj_srodowiska_enum rodzaj_srodowiska;
     private wielkosc_wybiegu_enum wielkosc_wybiegu;
     private float czystosc = 100;       //od 0 do 100
-    private float jedzenie = 100;
     private float cena;
     private float czas_sprzatania;
     //=================================================================================
@@ -29,7 +32,7 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     //===================================================================================
     //                          konstruktory
     //-----------------------------------------------------------------------------------
-    public Wybieg( rodzaj_srodowiska_enum rodzaj_wybiegu, wielkosc_wybiegu_enum wielkosc_wybiegu) {
+    public Wybieg_podstawowy(rodzaj_srodowiska_enum rodzaj_wybiegu, wielkosc_wybiegu_enum wielkosc_wybiegu) {
         this.rodzaj_srodowiska = rodzaj_wybiegu;
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wole_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
@@ -93,7 +96,7 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
         return (getWole_miejsce_w_wybiegu() - obiekt.getWielkosc())>=0;
     }
     public boolean czy_zwierze_ma_dobry_typ(Zwierze obiekt){
-        return getRodzaj_srodowiska() == obiekt.getRodzaj_srodowiska();
+        return getRodzaj_srodowiska() == obiekt.getRodzaj();
     }
     //---------------------------------------------------------------------------------------
     //========================================================================================
@@ -109,9 +112,15 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     public float przychody_z_wybiegu(){
         int przychod = 0;
         for (Zwierze obiekt : getLista_zwierzat()){
-            przychod+= obiekt.getMnoznik_pieniedzy()*10;
+            przychod+= (int) (obiekt.getMnoznik_pieniedzy()*10);
         }
         return przychod;
+    }
+
+    public void brudzenie_zwierzat(){
+        for (Zwierze zwierze : getLista_zwierzat()){
+           setCzystosc(getCzystosc() - zwierze.getWielkosc()*5);
+        }
     }
     //=========================================================================================
 
@@ -149,14 +158,23 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
     @Override
     public void powiadom_obserwatorow() {
         for(Obserwujacy_interface o : obserwujacy){
-            o.aktualizuj_oberwujacego(getCzystosc(),getJedzenie());
+            o.aktualizuj_oberwujacego(getCzystosc());
         }
     }
 
 
     //===============================================================================
 
+    //===============================================================================
+    //                          metody zwiazane z porami dnia
+    //-------------------------------------------------------------------------------
+    public void rozpoczecie_dnia(){
+        brudzenie_zwierzat();
+        powiadom_obserwatorow();
+    }
+    public void zakonczenie_dnia(){
 
+    }
 
 
 
@@ -168,7 +186,6 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
                 getWielkosc_wybiegu().toString() + " \n" +
                 "dla : " + getRodzaj_zwierzecia_w_wybiegu() + " \n" +
                 "czystosc: " + getCzystosc() + " \n" +
-                "jedzenie: " + getJedzenie() + " \n" +
                 "ilosc wolnego miejsca: " + getWole_miejsce_w_wybiegu() + " \n" +
                 "Zwierzeta w tym wybiegu : \n");
         for (Zwierze obiekt : getLista_zwierzat())
@@ -218,13 +235,7 @@ public class Wybieg extends Wybieg_abstract implements Obserwowany_interface {
         this.czystosc = czystosc;
     }
 
-    public float getJedzenie() {
-        return jedzenie;
-    }
 
-    public void setJedzenie(float jedzenie) {
-        this.jedzenie = jedzenie;
-    }
 
     public float getCena() {
         return cena;

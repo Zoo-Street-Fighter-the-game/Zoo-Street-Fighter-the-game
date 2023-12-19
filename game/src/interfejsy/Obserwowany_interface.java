@@ -1,4 +1,4 @@
-package Wybieg_package;
+package interfejsy;
 
 public interface Obserwowany_interface {
     void dodaj_obserwatora( Obserwujacy_interface o);

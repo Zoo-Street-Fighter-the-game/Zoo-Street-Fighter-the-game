@@ -1,12 +1,5 @@
 package tests;
 
-import Klasy_Zwierzat.Ladowe;
-import Klasy_Zwierzat.Zwierze;
-import Wybieg_package.Wybieg;
-import Wybieg_package.Wybieg_bezdomni;
-import Wybieg_package.rodzaj_srodowiska_enum;
-import Wybieg_package.wielkosc_wybiegu_enum;
-
 public class test1 {
     public static void main(String[] args) {
         /*Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getIstnieje();
