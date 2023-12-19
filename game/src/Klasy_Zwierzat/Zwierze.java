@@ -3,7 +3,11 @@ package Klasy_Zwierzat;
 import Enum.Enum_rodzaj;
 public abstract class Zwierze implements Obserwujacy_Interfejs{
 
-    //pola zwierząt
+    
+    //===========================================================================
+    //POLA ZWIERZĄT
+    //===========================================================================
+    
     private String nazwa;
     private int zycie;
     private int sila;
@@ -16,7 +20,9 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
     private Enum_rodzaj rodzaj;
     private float mnoznik_pieniedzy;
 
-    //konstruktor
+    //===========================================================================
+    //KONSTRUKTOR
+    //===========================================================================
     public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,Enum_rodzaj rodzaj){
         this.nazwa = nazwa;
         this.zycie = zycie;
@@ -30,7 +36,9 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
         this.rodzaj=rodzaj;
     }
 
-    //Settery i gettery
+    //===========================================================================
+    //SETTERY I GETTERY
+    //===========================================================================
     public String getNazwa() {
         return nazwa;
     }
@@ -119,36 +127,45 @@ public abstract class Zwierze implements Obserwujacy_Interfejs{
     }
 
 
+    //===========================================================================
+    //METODY - ZMIANA MNOŻNIKA,KARMIENIE, RELEASE
+    //===========================================================================
+    
     //Metoda obserwatora
     public void aktualizuj_oberwujacego(float czystosc, float jedzenie) {
         this.mnoznik_pieniedzy+= (czystosc-70+jedzenie-70)/10;
     }
 
     //Metoda na karmienie
-    public void Karmienie(int jedzenie){
+    public void karmienie(int jedzenie){
         this.wskaznik_glodu+=jedzenie/2;
     }
 
     //Jeszcze pusta metoda wypuszczania zwierzat
-    public void Release()
+    public void release()
     {
         //tu bedzie funkcja release
     }
 
+
+    //===========================================================================
+    //TOSTRING WYŚWIETLAJĄCY
+    //===========================================================================
+    
     //toString wyswietlajacy info o zwierzeciu
     @Override
     public String toString() {
         return "Zwierze{" +
-                "nazwa=" + nazwa +
-                ", zycie=" + zycie +
-                ", sila=" + sila +
-                ", wielkosc=" + wielkosc +
-                ", wskaznik_glodu=" + wskaznik_glodu +
-                ", zmeczenie=" + zmeczenie +
-                ", zadowolenie=" + zadowolenie +
-                ", przezyte_dni=" + przezyte_dni +
-                ", cena=" + cena +
-                ", rodzaj=" + rodzaj +
+                "nazwa=" + this.getNazwa() +
+                ", zycie=" + this.getZycie() +
+                ", sila=" + this.getSila() +
+                ", wielkosc=" + this.getWielkosc() +
+                ", wskaznik_glodu=" + this.getWskaznik_glodu() +
+                ", zmeczenie=" + this.getZmeczenie() +
+                ", zadowolenie=" + this.getZadowolenie() +
+                ", przezyte_dni=" + this.getPrzezyte_dni() +
+                ", cena=" + this.getCena() +
+                ", rodzaj=" + this.getRodzaj() +
                 '}';
     }
 }
