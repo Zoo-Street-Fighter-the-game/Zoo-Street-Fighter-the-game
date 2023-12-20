@@ -1,0 +1,91 @@
+import Zoo_dzienne.*;
+import Zwierze.*;
+import Wybieg.*;
+import Zasoby.*;
+
+public class Pracownik{
+
+    //INICJOWANIE SKLADOWYCH
+    private String imie;
+    private String nazwisko;
+    private int id;
+    private int jakoscUslug; //w skali do 10,
+                            //wplywa na metody umyjWybieg i nakarmZwierze
+
+
+    //KONSTRUKTOR
+    public Pracownik(String imie, String nazwisko, int id, int jakoscUslug){
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.id = id;
+        this.jakosUslug = jakoscUslug;
+    }
+
+
+
+    //METODY KLASY
+
+    public void umyjWybieg(Wybieg wybieg){
+        int poziomCzystosci = wybieg.getCzystosc();
+
+        poziomCzystosci += getJakoscUslug() * poziomCzystosci;
+
+        if(poziomCzystosci >= 100){ //nie moze przekraczac 100 z zalozenia
+            poziomCzystosci = 100;
+        }
+
+        wybieg.setCzystosc(poziomCzystosci);
+
+    }
+
+    public void nakarmZwierze(Zwierze zwierze, int jedzenie){
+        int poziomGlodu = zwierze.getPoziomGlodu();
+        poziomGlodu += jedzenie * getJakoscUslug();
+
+        zwierze.setPoziomGlodu(poziomGlodu);
+    }
+
+
+    public String toString(){
+        System.out.println("Dane pracownika: \n"+
+                "imie: " + getImie() + "\n"+
+                "nazwisko: " + getNazwisko()+ "\n" +
+                "id: " + getId() + "\n"+
+                "jakosc uslug: " + getJakoscUslug() + "\n");
+    }
+
+
+    //GETTERY I SETTERY
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getJakoscUslug() {
+        return jakoscUslug;
+    }
+
+    public void setJakoscUslug(int jakoscUslug) {
+        this.jakoscUslug = jakoscUslug;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+}
