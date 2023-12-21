@@ -1,63 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="zmiana">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_Ladowy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_Powietrzny.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_Wodny.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Ladowe.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Ladowe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Powietrzne.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Powietrzne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Wodne.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Wodne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Obserwowany_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/interfejsy/Obserwowany_interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Obserwujacy_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/interfejsy/Obserwujacy_interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/rodzaj_srodowiska_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/enumy/rodzaj_srodowiska_enum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Wybieg_package/wielkosc_wybiegu_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/enumy/wielkosc_wybiegu_enum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/tests/test1.java" afterDir="false" />
+    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/Zoo-Street-Fighter-the-game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Klasy_Zwierzat/ZwierzeLadowe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Klasy_Zwierzat/ZwierzePowietrzne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Klasy_Zwierzat/ZwierzeWodne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Pracownik_package/Pracownik" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Pracownik_package/Pracownik.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Wybieg_package/Wybieg_Ladowy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Wybieg_package/Wybieg_Powietrzny.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Wybieg_package/Wybieg_Wodny.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Wybieg_package/Wybieg_abstract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/enumy/rodzaj_srodowiska_enum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/enumy/wielkosc_wybiegu_enum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/interfejsy/Obserwowany_interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/interfejsy/Obserwujacy_interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/pakiet_arena/Arena.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/pakiet_sklep/BrakSrodkowException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/pakiet_sklep/Sklep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/pakiet_zasoby/Zasoby.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/game/src/tests/test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Arena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/DzienneZooPakiet/DzienneZoo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Klasy_Zwierzat/Zwierze.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Klasy_Zwierzat/ZwierzeLadowe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Klasy_Zwierzat/ZwierzePowietrzne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Klasy_Zwierzat/ZwierzeWodne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Pracownik_package/Pracownik" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Pracownik_package/Pracownik.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Wybieg_package/Wybieg_Ladowy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Wybieg_package/Wybieg_Powietrzny.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Wybieg_package/Wybieg_Wodny.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Wybieg_package/Wybieg_abstract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Wybieg_package/Wybieg_bezdomni.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/Wybieg_package/Wybieg_podstawowy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/enumy/rodzaj_srodowiska_enum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/enumy/wielkosc_wybiegu_enum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/interfejsy/Obserwowany_interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/interfejsy/Obserwujacy_interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/pakiet_sklep/BrakSrodkowException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/pakiet_sklep/sklep$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/pakiet_sklep/sklep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/pakiet_zasoby/Zasoby.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game-KamilBranch/out/production/Zoo-Street-Fighter-the-game/tests/test1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Zoo-Street-Fighter-the-game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Klasy_Zwierzat/Ladowe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Klasy_Zwierzat/Powietrzne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Klasy_Zwierzat/Wodne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Wybieg_package/Wybieg_Ladowy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Wybieg_package/Wybieg_Powietrzny.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Wybieg_package/Wybieg_Wodny.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Wybieg_package/Wybieg_abstract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/enumy/rodzaj_srodowiska_enum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/enumy/wielkosc_wybiegu_enum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/interfejsy/Obserwowany_interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/interfejsy/Obserwujacy_interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../game/src/tests/test1.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2ZdZg0kMcapsZ4Q4wwFbMxC2Vr6" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2Zqo6Fo9PQXvEl083UHDrwLpNsl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,45 +100,33 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Wybieg__branch",
-    "last_opened_file_path": "C:/Users/filip/OneDrive/Dokumenty/GitHub/Zoo_zwierzeta_kopia",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "git-widget-placeholder": "Dominik__branch",
+    "onboarding.tips.debug.path": "C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="" />
-      <created>1702754028112</created>
+      <changelist id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="" />
+      <created>1703158795934</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1702754028112</updated>
-      <workItem from="1702754031809" duration="79000" />
-      <workItem from="1702754238271" duration="45000" />
-      <workItem from="1702754309433" duration="13000" />
-      <workItem from="1702999126203" duration="1338000" />
+      <updated>1703158795934</updated>
+      <workItem from="1703158796736" duration="9000" />
     </task>
-    <task id="LOCAL-00001" summary="zmiana">
-      <option name="closed" value="true" />
-      <created>1702754069610</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702754069610</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="zmiana" />
-    <option name="LAST_COMMIT_MESSAGE" value="zmiana" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
