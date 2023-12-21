@@ -16,105 +16,7 @@ import pakiet_zasoby.Zasoby;
 
 public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
-    private static int cena_wybieg_maly = 10;
-    private static int cena_wybieg_sredni = 10;
-    private static int cena_wybieg_duzy = 10;
-
-
-
-    private static int cena1 = 435;
-    private static int cena2 =34;
-    private static int cena3= 345;
-    private static int cena4=344;
-    private static int cena5=34;
-    private static int cena6=3242;
-    private static int cena7=324;
-    private static int cena8=2131;
-    private static int cena9=1234;
-    private static int cena10=234;
-    private static int cenaopiekun=234;
-
-
-
-    public static int getCena1() {
-        return cena1;
-    }
-
-    public static void setCena1(int cena1) {
-        Sklep.cena1 = cena1;
-    }
-
-    public static int getCena2() {
-        return cena2;
-    }
-
-    public static void setCena2(int cena2) {
-        Sklep.cena2 = cena2;
-    }
-
-    public static int getCena3() {
-        return cena3;
-    }
-
-    public static void setCena3(int cena3) {
-        Sklep.cena3 = cena3;
-    }
-
-    public static int getCena4() {
-        return cena4;
-    }
-
-    public static void setCena4(int cena4) {
-        Sklep.cena4 = cena4;
-    }
-
-    public static int getCena5() {
-        return cena5;
-    }
-
-    public static void setCena5(int cena5) {
-        Sklep.cena5 = cena5;
-    }
-
-    public static int getCena6() {
-        return cena6;
-    }
-
-    public static void setCena6(int cena6) {
-        Sklep.cena6 = cena6;
-    }
-
-    public static int getCena7() {
-        return cena7;
-    }
-
-    public static void setCena7(int cena7) {
-        Sklep.cena7 = cena7;
-    }
-
-    public static int getCena8() {
-        return cena8;
-    }
-
-    public static void setCena8(int cena8) {
-        Sklep.cena8 = cena8;
-    }
-
-    public static int getCena9() {
-        return cena9;
-    }
-
-    public static void setCena9(int cena9) {
-        Sklep.cena9 = cena9;
-    }
-
-    public static int getCena10() {
-        return cena10;
-    }
-
-    public static void setCena10(int cena10) {
-        Sklep.cena10 = cena10;
-    }
+    final private static int cenaopiekun=234;
 
 
 
@@ -125,10 +27,11 @@ public class Sklep {
     public void setCena_sztuka_jedzenie(int cena_sztuka_jedzenie) {
         Sklep.cena_sztuka_jedzenie = cena_sztuka_jedzenie;
     }
+
+
     public void sprzedaj_jedzenie(int ilosc, Zasoby zasoby) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
-        boolean f2 = false;
 
         try {
             System.out.print("Podaj ilość jedzenia do sprzedania: ");
@@ -146,7 +49,6 @@ public class Sklep {
             zasoby.zmienJedzenie(-ilosc);
             zasoby.setMonety(zasoby.getMonety() + przychod);
             System.out.println("Sprzedaż udana. Zarobiłeś: " + przychod + " monet");
-            f2 = true;
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
             scanner.next();
@@ -288,7 +190,6 @@ public class Sklep {
     public  void kup_jedzenie(int ilosc,Zasoby zasoby){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
-        boolean f2 = false;
 
             try {
                 System.out.print("Podaj ilość jedzenia: ");
@@ -306,7 +207,6 @@ public class Sklep {
                 zasoby.zmienJedzenie(ilosc);
                 zasoby.setMonety(zasoby.getMonety() - koszt);
                 System.out.println("zakup udany");
-                f2 = true;
             } catch (InputMismatchException e) {
                 System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
                 scanner.next();
@@ -325,7 +225,7 @@ public class Sklep {
 
         try {
             int koszt = cenaopiekun;
-
+            koszt+= jakosc*10;
             if (koszt > zasoby.getMonety()) {
                 throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Wybierz tańszego opiekuna lub zebrać więcej środków.");
             }
@@ -340,27 +240,21 @@ public class Sklep {
         return null;
     }
 
-    public Wybieg_podstawowy kup_wybieg(String rodzajSrodowiska, String rozmiarWybiegu, Zasoby zasoby) {
-        int koszt = 0;
+    public Wybieg_podstawowy kup_wybieg(rodzaj_srodowiska_enum rodzajSrodowiska, wielkosc_wybiegu_enum wielkosc_wybiegu, Zasoby zasoby) {
+        Wybieg_podstawowy wybieg = null;
+        switch (rodzajSrodowiska) {
+            case rodzaj_srodowiska_enum.LADOWY ->   wybieg = new Wybieg_Ladowy(null);
+            case rodzaj_srodowiska_enum.WODNY ->    wybieg = new Wybieg_Wodny(null);
+            case rodzaj_srodowiska_enum.POWIETRZNY ->   wybieg = new Wybieg_Powietrzny(null);
 
-        switch (wielkosc_wybiegu_enum.valueOf(rozmiarWybiegu.toUpperCase())) {
-            case MALY:
-                koszt = cena_wybieg_maly;
-                break;
-            case SREDNI:
-                koszt = cena_wybieg_sredni;
-                break;
-            case DUZY:
-                koszt = cena_wybieg_duzy;
-                break;
-            default:
-                System.out.println("Nieznany rozmiar wybiegu.");
-                return null;
         }
-
-        System.out.println("Obecna cena za wybieg to: " + koszt);
-
+        switch(wielkosc_wybiegu){
+            case wielkosc_wybiegu_enum.MALY ->   wybieg.setWielkosc_wybiegu(wielkosc_wybiegu_enum.MALY);
+            case wielkosc_wybiegu_enum.SREDNI ->    wybieg.setWielkosc_wybiegu(wielkosc_wybiegu_enum.SREDNI);
+            case wielkosc_wybiegu_enum.DUZY ->   wybieg.setWielkosc_wybiegu(wielkosc_wybiegu_enum.DUZY);
+        }
         try {
+            int koszt =(int) wybieg.getCena();
             if (koszt > zasoby.getMonety()) {
                 throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Wybierz mniejszy wybieg lub zebrać więcej środków.");
             }
@@ -368,20 +262,8 @@ public class Sklep {
             zasoby.zmienMonety(-koszt);
             System.out.println("Zakup udany");
 
-            rodzaj_srodowiska_enum rodzajSrodowiskaEnum = rodzaj_srodowiska_enum.valueOf(rodzajSrodowiska.toUpperCase());
-            wielkosc_wybiegu_enum wielkoscWybieguEnum = wielkosc_wybiegu_enum.valueOf(rozmiarWybiegu.toUpperCase());
+           return wybieg;
 
-
-            if (rodzajSrodowiskaEnum == rodzaj_srodowiska_enum.POWIETRZNY) {
-                return new Wybieg_Powietrzny(wielkoscWybieguEnum);
-            } else if (rodzajSrodowiskaEnum == rodzaj_srodowiska_enum.LADOWY) {
-                return new Wybieg_Ladowy(wielkoscWybieguEnum);
-            } else if(rodzajSrodowiskaEnum == rodzaj_srodowiska_enum.WODNY) {
-                return new Wybieg_Wodny(wielkoscWybieguEnum);
-            } else {
-                System.out.println("Nieznany rodzaj środowiska.");
-                return null;
-            }
         } catch (BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
@@ -392,20 +274,24 @@ public class Sklep {
 
     public Zwierze kup_zwierze(String typ, String nazwa, int zycie, int sila, int wielkosc, int glod, int zmeczenie, int zadowolenie, int czasZycia, int cena, Zasoby zasoby) {
         if (cena <= zasoby.getMonety()) {
-            switch (typ) {
-                case "Ladowe":
+            return switch (typ) {
+                case "Ladowe" -> {
                     zasoby.zmienMonety(-cena);
-                    return new ZwierzeLadowe(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
-                case "Wodne":
+                    yield new ZwierzeLadowe(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
+                }
+                case "Wodne" -> {
                     zasoby.zmienMonety(-cena);
-                    return new ZwierzeWodne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
-                case "Powietrzne":
+                    yield new ZwierzeWodne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
+                }
+                case "Powietrzne" -> {
                     zasoby.zmienMonety(-cena);
-                    return new ZwierzePowietrzne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
-                default:
+                    yield new ZwierzePowietrzne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
+                }
+                default -> {
                     System.out.println("Nieprawidłowy typ zwierzęcia.");
-                    return null;
-            }
+                    yield null;
+                }
+            };
         } else {
             System.out.println("Brak wystarczających środków finansowych.");
             return null;

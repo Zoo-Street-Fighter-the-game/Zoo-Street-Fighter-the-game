@@ -11,8 +11,8 @@ public class ZwierzeLadowe extends Zwierze{
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public ZwierzeLadowe(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena) {
-        super(nazwa, zycie, sila, wielkosc, wskaznik_glodu, zmeczenie, zadowolenie, przezyte_dni, cena, rodzaj_srodowiska_enum.LADOWY);
+    public ZwierzeLadowe(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int cena) {
+        super(nazwa, zycie, sila, wielkosc, wskaznik_glodu, zmeczenie, zadowolenie, cena, rodzaj_srodowiska_enum.LADOWY);
     }
 
 }

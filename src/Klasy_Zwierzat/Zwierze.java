@@ -1,9 +1,9 @@
 package Klasy_Zwierzat;
 
 import enumy.rodzaj_srodowiska_enum;
-import interfejsy.Obserwujacy_interface;
+import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 
-public abstract class Zwierze implements Obserwujacy_interface{
+public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
 
     
     //===========================================================================
@@ -17,7 +17,7 @@ public abstract class Zwierze implements Obserwujacy_interface{
     private int wskaznik_glodu;
     private int zmeczenie;
     private int zadowolenie;
-    private int przezyte_dni;
+    private int przezyte_dni = 0;
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy;
@@ -25,7 +25,7 @@ public abstract class Zwierze implements Obserwujacy_interface{
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,rodzaj_srodowiska_enum rodzaj){
+    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int cena,rodzaj_srodowiska_enum rodzaj){
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
@@ -33,7 +33,6 @@ public abstract class Zwierze implements Obserwujacy_interface{
         this.wskaznik_glodu = wskaznik_glodu;
         this.zmeczenie = zmeczenie;
         this.zadowolenie = zadowolenie;
-        this.przezyte_dni = przezyte_dni;
         this.cena = cena;
         this.rodzaj=rodzaj;
     }

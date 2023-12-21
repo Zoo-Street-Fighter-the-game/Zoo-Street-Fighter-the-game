@@ -14,7 +14,7 @@ public class DzienneZoo {
     private String nazwaZoo;
     private int dniCounter =0;
     private Zasoby zmiennaZasoby;
-    private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getIstnieje();
+    final private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getIstnieje();
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
 
@@ -80,15 +80,14 @@ public class DzienneZoo {
 
     public void rozpocznijDzien()
     {
-        ArrayList <Zwierze> pom= new ArrayList<>();
+        ArrayList <Zwierze> pom ;
         setDniCounter(getDniCounter()+1);
         System.out.println("Rozpoczynami dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
             pom = (ArrayList<Zwierze>) obiekt.getLista_zwierzat();
-            for(int i=0 ; i< pom.size(); i++)
-            {
-                pom.get(i).setPrzezyte_dni(pom.get(i).getPrzezyte_dni()+1);
+            for (Zwierze zwierze : pom) {
+                zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni() + 1);
             }
         }
 
@@ -144,17 +143,17 @@ public class DzienneZoo {
     //TOSTRING
     public String toString()
  {
-     String status= getNazwaZoo()+ " \n";
+     StringBuilder status= new StringBuilder(getNazwaZoo() + " \n");
 
      for(Wybieg_podstawowy obiekt: listaWybiegow)
-         status+= obiekt.toString() + " \n";
+         status.append(obiekt.toString()).append(" \n");
 
      for(Pracownik obiekt: listaPracownikow)
-         status+= obiekt.toString() + " \n";
+         status.append(obiekt.toString()).append(" \n");
 
-     status+= zmiennaZasoby.toString() + " \n"; //daria musi dodac metode tostring!!!
+     status.append(zmiennaZasoby.toString()).append(" \n"); //daria musi dodac metode tostring!!!
 
-     return status;
+     return status.toString();
  }
  //POKAZANIE PRACOWNIKOW I WYBIEGOW
  public void pokazpracownikow()

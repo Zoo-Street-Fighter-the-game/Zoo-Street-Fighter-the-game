@@ -2,6 +2,12 @@ package tests;
 
 import DzienneZooPakiet.*;
 //import Klasy_Zwierzat.ZwierzeLadowe;
+import Klasy_Zwierzat.Zwierze;
+import Klasy_Zwierzat.ZwierzeLadowe;
+import Klasy_Zwierzat.ZwierzeWodne;
+import enumy.rodzaj_srodowiska_enum;
+import enumy.wielkosc_wybiegu_enum;
+import enumy.zwierzeta_enum;
 import pakiet_zasoby.Zasoby;
 import pakiet_sklep.*;
 
@@ -24,7 +30,7 @@ public class test1 {
         sklepik.sprzedaj_opiekuna(Zoo, Zoo.getZmiennaZasoby());
         System.out.println(Zoo);
 
-        Zoo.dodajWybieg(sklepik.kup_wybieg("Ladowy", "Maly", Zoo.getZmiennaZasoby()));
+        Zoo.dodajWybieg(sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.MALY, Zoo.getZmiennaZasoby()));
         System.out.println(Zoo);
 
         sklepik.sprzedaj_wybieg(Zoo, Zoo.getZmiennaZasoby());
@@ -38,5 +44,8 @@ public class test1 {
             System.out.println("Cos poszlo nie tak");
         }
         System.out.println(Zoo);
+        Zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze());
+        zwierzeta_enum cos = zwierzeta_enum.PINGWIN;
+
     }
 }

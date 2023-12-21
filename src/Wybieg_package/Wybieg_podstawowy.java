@@ -4,7 +4,7 @@ import Klasy_Zwierzat.Zwierze;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import interfejsy.Obserwowany_interface;
-import interfejsy.Obserwujacy_interface;
+import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     //==========================================================================
     //                              zmienne
     //--------------------------------------------------------------------------
-    private List<Obserwujacy_interface> obserwujacy = new ArrayList<>();
+    private List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy = new ArrayList<>();
     private int wolne_miejsce_w_wybiegu;
 
     private rodzaj_srodowiska_enum rodzaj_srodowiska;
@@ -146,18 +146,18 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     //                      metody zwiazanie z obserwowaniem zwierzat
     //---------------------------------------------------------------------------------------
     @Override
-    public void dodaj_obserwatora(Obserwujacy_interface o) {
+    public void dodaj_obserwatora(Obserwujacy_ZwierzeWybieg_interface o) {
         obserwujacy.add(o);
     }
 
     @Override
-    public void usun_obserwatora(Obserwujacy_interface o) {
+    public void usun_obserwatora(Obserwujacy_ZwierzeWybieg_interface o) {
         obserwujacy.remove(o);
     }
 
     @Override
     public void powiadom_obserwatorow() {
-        for(Obserwujacy_interface o : obserwujacy){
+        for(Obserwujacy_ZwierzeWybieg_interface o : obserwujacy){
             o.aktualizuj_oberwujacego(getCzystosc());
         }
     }
@@ -194,11 +194,11 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
         return status.toString();
     }
 
-    public List<Obserwujacy_interface> getobserwujacy() {
+    public List<Obserwujacy_ZwierzeWybieg_interface> getobserwujacy() {
         return obserwujacy;
     }
 
-    public void setobserwujacy(List<Obserwujacy_interface> obserwujacy) {
+    public void setobserwujacy(List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy) {
         obserwujacy = obserwujacy;
     }
 

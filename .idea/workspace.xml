@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeLadowe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeLadowe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzePowietrzne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzePowietrzne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeWodne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeWodne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfejsy/Obserwowany_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/Obserwowany_interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfejsy/Obserwujacy_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/Obserwujacy_ZwierzeWybieg_interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +48,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Dominik__branch&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -49,6 +69,8 @@
       <updated>1703158795934</updated>
       <workItem from="1703158796736" duration="9000" />
       <workItem from="1703158920413" duration="936000" />
+      <workItem from="1703161750791" duration="2690000" />
+      <workItem from="1703188707577" duration="3309000" />
     </task>
     <servers />
   </component>
