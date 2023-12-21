@@ -16,6 +16,11 @@ import pakiet_zasoby.Zasoby;
 
 public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
+    private static int cena_wybieg_maly = 10;
+    private static int cena_wybieg_sredni = 10;
+    private static int cena_wybieg_duzy = 10;
+
+
 
     private static int cena1 = 435;
     private static int cena2 =34;
@@ -340,7 +345,7 @@ public class Sklep {
 
         switch (wielkosc_wybiegu_enum.valueOf(rozmiarWybiegu.toUpperCase())) {
             case MALY:
-                koszt = ;
+                koszt = cena_wybieg_maly;
                 break;
             case SREDNI:
                 koszt = cena_wybieg_sredni;
