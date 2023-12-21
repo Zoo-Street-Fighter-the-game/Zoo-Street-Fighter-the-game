@@ -1,3 +1,5 @@
+package pakiet_arena;
+
 public class Arena {
     private int temperatura;
     private int zalesienie;

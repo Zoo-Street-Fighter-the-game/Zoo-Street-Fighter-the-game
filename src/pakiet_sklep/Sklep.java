@@ -16,9 +16,7 @@ import pakiet_zasoby.Zasoby;
 
 public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
-    private static int cena_wybieg_maly = 47;
-    private static int cena_wybieg_sredni = 87;
-    private static int cena_wybieg_duzy = 127;
+
     private static int cena1 = 435;
     private static int cena2 =34;
     private static int cena3= 345;
@@ -113,29 +111,7 @@ public class Sklep {
         Sklep.cena10 = cena10;
     }
 
-    public static int getCena_wybieg_maly() {
-        return cena_wybieg_maly;
-    }
 
-    public static void setCena_wybieg_maly(int cena_wybieg_maly) {
-        Sklep.cena_wybieg_maly = cena_wybieg_maly;
-    }
-
-    public static int getCena_wybieg_sredni() {
-        return cena_wybieg_sredni;
-    }
-
-    public static void setCena_wybieg_sredni(int cena_wybieg_sredni) {
-        Sklep.cena_wybieg_sredni = cena_wybieg_sredni;
-    }
-
-    public static int getCena_wybieg_duzy() {
-        return cena_wybieg_duzy;
-    }
-
-    public static void setCena_wybieg_duzy(int cena_wybieg_duzy) {
-        Sklep.cena_wybieg_duzy = cena_wybieg_duzy;
-    }
 
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;
@@ -211,52 +187,6 @@ public class Sklep {
         System.out.println("Wybieg został pomyślnie sprzedany. Stan konta wzrósł o " + cenaWybiegu + " monet.");
     }
 
-/*
-    public void sprzedaj_wybieg(DzienneZoo dzienneZoo, Zasoby zasoby) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Wyświetlanie dostępnych wybiegów
-        System.out.println("Dostępne wybiegi:");
-        List<Wybieg> listaWybiegow = dzienneZoo.getListawybiegow();
-
-        for (int i = 0; i < listaWybiegow.size(); i++) {
-            System.out.println((i + 1) + ". " + listaWybiegow.get(i));
-        }
-
-        // Wybór numeru wybiegu do sprzedaży
-        System.out.print("Wybierz numer wybiegu do sprzedaży: ");
-        int numerWybiegu = scanner.nextInt();
-
-        // Sprawdzenie poprawności wyboru
-        if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
-            System.out.println("Błędny numer wybiegu.");
-            return;
-        }
-
-        // Wybranie konkretnego wybiegu
-        Wybieg wybiegDoSprzedazy = listaWybiegow.get(numerWybiegu - 1);
-
-        // Sprawdzenie czy wybieg do sprzedazy zawiera zwierzeta
-        if (!wybiegDoSprzedazy.getLista_zwierzat().isEmpty()) {
-            // Jeśli zawiera zwierzęta, dodaj je do wybiegu dla bezdomnych
-            Wybieg_bezdomni wybiegBezdomni = Wybieg_bezdomni.getIstnieje();
-            wybiegBezdomni.dodaj_zwierze(wybiegDoSprzedazy.getLista_zwierzat());
-
-            // Wyczyszczenie zwierząt z wybiegu do sprzedazy
-
-            wybiegDoSprzedazy.usun_zwierze((Zwierze) wybiegDoSprzedazy.getLista_zwierzat());
-        }
-
-        // Logika sprzedaży wybiegu
-        dzienneZoo.usunwybieg(wybiegDoSprzedazy);
-
-        // Wzrost stanu konta po sprzedaży
-        int cenaWybiegu = (int) wybiegDoSprzedazy.getCena();
-        zasoby.setMonety(zasoby.getMonety() + cenaWybiegu);
-
-        System.out.println("Wybieg został pomyślnie sprzedany. Stan konta wzrósł o " + cenaWybiegu + " monet.");
-    }
-*/ // to jest metoda niedkonczona z wysylaniem zwierzat ze sprzedanego wybiegu na bezdomne wybiegi
 
     public void sprzedaj_opiekuna(DzienneZoo dzienneZoo, Zasoby zasoby) {
         Scanner scanner = new Scanner(System.in);
@@ -410,7 +340,7 @@ public class Sklep {
 
         switch (wielkosc_wybiegu_enum.valueOf(rozmiarWybiegu.toUpperCase())) {
             case MALY:
-                koszt = cena_wybieg_maly;
+                koszt = ;
                 break;
             case SREDNI:
                 koszt = cena_wybieg_sredni;

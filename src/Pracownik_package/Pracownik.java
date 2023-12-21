@@ -1,6 +1,4 @@
 package Pracownik_package;
-//import Zoo_dzienne.*;
-//import Zwierze.*;
 import Wybieg_package.*;
 import Klasy_Zwierzat.Zwierze;
 import pakiet_zasoby.*;
