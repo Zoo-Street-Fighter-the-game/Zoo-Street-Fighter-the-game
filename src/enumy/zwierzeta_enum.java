@@ -1,28 +1,41 @@
 package enumy;
 
 import Klasy_Zwierzat.Zwierze;
-import Klasy_Zwierzat.ZwierzeLadowe;
-import Klasy_Zwierzat.ZwierzeWodne;
 
-public enum zwierzeta_enum {
+public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcje do sklepu
     PINGWIN {
         @Override
+        public int podajCene() {
+            return 10;
+        }
+        @Override
         public Zwierze stworzZwierze() {
-            return new ZwierzeLadowe("Pingwin", 20, 10, 4, 5, 2, 1, 0);
+            return new Zwierze("Pingwin", 20, 10, 4, 5, 2, 1, 0, rodzaj_srodowiska_enum.WODNY);
         }
     },
     NIEDZWIEDZ {
         @Override
+        public int podajCene() {
+            return 10;
+        }
+        @Override
         public Zwierze stworzZwierze() {
-            return new ZwierzeWodne("Niedźwiedź", 20, 10, 1, 1, 1, 1, 1);
+            return new Zwierze("Niedźwiedź", 20, 10, 1, 1, 1, 1, 1, rodzaj_srodowiska_enum.LADOWY);
         }
     },
     LOS {
         @Override
+        public int podajCene() {
+            return 10;
+        }
+
+        @Override
         public Zwierze stworzZwierze() {
-            return new ZwierzeWodne("Łoś", 1, 1, 1, 1, 1, 1, 1);
+            return new Zwierze("Łoś", 1, 1, 1, 1, 1, 1, 1, rodzaj_srodowiska_enum.LADOWY);
         }
     };
 
     public abstract Zwierze stworzZwierze();
+
+    public abstract int podajCene();
 }

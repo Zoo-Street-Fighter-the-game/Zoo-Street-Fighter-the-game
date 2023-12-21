@@ -20,7 +20,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     private int przezyte_dni = 0;
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
-    private float mnoznik_pieniedzy;
+    private float mnoznik_pieniedzy=1;
 
     //===========================================================================
     //KONSTRUKTOR

@@ -82,7 +82,7 @@ public class DzienneZoo {
     {
         ArrayList <Zwierze> pom ;
         setDniCounter(getDniCounter()+1);
-        System.out.println("Rozpoczynami dzień "+ getDniCounter());
+        System.out.println("Rozpoczynamy dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
             pom = (ArrayList<Zwierze>) obiekt.getLista_zwierzat();
@@ -109,12 +109,19 @@ public class DzienneZoo {
     //DODAWANIE WYBIEGU I PRACOWNIKA
     public void dodajWybieg(Wybieg_podstawowy wybieg)
     {
+        if(wybieg!=null)
         listaWybiegow.add(wybieg);
     }
     public void dodajPracownika(Pracownik x)
     {
+        if(x!=null)
         listaPracownikow.add(x);
     }
+
+    /*public void dodajZwierze(Zwierze z)
+    {
+        tutaj moze byc cos w rodzaju wyswietl wszystkie wybiegi i dodaj do wybranego zwierze 'z'
+    }*/
 
     public void usunWybieg(Wybieg_podstawowy x)
     {
@@ -145,11 +152,10 @@ public class DzienneZoo {
  {
      StringBuilder status= new StringBuilder(getNazwaZoo() + " \n");
 
-     for(Wybieg_podstawowy obiekt: listaWybiegow)
-         status.append(obiekt.toString()).append(" \n");
-
-     for(Pracownik obiekt: listaPracownikow)
-         status.append(obiekt.toString()).append(" \n");
+     if(listaWybiegow!=null)
+            listaWybiegow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
+    if(listaPracownikow!=null)
+            listaPracownikow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
 
      status.append(zmiennaZasoby.toString()).append(" \n"); //daria musi dodac metode tostring!!!
 

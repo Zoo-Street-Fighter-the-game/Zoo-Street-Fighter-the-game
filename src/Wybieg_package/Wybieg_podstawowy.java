@@ -9,7 +9,7 @@ import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
+public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
 
 
 
@@ -22,7 +22,7 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     private rodzaj_srodowiska_enum rodzaj_srodowiska;
     private wielkosc_wybiegu_enum wielkosc_wybiegu;
     private float czystosc = 100;       //od 0 do 100
-    private float cena;
+    private int cena;
     private float czas_sprzatania;
     //=================================================================================
 
@@ -237,11 +237,11 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
 
 
 
-    public float getCena() {
+    public int getCena() {
         return cena;
     }
 
-    public void setCena(float cena) {
+    public void setCena(int cena) {
         this.cena = cena;
     }
 
