@@ -12,7 +12,7 @@ public class DzienneZoo {
 
     //ZMIENNNE --------------------------------------------------------------
     private int dniCounter =0;
-    private Zasoby zmiennaZasoby = new Zasoby(0,200,100);
+    final private Zasoby zmiennaZasoby = new Zasoby(0,200,100);
     final private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
@@ -35,10 +35,6 @@ public class DzienneZoo {
 
     public Zasoby getZmiennaZasoby() {
         return zmiennaZasoby;
-    }
-
-    public void setZmiennaZasoby(Zasoby zmiennaZasoby) {
-        this.zmiennaZasoby = zmiennaZasoby;
     }
 
     public ArrayList<Wybieg_podstawowy> getListaWybiegow() {
@@ -137,7 +133,6 @@ public class DzienneZoo {
 
 
     //TOSTRING
-    @Override
     public String toString()
  {
      StringBuilder status= new StringBuilder();

@@ -55,7 +55,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     }
 
     public Zwierze deep_clone() {
-        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getZmeczenie(), getZadowolenie(), getCena(), getRodzaj());
+        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
     }
 
 
