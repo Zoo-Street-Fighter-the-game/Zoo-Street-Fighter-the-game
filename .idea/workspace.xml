@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enumy/poziom_trudnosci_enum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pakiet_arena/Poziom_trudnosci.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pakiet_arena/Wybor_zwierzecia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeLadowe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeLadowe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzePowietrzne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzePowietrzne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeWodne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeWodne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfejsy/Obserwowany_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/Obserwowany_interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfejsy/Obserwujacy_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/Obserwujacy_ZwierzeWybieg_interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/Arena.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
     </list>
@@ -29,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,7 +69,11 @@
       <workItem from="1703158796736" duration="9000" />
       <workItem from="1703158920413" duration="936000" />
       <workItem from="1703161750791" duration="2690000" />
-      <workItem from="1703188707577" duration="3309000" />
+      <workItem from="1703188707577" duration="3310000" />
+      <workItem from="1703193900614" duration="167000" />
+      <workItem from="1703196275131" duration="132000" />
+      <workItem from="1703230378394" duration="2570000" />
+      <workItem from="1703232992142" duration="7750000" />
     </task>
     <servers />
   </component>

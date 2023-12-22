@@ -11,38 +11,27 @@ public class DzienneZoo {
 
 
     //ZMIENNNE --------------------------------------------------------------
-    private String nazwaZoo;
     private int dniCounter =0;
     private Zasoby zmiennaZasoby;
-    final private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getIstnieje();
+    final private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
-
+    private static DzienneZoo istnieje;
 
      //KONSTRUKTOR
 
-    public DzienneZoo(String nazwaZoo, Zasoby zmiennaZasoby, ArrayList<Wybieg_podstawowy> listaWybiegow, ArrayList<Pracownik> listaPracownikow) {
-        this.nazwaZoo = nazwaZoo;
-        this.zmiennaZasoby = zmiennaZasoby;
-        this.listaWybiegow = listaWybiegow;
-        this.listaPracownikow = listaPracownikow;
+    private DzienneZoo() {
     }
-    public DzienneZoo(String nazwaZoo, Zasoby zmiennaZasoby)
-    {
-        this.nazwaZoo = nazwaZoo;
-        this.zmiennaZasoby = zmiennaZasoby;
+    public static DzienneZoo getInstance(){
+        if (istnieje == null){
+            istnieje = new DzienneZoo();
+        }
+        return istnieje;
     }
 
 
 
     //SETTERY I GETTERY
-    public String getNazwaZoo() {
-        return nazwaZoo;
-    }
-
-    public void setNazwaZoo(String nazwaZoo) {
-        this.nazwaZoo = nazwaZoo;
-    }
 
     public Zasoby getZmiennaZasoby() {
         return zmiennaZasoby;
@@ -135,7 +124,13 @@ public class DzienneZoo {
         else System.out.println("nie udalo sie usunac pracownika");
     }
 
+    public void wypisz_zwierzeta(){
+        for (int i=0;i<getListaWybiegow().size();i++){
+            System.out.println("Wybieg nr" + i+ ": \n" );
+            getListaWybiegow().get(i).wypisz_zwierzeta();
+        }
 
+    }
 
 
 
@@ -143,7 +138,7 @@ public class DzienneZoo {
     //TOSTRING
     public String toString()
  {
-     StringBuilder status= new StringBuilder(getNazwaZoo() + " \n");
+     StringBuilder status= new StringBuilder("");
 
      for(Wybieg_podstawowy obiekt: listaWybiegow)
          status.append(obiekt.toString()).append(" \n");

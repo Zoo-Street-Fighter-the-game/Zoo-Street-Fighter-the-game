@@ -58,6 +58,9 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
         //tu bedzie funkcja release
     }
 
+    public Zwierze clone() {
+        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getZmeczenie(), getZadowolenie(), getCena(), getRodzaj());
+    }
 
 
     //===========================================================================

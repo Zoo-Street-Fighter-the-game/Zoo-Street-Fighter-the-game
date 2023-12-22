@@ -9,7 +9,7 @@ import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
+public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
 
 
 
@@ -132,7 +132,7 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     //-------------------------------------------------------------------------------------
     public void release(){
         obserwujacy.clear();
-        Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getIstnieje();
+        Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getInstance();
         for (Zwierze obiekt : getLista_zwierzat()){
             lista_bezdomnych.dodaj_zwierze(obiekt);
         }
@@ -192,6 +192,12 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
             status.append(obiekt.toString()).append(" \n");
 
         return status.toString();
+    }
+    public void wypisz_zwierzeta(){
+        for (int i=0;i<getLista_zwierzat().size();i++){
+            System.out.println("zwierze nr: " + i+ ": ");
+            System.out.println(getLista_zwierzat().get(i).toString()+"\n");
+        }
     }
 
     public List<Obserwujacy_ZwierzeWybieg_interface> getobserwujacy() {

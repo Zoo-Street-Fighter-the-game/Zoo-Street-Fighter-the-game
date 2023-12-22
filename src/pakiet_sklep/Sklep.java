@@ -272,20 +272,20 @@ public class Sklep {
     }
 
 
-    public Zwierze kup_zwierze(String typ, String nazwa, int zycie, int sila, int wielkosc, int glod, int zmeczenie, int zadowolenie, int czasZycia, int cena, Zasoby zasoby) {
+    public Zwierze kup_zwierze(String typ, String nazwa, int zycie, int sila, int wielkosc, int glod, int zmeczenie, int zadowolenie, int cena, Zasoby zasoby) {
         if (cena <= zasoby.getMonety()) {
             return switch (typ) {
                 case "Ladowe" -> {
                     zasoby.zmienMonety(-cena);
-                    yield new ZwierzeLadowe(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
+                    yield new ZwierzeLadowe(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, cena);
                 }
                 case "Wodne" -> {
                     zasoby.zmienMonety(-cena);
-                    yield new ZwierzeWodne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
+                    yield new ZwierzeWodne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, cena);
                 }
                 case "Powietrzne" -> {
                     zasoby.zmienMonety(-cena);
-                    yield new ZwierzePowietrzne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, czasZycia, cena);
+                    yield new ZwierzePowietrzne(nazwa, zycie, sila, wielkosc, glod, zmeczenie, zadowolenie, cena);
                 }
                 default -> {
                     System.out.println("Nieprawidłowy typ zwierzęcia.");

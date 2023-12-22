@@ -20,7 +20,7 @@ public class test1 {
         Sklep sklepik = new Sklep();
         //ZwierzeLadowe Slon = new ZwierzeLadowe("Eustachy", 10, 10, 5, 5,5,5,0,10);
 
-        DzienneZoo Zoo = new DzienneZoo("Zoo", bank);
+        DzienneZoo Zoo = DzienneZoo.getInstance();
 
         System.out.println(Zoo);
 
@@ -37,7 +37,7 @@ public class test1 {
         System.out.println(Zoo);
 
         try {
-            Zoo.getListaWybiegow().getFirst().dodaj_zwierze(sklepik.kup_zwierze("Ladowe", "Slon", 10, 10, 5, 5, 5, 5, 0, 10, Zoo.getZmiennaZasoby()));
+            //Zoo.getListaWybiegow().getFirst().dodaj_zwierze(sklepik.kup_zwierze("Ladowe", "Slon", 10, 10, 5, 5, 5, 5, 0, 10, Zoo.getZmiennaZasoby()));
             System.out.println(Zoo);
         } catch(NoSuchElementException e)
         {
@@ -46,6 +46,8 @@ public class test1 {
         System.out.println(Zoo);
         Zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze());
         zwierzeta_enum cos = zwierzeta_enum.PINGWIN;
+
+
 
     }
 }
