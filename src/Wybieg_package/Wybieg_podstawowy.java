@@ -65,8 +65,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
             setWolne_miejsce_w_wybiegu( getWolne_miejsce_w_wybiegu() + obiekt.getWielkosc() );
             usun_obserwatora(obiekt);
             obiekt.release();
-            obiekt = null;
-            getLista_zwierzat().remove( null);
+            getLista_zwierzat().remove( obiekt);
 
             System.gc();
             System.out.println("usunieto zwierze");
@@ -132,7 +131,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //-------------------------------------------------------------------------------------
     public void release(){
         obserwujacy.clear();
-        Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getIstnieje();
+        Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getInstance();
         for (Zwierze obiekt : getLista_zwierzat()){
             lista_bezdomnych.dodaj_zwierze(obiekt);
         }
@@ -193,13 +192,19 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
 
         return status.toString();
     }
+    public void wypisz_zwierzeta(){
+        for (int i=0;i<getLista_zwierzat().size();i++){
+            System.out.println("zwierze nr: " + i+ ": ");
+            System.out.println(getLista_zwierzat().get(i).toString()+"\n");
+        }
+    }
 
     public List<Obserwujacy_ZwierzeWybieg_interface> getobserwujacy() {
         return obserwujacy;
     }
 
     public void setobserwujacy(List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy) {
-        obserwujacy = obserwujacy;
+        this.obserwujacy = obserwujacy;
     }
 
     public int getWolne_miejsce_w_wybiegu() {

@@ -1,7 +1,6 @@
 package Pracownik_package;
 import Wybieg_package.*;
 import Klasy_Zwierzat.Zwierze;
-import pakiet_zasoby.*;
 
 
 public class Pracownik{
