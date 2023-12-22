@@ -13,7 +13,13 @@ public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
     final private static int cenaPracownika =234;
 
+    private DzienneZoo zoo;
+
     final int mnoznikCenyPracownika=10;
+
+    public Sklep(DzienneZoo zoo) {
+        this.zoo = zoo;
+    }
 
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;

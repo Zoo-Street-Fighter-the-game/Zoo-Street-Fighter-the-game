@@ -47,6 +47,7 @@ public class Zasoby {
         jedzenie = jedzenie+x;
     }
 
+    @Override
     public String toString(){
         return "Twoje zasoby: \n Exp: "+getExp()+" , Monety: "+getMonety()+" , Jedzenie: "+ getJedzenie();
     }

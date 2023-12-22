@@ -12,7 +12,7 @@ public class DzienneZoo {
 
     //ZMIENNNE --------------------------------------------------------------
     private int dniCounter =0;
-    private Zasoby zmiennaZasoby;
+    private Zasoby zmiennaZasoby = new Zasoby(0,200,100);
     final private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
@@ -136,22 +136,27 @@ public class DzienneZoo {
     }
 
 
-
-
     //TOSTRING
+    @Override
     public String toString()
  {
      StringBuilder status= new StringBuilder();
 
-     if(listaWybiegow!=null)
+     if(!listaWybiegow.isEmpty())
             listaWybiegow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
-    if(listaPracownikow!=null)
-            listaPracownikow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
+     else
+         status.append("nie masz żadnych wybiegów\n");
 
+    if(!listaPracownikow.isEmpty())
+            listaPracownikow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
+    else
+        status.append("nie masz żadnych pracowników\n");
      status.append(zmiennaZasoby.toString()).append(" \n"); //daria musi dodac metode tostring!!!
 
      return status.toString();
  }
+
+
  //POKAZANIE PRACOWNIKOW I WYBIEGOW
  public void pokazpracownikow()
  {
