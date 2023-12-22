@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="poprawienie składowych klasy i toStringa">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/src/Pracownik_package/Pracownik" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/Pracownik_package/Pracownik" afterDir="false" />
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="zmiana">
+      <change beforePath="$PROJECT_DIR$/game/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/game/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,20 +25,6 @@
     </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Mrk-Ga&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="414553c3-548d-416a-a518-732626bd1fba" />
-        <option name="url" value="https://github.com/gunterame/Zoo-Street-Fighter-the-game.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -59,68 +41,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Pracownik__branch&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JAVA&quot;
-    ]
   }
 }</component>
-  <component name="RunAnythingCache">
-    <myKeys>
-      <visibility group="Gradle Tasks" flag="true" />
-      <visibility group="Grunt" flag="true" />
-      <visibility group="Gulp" flag="true" />
-      <visibility group="HTTP Requests" flag="true" />
-      <visibility group="Maven Goals" flag="true" />
-      <visibility group="Node.js" flag="true" />
-      <visibility group="Recent projects" flag="true" />
-      <visibility group="Run configurations" flag="true" />
-      <visibility group="com.intellij.httpClient.http.request.run.HttpRequestRunAnythingProvider" flag="false" />
-      <visibility group="com.intellij.ide.actions.runAnything.RunAnythingRunConfigurationProvider" flag="false" />
-      <visibility group="com.intellij.ide.actions.runAnything.activity.RunAnythingRecentProjectProvider" flag="false" />
-      <visibility group="com.intellij.lang.javascript.buildTools.grunt.GruntRunAnythingProvider" flag="false" />
-      <visibility group="com.intellij.lang.javascript.buildTools.gulp.GulpRunAnythingProvider" flag="false" />
-      <visibility group="com.intellij.lang.javascript.buildTools.npm.NpmRunAnythingProvider.Npm" flag="false" />
-      <visibility group="com.intellij.lang.javascript.buildTools.npm.NpmRunAnythingProvider.Yarn" flag="false" />
-      <visibility group="com.jetbrains.nodejs.execution.NodeRunAnythingProvider" flag="false" />
-      <visibility group="npm" flag="true" />
-      <visibility group="org.jetbrains.idea.maven.execution.MavenRunAnythingProvider" flag="false" />
-      <visibility group="org.jetbrains.plugins.gradle.execution.GradleRunAnythingProvider" flag="false" />
-      <visibility group="yarn" flag="true" />
-    </myKeys>
-    <option name="myCommands">
-      <command value="ffdf" />
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Zoo-Street-Fighter-the-game" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Zoo-Street-Fighter-the-game" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -132,15 +56,6 @@
       <workItem from="1702754031809" duration="79000" />
       <workItem from="1702754238271" duration="45000" />
       <workItem from="1702754309433" duration="13000" />
-      <workItem from="1702838459645" duration="97000" />
-      <workItem from="1702838608654" duration="70000" />
-      <workItem from="1702838793734" duration="292000" />
-      <workItem from="1702839097735" duration="73000" />
-      <workItem from="1702839184370" duration="80000" />
-      <workItem from="1702839280410" duration="32000" />
-      <workItem from="1702839342370" duration="8875000" />
-      <workItem from="1702855178265" duration="1722000" />
-      <workItem from="1702910861658" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -150,76 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702754069610</updated>
     </task>
-    <task id="LOCAL-00002" summary="pierwsza wersja klasy Pracownik">
-      <option name="closed" value="true" />
-      <created>1702840802847</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1702840802847</updated>
-    </task>
-    <task id="LOCAL-00003" summary="poprawienie pól klasy i toStringa">
-      <option name="closed" value="true" />
-      <created>1702846023723</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1702846023723</updated>
-    </task>
-    <task id="LOCAL-00004" summary="poprawienie składowych klasy i toStringa">
-      <option name="closed" value="true" />
-      <created>1702846258843</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1702846258843</updated>
-    </task>
-    <task id="LOCAL-00005" summary="poprawienie składowych klasy i toStringa">
-      <option name="closed" value="true" />
-      <created>1702854676181</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1702854676181</updated>
-    </task>
-    <task id="LOCAL-00006" summary="poprawienie składowych klasy i toStringa">
-      <option name="closed" value="true" />
-      <created>1702854687092</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1702854687092</updated>
-    </task>
-    <task id="LOCAL-00007" summary="poprawienie składowych klasy i toStringa">
-      <option name="closed" value="true" />
-      <created>1702855315658</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1702855315658</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="zmiana" />
-    <MESSAGE value="pierwsza wersja klasy Pracownik" />
-    <MESSAGE value="poprawienie pól klasy i toStringa" />
-    <MESSAGE value="poprawienie składowych klasy i toStringa" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawienie składowych klasy i toStringa" />
+    <option name="LAST_COMMIT_MESSAGE" value="zmiana" />
   </component>
 </project>
