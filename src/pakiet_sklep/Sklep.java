@@ -271,6 +271,7 @@ public class Sklep {
         } catch (BrakSrodkowException e)
         {
             System.out.println(e.getMessage());
+
         }
         return null;
     }
