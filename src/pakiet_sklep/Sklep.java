@@ -29,7 +29,7 @@ public class Sklep {
     }
 
 
-    public void sprzedaj_jedzenie(int ilosc, Zasoby zasoby) {
+    public void sprzedaj_jedzenie(int ilosc) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
 
@@ -42,12 +42,12 @@ public class Sklep {
 
             int przychod = ilosc * getCena_sztuka_jedzenie();
 
-            if (ilosc > zasoby.getJedzenie()) {
+            if (ilosc > zoo.getZmiennaZasoby().getJedzenie()) {
                 throw new BrakSrodkowException("Nie masz wystarczająco dużo jedzenia. Wybierz mniejszą ilość.");
             }
 
-            zasoby.zmienJedzenie(-ilosc);
-            zasoby.setMonety(zasoby.getMonety() + przychod);
+            zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
+            zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż udana. Zarobiłeś: " + przychod + " monet");
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
@@ -218,7 +218,7 @@ public class Sklep {
                 System.out.println(e.getMessage());
             }
     }
-    public  Pracownik kup_pracownika(String imie, String nazwisko, int jakosc) {
+    public void kup_pracownika(String imie, String nazwisko, int jakosc) {
 
         System.out.println("Obecna cena za pracownika to: " + cenaPracownika*mnoznikCenyPracownika);
 
@@ -230,16 +230,15 @@ public class Sklep {
             zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*mnoznikCenyPracownika);
             System.out.println("zakup udany");
 
-            return new Pracownik(imie, nazwisko, jakosc);
+            zoo.dodajPracownika(new Pracownik(imie, nazwisko, jakosc));
 
         } catch (BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
 
-        return null;
     }
 
-    public Wybieg_podstawowy kup_wybieg(rodzaj_srodowiska_enum rodzajSrodowiska, wielkosc_wybiegu_enum wielkosc_wybiegu) {
+    public void kup_wybieg(rodzaj_srodowiska_enum rodzajSrodowiska, wielkosc_wybiegu_enum wielkosc_wybiegu) {
         Wybieg_podstawowy wybieg = new Wybieg_podstawowy(rodzajSrodowiska, wielkosc_wybiegu);
         try {
 
@@ -250,16 +249,12 @@ public class Sklep {
             zoo.getZmiennaZasoby().zmienMonety(-wybieg.getCena());
             System.out.println("Zakup udany");
 
-            //zoo.dodajWybieg(wybieg);
-           return wybieg;
+            zoo.dodajWybieg(wybieg);
 
         } catch (BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
 
-
-
-        return null;
     }
 
 
