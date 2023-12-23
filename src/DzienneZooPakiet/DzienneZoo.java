@@ -18,7 +18,6 @@ public class DzienneZoo {
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
     private static DzienneZoo istnieje;
-    Scanner sc = new Scanner(System.in);
 
      //KONSTRUKTOR
 
@@ -102,9 +101,11 @@ public class DzienneZoo {
     }
 
 
-    //PRZENOSZENIE ZWIERZĄT MIĘDZY WYBIEGAMI
-    public void przeniesZwierze(int wybieg_zabieranie, int wybieg_dawanie, int zwierze)
+    //WYBIERANIE WYBIEGU SPOŚRÓD DOSTĘPNYCH
+    public int wybierzWybiegi()
     {
+        Scanner sc = new Scanner(System.in);
+        int wybieg_zabieranie;
         //WYŚWIETLANIE WYBIEGU
         System.out.println("Wybiegi do wyboru: " );
         for(int i=0;i<listaWybiegow.size();i++)
@@ -113,50 +114,45 @@ public class DzienneZoo {
         }
         System.out.println("Wybieg " + listaWybiegow.size() + ": " + wybiegDlaBezdomnych);//OSTATNI WYBIEG ZAWSZE DO WYBORU TO WYBIEG BEZDOMNYCH
 
-        //PODAWANIE WYBIEGU
         System.out.println("Podaj wybieg, ktory chcesz wybrac!" );
         wybieg_zabieranie=sc.nextInt();
 
-        //WYŚWIETLANIE ZWIERZAT DLA DANEGO WYBIEGU
-        System.out.println("Lista zwierzat w wybranym wybiegu: ");
-        //listaWybiegow.size() TO OPCJA WYBIEGU DLA BEZDOMNYCH WYBIERANA PRZEZ UŻYTKOWNIKA
-        if(wybieg_zabieranie==listaWybiegow.size())//IF DLA SPRAWDZENIA KTÓRY RODZAJ WYBIEGU CHCEMY
-        {
-            for(int i=0; i<wybiegDlaBezdomnych.getLista_zwierzat().size(); i++)
-            {
-                System.out.println("Zwierze " + i + ": " + (wybiegDlaBezdomnych.getLista_zwierzat()).get(i));
-            }
-        }else {
-            for(int i=0; i<((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).size(); i++)
-            {
-                System.out.println("Zwierze " + i + ": " + ((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(i));
-            }
-        }
+        return wybieg_zabieranie;
+    }
 
-        //PODAWANIE ZWIERZECIA I WYBIEGU DO PRZENIESIENIA
-        System.out.println("Podaj numer zwierzecia, ktore chcesz przeniesc!" );
-        zwierze=sc.nextInt();
+    //PRZENOSZENIE ZWIERZĄT MIĘDZY WYBIEGAMI
+    public void przeniesZwierze_Wybiegi()
+    {
+        int wybieg_zabieranie, zwierze;
+        wybieg_zabieranie = wybierzWybiegi();
+        zwierze = listaWybiegow.get(wybieg_zabieranie).wybierzZwierze();
+
         System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!" );
-        wybieg_dawanie=sc.nextInt();
+        int wybieranie = wybierzWybiegi();
+
+        //DODAJEMY ZWIERZE DO WYBIEGU
+        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
 
 
-        if(wybieg_dawanie==listaWybiegow.size())//IF DLA SPRAWDZENIA, NA KTORY WYBIEG DODAJEMY ZWIERZE
-        {
-            //DODAJEMY ZWIERZE DO WYBIEGU
-            wybiegDlaBezdomnych.dodaj_zwierze(wybiegDlaBezdomnych.getLista_zwierzat().get(zwierze));
-        }else {
-            //DODAJEMY ZWIERZE DO WYBIEGU
-            listaWybiegow.get(wybieg_dawanie).dodaj_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
-        }
+        //USUWAMY ZWIERZE Z WYBIEGU
+        listaWybiegow.get(wybieg_zabieranie).usun_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
 
-        if(wybieg_zabieranie==listaWybiegow.size())//IF DLA SPRAWDZENIA, Z KTÓREGO WYBIEGU USUWAMY ZWIERZE
-        {
-            //USUWAMY ZWIERZE Z WYBIEGU
-            wybiegDlaBezdomnych.usun_zwierze(wybiegDlaBezdomnych.getLista_zwierzat().get(zwierze));
-        }else {
-            //USUWAMY ZWIERZE Z WYBIEGU
-            listaWybiegow.get(wybieg_zabieranie).usun_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
-        }
+    }
+
+    //METODA PRZENOSZĄCA ZWIERZE Z WYBIEGU BEZDOMNI
+    public void przeniesZwierze_bezdomni()
+    {
+        int zwierze;
+        zwierze = wybiegDlaBezdomnych.wybierzZwierze();
+
+        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!");
+        int wybieranie = wybierzWybiegi();
+
+        //DODAJEMY ZWIERZE DO WYBIEGU
+        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieranie)).getLista_zwierzat()).get(zwierze));
+
+        //USUWAMY ZWIERZE Z WYBIEGU
+        wybiegDlaBezdomnych.usun_zwierze(wybiegDlaBezdomnych.getLista_zwierzat().get(zwierze));
     }
 
     public void usunWybieg(Wybieg_podstawowy x)

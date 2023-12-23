@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="przeredagowany sklep z obiektem zoo">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dodana metoda przenoszenia zwierzecia miedzy wybiegami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_abstract.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703289556366</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Dodana metoda przenoszenia zwierzecia miedzy wybiegami">
+      <option name="closed" value="true" />
+      <created>1703358995887</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703358995887</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +120,7 @@
     <MESSAGE value="zmiana" />
     <MESSAGE value="wstępne modyfikacje do zoo dziennego, sklepu i zwierząt" />
     <MESSAGE value="przeredagowany sklep z obiektem zoo" />
-    <option name="LAST_COMMIT_MESSAGE" value="przeredagowany sklep z obiektem zoo" />
+    <MESSAGE value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
   </component>
 </project>
