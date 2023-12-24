@@ -82,8 +82,10 @@ public class DzienneZoo {
     public void zakonczDzien()
     {
         System.out.println("\nKonczymy dzien numer "+ getDniCounter() + "\n");
+        System.out.println("stan wybiegów wyglada następująco:\n");
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
+            obiekt.brudzenie_zwierzat();
             System.out.println(obiekt);
             obiekt.zakonczenie_dnia(); // pusta metoda
         }
@@ -102,21 +104,9 @@ public class DzienneZoo {
 
 
 
-    //WYŚWIETLANIE WYBIEGOW Z ZOO
-
-    public void wyswietlWybiegiWZoo(){
-        System.out.println("Wybiegi do wyboru: " );
-        for(int i=0;i<listaWybiegow.size();i++)
-        {
-            System.out.println("Wybieg " + i + ": " + listaWybiegow.get(i));
-        }
-        System.out.println("Wybieg " + listaWybiegow.size() + ": " + wybiegDlaBezdomnych);//OSTATNI WYBIEG ZAWSZE DO WYBORU TO WYBIEG BEZDOMNYCH
-
-    }
-
     //DODAWANIE ZWIERZĘCIA DO WYBRANEGO WYBIEGU
     public void dodajZwierzeWZoo(Zwierze z){
-        pokazWybiegi();
+        pokazWybiegi(); //metoda pokazujaca wybiegi, potrzebna w innych metodach tez, wiec takie rozwiazanie nie powiela kodu
 
         //podawanie wybiegu z wcześniej wyświetlonych
         System.out.println("Podaj wybieg, ktory chcesz wybrac:" );

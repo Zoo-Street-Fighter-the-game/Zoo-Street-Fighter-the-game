@@ -55,7 +55,7 @@ public class Sklep {
 
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
-            System.out.println("Sprzedaż udana. Zarobiłeś: " + przychod + " monet");
+            System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
             scanner.next();
@@ -235,7 +235,7 @@ public class Sklep {
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*mnoznikCenyPracownika);
-            System.out.println("zakup udany");
+            System.out.println("zakup pracownika udany");
 
             zoo.dodajPracownika(new Pracownik(imie, nazwisko, jakosc));
 
@@ -254,7 +254,7 @@ public class Sklep {
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-wybieg.getCena());
-            System.out.println("Zakup udany");
+            System.out.println("Zakup wybiegu udany");
 
             zoo.dodajWybieg(wybieg);
 
@@ -273,7 +273,7 @@ public class Sklep {
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
-            System.out.println("Zakup udany");
+            System.out.println("Zakup zwierzecia udany");
 
             zoo.dodajZwierzeWZoo(typ.stworzZwierze());
 
