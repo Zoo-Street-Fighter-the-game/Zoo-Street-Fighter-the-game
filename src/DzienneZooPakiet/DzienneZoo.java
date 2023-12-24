@@ -69,7 +69,7 @@ public class DzienneZoo {
     {
         ArrayList <Zwierze> pom ;
         setDniCounter(getDniCounter()+1);
-        System.out.println("Rozpoczynamy dzień "+ getDniCounter());
+        System.out.println("\nRozpoczynamy dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
             pom = (ArrayList<Zwierze>) obiekt.getLista_zwierzat();
@@ -81,15 +81,14 @@ public class DzienneZoo {
     }
     public void zakonczDzien()
     {
-        System.out.println("Konczymy dzien numer "+ getDniCounter());
+        System.out.println("\nKonczymy dzien numer "+ getDniCounter() + "\n");
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
-            obiekt.zakonczenie_dnia();
+            System.out.println(obiekt);
+            obiekt.zakonczenie_dnia(); // pusta metoda
         }
         System.out.println("Zasoby zgromadzone na koniec dnia: \n"+ zmiennaZasoby);
     }
-
-
 
 
 
@@ -102,10 +101,10 @@ public class DzienneZoo {
     }
 
 
-    //PRZENOSZENIE ZWIERZĄT MIĘDZY WYBIEGAMI
-    public void przeniesZwierze(int wybieg_zabieranie, int wybieg_dawanie, int zwierze)
-    {
-        //WYŚWIETLANIE WYBIEGU
+
+    //WYŚWIETLANIE WYBIEGOW Z ZOO
+
+    public void wyswietlWybiegiWZoo(){
         System.out.println("Wybiegi do wyboru: " );
         for(int i=0;i<listaWybiegow.size();i++)
         {
@@ -113,9 +112,33 @@ public class DzienneZoo {
         }
         System.out.println("Wybieg " + listaWybiegow.size() + ": " + wybiegDlaBezdomnych);//OSTATNI WYBIEG ZAWSZE DO WYBORU TO WYBIEG BEZDOMNYCH
 
+    }
+
+    //DODAWANIE ZWIERZĘCIA DO WYBRANEGO WYBIEGU
+    public void dodajZwierzeWZoo(Zwierze z){
+        pokazWybiegi();
+
+        //podawanie wybiegu z wcześniej wyświetlonych
+        System.out.println("Podaj wybieg, ktory chcesz wybrac:" );
+
+        int indeks = sc.nextInt();
+        sc.nextLine();
+
+        listaWybiegow.get(indeks).dodaj_zwierze(z);
+
+        System.out.println("pomyslnie dodano zwierze do wybiegu");
+
+
+    }
+
+    //PRZENOSZENIE ZWIERZĄT MIĘDZY WYBIEGAMI
+    public void przeniesZwierze()
+    {
+        pokazWybiegi();
+
         //PODAWANIE WYBIEGU
-        System.out.println("Podaj wybieg, ktory chcesz wybrac!" );
-        wybieg_zabieranie=sc.nextInt();
+        System.out.println("Podaj wybieg, ktory chcesz wybrac:" );
+        int wybieg_zabieranie=sc.nextInt();
 
         //WYŚWIETLANIE ZWIERZAT DLA DANEGO WYBIEGU
         System.out.println("Lista zwierzat w wybranym wybiegu: ");
@@ -134,10 +157,10 @@ public class DzienneZoo {
         }
 
         //PODAWANIE ZWIERZECIA I WYBIEGU DO PRZENIESIENIA
-        System.out.println("Podaj numer zwierzecia, ktore chcesz przeniesc!" );
-        zwierze=sc.nextInt();
-        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!" );
-        wybieg_dawanie=sc.nextInt();
+        System.out.println("Podaj numer zwierzecia, ktore chcesz przeniesc:" );
+        int zwierze=sc.nextInt();
+        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc:" );
+        int wybieg_dawanie=sc.nextInt();
 
 
         if(wybieg_dawanie==listaWybiegow.size())//IF DLA SPRAWDZENIA, NA KTORY WYBIEG DODAJEMY ZWIERZE
@@ -207,18 +230,24 @@ public class DzienneZoo {
  }
 
 
- //POKAZANIE PRACOWNIKOW I WYBIEGOW
- public void pokazpracownikow()
- {
-     System.out.println("--------------- \n pracownicy:");
-     for(Pracownik obiekt: listaPracownikow)
-         System.out.println(obiekt);
- }
-    public void pokazwybiegi()
-    {
-        System.out.println("--------------- \n wybiegi");
-        for(Wybieg_podstawowy obiekt: listaWybiegow)
-            System.out.println(obiekt);
+    //POKAZANIE PRACOWNIKOW I WYBIEGOW
+    public void pokazPracownikow() {
+        System.out.println("--------------- \npracownicy:");
+        System.out.println("Pracownicy do wyboru: ");
+        for (int i = 0; i < listaWybiegow.size(); i++) {
+            System.out.println("Pracownik " + i + ": " + listaWybiegow.get(i));
+        }
+    }
+
+    public void pokazWybiegi(){
+        System.out.println("--------------- \nwybiegi");
+        System.out.println("Wybiegi do wyboru: " );
+        for(int i=0;i<listaWybiegow.size();i++)
+        {
+            System.out.println("Wybieg " + i + ": " + listaWybiegow.get(i));
+        }
+        System.out.println("Wybieg " + listaWybiegow.size() + ": " + wybiegDlaBezdomnych);//OSTATNI WYBIEG ZAWSZE DO WYBORU TO WYBIEG BEZDOMNYCH
+        System.out.println("--------------- \n");
     }
 
 

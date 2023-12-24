@@ -36,7 +36,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         this.rodzaj_srodowiska = rodzaj_wybiegu;
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wolne_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
-        this.cena = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*10;
+        this.cena = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*1; //!!! zmiana
         this.czas_sprzatania = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*2;
     }
 
@@ -181,7 +181,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //                                  gettery i settery oraz toString
     //-------------------------------------------------------------------------------------
     public String  toString(){
-        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " \n" +
+        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " " +
                 getWielkosc_wybiegu().toString() + " \n" +
                 "dla : " + getRodzaj_zwierzecia_w_wybiegu() + " \n" +
                 "czystosc: " + getCzystosc() + " \n" +

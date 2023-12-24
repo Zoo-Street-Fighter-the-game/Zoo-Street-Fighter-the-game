@@ -17,12 +17,17 @@ public class test1 {
         DzienneZoo Zoo = DzienneZoo.getInstance();
 
         Sklep sklepik = new Sklep(Zoo);
-
         System.out.println(Zoo);
-        //System.out.println(bank);
 
-       //Zoo.dodajWybieg(sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY, Zoo.getZmiennaZasoby()));
-       //System.out.println(Zoo);
+        Zoo.rozpocznijDzien();
+        sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY);
+        sklepik.kup_zwierze(zwierzeta_enum.LOS);
+        sklepik.getZoo().zakonczDzien();
+
+        sklepik.getZoo().rozpocznijDzien();
+        sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.MALY);
+        sklepik.getZoo().przeniesZwierze();
+        sklepik.getZoo().zakonczDzien();
 
 
 /*
