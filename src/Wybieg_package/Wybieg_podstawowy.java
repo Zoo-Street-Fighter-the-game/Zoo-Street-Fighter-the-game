@@ -23,7 +23,6 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     private wielkosc_wybiegu_enum wielkosc_wybiegu;
     private float czystosc = 100;       //od 0 do 100
     private int cena;
-    private float czas_sprzatania;
     //=================================================================================
 
 
@@ -37,7 +36,6 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wolne_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
         this.cena = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*10;
-        this.czas_sprzatania = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*2;
     }
 
     //=====================================================================================
@@ -108,10 +106,10 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //========================================================================================
     //                      metody zwiazane z wlasnosciami zwierzat
     //-------------------------------------------------------------------------------------
-    public float przychody_z_wybiegu(){
+    public int przychody_z_wybiegu(){
         int przychod = 0;
         for (Zwierze obiekt : getLista_zwierzat()){
-            przychod+= (int) (obiekt.getMnoznik_pieniedzy()*10);
+            przychod+= (int)(obiekt.getMnoznik_pieniedzy()*10);
         }
         return przychod;
     }
@@ -119,6 +117,12 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     public void brudzenie_zwierzat(){
         for (Zwierze zwierze : getLista_zwierzat()){
            setCzystosc(getCzystosc() - zwierze.getWielkosc()*5);
+        }
+    }
+
+    public void postarz(){
+        for (Zwierze zwierze : getLista_zwierzat()){
+            zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni()+1);
         }
     }
     //=========================================================================================
@@ -170,6 +174,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     public void rozpoczecie_dnia(){
         brudzenie_zwierzat();
         powiadom_obserwatorow();
+        postarz();
     }
     public void zakonczenie_dnia(){
 
@@ -250,19 +255,11 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         this.cena = cena;
     }
 
-    public float getCzas_sprzatania() {
-        return czas_sprzatania;
-    }
-
-    public void setCzas_sprzatania(float czas_sprzatania) {
-        this.czas_sprzatania = czas_sprzatania;
-    }
-
     //specjalny getter
     //--------------------------------------------------------------
     public String getRodzaj_zwierzecia_w_wybiegu(){
         if (!getLista_zwierzat().isEmpty())
-            return getLista_zwierzat().get(0).getClass().getName();
+            return getLista_zwierzat().getFirst().getClass().getName();
         return null;
     }
     //===================================================================================

@@ -55,6 +55,7 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     }
 
     public String toString(){
-        return " ";
+        System.out.println(getLista_zwierzat());
+        return null;
     }
 }

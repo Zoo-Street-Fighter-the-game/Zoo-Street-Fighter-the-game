@@ -13,8 +13,8 @@ public class DzienneZoo {
 
     //ZMIENNNE --------------------------------------------------------------
     private int dniCounter =0;
-    final private Zasoby zmiennaZasoby = new Zasoby(0,200,100);
-    final private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
+    private final Zasoby zmiennaZasoby = new Zasoby(0,1000,100);
+    private final Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
     private static DzienneZoo istnieje;
@@ -62,6 +62,8 @@ public class DzienneZoo {
         this.dniCounter = dniCounter;
     }
 
+    public Wybieg_bezdomni getWybiegDlaBezdomnych () {return wybiegDlaBezdomnych;}
+
     //KONIEC SETTEROW I GETTEROW
 
     public void rozpocznijDzien()
@@ -71,10 +73,8 @@ public class DzienneZoo {
         System.out.println("Rozpoczynamy dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
-            pom = (ArrayList<Zwierze>) obiekt.getLista_zwierzat();
-            for (Zwierze zwierze : pom) {
-                zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni() + 1);
-            }
+            obiekt.rozpoczecie_dnia();
+            zmiennaZasoby.zmienMonety(obiekt.przychody_z_wybiegu());
         }
 
     }
@@ -112,8 +112,6 @@ public class DzienneZoo {
         {
             System.out.println("Wybieg " + i + ": " + listaWybiegow.get(i));
         }
-        System.out.println("Wybieg " + listaWybiegow.size() + ": " + wybiegDlaBezdomnych);//OSTATNI WYBIEG ZAWSZE DO WYBORU TO WYBIEG BEZDOMNYCH
-
         System.out.println("Podaj wybieg, ktory chcesz wybrac!" );
         wybieg_zabieranie=sc.nextInt();
 

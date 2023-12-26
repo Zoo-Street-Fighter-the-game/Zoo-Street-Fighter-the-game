@@ -33,6 +33,7 @@ public class Pracownik{
         }
 
         wybieg.setCzystosc(poziomCzystosci);
+        wybieg.powiadom_obserwatorow();
 
     }
 

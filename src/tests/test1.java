@@ -19,11 +19,21 @@ public class test1 {
         Sklep sklepik = new Sklep(Zoo);
 
         System.out.println(Zoo);
-        //System.out.println(bank);
-
-       //Zoo.dodajWybieg(sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY, Zoo.getZmiennaZasoby()));
-       //System.out.println(Zoo);
-
+        sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY);
+        System.out.println(Zoo);
+        sklepik.kup_pracownika("Hubert", "Cytar", 1);
+        System.out.println(Zoo);
+        sklepik.kup_zwierze(zwierzeta_enum.LOS);
+        System.out.println(Zoo);
+        Zoo.rozpocznijDzien();
+        System.out.println(Zoo.getListaWybiegow().getFirst().getLista_zwierzat().getFirst().getMnoznik_pieniedzy());
+        Zoo.getListaPracownikow().getFirst().umyjWybieg(Zoo.getListaWybiegow().getFirst());
+        System.out.println(Zoo.getListaWybiegow().getFirst().getLista_zwierzat().getFirst().getMnoznik_pieniedzy());
+        sklepik.sprzedaj_wybieg();
+        sklepik.sprzedaj_zwierze();
+        sklepik.sprzedaj_pracownika();
+        System.out.println(Zoo);
+        Zoo.getWybiegDlaBezdomnych().toString();
 
 /*
 <<<<<<< HEAD

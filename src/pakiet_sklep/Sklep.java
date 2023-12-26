@@ -11,7 +11,7 @@ import enumy.zwierzeta_enum;
 
 public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
-    final private static int cenaPracownika =234;
+    final private static int cenaPracownika =23;
 
     private DzienneZoo zoo;
 
@@ -60,36 +60,26 @@ public class Sklep {
 
 
 
-    public void sprzedaj_wybieg(Zasoby zasoby) {
-        Scanner scanner = new Scanner(System.in);
+    public void sprzedaj_wybieg() {
 
-        // Wyświetlanie dostępnych wybiegów
-        System.out.println("Dostępne wybiegi:");
-        List<Wybieg_podstawowy> listaWybiegow = zoo.getListaWybiegow();
 
-        for (int i = 0; i < listaWybiegow.size(); i++) {
-            System.out.println((i + 1) + ". " + listaWybiegow.get(i));
-        }
-
-        // Wybór numeru wybiegu do sprzedaży
-        System.out.print("Wybierz numer wybiegu do sprzedaży: ");
-        int numerWybiegu = scanner.nextInt();
+        int numerWybiegu = zoo.wybierzWybiegi();
 
         // Sprawdzenie poprawności wyboru
-        if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
+        if (numerWybiegu < 1 || numerWybiegu > zoo.getListaWybiegow().size()) {
             System.out.println("Błędny numer wybiegu.");
             return;
         }
 
         // Wybranie konkretnego wybiegu
-        Wybieg_podstawowy wybiegDoSprzedazy = listaWybiegow.get(numerWybiegu - 1);
+        Wybieg_podstawowy wybiegDoSprzedazy = zoo.getListaWybiegow().get(numerWybiegu - 1);
 
         // Logika sprzedaży wybiegu
         zoo.usunWybieg(wybiegDoSprzedazy);
 
         // Wzrost stanu konta po sprzedaży
         int cenaWybiegu = (int) wybiegDoSprzedazy.getCena();
-        zasoby.setMonety(zasoby.getMonety() + cenaWybiegu);
+        zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaWybiegu);
 
         System.out.println("Wybieg został pomyślnie sprzedany. Stan konta wzrósł o " + cenaWybiegu + " monet.");
     }
@@ -258,16 +248,16 @@ public class Sklep {
     }
 
 
-    public Zwierze kup_zwierze(zwierzeta_enum typ) {
+    public void kup_zwierze(zwierzeta_enum typ) {
         try{
-            if(typ.podajCene() <= zoo.getZmiennaZasoby().getMonety())
+            if(typ.podajCene() > zoo.getZmiennaZasoby().getMonety())
             {
                 throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Kup inne zwierze lub zbierz więcej środków");
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
             System.out.println("Zakup udany");
-            return typ.stworzZwierze();
+            zoo.getListaWybiegow().get(zoo.wybierzWybiegi()-1).dodaj_zwierze(typ.stworzZwierze());
 
 
         } catch (BrakSrodkowException e)
@@ -275,7 +265,6 @@ public class Sklep {
             System.out.println(e.getMessage());
 
         }
-        return null;
     }
 
 

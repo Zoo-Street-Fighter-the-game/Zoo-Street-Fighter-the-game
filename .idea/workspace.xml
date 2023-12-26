@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dodana metoda przenoszenia zwierzecia miedzy wybiegami">
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje:&#10;-kupowanie, sprzedawanie wybiegów, pracowników i zwierząt&#10;-">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_abstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,22 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.test1.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Zwierzeta__branch",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.NocneZoo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;HubertBranch&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,6 +88,8 @@
       <workItem from="1702754238271" duration="45000" />
       <workItem from="1702754309433" duration="13000" />
       <workItem from="1703345044966" duration="2496000" />
+      <workItem from="1703609428336" duration="6047000" />
+      <workItem from="1703616207568" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -116,11 +129,26 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="zmiana" />
     <MESSAGE value="wstępne modyfikacje do zoo dziennego, sklepu i zwierząt" />
     <MESSAGE value="przeredagowany sklep z obiektem zoo" />
     <MESSAGE value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
     <option name="LAST_COMMIT_MESSAGE" value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

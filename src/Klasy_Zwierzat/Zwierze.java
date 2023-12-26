@@ -15,8 +15,6 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     private int sila;
     private int wielkosc;
     private int wskaznik_glodu;
-    private int zmeczenie;
-    private int zadowolenie;
     private int przezyte_dni = 0;
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
@@ -25,14 +23,12 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int cena,rodzaj_srodowiska_enum rodzaj){
+    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int cena, rodzaj_srodowiska_enum rodzaj){
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
         this.wielkosc = wielkosc;
         this.wskaznik_glodu = wskaznik_glodu;
-        this.zmeczenie = zmeczenie;
-        this.zadowolenie = zadowolenie;
         this.cena = cena;
         this.rodzaj=rodzaj;
     }
@@ -59,7 +55,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     }
 
     public Zwierze deep_clone() {
-        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getZmeczenie(), getZadowolenie(), getCena(), getRodzaj());
+        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
     }
 
 
@@ -76,8 +72,6 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
                 ", sila=" + this.getSila() +
                 ", wielkosc=" + this.getWielkosc() +
                 ", wskaznik_glodu=" + this.getWskaznik_glodu() +
-                ", zmeczenie=" + this.getZmeczenie() +
-                ", zadowolenie=" + this.getZadowolenie() +
                 ", przezyte_dni=" + this.getPrzezyte_dni() +
                 ", cena=" + this.getCena() +
                 ", rodzaj=" + this.getRodzaj() +
@@ -125,22 +119,6 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
 
     public void setWskaznik_glodu(int wskaznik_glodu) {
         this.wskaznik_glodu = wskaznik_glodu;
-    }
-
-    public int getZmeczenie() {
-        return zmeczenie;
-    }
-
-    public void setZmeczenie(int zmeczenie) {
-        this.zmeczenie = zmeczenie;
-    }
-
-    public int getZadowolenie() {
-        return zadowolenie;
-    }
-
-    public void setZadowolenie(int zadowolenie) {
-        this.zadowolenie = zadowolenie;
     }
 
     public int getPrzezyte_dni() {
