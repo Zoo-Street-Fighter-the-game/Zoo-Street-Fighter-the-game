@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="dodawanie zwierząt do wybiegów przez sklep, poprawa kodu ze zwierząt i dziennego zoo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
-    </list>
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="dodanie brudzenia zwierzat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +74,7 @@
       <workItem from="1703345044966" duration="2496000" />
       <workItem from="1703364853518" duration="707000" />
       <workItem from="1703369266146" duration="5144000" />
-      <workItem from="1703423140810" duration="833000" />
+      <workItem from="1703423140810" duration="885000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -113,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703377139269</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="dodanie brudzenia zwierzat">
+      <option name="closed" value="true" />
+      <created>1703424020680</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703424020680</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +127,7 @@
     <MESSAGE value="wstępne modyfikacje do zoo dziennego, sklepu i zwierząt" />
     <MESSAGE value="przeredagowany sklep z obiektem zoo" />
     <MESSAGE value="dodawanie zwierząt do wybiegów przez sklep, poprawa kodu ze zwierząt i dziennego zoo" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodawanie zwierząt do wybiegów przez sklep, poprawa kodu ze zwierząt i dziennego zoo" />
+    <MESSAGE value="dodanie brudzenia zwierzat" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie brudzenia zwierzat" />
   </component>
 </project>
