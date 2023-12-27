@@ -186,7 +186,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //                                  gettery i settery oraz toString
     //-------------------------------------------------------------------------------------
     public String  toString(){
-        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " \n" +
+        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " " +
                 getWielkosc_wybiegu().toString() + " \n" +
                 "dla : " + getRodzaj_zwierzecia_w_wybiegu() + " \n" +
                 "czystosc: " + getCzystosc() + " \n" +

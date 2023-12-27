@@ -17,9 +17,7 @@ public class Sklep {
 
     final int mnoznikCenyPracownika=10;
 
-    public Sklep(DzienneZoo zoo) {
-        this.zoo = zoo;
-    }
+
 
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;
@@ -28,7 +26,16 @@ public class Sklep {
         Sklep.cena_sztuka_jedzenie = cena_sztuka_jedzenie;
     }
 
+    //SETTER I GETTER DLA OBIEKTU DzienneZoo
+    public DzienneZoo getZoo() {
+        return zoo;
+    }
 
+    public Sklep(DzienneZoo zoo) {
+        this.zoo = zoo;
+    }
+
+    //METODY KLASY
     public void sprzedaj_jedzenie(int ilosc) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
@@ -48,7 +55,7 @@ public class Sklep {
 
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
-            System.out.println("Sprzedaż udana. Zarobiłeś: " + przychod + " monet");
+            System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
             scanner.next();
@@ -218,7 +225,7 @@ public class Sklep {
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*mnoznikCenyPracownika);
-            System.out.println("zakup udany");
+            System.out.println("zakup pracownika udany");
 
             zoo.dodajPracownika(new Pracownik(imie, nazwisko, jakosc));
 
@@ -237,7 +244,7 @@ public class Sklep {
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-wybieg.getCena());
-            System.out.println("Zakup udany");
+            System.out.println("Zakup wybiegu udany");
 
             zoo.dodajWybieg(wybieg);
 
@@ -256,7 +263,7 @@ public class Sklep {
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
-            System.out.println("Zakup udany");
+            System.out.println("Zakup zwierzecia udany");
             zoo.getListaWybiegow().get(zoo.wybierzWybiegi()-1).dodaj_zwierze(typ.stworzZwierze());
 
 
@@ -265,6 +272,7 @@ public class Sklep {
             System.out.println(e.getMessage());
 
         }
+
     }
 
 
