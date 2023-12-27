@@ -4,22 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje:&#10;-kupowanie, sprzedawanie wybiegów, pracowników i zwierząt&#10;-">
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/MyFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zoo-Street-Fighter-the-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Zoo-Street-Fighter-the-game.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -50,25 +58,37 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Hello.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.NocneZoo.executor&quot;: &quot;Run&quot;,
     &quot;Application.test1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;HubertBranch&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hcyta/OneDrive/Dokumenty/IST sem 1/Programowanie Strukturalne i Obiektowe/javafx-sdk-21.0.1/lib&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\gui_package" />
+      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src" />
+      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,7 +109,19 @@
       <workItem from="1702754309433" duration="13000" />
       <workItem from="1703345044966" duration="2496000" />
       <workItem from="1703609428336" duration="6047000" />
-      <workItem from="1703616207568" duration="530000" />
+      <workItem from="1703616207568" duration="1072000" />
+      <workItem from="1703619950514" duration="50000" />
+      <workItem from="1703620013389" duration="174000" />
+      <workItem from="1703620204111" duration="1185000" />
+      <workItem from="1703621475426" duration="162000" />
+      <workItem from="1703621656562" duration="255000" />
+      <workItem from="1703621941005" duration="289000" />
+      <workItem from="1703622288362" duration="1966000" />
+      <workItem from="1703625913697" duration="510000" />
+      <workItem from="1703626438992" duration="1566000" />
+      <workItem from="1703628820401" duration="566000" />
+      <workItem from="1703709907133" duration="333000" />
+      <workItem from="1703710280470" duration="3986000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -123,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703358995887</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych">
+      <option name="closed" value="true" />
+      <created>1703616778288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703616778288</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +185,18 @@
     <MESSAGE value="wstępne modyfikacje do zoo dziennego, sklepu i zwierząt" />
     <MESSAGE value="przeredagowany sklep z obiektem zoo" />
     <MESSAGE value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
+    <MESSAGE value="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

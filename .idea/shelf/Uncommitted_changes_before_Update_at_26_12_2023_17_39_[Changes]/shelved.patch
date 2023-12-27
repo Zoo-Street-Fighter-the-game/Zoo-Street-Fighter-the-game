@@ -1,0 +1,110 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7c5f08c3-43b5-461f-92fd-fcc305f2fa8c\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeLadowe.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzePowietrzne.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeWodne.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Pracownik_package/Pracownik.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Pracownik_package/Pracownik.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Wybieg_package/Wybieg_Ladowy.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Wybieg_package/Wybieg_Powietrzny.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Wybieg_package/Wybieg_Wodny.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/enumy/zwierzeta_enum.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/enumy/zwierzeta_enum.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/pakiet_sklep/Sklep.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/pakiet_sklep/Sklep.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/tests/test1.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/tests/test1.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"Dominik_branch\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <hideBySeverity>\r\n      <option value=\"11\" />\r\n      <option value=\"12\" />\r\n      <option value=\"13\" />\r\n      <option value=\"14\" />\r\n      <option value=\"15\" />\r\n      <option value=\"16\" />\r\n    </hideBySeverity>\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2Zqo6Fo9PQXvEl083UHDrwLpNsl\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.test1.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"DzienneZooWeek3__Branch\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"onboarding.tips.debug.path\": \"C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7c5f08c3-43b5-461f-92fd-fcc305f2fa8c\" name=\"Changes\" comment=\"\" />\r\n      <created>1703158795934</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1703158795934</updated>\r\n      <workItem from=\"1703158796736\" duration=\"9000\" />\r\n      <workItem from=\"1703158920413\" duration=\"936000\" />\r\n      <workItem from=\"1703161750791\" duration=\"2690000\" />\r\n      <workItem from=\"1703188707577\" duration=\"3309000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -6,77 +6,39 @@
+   <component name="ChangeListManager">
+     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeLadowe.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzePowietrzne.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/ZwierzeWodne.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_Ladowy.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_Powietrzny.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_Wodny.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Enum" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="Dominik_branch" />
+-      </map>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="ProblemsViewState">
+-    <hideBySeverity>
+-      <option value="11" />
+-      <option value="12" />
+-      <option value="13" />
+-      <option value="14" />
+-      <option value="15" />
+-      <option value="16" />
+-    </hideBySeverity>
+-    <option name="selectedTabId" value="CurrentFile" />
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;customColor&quot;: &quot;&quot;,
+   &quot;associatedIndex&quot;: 3
+ }</component>
+   <component name="ProjectId" id="2Zqo6Fo9PQXvEl083UHDrwLpNsl" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.test1.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "DzienneZooWeek3__Branch",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "onboarding.tips.debug.path": "C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Dominik__branch&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -87,8 +49,6 @@
+       <updated>1703158795934</updated>
+       <workItem from="1703158796736" duration="9000" />
+       <workItem from="1703158920413" duration="936000" />
+-      <workItem from="1703161750791" duration="2690000" />
+-      <workItem from="1703188707577" duration="3309000" />
+     </task>
+     <servers />
+   </component>
