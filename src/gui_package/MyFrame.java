@@ -1,7 +1,6 @@
 package gui_package;
 
 import javax.swing.JFrame;
-import java.awt.Dimension;
 
 public class MyFrame extends JFrame{
 
