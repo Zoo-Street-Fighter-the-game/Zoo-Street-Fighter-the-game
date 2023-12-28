@@ -1,39 +1,34 @@
 package Klasy_Zwierzat;
 
 import enumy.rodzaj_srodowiska_enum;
-import interfejsy.Obserwujacy_interface;
+import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 
-public abstract class Zwierze implements Obserwujacy_interface{
+public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
 
-    
+
     //===========================================================================
     //POLA ZWIERZĄT
     //===========================================================================
-    
+
     private String nazwa;
     private int zycie;
     private int sila;
     private int wielkosc;
     private int wskaznik_glodu;
-    private int zmeczenie;
-    private int zadowolenie;
-    private int przezyte_dni;
+    private int przezyte_dni = 0;
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
-    private float mnoznik_pieniedzy;
+    private float mnoznik_pieniedzy=1;
 
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,rodzaj_srodowiska_enum rodzaj){
+    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int cena, rodzaj_srodowiska_enum rodzaj){
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
         this.wielkosc = wielkosc;
         this.wskaznik_glodu = wskaznik_glodu;
-        this.zmeczenie = zmeczenie;
-        this.zadowolenie = zadowolenie;
-        this.przezyte_dni = przezyte_dni;
         this.cena = cena;
         this.rodzaj=rodzaj;
     }
@@ -42,7 +37,7 @@ public abstract class Zwierze implements Obserwujacy_interface{
     //===========================================================================
     //METODY - ZMIANA MNOŻNIKA,KARMIENIE, RELEASE
     //===========================================================================
-    
+
     //Metoda obserwatora
     public void aktualizuj_oberwujacego(float czystosc) {
         this.mnoznik_pieniedzy+= (czystosc-70)/10;
@@ -59,12 +54,15 @@ public abstract class Zwierze implements Obserwujacy_interface{
         //tu bedzie funkcja release
     }
 
+    public Zwierze deep_clone() {
+        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
+    }
 
 
     //===========================================================================
     //TOSTRING WYŚWIETLAJĄCY
     //===========================================================================
-    
+
     //toString wyswietlajacy info o zwierzeciu
     @Override
     public String toString() {
@@ -74,8 +72,6 @@ public abstract class Zwierze implements Obserwujacy_interface{
                 ", sila=" + this.getSila() +
                 ", wielkosc=" + this.getWielkosc() +
                 ", wskaznik_glodu=" + this.getWskaznik_glodu() +
-                ", zmeczenie=" + this.getZmeczenie() +
-                ", zadowolenie=" + this.getZadowolenie() +
                 ", przezyte_dni=" + this.getPrzezyte_dni() +
                 ", cena=" + this.getCena() +
                 ", rodzaj=" + this.getRodzaj() +
@@ -123,22 +119,6 @@ public abstract class Zwierze implements Obserwujacy_interface{
 
     public void setWskaznik_glodu(int wskaznik_glodu) {
         this.wskaznik_glodu = wskaznik_glodu;
-    }
-
-    public int getZmeczenie() {
-        return zmeczenie;
-    }
-
-    public void setZmeczenie(int zmeczenie) {
-        this.zmeczenie = zmeczenie;
-    }
-
-    public int getZadowolenie() {
-        return zadowolenie;
-    }
-
-    public void setZadowolenie(int zadowolenie) {
-        this.zadowolenie = zadowolenie;
     }
 
     public int getPrzezyte_dni() {

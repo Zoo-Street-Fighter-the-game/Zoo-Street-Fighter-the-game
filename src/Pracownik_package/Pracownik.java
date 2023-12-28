@@ -1,7 +1,6 @@
 package Pracownik_package;
 import Wybieg_package.*;
 import Klasy_Zwierzat.Zwierze;
-import pakiet_zasoby.*;
 
 
 public class Pracownik{
@@ -9,16 +8,14 @@ public class Pracownik{
     //INICJOWANIE SKLADOWYCH
     private String imie;
     private String nazwisko;
-    private int id;
     private int jakoscUslug; //w skali do 10,
     //wplywa na metody umyjWybieg i nakarmZwierze
 
 
     //KONSTRUKTOR
-    public Pracownik(String imie, String nazwisko, int id, int jakoscUslug){
+    public Pracownik(String imie, String nazwisko, int jakoscUslug){
         this.imie = imie;
         this.nazwisko = nazwisko;
-        this.id = id;
         this.jakoscUslug = jakoscUslug;
     }
 
@@ -36,6 +33,7 @@ public class Pracownik{
         }
 
         wybieg.setCzystosc(poziomCzystosci);
+        wybieg.powiadom_obserwatorow();
 
     }
 
@@ -51,7 +49,6 @@ public class Pracownik{
         return "Pracownik{" +
                 "imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
-                ", id=" + id +
                 ", jakoscUslug=" + jakoscUslug +
                 '}';
     }
@@ -65,15 +62,6 @@ public class Pracownik{
     public void setImie(String imie) {
         this.imie = imie;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getJakoscUslug() {
         return jakoscUslug;
     }

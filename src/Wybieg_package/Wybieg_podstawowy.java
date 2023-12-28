@@ -4,26 +4,25 @@ import Klasy_Zwierzat.Zwierze;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import interfejsy.Obserwowany_interface;
-import interfejsy.Obserwujacy_interface;
+import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
+public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
 
 
 
     //==========================================================================
     //                              zmienne
     //--------------------------------------------------------------------------
-    private List<Obserwujacy_interface> obserwujacy = new ArrayList<>();
+    private List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy = new ArrayList<>();
     private int wolne_miejsce_w_wybiegu;
 
     private rodzaj_srodowiska_enum rodzaj_srodowiska;
     private wielkosc_wybiegu_enum wielkosc_wybiegu;
     private float czystosc = 100;       //od 0 do 100
-    private float cena;
-    private float czas_sprzatania;
+    private int cena;
     //=================================================================================
 
 
@@ -37,7 +36,6 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wolne_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
         this.cena = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*10;
-        this.czas_sprzatania = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*2;
     }
 
     //=====================================================================================
@@ -65,8 +63,7 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
             setWolne_miejsce_w_wybiegu( getWolne_miejsce_w_wybiegu() + obiekt.getWielkosc() );
             usun_obserwatora(obiekt);
             obiekt.release();
-            obiekt = null;
-            getLista_zwierzat().remove( null);
+            getLista_zwierzat().remove( obiekt);
 
             System.gc();
             System.out.println("usunieto zwierze");
@@ -109,10 +106,10 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     //========================================================================================
     //                      metody zwiazane z wlasnosciami zwierzat
     //-------------------------------------------------------------------------------------
-    public float przychody_z_wybiegu(){
+    public int przychody_z_wybiegu(){
         int przychod = 0;
         for (Zwierze obiekt : getLista_zwierzat()){
-            przychod+= (int) (obiekt.getMnoznik_pieniedzy()*10);
+            przychod+= (int)(obiekt.getMnoznik_pieniedzy()*10);
         }
         return przychod;
     }
@@ -120,6 +117,12 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     public void brudzenie_zwierzat(){
         for (Zwierze zwierze : getLista_zwierzat()){
            setCzystosc(getCzystosc() - zwierze.getWielkosc()*5);
+        }
+    }
+
+    public void postarz(){
+        for (Zwierze zwierze : getLista_zwierzat()){
+            zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni()+1);
         }
     }
     //=========================================================================================
@@ -132,7 +135,7 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     //-------------------------------------------------------------------------------------
     public void release(){
         obserwujacy.clear();
-        Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getIstnieje();
+        Wybieg_bezdomni lista_bezdomnych = Wybieg_bezdomni.getInstance();
         for (Zwierze obiekt : getLista_zwierzat()){
             lista_bezdomnych.dodaj_zwierze(obiekt);
         }
@@ -146,18 +149,18 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     //                      metody zwiazanie z obserwowaniem zwierzat
     //---------------------------------------------------------------------------------------
     @Override
-    public void dodaj_obserwatora(Obserwujacy_interface o) {
+    public void dodaj_obserwatora(Obserwujacy_ZwierzeWybieg_interface o) {
         obserwujacy.add(o);
     }
 
     @Override
-    public void usun_obserwatora(Obserwujacy_interface o) {
+    public void usun_obserwatora(Obserwujacy_ZwierzeWybieg_interface o) {
         obserwujacy.remove(o);
     }
 
     @Override
     public void powiadom_obserwatorow() {
-        for(Obserwujacy_interface o : obserwujacy){
+        for(Obserwujacy_ZwierzeWybieg_interface o : obserwujacy){
             o.aktualizuj_oberwujacego(getCzystosc());
         }
     }
@@ -171,6 +174,7 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
     public void rozpoczecie_dnia(){
         brudzenie_zwierzat();
         powiadom_obserwatorow();
+        postarz();
     }
     public void zakonczenie_dnia(){
 
@@ -193,13 +197,19 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
 
         return status.toString();
     }
+    public void wypisz_zwierzeta(){
+        for (int i=0;i<getLista_zwierzat().size();i++){
+            System.out.println("zwierze nr: " + i+ ": ");
+            System.out.println(getLista_zwierzat().get(i).toString()+"\n");
+        }
+    }
 
-    public List<Obserwujacy_interface> getobserwujacy() {
+    public List<Obserwujacy_ZwierzeWybieg_interface> getobserwujacy() {
         return obserwujacy;
     }
 
-    public void setobserwujacy(List<Obserwujacy_interface> obserwujacy) {
-        obserwujacy = obserwujacy;
+    public void setobserwujacy(List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy) {
+        this.obserwujacy = obserwujacy;
     }
 
     public int getWolne_miejsce_w_wybiegu() {
@@ -237,27 +247,19 @@ public abstract class Wybieg_podstawowy extends Wybieg_abstract implements Obser
 
 
 
-    public float getCena() {
+    public int getCena() {
         return cena;
     }
 
-    public void setCena(float cena) {
+    public void setCena(int cena) {
         this.cena = cena;
-    }
-
-    public float getCzas_sprzatania() {
-        return czas_sprzatania;
-    }
-
-    public void setCzas_sprzatania(float czas_sprzatania) {
-        this.czas_sprzatania = czas_sprzatania;
     }
 
     //specjalny getter
     //--------------------------------------------------------------
     public String getRodzaj_zwierzecia_w_wybiegu(){
         if (!getLista_zwierzat().isEmpty())
-            return getLista_zwierzat().get(0).getClass().getName();
+            return getLista_zwierzat().getFirst().getClass().getName();
         return null;
     }
     //===================================================================================

@@ -5,51 +5,37 @@ import Wybieg_package.*;
 import Pracownik_package.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class DzienneZoo {
 
 
     //ZMIENNNE --------------------------------------------------------------
-    private String nazwaZoo;
     private int dniCounter =0;
-    private Zasoby zmiennaZasoby;
-    private Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getIstnieje();
+    private final Zasoby zmiennaZasoby = new Zasoby(0,1000,100);
+    private final Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
      private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
      private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
-
+    private static DzienneZoo istnieje;
 
      //KONSTRUKTOR
 
-    public DzienneZoo(String nazwaZoo, Zasoby zmiennaZasoby, ArrayList<Wybieg_podstawowy> listaWybiegow, ArrayList<Pracownik> listaPracownikow) {
-        this.nazwaZoo = nazwaZoo;
-        this.zmiennaZasoby = zmiennaZasoby;
-        this.listaWybiegow = listaWybiegow;
-        this.listaPracownikow = listaPracownikow;
+    private DzienneZoo() {
     }
-    public DzienneZoo(String nazwaZoo, Zasoby zmiennaZasoby)
-    {
-        this.nazwaZoo = nazwaZoo;
-        this.zmiennaZasoby = zmiennaZasoby;
+    public static DzienneZoo getInstance(){
+        if (istnieje == null){
+            istnieje = new DzienneZoo();
+        }
+        return istnieje;
     }
 
 
 
     //SETTERY I GETTERY
-    public String getNazwaZoo() {
-        return nazwaZoo;
-    }
-
-    public void setNazwaZoo(String nazwaZoo) {
-        this.nazwaZoo = nazwaZoo;
-    }
 
     public Zasoby getZmiennaZasoby() {
         return zmiennaZasoby;
-    }
-
-    public void setZmiennaZasoby(Zasoby zmiennaZasoby) {
-        this.zmiennaZasoby = zmiennaZasoby;
     }
 
     public ArrayList<Wybieg_podstawowy> getListaWybiegow() {
@@ -76,20 +62,19 @@ public class DzienneZoo {
         this.dniCounter = dniCounter;
     }
 
+    public Wybieg_bezdomni getWybiegDlaBezdomnych () {return wybiegDlaBezdomnych;}
+
     //KONIEC SETTEROW I GETTEROW
 
     public void rozpocznijDzien()
     {
-        ArrayList <Zwierze> pom= new ArrayList<>();
+        ArrayList <Zwierze> pom ;
         setDniCounter(getDniCounter()+1);
-        System.out.println("Rozpoczynami dzień "+ getDniCounter());
+        System.out.println("Rozpoczynamy dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
         {
-            pom = (ArrayList<Zwierze>) obiekt.getLista_zwierzat();
-            for(int i=0 ; i< pom.size(); i++)
-            {
-                pom.get(i).setPrzezyte_dni(pom.get(i).getPrzezyte_dni()+1);
-            }
+            obiekt.rozpoczecie_dnia();
+            zmiennaZasoby.zmienMonety(obiekt.przychody_z_wybiegu());
         }
 
     }
@@ -108,13 +93,64 @@ public class DzienneZoo {
 
 
     //DODAWANIE WYBIEGU I PRACOWNIKA
-    public void dodajWybieg(Wybieg_podstawowy wybieg)
-    {
+    public void dodajWybieg(Wybieg_podstawowy wybieg) {
         listaWybiegow.add(wybieg);
     }
-    public void dodajPracownika(Pracownik x)
-    {
+    public void dodajPracownika(Pracownik x) {
         listaPracownikow.add(x);
+    }
+
+
+    //WYBIERANIE WYBIEGU SPOŚRÓD DOSTĘPNYCH
+    public int wybierzWybiegi()
+    {
+        Scanner sc = new Scanner(System.in);
+        int wybieg_zabieranie;
+        //WYŚWIETLANIE WYBIEGU
+        System.out.println("Wybiegi do wyboru: " );
+        for(int i=0;i<listaWybiegow.size();i++)
+        {
+            System.out.println("Wybieg " + i + ": " + listaWybiegow.get(i));
+        }
+        System.out.println("Podaj wybieg, ktory chcesz wybrac!" );
+        wybieg_zabieranie=sc.nextInt();
+
+        return wybieg_zabieranie;
+    }
+
+    //PRZENOSZENIE ZWIERZĄT MIĘDZY WYBIEGAMI
+    public void przeniesZwierze_Wybiegi()
+    {
+        int wybieg_zabieranie, zwierze;
+        wybieg_zabieranie = wybierzWybiegi();
+        zwierze = listaWybiegow.get(wybieg_zabieranie).wybierzZwierze();
+
+        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!" );
+        int wybieranie = wybierzWybiegi();
+
+        //DODAJEMY ZWIERZE DO WYBIEGU
+        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
+
+
+        //USUWAMY ZWIERZE Z WYBIEGU
+        listaWybiegow.get(wybieg_zabieranie).usun_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
+
+    }
+
+    //METODA PRZENOSZĄCA ZWIERZE Z WYBIEGU BEZDOMNI
+    public void przeniesZwierze_bezdomni()
+    {
+        int zwierze;
+        zwierze = wybiegDlaBezdomnych.wybierzZwierze();
+
+        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!");
+        int wybieranie = wybierzWybiegi();
+
+        //DODAJEMY ZWIERZE DO WYBIEGU
+        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieranie)).getLista_zwierzat()).get(zwierze));
+
+        //USUWAMY ZWIERZE Z WYBIEGU
+        wybiegDlaBezdomnych.usun_zwierze(wybiegDlaBezdomnych.getLista_zwierzat().get(zwierze));
     }
 
     public void usunWybieg(Wybieg_podstawowy x)
@@ -136,26 +172,35 @@ public class DzienneZoo {
         else System.out.println("nie udalo sie usunac pracownika");
     }
 
+    public void wypisz_zwierzeta(){
+        for (int i=0;i<getListaWybiegow().size();i++){
+            System.out.println("Wybieg nr" + i+ ": \n" );
+            getListaWybiegow().get(i).wypisz_zwierzeta();
+        }
 
-
-
+    }
 
 
     //TOSTRING
     public String toString()
  {
-     String status= getNazwaZoo()+ " \n";
+     StringBuilder status= new StringBuilder();
 
-     for(Wybieg_podstawowy obiekt: listaWybiegow)
-         status+= obiekt.toString() + " \n";
+     if(!listaWybiegow.isEmpty())
+            listaWybiegow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
+     else
+         status.append("nie masz żadnych wybiegów\n");
 
-     for(Pracownik obiekt: listaPracownikow)
-         status+= obiekt.toString() + " \n";
+    if(!listaPracownikow.isEmpty())
+            listaPracownikow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
+    else
+        status.append("nie masz żadnych pracowników\n");
+     status.append(zmiennaZasoby.toString()).append(" \n"); //daria musi dodac metode tostring!!!
 
-     status+= zmiennaZasoby.toString() + " \n"; //daria musi dodac metode tostring!!!
-
-     return status;
+     return status.toString();
  }
+
+
  //POKAZANIE PRACOWNIKOW I WYBIEGOW
  public void pokazpracownikow()
  {
@@ -170,7 +215,5 @@ public class DzienneZoo {
             System.out.println(obiekt);
     }
 
-
-    
 
 }

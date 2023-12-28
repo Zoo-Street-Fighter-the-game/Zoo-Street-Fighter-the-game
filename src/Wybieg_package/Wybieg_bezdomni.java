@@ -18,7 +18,7 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     //-----------------------------------------------------------
     private Wybieg_bezdomni() {
     }
-    public static Wybieg_bezdomni getIstnieje(){
+    public static Wybieg_bezdomni getInstance(){
         if(istnieje == null)
             istnieje = new Wybieg_bezdomni();
         return istnieje;
@@ -55,6 +55,7 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     }
 
     public String toString(){
-        return " ";
+        System.out.println(getLista_zwierzat());
+        return null;
     }
 }
