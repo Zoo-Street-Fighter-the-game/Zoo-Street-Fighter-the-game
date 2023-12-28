@@ -5,8 +5,8 @@ import java.awt.Dimension;
 
 public class MyFrame extends JFrame{
 
-    PanelDzien panelDzien = new PanelDzien();
-    MyFrame()
+    private PanelDzien panelDzien = new PanelDzien();
+    public MyFrame() //konstruktor domyslny
     {
         this.setTitle("Tytul roboczy");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,6 +14,11 @@ public class MyFrame extends JFrame{
         this.setVisible(true);
 
         this.add(panelDzien);
+    }
+
+    //GETTERY
+    public PanelDzien getPanelDzien() {
+        return panelDzien;
     }
 
 }

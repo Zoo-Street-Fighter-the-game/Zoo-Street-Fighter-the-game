@@ -5,8 +5,11 @@ import java.awt.*;
 
 public class PanelDzienWybiegi extends JPanel {
 
-    PanelDzienWybiegi()
+    public PanelDzienWybiegi()
     {
-        this.setBackground(Color.blue);
+        this.setBackground(Color.lightGray);
+        this.setLayout(new FlowLayout());
+        this.add(new PanelWybieg());
+
     }
 }

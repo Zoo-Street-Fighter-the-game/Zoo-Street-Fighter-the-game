@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class PanelDzienZasoby extends JPanel {
 
-    PanelDzienZasoby()
+    public PanelDzienZasoby()
     {
         this.setBackground(Color.green);
         this.setPreferredSize(new Dimension(0, 75));

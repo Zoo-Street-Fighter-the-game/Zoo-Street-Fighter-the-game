@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class PanelDzienPracownicy extends JPanel {
 
-    PanelDzienPracownicy()
+    public PanelDzienPracownicy()
     {
         this.setBackground(Color.red);
         this.setPreferredSize(new Dimension(150, 0));
