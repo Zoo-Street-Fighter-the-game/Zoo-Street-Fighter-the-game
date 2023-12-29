@@ -6,12 +6,18 @@ import Pracownik_package.Pracownik;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
+import gui_package.PanelDzienZasoby;
 import pakiet_zasoby.Zasoby;
 import enumy.zwierzeta_enum;
+import pakiet_sklep.*;
+
+import javax.swing.*;
+
 
 public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
     final private static int cenaPracownika =23;
+    private PanelDzienZasoby panelZasoby;
 
     private DzienneZoo zoo;
 
@@ -31,14 +37,18 @@ public class Sklep {
         return zoo;
     }
 
+    public void dodajpanel(PanelDzienZasoby panel)
+    {
+        panelZasoby=panel;
+    }
     public Sklep(DzienneZoo zoo) {
         this.zoo = zoo;
     }
 
     //METODY KLASY
     public void sprzedaj_jedzenie(int ilosc) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
+
+
 
         try {
             System.out.print("Podaj ilość jedzenia do sprzedania: ");
@@ -56,9 +66,10 @@ public class Sklep {
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
+            panelZasoby.updatezasoby();
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
-            scanner.next();
+
         } catch (IllegalArgumentException | BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
@@ -188,7 +199,7 @@ public class Sklep {
 
 
     public  void kup_jedzenie(int ilosc){
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
 
             try {
@@ -206,11 +217,12 @@ public class Sklep {
 
                 zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
                 zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
+                panelZasoby.updatezasoby();
                 System.out.println("zakup udany");
 
             } catch (InputMismatchException e) {
                 System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
-                scanner.next();
+
             } catch (IllegalArgumentException | BrakSrodkowException e) {
                 System.out.println(e.getMessage());
             }

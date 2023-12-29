@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import gui_oknasklepu.*;
 
+import DzienneZooPakiet.DzienneZoo;
+import gui_oknasklepu.*;
+import pakiet_sklep.Sklep;
 
 
 public class PanelDzienSklep extends JPanel implements ActionListener {
@@ -17,8 +19,13 @@ public class PanelDzienSklep extends JPanel implements ActionListener {
     private JButton sprzedajZwierze;
     private JButton sprzedajWybieg;
     private JButton sprzedajPracownika;
-    public PanelDzienSklep()
+    private DzienneZoo zoo;
+    private Sklep sklepik;
+
+    public PanelDzienSklep(DzienneZoo zoo, Sklep sklepik)
     {
+        this.zoo=zoo;
+        this.sklepik=sklepik;
         JLabel logosklepu = new JLabel();
         logosklepu.setText("Sklep (tu bedzie grafika)");
         this.setBackground(Color.yellow);
@@ -44,6 +51,13 @@ public class PanelDzienSklep extends JPanel implements ActionListener {
         setsettingsforbutton(sprzedajZwierze);
 
         kupZwierze.addActionListener(this);
+        sprzedajZwierze.addActionListener(this);
+        kupJedzenie.addActionListener(this);
+        sprzedajJedzenie.addActionListener(this);
+        kupWybieg.addActionListener(this);
+        sprzedajWybieg.addActionListener(this);
+        kupPracownika.addActionListener(this);
+        sprzedajPracownika.addActionListener(this);
 
         this.add(logosklepu);
         this.add(kupJedzenie);
@@ -58,6 +72,9 @@ public class PanelDzienSklep extends JPanel implements ActionListener {
 
 
     }
+
+
+
     public void setsettingsforbutton (JButton button)
     {
         button.setPreferredSize(new Dimension(300,50));
@@ -75,8 +92,15 @@ public class PanelDzienSklep extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==kupZwierze)
         {
-            System.out.println("asas");
-            new gui_oknasklepu.OknoKupZwierze();
+            new gui_oknasklepu.OknoKupZwierze(zoo, sklepik);
+        }
+        if(e.getSource()==kupJedzenie)
+        {
+            new gui_oknasklepu.OknoKupJedzenie(zoo, sklepik);
+        }
+        if(e.getSource()==sprzedajJedzenie)
+        {
+            new gui_oknasklepu.OknoSprzedajJedzenie(zoo,sklepik);
         }
     }
 }

@@ -1,17 +1,25 @@
 package gui_package;
 
+import DzienneZooPakiet.DzienneZoo;
+import pakiet_sklep.Sklep;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class PanelDzien extends JPanel {
 
-    private PanelDzienZasoby panelZasoby = new PanelDzienZasoby();
-    private PanelDzienPracownicy panelPracownicy = new PanelDzienPracownicy();
+    private PanelDzienZasoby panelZasoby;
+    private PanelDzienPracownicy panelPracownicy;
     private PanelDzienWybiegi panelWybiegi = new PanelDzienWybiegi();
-    private PanelDzienSklep panelSklep = new PanelDzienSklep();
+    private PanelDzienSklep panelSklep;
 
-    public PanelDzien() //konstruktor domyslny
+
+    public PanelDzien(DzienneZoo zoo, Sklep sklepik) //konstruktor domyslny
     {
+        panelZasoby = new PanelDzienZasoby(zoo);
+        sklepik.dodajpanel(panelZasoby);
+        panelPracownicy = new PanelDzienPracownicy(zoo);
+        panelSklep = new PanelDzienSklep(zoo, sklepik);
         this.setBackground(Color.white);
         this.setLayout(new BorderLayout());
 
