@@ -3,8 +3,10 @@ package gui_package;
 import javax.swing.*;
 import java.awt.*;
 import DzienneZooPakiet.*;
+import interfejsy.UpdateGUI;
+import pakiet_sklep.Sklep;
 
-public class PanelDzienZasoby extends JPanel {
+public class PanelDzienZasoby extends JPanel implements UpdateGUI {
     JLabel monety;
     JLabel jedzenie;
     JLabel exp;
@@ -15,8 +17,10 @@ public class PanelDzienZasoby extends JPanel {
 
 
 
-    public PanelDzienZasoby(DzienneZoo zoo)
+    public PanelDzienZasoby(DzienneZoo zoo, Sklep sklep)
     {
+        sklep.dodajObsewatoraGUI(this);
+
         this.zoo=zoo;
         monety = new JLabel(String.valueOf(zoo.getZmiennaZasoby().getMonety()));
         jedzenie = new JLabel(String.valueOf(zoo.getZmiennaZasoby().getJedzenie()));
@@ -38,13 +42,13 @@ public class PanelDzienZasoby extends JPanel {
         this.setPreferredSize(new Dimension(0, 75));
 
     }
-    public void updatezasoby()
-    {
+
+    @Override
+    public void UpdateGUI() {
         monety.setText(String.valueOf(zoo.getZmiennaZasoby().getMonety()));
         jedzenie.setText(String.valueOf(zoo.getZmiennaZasoby().getJedzenie()));
         exp.setText(String.valueOf(zoo.getZmiennaZasoby().getExp()));
-        this.repaint();
-        this.revalidate();
-
+        repaint();
+        revalidate();
     }
 }

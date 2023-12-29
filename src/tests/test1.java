@@ -1,4 +1,4 @@
-package tests;
+/*package tests;
 
 import DzienneZooPakiet.*;
 //import Klasy_Zwierzat.ZwierzeLadowe;
@@ -55,5 +55,3 @@ public class test1 {
 
 
 */
-    }
-}

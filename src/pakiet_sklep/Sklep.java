@@ -7,17 +7,15 @@ import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import gui_package.PanelDzienZasoby;
-import pakiet_zasoby.Zasoby;
 import enumy.zwierzeta_enum;
-import pakiet_sklep.*;
-
-import javax.swing.*;
+import interfejsy.UpdateGUI;
 
 
 public class Sklep {
     private static int cena_sztuka_jedzenie = 47;
     final private static int cenaPracownika =23;
-    private PanelDzienZasoby panelZasoby;
+    private ArrayList<UpdateGUI> listaGUI;
+
 
     private DzienneZoo zoo;
 
@@ -36,12 +34,8 @@ public class Sklep {
     public DzienneZoo getZoo() {
         return zoo;
     }
-
-    public void dodajpanel(PanelDzienZasoby panel)
-    {
-        panelZasoby=panel;
-    }
     public Sklep(DzienneZoo zoo) {
+        listaGUI = new ArrayList<>();
         this.zoo = zoo;
     }
 
@@ -66,7 +60,7 @@ public class Sklep {
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
-            panelZasoby.updatezasoby();
+            UpdateGUI();
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
 
@@ -78,28 +72,17 @@ public class Sklep {
 
 
 
-    public void sprzedaj_wybieg() {
-
-
-        int numerWybiegu = zoo.wybierzWybiegi();
-
-        // Sprawdzenie poprawności wyboru
-        if (numerWybiegu < 1 || numerWybiegu > zoo.getListaWybiegow().size()) {
-            System.out.println("Błędny numer wybiegu.");
-            return;
-        }
-
-        // Wybranie konkretnego wybiegu
-        Wybieg_podstawowy wybiegDoSprzedazy = zoo.getListaWybiegow().get(numerWybiegu - 1);
+    public void sprzedaj_wybieg(Wybieg_podstawowy wybieg) {
 
         // Logika sprzedaży wybiegu
-        zoo.usunWybieg(wybiegDoSprzedazy);
+        zoo.usunWybieg(wybieg);
 
         // Wzrost stanu konta po sprzedaży
-        int cenaWybiegu = (int) wybiegDoSprzedazy.getCena();
+        int cenaWybiegu = (int) wybieg.getCena();
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaWybiegu);
 
         System.out.println("Wybieg został pomyślnie sprzedany. Stan konta wzrósł o " + cenaWybiegu + " monet.");
+        UpdateGUI();
     }
 
 
@@ -217,7 +200,7 @@ public class Sklep {
 
                 zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
                 zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
-                panelZasoby.updatezasoby();
+                UpdateGUI();
                 System.out.println("zakup udany");
 
             } catch (InputMismatchException e) {
@@ -260,6 +243,7 @@ public class Sklep {
 
             zoo.dodajWybieg(wybieg);
 
+
         } catch (BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
@@ -285,6 +269,21 @@ public class Sklep {
 
         }
 
+    }
+
+    //obserwator GUI
+
+    public void dodajObsewatoraGUI(UpdateGUI G)
+    {
+        listaGUI.add(G);
+    }
+
+    public void UpdateGUI()
+    {
+        for(UpdateGUI o : listaGUI)
+        {
+            o.UpdateGUI();
+        }
     }
 
 

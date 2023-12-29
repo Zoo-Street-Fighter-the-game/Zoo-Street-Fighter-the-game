@@ -6,11 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import DzienneZooPakiet.DzienneZoo;
-import gui_oknasklepu.*;
+import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
 
-public class PanelDzienSklep extends JPanel implements ActionListener {
+public class PanelDzienSklep extends JPanel implements ActionListener, UpdateGUI {
     private JButton kupJedzenie;
     private JButton kupZwierze;
     private JButton kupWybieg;
@@ -20,12 +20,14 @@ public class PanelDzienSklep extends JPanel implements ActionListener {
     private JButton sprzedajWybieg;
     private JButton sprzedajPracownika;
     private DzienneZoo zoo;
-    private Sklep sklepik;
+    private Sklep sklep;
 
-    public PanelDzienSklep(DzienneZoo zoo, Sklep sklepik)
+    public PanelDzienSklep(DzienneZoo zoo, Sklep sklep)
     {
-        this.zoo=zoo;
-        this.sklepik=sklepik;
+        sklep.dodajObsewatoraGUI(this);
+
+        this.zoo = zoo;
+        this.sklep = sklep;
         JLabel logosklepu = new JLabel();
         logosklepu.setText("Sklep (tu bedzie grafika)");
         this.setBackground(Color.yellow);
@@ -92,15 +94,21 @@ public class PanelDzienSklep extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==kupZwierze)
         {
-            new gui_oknasklepu.OknoKupZwierze(zoo, sklepik);
+            new gui_oknasklepu.OknoKupZwierze(zoo, sklep);
         }
         if(e.getSource()==kupJedzenie)
         {
-            new gui_oknasklepu.OknoKupJedzenie(zoo, sklepik);
+            new gui_oknasklepu.OknoKupJedzenie(zoo, sklep);
         }
         if(e.getSource()==sprzedajJedzenie)
         {
-            new gui_oknasklepu.OknoSprzedajJedzenie(zoo,sklepik);
+            new gui_oknasklepu.OknoSprzedajJedzenie(zoo, sklep);
         }
+    }
+
+    @Override
+    public void UpdateGUI() {
+        this.repaint();
+        this.revalidate();
     }
 }
