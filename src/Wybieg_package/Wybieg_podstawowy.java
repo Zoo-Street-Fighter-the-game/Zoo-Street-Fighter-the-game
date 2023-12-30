@@ -77,7 +77,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //---------------------------------------------------------------------------------
 
     public  boolean czy_zwierze_spelnia_wymogi_dodania_do_wybiegu(Zwierze obiekt){
-        return czy_wybieg_ma_ten_rodzaj_zwierzecia(obiekt) &&
+        return //czy_wybieg_ma_ten_rodzaj_zwierzecia(obiekt) &&
                 czy_zwierze_zmiesci_sie(obiekt) &&
                 czy_zwierze_ma_dobry_typ(obiekt);
     }

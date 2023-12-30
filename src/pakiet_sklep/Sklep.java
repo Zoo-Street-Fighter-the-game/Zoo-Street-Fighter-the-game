@@ -6,9 +6,12 @@ import Pracownik_package.Pracownik;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
+import gui_oknaPopUp.OknoKupZwierze;
 import gui_package.PanelDzienZasoby;
 import enumy.zwierzeta_enum;
 import interfejsy.UpdateGUI;
+
+import javax.swing.*;
 
 
 public class Sklep {
@@ -16,7 +19,7 @@ public class Sklep {
     final private static int cenaPracownika =23;
     private ArrayList<UpdateGUI> listaGUI;
 
-
+    private OknoKupZwierze oknoKupZwierze;
     private DzienneZoo zoo;
 
     final int mnoznikCenyPracownika=10;
@@ -30,6 +33,8 @@ public class Sklep {
         Sklep.cena_sztuka_jedzenie = cena_sztuka_jedzenie;
     }
 
+    public void setOknoKupZwierze(OknoKupZwierze oknoKupZwierze) {this.oknoKupZwierze = oknoKupZwierze;}
+
     //SETTER I GETTER DLA OBIEKTU DzienneZoo
     public DzienneZoo getZoo() {
         return zoo;
@@ -38,6 +43,7 @@ public class Sklep {
         listaGUI = new ArrayList<>();
         this.zoo = zoo;
     }
+
 
     //METODY KLASY
     public void sprzedaj_jedzenie(int ilosc) {
@@ -125,7 +131,8 @@ public class Sklep {
         System.out.println("Opiekun został pomyślnie sprzedany. Stan konta wzrósł o " + cenaPracownika*mnoznikCenyPracownika + " monet.");
     }
 
-    public void sprzedaj_zwierze() {
+    public void sprzedaj_zwierze(Wybieg_podstawowy wybieg, Zwierze zwierze) {
+        /*
         Scanner scanner = new Scanner(System.in);
 
         // Wyświetlanie dostępnych wybiegów
@@ -169,15 +176,14 @@ public class Sklep {
 
         // Wybranie konkretnego zwierzęcia
         Zwierze zwierzeDoSprzedazy = zwierzetaWybiegu.get(numerZwierzecia - 1);
-
+*/
         // Logika sprzedaży zwierzęcia
-        wybranyWybieg.usun_zwierze(zwierzeDoSprzedazy);
+        wybieg.usun_zwierze(zwierze);
 
         // Wzrost stanu konta po sprzedaży
-        int cenaZwierzecia = zwierzeDoSprzedazy.getCena();
-        zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaZwierzecia);
+        zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + zwierze.getCena());
 
-        System.out.println("Zwierzę zostało pomyślnie sprzedane. Stan konta wzrósł o " + cenaZwierzecia + " monet.");
+        System.out.println("Zwierzę zostało pomyślnie sprzedane. Stan konta wzrósł o " + zwierze.getCena() + " monet.");
     }
 
 
@@ -251,23 +257,16 @@ public class Sklep {
     }
 
 
-    public void kup_zwierze(zwierzeta_enum typ) {
-        try{
+    public void kup_zwierze(zwierzeta_enum typ, Wybieg_podstawowy wybieg) {
             if(typ.podajCene() > zoo.getZmiennaZasoby().getMonety())
             {
-                throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Kup inne zwierze lub zbierz więcej środków");
+                oknoKupZwierze.BrakSrodkow();
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
             System.out.println("Zakup zwierzecia udany");
-            zoo.getListaWybiegow().get(zoo.wybierzWybiegi()-1).dodaj_zwierze(typ.stworzZwierze());
-
-
-        } catch (BrakSrodkowException e)
-        {
-            System.out.println(e.getMessage());
-
-        }
+            wybieg.dodaj_zwierze(typ.stworzZwierze());
+            UpdateGUI();
 
     }
 

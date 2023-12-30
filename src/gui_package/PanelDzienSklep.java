@@ -35,29 +35,29 @@ public class PanelDzienSklep extends JPanel implements ActionListener, UpdateGUI
         this.setLayout(new FlowLayout());
         this.setPreferredSize(new Dimension( 250, 0));
         kupJedzenie = new JButton("Kup jedzenie");
-        kupZwierze = new JButton("Kup zwierze");
+        //kupZwierze = new JButton("Kup zwierze");
         kupWybieg = new JButton("Kup Wybieg");
         kupPracownika = new JButton("Kup pracownika");
         sprzedajJedzenie = new JButton("sprzedaj jedzenie");
-        sprzedajZwierze = new JButton("sprzedaj Zwierze");
-        sprzedajWybieg = new JButton("sprzedaj Wybieg");
+        //sprzedajZwierze = new JButton("sprzedaj Zwierze");
+        //sprzedajWybieg = new JButton("sprzedaj Wybieg");
         sprzedajPracownika = new JButton("sprzedaj Pracownika");
 
         setsettingsforbutton(kupJedzenie);
         setsettingsforbutton(kupPracownika);
         setsettingsforbutton(kupWybieg);
-        setsettingsforbutton(kupZwierze);
+       // setsettingsforbutton(kupZwierze);
         setsettingsforbutton(sprzedajJedzenie);
         setsettingsforbutton(sprzedajPracownika);
-        setsettingsforbutton(sprzedajWybieg);
-        setsettingsforbutton(sprzedajZwierze);
+        //setsettingsforbutton(sprzedajWybieg);
+        //setsettingsforbutton(sprzedajZwierze);
 
-        kupZwierze.addActionListener(this);
-        sprzedajZwierze.addActionListener(this);
+        //kupZwierze.addActionListener(this);
+        //sprzedajZwierze.addActionListener(this);
         kupJedzenie.addActionListener(this);
         sprzedajJedzenie.addActionListener(this);
         kupWybieg.addActionListener(this);
-        sprzedajWybieg.addActionListener(this);
+        //sprzedajWybieg.addActionListener(this);
         kupPracownika.addActionListener(this);
         sprzedajPracownika.addActionListener(this);
 
@@ -65,11 +65,11 @@ public class PanelDzienSklep extends JPanel implements ActionListener, UpdateGUI
         this.add(kupJedzenie);
         this.add(kupPracownika);
         this.add(kupWybieg);
-        this.add(kupZwierze);
+        //this.add(kupZwierze);
         this.add(sprzedajJedzenie);
         this.add(sprzedajPracownika);
-        this.add(sprzedajWybieg);
-        this.add(sprzedajZwierze);
+        //this.add(sprzedajWybieg);
+        //this.add(sprzedajZwierze);
 
 
 
@@ -92,17 +92,14 @@ public class PanelDzienSklep extends JPanel implements ActionListener, UpdateGUI
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==kupZwierze)
-        {
-            new gui_oknasklepu.OknoKupZwierze(zoo, sklep);
-        }
+
         if(e.getSource()==kupJedzenie)
         {
-            new gui_oknasklepu.OknoKupJedzenie(zoo, sklep);
+            new gui_oknaPopUp.OknoKupJedzenie(zoo, sklep);
         }
         if(e.getSource()==sprzedajJedzenie)
         {
-            new gui_oknasklepu.OknoSprzedajJedzenie(zoo, sklep);
+            new gui_oknaPopUp.OknoSprzedajJedzenie(zoo, sklep);
         }
     }
 

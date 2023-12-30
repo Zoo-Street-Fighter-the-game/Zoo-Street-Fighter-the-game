@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dodano przedrostki private i public przed składowymi klas gui.&#10;Stworzono klasę PanelWybieg.&#10;Wprowadzono małe zmiany w klasie PanelDzienWybiegi.">
-      <change afterPath="$PROJECT_DIR$/src/gui_package/WybiegButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfejsy/UpdateGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_12_2023_21_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_12_2023_21_28__Changes_.xml" afterDir="false" />
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI">
+      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknasklepu/OknoKupJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknasklepu/OknoKupZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknasklepu/OknoSprzedajJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,8 +53,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -98,6 +102,9 @@
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src" />
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="gui_oknaPopUp" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -133,6 +140,7 @@
       <workItem from="1703709907133" duration="333000" />
       <workItem from="1703710280470" duration="3986000" />
       <workItem from="1703777850279" duration="2499000" />
+      <workItem from="1703929314431" duration="9489000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -182,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703778821268</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI">
+      <option name="closed" value="true" />
+      <created>1703890217599</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703890217599</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +222,8 @@
     <MESSAGE value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
     <MESSAGE value="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych" />
     <MESSAGE value="Dodano przedrostki private i public przed składowymi klas gui.&#10;Stworzono klasę PanelWybieg.&#10;Wprowadzono małe zmiany w klasie PanelDzienWybiegi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodano przedrostki private i public przed składowymi klas gui.&#10;Stworzono klasę PanelWybieg.&#10;Wprowadzono małe zmiany w klasie PanelDzienWybiegi." />
+    <MESSAGE value="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

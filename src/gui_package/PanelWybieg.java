@@ -115,7 +115,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Kupiono zwierze");
+                new gui_oknaPopUp.OknoKupZwierze(sklep, wybieg);
         }
     }
 
@@ -124,7 +124,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Sprzedano zwierze");
+            new gui_oknaPopUp.OknoSprzedajZwierze(sklep, wybieg);
         }
     }
 
