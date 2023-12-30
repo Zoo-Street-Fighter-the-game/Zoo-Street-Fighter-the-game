@@ -1,9 +1,7 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import Wybieg_package.Wybieg_podstawowy;
-import enumy.zwierzeta_enum;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
@@ -19,9 +17,10 @@ public class OknoSprzedajZwierze extends JFrame {
     private JPanel panelMain;
     private JPanel panelRadio;
     private JLabel text;
-    //private ArrayList<ZwierzeRadioButton> listaZwierzeRadioButton = new ArrayList<>();
-    private ZwierzeRadioButton wybrany;
-    JButton sprzedajZwierzeButton;
+    private ArrayList<JRadioButton> listaRadioButton;
+    private Zwierze wybrany;
+    private JButton sprzedajZwierzeButton;
+    ButtonGroup group;
     public OknoSprzedajZwierze(Sklep sklep, Wybieg_podstawowy wybieg)
     {
         this.sklep = sklep;
@@ -30,15 +29,17 @@ public class OknoSprzedajZwierze extends JFrame {
         panelMain = new JPanel();
         panelRadio = new JPanel();
         text = new JLabel("Wybierz zwierze: ");
+        listaRadioButton = new ArrayList<>();
         sprzedajZwierzeButton = new JButton("Sprzedaj zwierze");
         sprzedajZwierzeButton.setEnabled(false);
-        //sprzedajZwierzeButton.addActionListener(new ReakcjaKupZwierzeButton());
+        sprzedajZwierzeButton.addActionListener(new ReakcjaSprzedajZwierzeButton());
 
         this.setTitle("Sprzedaj Zwierze");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         sprzedajZwierzeButton.setFocusable(false);
-        UstawRadioButton();
+        group = new ButtonGroup();
+        ustawRadioButton();
 
         this.add(panelMain);
         panelMain.add(text);
@@ -52,29 +53,34 @@ public class OknoSprzedajZwierze extends JFrame {
         this.setVisible(true);
     }
 
-    public void UstawRadioButton()
+    public void ustawRadioButton()
     {
         for(Zwierze zwierze : wybieg.getLista_zwierzat())
         {
-            panelRadio.add(new JRadioButton(zwierze.getNazwa()));
+            listaRadioButton.add(new JRadioButton(zwierze.getNazwa()));
+            panelRadio.add(listaRadioButton.getLast());
+            listaRadioButton.getLast().addActionListener(new ReakcjaRadioButton());
+            group.add(listaRadioButton.getLast());
         }
     }
 
-    class ReakcjaZwierzeRadioButton implements ActionListener
+    class ReakcjaRadioButton implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            wybrany=(ZwierzeRadioButton)e.getSource();
+           wybrany=(wybieg.getLista_zwierzat().get(listaRadioButton.indexOf(((JRadioButton)e.getSource()))));
+           sprzedajZwierzeButton.setEnabled(true);
         }
     }
 
-    /*class ReakcjaSprzedajZwierzeButton implements ActionListener
+    class ReakcjaSprzedajZwierzeButton implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            sklep.sprzedaj_zwierze();
+            sklep.sprzedaj_zwierze(wybieg, wybrany);
+            OknoSprzedajZwierze.this.dispose();
         }
-    }*/
+    }
 
     public void BrakSrodkow()
     {

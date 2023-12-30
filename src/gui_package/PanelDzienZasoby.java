@@ -44,7 +44,7 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI {
     }
 
     @Override
-    public void UpdateGUI() {
+    public void updateGUI() {
         monety.setText(String.valueOf(zoo.getZmiennaZasoby().getMonety()));
         jedzenie.setText(String.valueOf(zoo.getZmiennaZasoby().getJedzenie()));
         exp.setText(String.valueOf(zoo.getZmiennaZasoby().getExp()));

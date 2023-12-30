@@ -19,7 +19,7 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
     }
 
     @Override
-    public void UpdateGUI() {
+    public void updateGUI() {
         this.repaint();
         this.revalidate();
     }

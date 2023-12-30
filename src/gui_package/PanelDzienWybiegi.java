@@ -7,8 +7,6 @@ import pakiet_sklep.Sklep;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
     public PanelDzienWybiegi(DzienneZoo zoo, Sklep sklep, Wybieg_podstawowy wybieg)
@@ -24,11 +22,11 @@ public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
     public void UsunWybieg(PanelWybieg W)
     {
         this.remove(W);
-        this.UpdateGUI();
+        this.updateGUI();
     }
 
     @Override
-    public void UpdateGUI() {
+    public void updateGUI() {
         revalidate();
         repaint();
     }

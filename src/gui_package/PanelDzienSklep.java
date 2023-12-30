@@ -104,7 +104,7 @@ public class PanelDzienSklep extends JPanel implements ActionListener, UpdateGUI
     }
 
     @Override
-    public void UpdateGUI() {
+    public void updateGUI() {
         this.repaint();
         this.revalidate();
     }

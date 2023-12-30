@@ -1,6 +1,5 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.zwierzeta_enum;
 import pakiet_sklep.Sklep;
@@ -20,7 +19,7 @@ public class OknoKupZwierze extends JFrame {
     private ZwierzeRadioButton pingwin;
     private ZwierzeRadioButton niedzwiedz;
     private ZwierzeRadioButton los;
-
+    private ButtonGroup group;
     private ZwierzeRadioButton wybrany;
 
     JButton kupZwierzeButton;
@@ -44,7 +43,7 @@ public class OknoKupZwierze extends JFrame {
         los = new ZwierzeRadioButton("los", zwierzeta_enum.LOS);
         los.addActionListener(new ReakcjaZwierzeRadioButton());
 
-        ButtonGroup group = new ButtonGroup();
+        group = new ButtonGroup();
 
         group.add(pingwin);
         group.add(niedzwiedz);
@@ -94,7 +93,7 @@ public class OknoKupZwierze extends JFrame {
         }
     }
 
-    public void BrakSrodkow()
+    public void brakSrodkow()
     {
         JOptionPane.showMessageDialog(this,
                 "Nie masz wystarczajaco duzo monet!",

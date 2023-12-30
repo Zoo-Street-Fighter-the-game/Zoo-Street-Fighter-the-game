@@ -7,11 +7,8 @@ import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import gui_oknaPopUp.OknoKupZwierze;
-import gui_package.PanelDzienZasoby;
 import enumy.zwierzeta_enum;
 import interfejsy.UpdateGUI;
-
-import javax.swing.*;
 
 
 public class Sklep {
@@ -66,7 +63,7 @@ public class Sklep {
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
-            UpdateGUI();
+            updateGUI();
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
 
@@ -88,7 +85,7 @@ public class Sklep {
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaWybiegu);
 
         System.out.println("Wybieg został pomyślnie sprzedany. Stan konta wzrósł o " + cenaWybiegu + " monet.");
-        UpdateGUI();
+        updateGUI();
     }
 
 
@@ -182,6 +179,7 @@ public class Sklep {
 
         // Wzrost stanu konta po sprzedaży
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + zwierze.getCena());
+        updateGUI();
 
         System.out.println("Zwierzę zostało pomyślnie sprzedane. Stan konta wzrósł o " + zwierze.getCena() + " monet.");
     }
@@ -206,7 +204,7 @@ public class Sklep {
 
                 zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
                 zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
-                UpdateGUI();
+                updateGUI();
                 System.out.println("zakup udany");
 
             } catch (InputMismatchException e) {
@@ -260,13 +258,13 @@ public class Sklep {
     public void kup_zwierze(zwierzeta_enum typ, Wybieg_podstawowy wybieg) {
             if(typ.podajCene() > zoo.getZmiennaZasoby().getMonety())
             {
-                oknoKupZwierze.BrakSrodkow();
+                oknoKupZwierze.brakSrodkow();
             }
 
             zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
             System.out.println("Zakup zwierzecia udany");
             wybieg.dodaj_zwierze(typ.stworzZwierze());
-            UpdateGUI();
+            updateGUI();
 
     }
 
@@ -277,11 +275,11 @@ public class Sklep {
         listaGUI.add(G);
     }
 
-    public void UpdateGUI()
+    public void updateGUI()
     {
         for(UpdateGUI o : listaGUI)
         {
-            o.UpdateGUI();
+            o.updateGUI();
         }
     }
 
