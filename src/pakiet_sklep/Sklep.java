@@ -8,18 +8,24 @@ import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import gui_oknaPopUp.OknoKupZwierze;
 import enumy.zwierzeta_enum;
+import gui_package.PanelDzienPracownicy;
+import gui_package.PanelDzienSklep;
+import gui_package.PanelDzienWybiegi;
+import gui_package.PanelWybieg;
 import interfejsy.UpdateGUI;
 
 
 public class Sklep {
-    private static int cena_sztuka_jedzenie = 47;
-    final private static int cenaPracownika =23;
+    private static int cena_sztuka_jedzenie = 1;
+    final private static int cenaPracownika =5;
     private ArrayList<UpdateGUI> listaGUI;
 
     private OknoKupZwierze oknoKupZwierze;
+    private PanelDzienWybiegi panelDzienWybiegi;
+    private PanelDzienPracownicy panelDzienPracownicy;
     private DzienneZoo zoo;
 
-    final int mnoznikCenyPracownika=10;
+    final int mnoznikCenyPracownika=2;
 
 
 
@@ -31,6 +37,8 @@ public class Sklep {
     }
 
     public void setOknoKupZwierze(OknoKupZwierze oknoKupZwierze) {this.oknoKupZwierze = oknoKupZwierze;}
+    public void setPanelDzienWybiegi(PanelDzienWybiegi panelDzienWybiegi) {this.panelDzienWybiegi = panelDzienWybiegi;}
+    public void setPanelDzienPracownicy(PanelDzienPracownicy panelDzienPracownicy) {this.panelDzienPracownicy = panelDzienPracownicy;}
 
     //SETTER I GETTER DLA OBIEKTU DzienneZoo
     public DzienneZoo getZoo() {
@@ -89,43 +97,28 @@ public class Sklep {
     }
 
 
-    public void sprzedaj_pracownika() {
-        Scanner scanner = new Scanner(System.in);
+    public void sprzedaj_pracownika(int numerPracownika) {
+
         List<Pracownik> listaOpiekunow = zoo.getListaPracownikow();
 
         if(listaOpiekunow.isEmpty())
         {
             System.out.println("Nie masz zadnych pracownikow");
-            return;
-        }
 
-        // Wyświetlanie dostępnych opiekunów
-        System.out.println("Dostępni pracownicy:");
-
-        for (int i = 0; i < listaOpiekunow.size(); i++) {
-            System.out.println((i + 1) + ". " + listaOpiekunow.get(i));
         }
 
 
-        System.out.print("Wybierz numer pracownika do sprzedaży: ");
-        int numerPracownika = scanner.nextInt();
-
-
-        if (numerPracownika < 1 || numerPracownika > listaOpiekunow.size()) {
-            System.out.println("Błędny numer pracownika.");
-            return;
-        }
-
-
-        Pracownik opiekunDoSprzedazy = listaOpiekunow.get(numerPracownika - 1);
+        Pracownik opiekunDoSprzedazy = zoo.getListaPracownikow().get(numerPracownika );
 
 
         zoo.usunPracownika(opiekunDoSprzedazy);
 
         // Wzrost stanu konta po sprzedaży
         (zoo.getZmiennaZasoby()).setMonety(zoo.getZmiennaZasoby().getMonety() + cenaPracownika*mnoznikCenyPracownika);
+        panelDzienPracownicy.usunpracownika(numerPracownika);
 
         System.out.println("Opiekun został pomyślnie sprzedany. Stan konta wzrósł o " + cenaPracownika*mnoznikCenyPracownika + " monet.");
+        updateGUI();
     }
 
     public void sprzedaj_zwierze(Wybieg_podstawowy wybieg, Zwierze zwierze) {
@@ -187,10 +180,9 @@ public class Sklep {
 
     public  void kup_jedzenie(int ilosc){
 
-        System.out.println("Obecna cena za sztukę to: " + getCena_sztuka_jedzenie());
 
             try {
-                System.out.print("Podaj ilość jedzenia: ");
+
 
                 if (ilosc <= 0) {
                     throw new IllegalArgumentException("Błędna wartość. Wprowadź liczbę większą niż 0.");
@@ -219,14 +211,17 @@ public class Sklep {
         System.out.println("Obecna cena za pracownika to: " + cenaPracownika*mnoznikCenyPracownika);
 
         try {
-            if (cenaPracownika*mnoznikCenyPracownika > zoo.getZmiennaZasoby().getMonety()) {
+            if (cenaPracownika*mnoznikCenyPracownika*jakosc > zoo.getZmiennaZasoby().getMonety()) {
                 throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Wybierz tańszego pracownika lub zebrać więcej środków.");
             }
 
-            zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*mnoznikCenyPracownika);
+            zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*mnoznikCenyPracownika*jakosc);
             System.out.println("zakup pracownika udany");
+            Pracownik przyklad = new Pracownik(imie, nazwisko, jakosc);
+            zoo.dodajPracownika(przyklad);
+            panelDzienPracownicy.dodajpracownika(przyklad);
+            updateGUI();
 
-            zoo.dodajPracownika(new Pracownik(imie, nazwisko, jakosc));
 
         } catch (BrakSrodkowException e) {
             System.out.println(e.getMessage());
@@ -245,8 +240,10 @@ public class Sklep {
             zoo.getZmiennaZasoby().zmienMonety(-wybieg.getCena());
             System.out.println("Zakup wybiegu udany");
 
-            zoo.dodajWybieg(wybieg);
 
+            zoo.dodajWybieg(wybieg);
+            panelDzienWybiegi.dodajWybieg(new PanelWybieg(zoo, this, wybieg));
+            updateGUI();
 
         } catch (BrakSrodkowException e) {
             System.out.println(e.getMessage());
@@ -286,7 +283,7 @@ public class Sklep {
 
 
     //public  void kup_bron(){} do zrobienia
-
+/*
     public static Thread startMessageSenderThread() {
         Thread thread = new Thread(() -> {
             try {
@@ -320,5 +317,5 @@ public class Sklep {
         System.out.println("  |  ^   | ");
         System.out.println("   '-----'");
         System.out.println();
-    }
+    }*/
 }

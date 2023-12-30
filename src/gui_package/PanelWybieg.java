@@ -9,9 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PanelWybieg extends JPanel implements UpdateGUI {
 
@@ -134,7 +131,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             sklep.sprzedaj_wybieg(wybieg);
-            ((PanelDzienWybiegi)PanelWybieg.this.getParent()).UsunWybieg(PanelWybieg.this);
+            ((PanelDzienWybiegi)PanelWybieg.this.getParent()).usunWybieg(PanelWybieg.this);
         }
     }
 

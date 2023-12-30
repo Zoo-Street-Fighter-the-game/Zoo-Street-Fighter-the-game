@@ -10,6 +10,7 @@ public class Pracownik{
     private String nazwisko;
     private int jakoscUslug; //w skali do 10,
     //wplywa na metody umyjWybieg i nakarmZwierze
+    private int iloscakcji=3;
 
 
     //KONSTRUKTOR
@@ -46,11 +47,10 @@ public class Pracownik{
 
     @Override
     public String toString() {
-        return "Pracownik{" +
-                "imie='" + imie + '\'' +
-                ", nazwisko='" + nazwisko + '\'' +
-                ", jakoscUslug=" + jakoscUslug +
-                '}';
+        return
+                 imie +
+                " " + nazwisko +
+                " " + jakoscUslug+" jakosci" ;
     }
 
 
