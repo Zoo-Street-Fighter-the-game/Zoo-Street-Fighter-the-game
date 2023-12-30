@@ -255,15 +255,15 @@ public class Sklep {
     }
 
 
-    public void kup_zwierze(zwierzeta_enum typ, Wybieg_podstawowy wybieg) {
-            if(typ.podajCene() > zoo.getZmiennaZasoby().getMonety())
+    public void kup_zwierze(zwierzeta_enum typ, Wybieg_podstawowy wybieg, String imie) {
+            if(typ.getCena() > zoo.getZmiennaZasoby().getMonety())
             {
                 oknoKupZwierze.brakSrodkow();
             }
 
-            zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
+            zoo.getZmiennaZasoby().zmienMonety(-typ.getCena());
             System.out.println("Zakup zwierzecia udany");
-            wybieg.dodaj_zwierze(typ.stworzZwierze());
+            wybieg.dodaj_zwierze(typ.stworzZwierze(imie));
             updateGUI();
 
     }

@@ -13,7 +13,7 @@ public class NocneZoo {
         //to jest pod testy,ale reszta kodu pod gre juz
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY,wielkosc_wybiegu_enum.SREDNI));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1",1,1,1,1,1, rodzaj_srodowiska_enum.POWIETRZNY));
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("","1",1,1,1,1,1, rodzaj_srodowiska_enum.POWIETRZNY));
         //
         Poziom_trudnosci poziom_trudnosci = new Poziom_trudnosci();
         poziom_trudnosci.ustaw_poziom_trudnosci();

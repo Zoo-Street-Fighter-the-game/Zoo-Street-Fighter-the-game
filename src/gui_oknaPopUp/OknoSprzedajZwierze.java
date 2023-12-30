@@ -46,10 +46,13 @@ public class OknoSprzedajZwierze extends JFrame {
         panelMain.add(panelRadio);
         panelMain.add(sprzedajZwierzeButton);
 
+        panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.Y_AXIS));
         panelRadio.setLayout(new FlowLayout());
-        panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.PAGE_AXIS));
+        text.setAlignmentX(Component.CENTER_ALIGNMENT);
+        sprzedajZwierzeButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panelRadio.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        this.setBounds(0,0,300,200);
+        this.pack();
         this.setVisible(true);
     }
 
@@ -57,7 +60,7 @@ public class OknoSprzedajZwierze extends JFrame {
     {
         for(Zwierze zwierze : wybieg.getLista_zwierzat())
         {
-            listaRadioButton.add(new JRadioButton(zwierze.getNazwa()));
+            listaRadioButton.add(new JRadioButton(zwierze.getNazwa() +" "+zwierze.getImie()));
             panelRadio.add(listaRadioButton.getLast());
             listaRadioButton.getLast().addActionListener(new ReakcjaRadioButton());
             group.add(listaRadioButton.getLast());

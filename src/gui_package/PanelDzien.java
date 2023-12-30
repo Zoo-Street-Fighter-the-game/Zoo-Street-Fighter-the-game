@@ -23,7 +23,7 @@ public class PanelDzien extends JPanel implements UpdateGUI {
         sklep.dodajObsewatoraGUI(this);
 
         panelZasoby = new PanelDzienZasoby(zoo, sklep);
-        panelWybiegi = new PanelDzienWybiegi(zoo, sklep, new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY));
+        panelWybiegi = new PanelDzienWybiegi(zoo, sklep, new Wybieg_podstawowy(rodzaj_srodowiska_enum.WODNY, wielkosc_wybiegu_enum.DUZY));
         panelPracownicy = new PanelDzienPracownicy(zoo, sklep);
         panelSklep = new PanelDzienSklep(zoo, sklep);
         this.setBackground(Color.white);

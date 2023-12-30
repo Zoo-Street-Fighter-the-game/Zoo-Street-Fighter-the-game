@@ -158,10 +158,9 @@ public class PanelWybieg extends JPanel implements UpdateGUI {
 
     class ReakcjaPokazZwierzeta implements ActionListener
     {
-
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Pokazano zwierzeta");
+            new gui_oknaPopUp.OknoPokazZwierzeta(wybieg);
         }
     }
 

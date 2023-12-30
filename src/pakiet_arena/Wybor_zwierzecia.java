@@ -87,7 +87,7 @@ public class Wybor_zwierzecia {
 
         zwierzeta_enum[] mozliwe_zwierzeta = zwierzeta_enum.values();
         int indeks = new Random().nextInt(mozliwe_zwierzeta.length);
-        Zwierze zwierze = mozliwe_zwierzeta[indeks].stworzZwierze();
+        Zwierze zwierze = mozliwe_zwierzeta[indeks].stworzZwierze("");
         dostosuj_przeciwnika_pod_trudnosc(zwierze,poziom_trudnosci);
         return zwierze;
     }

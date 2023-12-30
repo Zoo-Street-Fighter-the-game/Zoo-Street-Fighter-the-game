@@ -22,6 +22,8 @@ public class OknoKupZwierze extends JFrame {
     private ButtonGroup group;
     private ZwierzeRadioButton wybrany;
 
+    private JTextField imieTextField;
+
     JButton kupZwierzeButton;
     public OknoKupZwierze (Sklep sklep, Wybieg_podstawowy wybieg)
     {
@@ -32,14 +34,20 @@ public class OknoKupZwierze extends JFrame {
         panelMain = new JPanel();
         panelRadio = new JPanel();
         text = new JLabel("Wybierz zwierze: ");
+
+        imieTextField = new JTextField("Fafik");
+        imieTextField.setPreferredSize(new Dimension(200, 30));
+
         kupZwierzeButton = new JButton("Kup zwierze");
         kupZwierzeButton.setEnabled(false);
         kupZwierzeButton.addActionListener(new ReakcjaKupZwierzeButton());
 
         pingwin = new ZwierzeRadioButton("pingwin", zwierzeta_enum.PINGWIN);
         pingwin.addActionListener(new ReakcjaZwierzeRadioButton());
+
         niedzwiedz = new ZwierzeRadioButton("niedzwiedz", zwierzeta_enum.NIEDZWIEDZ);
         niedzwiedz.addActionListener(new ReakcjaZwierzeRadioButton());
+
         los = new ZwierzeRadioButton("los", zwierzeta_enum.LOS);
         los.addActionListener(new ReakcjaZwierzeRadioButton());
 
@@ -59,15 +67,41 @@ public class OknoKupZwierze extends JFrame {
         panelRadio.add(niedzwiedz);
         panelRadio.add(los);
 
-        this.add(panelMain);
-        panelMain.add(text);
-        panelMain.add(panelRadio);
-        panelMain.add(kupZwierzeButton);
-
         panelRadio.setLayout(new FlowLayout());
-        panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.PAGE_AXIS));
+        panelMain.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
-        this.setBounds(0,0,300,200);
+        this.add(panelMain);
+
+        gbc.insets=new Insets(10,10,10,10);
+
+        gbc.gridwidth=3;
+        gbc.gridx=0;
+        gbc.gridy=0;
+
+        panelMain.add(text, gbc);
+
+        gbc.gridwidth=3;
+        gbc.gridx=0;
+        gbc.gridy=1;
+
+        panelMain.add(panelRadio, gbc);
+
+        gbc.gridwidth=3;
+        gbc.gridx=0;
+        gbc.gridy=2;
+
+        panelMain.add(imieTextField, gbc);
+
+        gbc.gridwidth=1;
+        gbc.gridx=3;
+        gbc.gridy=3;
+
+        panelMain.add(kupZwierzeButton, gbc);
+
+
+
+        this.pack();
         this.setVisible(true);
     }
 
@@ -76,7 +110,7 @@ public class OknoKupZwierze extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             kupZwierzeButton.setEnabled(true);
-            if(!wybieg.czy_zwierze_spelnia_wymogi_dodania_do_wybiegu(((ZwierzeRadioButton)e.getSource()).getTyp().stworzZwierze()))
+            if(!wybieg.czy_zwierze_spelnia_wymogi_dodania_do_wybiegu(((ZwierzeRadioButton)e.getSource()).getTyp().stworzZwierze("")))
             {
                 kupZwierzeButton.setEnabled(false);
             }
@@ -88,7 +122,7 @@ public class OknoKupZwierze extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            sklep.kup_zwierze(wybrany.getTyp(), wybieg);
+            sklep.kup_zwierze(wybrany.getTyp(), wybieg, imieTextField.getText());
             OknoKupZwierze.this.dispose();
         }
     }

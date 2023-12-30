@@ -9,7 +9,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //===========================================================================
     //POLA ZWIERZĄT
     //===========================================================================
-
+    private String imie;
     private String nazwa;
     private int zycie;
     private int sila;
@@ -23,7 +23,8 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int cena, rodzaj_srodowiska_enum rodzaj){
+    public Zwierze(String imie, String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int cena, rodzaj_srodowiska_enum rodzaj){
+        this.imie = imie;
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
@@ -55,8 +56,9 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     }
 
     public Zwierze deep_clone() {
-        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
+        return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
     }
+
 
 
     //===========================================================================
@@ -81,6 +83,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //SETTERY I GETTERY
     //===========================================================================
 
+    public String getImie() {return imie;}
     public String getNazwa() {
         return nazwa;
     }

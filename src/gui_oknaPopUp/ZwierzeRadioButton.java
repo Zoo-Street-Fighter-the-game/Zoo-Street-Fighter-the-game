@@ -10,7 +10,7 @@ public class ZwierzeRadioButton extends JRadioButton {
 
     public ZwierzeRadioButton(String str, zwierzeta_enum typ)
     {
-        this.setText(str);
+        this.setText(str +" "+ typ.getCena() +"$");
         this.typ = typ;
     }
 
