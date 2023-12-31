@@ -69,16 +69,15 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //toString wyswietlajacy info o zwierzeciu
     @Override
     public String toString() {
-        return "Zwierze{" +
-                "nazwa=" + getNazwa() +
-                ", zycie=" + getZycie() +
-                ", sila=" + getSila() +
-                ", wielkosc=" + getWielkosc() +
-                ", wskaznik_glodu=" + getWskaznik_glodu() +
-                ", przezyte_dni=" + getPrzezyte_dni() +
-                ", cena=" + getCena() +
-                ", rodzaj=" + getRodzaj() +
-                '}';
+        return "Imie to:" + getImie() +"\n"+
+                "Typ to:" + getNazwa() +"\n"+
+                "Zycie to: " + getZycie() +"\n"+
+                "Sila to: " + getSila() +"\n"+
+                "Wielkosc to: " + getWielkosc() +"\n"+
+                "Najedzony w " + getWskaznik_glodu() +" procentach\n"+
+                "Przezyl " + getPrzezyte_dni() +" dni\n"+
+                "Cena to: " + getCena() +"\n"+
+                "Rodzaj to: " + getRodzaj() +" \n";
     }
     //===========================================================================
     //SETTERY I GETTERY

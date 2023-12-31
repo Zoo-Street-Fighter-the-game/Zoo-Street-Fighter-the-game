@@ -45,15 +45,7 @@ public class OknoPokazZwierzeta extends JFrame {
         public void actionPerformed(ActionEvent e) {
             Zwierze zwierze = wybieg.getLista_zwierzat().get(listaZwierzeButton.indexOf((JButton)e.getSource()));
             JOptionPane.showMessageDialog(OknoPokazZwierzeta.this,
-                    "Imie to:" + zwierze.getImie() +"\n"+
-                            "Typ to:" + zwierze.getNazwa() +"\n"+
-                            "Zycie to: " + zwierze.getZycie() +"\n"+
-                            "Sila to: " + zwierze.getSila() +"\n"+
-                            "Wielkosc to: " + zwierze.getWielkosc() +"\n"+
-                            "Najedzony w " + zwierze.getWskaznik_glodu() +" procentach\n"+
-                            "Przezyl " + zwierze.getPrzezyte_dni() +" dni\n"+
-                            "Cena to: " + zwierze.getCena() +"\n"+
-                            "Rodzaj to: " + zwierze.getRodzaj() +" \n",
+                    zwierze.toString(),
                     "Informacje o zwierzeciu",
                     JOptionPane.INFORMATION_MESSAGE);
         }
