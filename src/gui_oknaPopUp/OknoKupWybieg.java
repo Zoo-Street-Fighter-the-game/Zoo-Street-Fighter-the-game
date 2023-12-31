@@ -24,8 +24,7 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
     private wielkosc_wybiegu_enum wielkosc;
     private rodzaj_srodowiska_enum rodzaj;
 
-    public OknoKupWybieg(DzienneZoo zoo, Sklep sklep) {
-        this.zoo = zoo;
+    public OknoKupWybieg(Sklep sklep) {
         this.sklepik = sklep;
 
         this.setTitle("Kup Wybieg");

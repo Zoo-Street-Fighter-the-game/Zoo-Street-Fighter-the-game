@@ -35,7 +35,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         this.rodzaj_srodowiska = rodzaj_wybiegu;
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wolne_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
-        this.cena = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*10;
+        this.cena = wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu();
     }
 
     //=====================================================================================
@@ -117,6 +117,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     public void brudzenie_zwierzat(){
         for (Zwierze zwierze : getLista_zwierzat()){
            setCzystosc(getCzystosc() - zwierze.getWielkosc()*5);
+           powiadom_obserwatorow();
         }
     }
 

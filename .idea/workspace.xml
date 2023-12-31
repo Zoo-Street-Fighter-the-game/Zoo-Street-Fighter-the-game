@@ -5,15 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Działa sprzedawanie zwierząt">
-      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfejsy/ObserwujacyPracownikGUI_interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enumy/wielkosc_wybiegu_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/wielkosc_wybiegu_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
     </list>

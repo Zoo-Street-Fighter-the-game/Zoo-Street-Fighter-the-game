@@ -9,20 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
-    private DzienneZoo zoo;
-    private Sklep sklep;
-    public PanelDzienWybiegi(DzienneZoo zoo, Sklep sklep, Wybieg_podstawowy wybieg)
+    public PanelDzienWybiegi(Sklep sklep)
     {
         sklep.dodajObsewatoraGUI(this);
         sklep.setPanelDzienWybiegi(this);
-        this.zoo=zoo;
-        this.sklep=sklep;
 
         this.setBackground(Color.lightGray);
         this.setLayout(new FlowLayout(FlowLayout.LEADING));
-        this.add(new PanelWybieg(zoo, sklep, wybieg));
-
-
     }
 
     public void usunWybieg(PanelWybieg W)

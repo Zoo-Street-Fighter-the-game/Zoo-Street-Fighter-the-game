@@ -41,12 +41,13 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
 
     //Metoda obserwatora
     public void aktualizuj_oberwujacego(float czystosc) {
-        this.mnoznik_pieniedzy+= (czystosc-70)/10;
+        mnoznik_pieniedzy+= (czystosc-70)/10;
     }
 
     //Metoda na karmienie
     public void karmienie(int jedzenie){
-        this.wskaznik_glodu+=jedzenie/2;
+        wskaznik_glodu+=jedzenie;
+        if(wskaznik_glodu>100) wskaznik_glodu=100;
     }
 
     //Jeszcze pusta metoda wypuszczania zwierzat
@@ -69,14 +70,14 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     @Override
     public String toString() {
         return "Zwierze{" +
-                "nazwa=" + this.getNazwa() +
-                ", zycie=" + this.getZycie() +
-                ", sila=" + this.getSila() +
-                ", wielkosc=" + this.getWielkosc() +
-                ", wskaznik_glodu=" + this.getWskaznik_glodu() +
-                ", przezyte_dni=" + this.getPrzezyte_dni() +
-                ", cena=" + this.getCena() +
-                ", rodzaj=" + this.getRodzaj() +
+                "nazwa=" + getNazwa() +
+                ", zycie=" + getZycie() +
+                ", sila=" + getSila() +
+                ", wielkosc=" + getWielkosc() +
+                ", wskaznik_glodu=" + getWskaznik_glodu() +
+                ", przezyte_dni=" + getPrzezyte_dni() +
+                ", cena=" + getCena() +
+                ", rodzaj=" + getRodzaj() +
                 '}';
     }
     //===========================================================================

@@ -29,7 +29,6 @@ public class OknoKupZwierze extends JFrame {
     {
         this.sklep = sklep;
         this.wybieg = wybieg;
-        sklep.setOknoKupZwierze(this);
 
         panelMain = new JPanel();
         panelRadio = new JPanel();
@@ -127,9 +126,9 @@ public class OknoKupZwierze extends JFrame {
         }
     }
 
-    public void brakSrodkow()
+    public static void brakSrodkow()
     {
-        JOptionPane.showMessageDialog(this,
+        JOptionPane.showMessageDialog(null,
                 "Nie masz wystarczajaco duzo monet!",
                 "Brak Srodkow",
                 JOptionPane.ERROR_MESSAGE);

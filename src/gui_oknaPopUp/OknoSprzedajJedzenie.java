@@ -10,13 +10,11 @@ import java.awt.event.ActionListener;
 
 public class OknoSprzedajJedzenie extends JFrame implements ActionListener {
     private JTextField iloscField;
-    private DzienneZoo zoo;
     private Sklep sklepik;
 
 
-    public OknoSprzedajJedzenie (DzienneZoo zoo, Sklep sklepik)
+    public OknoSprzedajJedzenie (Sklep sklepik)
     {
-        this.zoo=zoo;
         this.sklepik=sklepik;
         JLabel text = new JLabel("Sprzedaj Jedzenie");
 
@@ -31,7 +29,7 @@ public class OknoSprzedajJedzenie extends JFrame implements ActionListener {
         panel.add(iloscField);
 
         // Utworzenie przycisku
-        JButton kupButton = new JButton("Sprzedaj jedzenie " + " | Obecna cena za sztukę to: " + sklepik.getCena_sztuka_jedzenie());
+        JButton kupButton = new JButton("Sprzedaj jedzenie " + " | Obecna cena za sztukę to: " + Sklep.getCena_sztuka_jedzenie());
         panel.add(kupButton);
         kupButton.addActionListener(this);
 

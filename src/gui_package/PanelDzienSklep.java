@@ -6,27 +6,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import DzienneZooPakiet.DzienneZoo;
+import interfejsy.ObserwujacyPracownikGUI_interface;
 import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
 
-public class PanelDzienSklep extends JPanel implements UpdateGUI {
+public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
     private JButton kupJedzenie;
-
     private JButton kupWybieg;
     private JButton kupPracownika;
     private JButton sprzedajJedzenie ;
-
     private JButton sprzedajPracownika;
-    private DzienneZoo zoo;
     private Sklep sklep;
 
-    public PanelDzienSklep(DzienneZoo zoo, Sklep sklep)
+    private DzienneZoo zoo;
+    public PanelDzienSklep(Sklep sklep)
     {
         sklep.dodajObsewatoraGUI(this);
 
-        this.zoo = zoo;
         this.sklep = sklep;
+        this.zoo = sklep.getZoo();
+
         JLabel logosklepu = new JLabel();
         logosklepu.setText("Sklep (tu bedzie grafika)");
         this.setBackground(Color.yellow);
@@ -68,14 +68,6 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI {
 
     }
 
-    public DzienneZoo getZoo() {
-        return zoo;
-    }
-
-    public void setZoo(DzienneZoo zoo) {
-        this.zoo = zoo;
-    }
-
     public Sklep getSklep() {
         return sklep;
     }
@@ -84,38 +76,57 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI {
         this.sklep = sklep;
     }
 
+    @Override
+    public void reakcjaZaznaczenie() {
+
+        kupJedzenie.setEnabled(false);
+        kupPracownika.setEnabled(false);
+        kupWybieg.setEnabled(false);
+        sprzedajJedzenie.setEnabled(false);
+        sprzedajPracownika.setEnabled(false);
+    }
+
+    @Override
+    public void reakcjaOdznaczenie() {
+        kupJedzenie.setEnabled(true);
+        kupPracownika.setEnabled(true);
+        kupWybieg.setEnabled(true);
+        sprzedajJedzenie.setEnabled(true);
+        sprzedajPracownika.setEnabled(true);
+    }
+
     class ReakcjaKupWybieg implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.OknoKupWybieg(getZoo(), getSklep());
+            new gui_oknaPopUp.OknoKupWybieg(getSklep());
         }
     }
     class ReakcjaKupJedzenie implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.OknoKupJedzenie(getZoo(), getSklep());
+            new gui_oknaPopUp.OknoKupJedzenie(getSklep());
         }
     }
 
     class ReakcjaKupPracownika implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.OknoKupPracownika(getZoo(), getSklep());
+            new gui_oknaPopUp.OknoKupPracownika(getSklep());
         }
     }
 
     class ReakcjaSprzedajJedzenie implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.OknoSprzedajJedzenie(getZoo(), getSklep());
+            new gui_oknaPopUp.OknoSprzedajJedzenie(getSklep());
         }
     }
 
     class ReakcjaSprzedajPracownika implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.OknoSprzedajPracownika(getZoo(), getSklep());
+            new gui_oknaPopUp.OknoSprzedajPracownika(getSklep());
         }
     }
 

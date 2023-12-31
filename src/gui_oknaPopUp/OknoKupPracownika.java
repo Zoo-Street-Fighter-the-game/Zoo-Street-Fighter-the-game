@@ -13,11 +13,9 @@ public class OknoKupPracownika extends JFrame implements ActionListener {
     private JTextField nazwiskoField;
     private JSlider jakoscSlider;
     private JButton kupButton;
-    private DzienneZoo zoo;
     private Sklep sklepik;
 
-    public OknoKupPracownika(DzienneZoo zoo, Sklep sklep) {
-        this.zoo = zoo;
+    public OknoKupPracownika(Sklep sklep) {
         this.sklepik = sklep;
 
         JLabel text = new JLabel("Kup Pracownika");

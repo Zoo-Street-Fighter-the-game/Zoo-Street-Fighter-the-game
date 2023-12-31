@@ -18,14 +18,17 @@ public class PanelDzien extends JPanel implements UpdateGUI {
     private PanelDzienSklep panelSklep;
 
 
-    public PanelDzien(DzienneZoo zoo, Sklep sklep) //konstruktor domyslny
+    public PanelDzien(Sklep sklep) //konstruktor domyslny
     {
         sklep.dodajObsewatoraGUI(this);
 
-        panelZasoby = new PanelDzienZasoby(zoo, sklep);
-        panelWybiegi = new PanelDzienWybiegi(zoo, sklep, new Wybieg_podstawowy(rodzaj_srodowiska_enum.WODNY, wielkosc_wybiegu_enum.DUZY));
-        panelPracownicy = new PanelDzienPracownicy(zoo, sklep);
-        panelSklep = new PanelDzienSklep(zoo, sklep);
+        panelZasoby = new PanelDzienZasoby(sklep);
+        panelWybiegi = new PanelDzienWybiegi(sklep);
+        panelSklep = new PanelDzienSklep(sklep);
+        panelPracownicy = new PanelDzienPracownicy(sklep);
+
+        panelPracownicy.getListaObserwatorow().add(panelSklep);
+
         this.setBackground(Color.white);
         this.setLayout(new BorderLayout());
 

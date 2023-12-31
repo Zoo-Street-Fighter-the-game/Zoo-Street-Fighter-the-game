@@ -1,11 +1,13 @@
 package gui_package;
 import DzienneZooPakiet.DzienneZoo;
-import gui_package.MyFrame;
 import pakiet_sklep.Sklep;
 
 public class Main {
     public static void main (String [] args)
     {
-        MyFrame Frame = new MyFrame(DzienneZoo.getInstance(), new Sklep(DzienneZoo.getInstance()));
+        MyFrame Frame = new MyFrame(new Sklep(DzienneZoo.getInstance()));
     }
+    //trzeba zrobic polaczenie miedzy wskaznikiem glodu zwierzecia a jego smiercia
+    //trzeba zrobic mozliwosc wybierania ilosci jedzenia w gui do karmienia zwierzat
+
 }

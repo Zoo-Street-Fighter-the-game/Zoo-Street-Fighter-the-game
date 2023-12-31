@@ -9,9 +9,9 @@ import javax.swing.JFrame;
 public class MyFrame extends JFrame {
 
     private PanelDzien panelDzien;
-    public MyFrame(DzienneZoo zoo, Sklep sklepik) //konstruktor domyslny
+    public MyFrame(Sklep sklepik) //konstruktor domyslny
     {
-        panelDzien = new PanelDzien(zoo, sklepik);
+        panelDzien = new PanelDzien(sklepik);
         this.setTitle("Zoo Street Figther The Game");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);

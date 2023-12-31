@@ -2,6 +2,7 @@ package gui_package;
 
 import DzienneZooPakiet.DzienneZoo;
 import Pracownik_package.Pracownik;
+import interfejsy.ObserwujacyPracownikGUI_interface;
 import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
@@ -18,25 +19,34 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
     private ButtonGroup grupapracownikow=new ButtonGroup();
     private JButton zaznaczNie = new JButton("Usun zaznaczenie");
     private Pracownik zaznaczonyPracownik;
-    public PanelDzienPracownicy(DzienneZoo zoo, Sklep sklep)
+
+    private ArrayList<ObserwujacyPracownikGUI_interface> listaObserwatorow;
+
+    public PanelDzienPracownicy(Sklep sklep)
     {
-        this.zoo = zoo;
+        this.zoo = sklep.getZoo();
         sklep.dodajObsewatoraGUI(this);
         sklep.setPanelDzienPracownicy(this);
-        zaznaczNie.addActionListener(new Odzaznaczanie() );
+        zaznaczNie.addActionListener(new Odzaznaczanie());
         this.add(zaznaczNie);
+        listaObserwatorow =new ArrayList<>();
+
 
         this.setBackground(Color.red);
         this.setPreferredSize(new Dimension(250, 0));
 
 
     }
-    class zaznaczanie implements ActionListener
+    class Zaznaczanie implements ActionListener
     {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-                    zaznaczonyPracownik=zoo.getListaPracownikow().get(listaprzyciskow.indexOf((JRadioButton) e.getSource()));
+            zaznaczonyPracownik=zoo.getListaPracownikow().get(listaprzyciskow.indexOf((JRadioButton) e.getSource()));
+            for(ObserwujacyPracownikGUI_interface o : listaObserwatorow)
+            {
+                o.reakcjaZaznaczenie();
+            }
 
         }
     }
@@ -45,21 +55,23 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(e.getSource()==zaznaczNie)
-            {
                 grupapracownikow.clearSelection();
                 zaznaczonyPracownik=null;
-            }
+                for(ObserwujacyPracownikGUI_interface o : listaObserwatorow)
+                {
+                o.reakcjaOdznaczenie();
+                }
+
         }
     }
-    public void dodajpracownika(Pracownik p)
+    public void dodajPracownika(Pracownik p)
     {
         listaprzyciskow.add(new JRadioButton(p.toString()));
         this.add(listaprzyciskow.getLast());
         grupapracownikow.add(listaprzyciskow.getLast());
-        listaprzyciskow.getLast().addActionListener(new zaznaczanie() );
+        listaprzyciskow.getLast().addActionListener(new Zaznaczanie() );
     }
-    public void usunpracownika (int numer)
+    public void usunPracownika(int numer)
     {
 
         this.remove(listaprzyciskow.get(numer));
@@ -69,6 +81,13 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
     }
 
+    public Pracownik getZaznaczonyPracownik() {
+        return zaznaczonyPracownik;
+    }
+
+    public ArrayList<ObserwujacyPracownikGUI_interface> getListaObserwatorow() {
+        return listaObserwatorow;
+    }
 
     @Override
     public void updateGUI() {
