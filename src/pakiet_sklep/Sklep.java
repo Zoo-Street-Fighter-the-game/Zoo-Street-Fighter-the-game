@@ -17,7 +17,7 @@ import interfejsy.UpdateGUI;
 
 
 public class Sklep {
-    private static int cena_sztuka_jedzenie = 1;
+    final private static int cena_sztuka_jedzenie = 1;
     final private static int cenaPracownika =10;
     private ArrayList<UpdateGUI> listaGUI;
 
@@ -29,13 +29,9 @@ public class Sklep {
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;
     }
-    public void setCena_sztuka_jedzenie(int cena_sztuka_jedzenie) {
-        Sklep.cena_sztuka_jedzenie = cena_sztuka_jedzenie;
-    }
-
     public void setPanelDzienWybiegi(PanelDzienWybiegi panelDzienWybiegi) {this.panelDzienWybiegi = panelDzienWybiegi;}
     public void setPanelDzienPracownicy(PanelDzienPracownicy panelDzienPracownicy) {this.panelDzienPracownicy = panelDzienPracownicy;}
-
+    public int getCenaPracownika() {return cenaPracownika;}
     //SETTER I GETTER DLA OBIEKTU DzienneZoo
     public DzienneZoo getZoo() {
         return zoo;

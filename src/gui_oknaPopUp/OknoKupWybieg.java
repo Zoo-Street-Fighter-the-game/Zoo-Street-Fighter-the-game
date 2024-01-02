@@ -23,6 +23,7 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
     private ButtonGroup wielkoscWybieguGroup;
     private wielkosc_wybiegu_enum wielkosc;
     private rodzaj_srodowiska_enum rodzaj;
+    private JLabel buttonLabel;
 
     public OknoKupWybieg(Sklep sklep) {
         this.sklepik = sklep;
@@ -63,7 +64,10 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
         this.add(wielkoscPanel);
 
 
-         kupButton = new JButton("Kup wybieg");
+        kupButton = new JButton("Kup wybieg");
+        buttonLabel = new JLabel();
+        kupButton.add(buttonLabel);
+
         kupButton.addActionListener(this);
         malyButton.addActionListener(this);
         sredniButton.addActionListener(this);
@@ -83,13 +87,16 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
         if(e.getSource()==malyButton)
         {
             wielkosc = wielkosc_wybiegu_enum.MALY;
+            updateKoszt();
         }
         if(e.getSource()==sredniButton)
         {
             wielkosc = wielkosc_wybiegu_enum.SREDNI;
+            updateKoszt();
         }if(e.getSource()==duzyButton)
         {
             wielkosc = wielkosc_wybiegu_enum.DUZY;
+            updateKoszt();
         }
         if(e.getSource()==powietrznyButton)
         {
@@ -111,5 +118,15 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
             else
                 sklepik.kup_wybieg(rodzaj, wielkosc);
         }
+    }
+
+    public void updateKoszt()
+    {
+        if(wielkosc!=null)
+        {
+            buttonLabel.setText("Koszt: " + wielkosc.getLiczbowa_Cena_Wybiegu());
+        }
+        else buttonLabel.setText("Podaj wielkosc wybiegu");
+        this.pack();
     }
 }

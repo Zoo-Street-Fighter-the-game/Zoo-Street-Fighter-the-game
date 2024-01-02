@@ -126,7 +126,9 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
     class ReakcjaSprzedajPracownika implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.OknoSprzedajPracownika(getSklep());
+            if(!zoo.getListaPracownikow().isEmpty()) {
+                new gui_oknaPopUp.OknoSprzedajPracownika(getSklep());
+            }
         }
     }
 

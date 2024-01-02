@@ -5,19 +5,22 @@ import pakiet_sklep.Sklep;
 
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class OknoSprzedajPracownika extends JFrame implements ActionListener {
+public class OknoSprzedajPracownika extends JFrame implements ActionListener, ChangeListener {
     private JSlider slider;
     private JButton przycisk;
     private Sklep sklep;
+    private JLabel buttonLabel;
 
     public OknoSprzedajPracownika(Sklep sklep) {
         this.sklep=sklep;
         this.setTitle("Okno Slider");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JPanel panel = new JPanel();
         getContentPane().add(panel);
         panel.setLayout(new GridLayout(0, 1));
@@ -32,10 +35,13 @@ public class OknoSprzedajPracownika extends JFrame implements ActionListener {
         slider.setMinorTickSpacing(1);
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
+        slider.addChangeListener(this);
         panel.add(slider);
 
 
         przycisk = new JButton("Pokaż wartość");
+        buttonLabel = new JLabel(String.valueOf(sklep.getZoo().getListaPracownikow().get(slider.getValue()-1).getJakoscUslug()*sklep.getCenaPracownika()));
+        przycisk.add(buttonLabel);
         panel.add(przycisk);
         przycisk.addActionListener(this);
 
@@ -49,6 +55,14 @@ public class OknoSprzedajPracownika extends JFrame implements ActionListener {
             int wartoscSlidera = slider.getValue()-1;
             sklep.sprzedaj_pracownika(wartoscSlidera);
             this.dispose();
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        if(e.getSource()==slider)
+        {
+            buttonLabel.setText(String.valueOf(String.valueOf(sklep.getZoo().getListaPracownikow().get(slider.getValue()-1).getJakoscUslug()*sklep.getCenaPracownika())));
         }
     }
 }

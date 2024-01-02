@@ -4,16 +4,19 @@ import DzienneZooPakiet.DzienneZoo;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class OknoKupPracownika extends JFrame implements ActionListener {
+public class OknoKupPracownika extends JFrame implements ActionListener, ChangeListener {
     private JTextField imieField;
     private JTextField nazwiskoField;
     private JSlider jakoscSlider;
     private JButton kupButton;
     private Sklep sklepik;
+    private JLabel buttonLabel;
 
     public OknoKupPracownika(Sklep sklep) {
         this.sklepik = sklep;
@@ -40,12 +43,15 @@ public class OknoKupPracownika extends JFrame implements ActionListener {
         jakoscSlider.setMajorTickSpacing(1);
         jakoscSlider.setPaintTicks(true);
         jakoscSlider.setPaintLabels(true);
+        jakoscSlider.addChangeListener(this);
 
         panel.add(new JLabel("  Jakosc uslug"));
         panel.add(jakoscSlider);
 
         // Utworzenie przycisku
         kupButton = new JButton("Kup Pracownika");
+        buttonLabel = new JLabel(String.valueOf(jakoscSlider.getValue()*sklepik.getCenaPracownika()));
+        kupButton.add(buttonLabel);
         panel.add(kupButton);
         kupButton.addActionListener(this);
 
@@ -55,13 +61,17 @@ public class OknoKupPracownika extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String imie = imieField.getText();
-        String nazwisko = nazwiskoField.getText();
-        int jakosc = jakoscSlider.getValue();
-
         if(e.getSource()==kupButton)
         {
-            sklepik.kup_pracownika(imie,nazwisko,jakosc);
+            sklepik.kup_pracownika(imieField.getText(),nazwiskoField.getText(),jakoscSlider.getValue());
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        if(e.getSource()==jakoscSlider)
+        {
+            buttonLabel.setText(String.valueOf(jakoscSlider.getValue()*sklepik.getCenaPracownika()));
         }
     }
 }

@@ -60,7 +60,7 @@ public class OknoSprzedajZwierze extends JFrame {
     {
         for(Zwierze zwierze : wybieg.getLista_zwierzat())
         {
-            listaRadioButton.add(new JRadioButton(zwierze.getNazwa() +" "+zwierze.getImie()));
+            listaRadioButton.add(new JRadioButton(zwierze.getNazwa() +" "+zwierze.getImie()+" "+zwierze.getCena()));
             panelRadio.add(listaRadioButton.getLast());
             listaRadioButton.getLast().addActionListener(new ReakcjaRadioButton());
             group.add(listaRadioButton.getLast());

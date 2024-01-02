@@ -57,7 +57,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
         wyczyscButton.setEnabled(false);
         nakarmButton.setEnabled(false);
 
-        wybiegLabel.setText("Wybieg");
+        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg " + wybieg.getRodzaj_srodowiska());
         wybiegLabel.setBackground(Color.red);
         wybiegLabel.setOpaque(true);
 
@@ -109,6 +109,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
 
     @Override
     public void updateGUI() {
+        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg " + wybieg.getRodzaj_srodowiska());
         this.repaint();
         this.revalidate();
     }
