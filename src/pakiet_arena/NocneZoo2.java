@@ -71,13 +71,14 @@ public class NocneZoo2 {
 
             if (twoje_zwierze.getZycie() <= 0) {
                 System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, -10); // Kara za przegraną walkę
+                agent.learn(1, 0, 1, 10); // Nagroda za przegraną walkę przeciwnika
                 break;
             } else if (przeciwnik.getZycie() <= 0) {
                 System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, 10); // Nagroda za wygraną walkę
+                agent.learn(1, 0, 1, -10); // Kara za wygraną walkę przeciwnika
                 break;
             }
+
 
             int actionPrzeciwnika = agent.chooseAction(1);
 
@@ -85,16 +86,16 @@ public class NocneZoo2 {
                 Atak atakPrzeciwnika = new Atak();
                 atakPrzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
                 System.out.println("Przeciwnik zaatakował!");
-
                 if (twoje_zwierze.getZycie() <= 0) {
                     System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, actionPrzeciwnika, 1, 10); // Nagroda za przegraną walkę
+                    agent.learn(1, 0, 1, 10);
                     break;
                 } else if (przeciwnik.getZycie() <= 0) {
                     System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, actionPrzeciwnika, 1, -10); // Kara za wygraną walkę
+                    agent.learn(1, 0, 1, -10);
                     break;
                 }
+
             } else {
                 Leczenie leczenieprzeciwnika = new Leczenie();
                 leczenieprzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
@@ -104,13 +105,14 @@ public class NocneZoo2 {
 
                 if (twoje_zwierze.getZycie() <= 0) {
                     System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, actionPrzeciwnika, 1, 10); // Kara za przegraną walkę
+                    agent.learn(1, 0, 1, 10); // Nagroda za przegraną walkę przeciwnika
                     break;
                 } else if (przeciwnik.getZycie() <= 0) {
                     System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, actionPrzeciwnika, 1, -10); // Nagroda za wygraną walkę
+                    agent.learn(1, 0, 1, -10); // Kara za wygraną walkę przeciwnika
                     break;
                 }
+
             }
 
             if (twoje_zwierze.getZycie() <= 0) {
@@ -120,7 +122,7 @@ public class NocneZoo2 {
                 System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
                 break;
             }
-            System.out.println(twoje_zwierze.getZycie());
+            System.out.println("Moje:"+twoje_zwierze.getZycie());
             System.out.println(przeciwnik.getZycie());
 
         } while (wybor != 3);
