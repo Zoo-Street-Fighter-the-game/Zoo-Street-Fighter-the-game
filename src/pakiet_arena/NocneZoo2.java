@@ -71,11 +71,11 @@ public class NocneZoo2 {
 
             if (twoje_zwierze.getZycie() <= 0) {
                 System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, 10); // Nagroda za przegraną walkę przeciwnika
+                agent.learn(1, 0, 1, 10);
                 break;
             } else if (przeciwnik.getZycie() <= 0) {
                 System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, -10); // Kara za wygraną walkę przeciwnika
+                agent.learn(1, 0, 1, -10);
                 break;
             }
 
@@ -101,15 +101,15 @@ public class NocneZoo2 {
                 leczenieprzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
                 System.out.println("Przeciwnik się leczy.");
 
-                agent.learn(1, actionPrzeciwnika, 1, 5); // Nagroda za leczenie przeciwnika
+                agent.learn(1, actionPrzeciwnika, 1, 5);
 
                 if (twoje_zwierze.getZycie() <= 0) {
                     System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, 10); // Nagroda za przegraną walkę przeciwnika
+                    agent.learn(1, 0, 1, 10);
                     break;
                 } else if (przeciwnik.getZycie() <= 0) {
                     System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, -10); // Kara za wygraną walkę przeciwnika
+                    agent.learn(1, 0, 1, -10);
                     break;
                 }
 
@@ -120,6 +120,8 @@ public class NocneZoo2 {
                 break;
             } else if (przeciwnik.getZycie() <= 0) {
                 System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
+
+
                 break;
             }
             System.out.println("Moje:"+twoje_zwierze.getZycie());
@@ -127,6 +129,7 @@ public class NocneZoo2 {
 
         } while (wybor != 3);
         agent.saveQTableToFile(Q_TABLE_FILE);
+        agent.displayQTable();
     }
 }
 
@@ -138,9 +141,9 @@ class QLearningAgent {
 
     public QLearningAgent(int stateSize, int actionSize) {
         qTable = new double[stateSize][actionSize];
-        learningRate = 0.1;
-        discountFactor = 0.9;
-        epsilon = 0.1;
+        learningRate = 0.15;
+        discountFactor = 0.9999;
+        epsilon = 0.2;
     }
 
     public int chooseAction(int state) {
@@ -156,14 +159,15 @@ class QLearningAgent {
                 }
             }
 
-            // Zmniejszenie prawdopodobieństwa wyboru akcji leczenia
-            if (bestAction == 1 && Math.random() < 0.7) {
-                return 0;  // Wybierz atak zamiast leczenia w 70% przypadków
+            //
+            if (bestAction == 1 && Math.random() < 0.5) {
+                return 0;
             } else {
                 return bestAction;
             }
         }
     }
+
 
 
     public void learn(int state, int action, int nextState, int reward) {
@@ -197,4 +201,13 @@ class QLearningAgent {
             e.printStackTrace();
         }
     }
+    public void displayQTable() {
+        for (int i = 0; i < qTable.length; i++) {
+            for (int j = 0; j < qTable[i].length; j++) {
+                System.out.print(qTable[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
 }
