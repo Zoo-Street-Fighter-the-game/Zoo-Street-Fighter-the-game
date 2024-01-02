@@ -18,7 +18,7 @@ import static pakiet_arena.Wybor_zwierzecia.*;
 import static pakiet_arena.Wybor_zwierzecia.stworzenie_zwierzecia_walczacego;
 
 public class NocneZoo2 {
-    private static final String Q_TABLE_FILE = "q_table.ser";
+    private static final String Q_TABLE_FILE = "q_table_new.ser";
 
     public static void main(String[] args) {
         QLearningAgent agent = new QLearningAgent(2, 2);
