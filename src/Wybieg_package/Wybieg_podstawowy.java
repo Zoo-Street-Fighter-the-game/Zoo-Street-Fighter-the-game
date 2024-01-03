@@ -84,7 +84,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
 
     public  boolean czy_wybieg_ma_ten_rodzaj_zwierzecia(Zwierze obiekt){
         if (!getLista_zwierzat().isEmpty()){
-            return obiekt.getClass().getName().equals(getRodzaj_zwierzecia_w_wybiegu());
+            return obiekt.getNazwa().equals(getRodzaj_zwierzecia_w_wybiegu());
         }
         return true;
     }
@@ -260,7 +260,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //--------------------------------------------------------------
     public String getRodzaj_zwierzecia_w_wybiegu(){
         if (!getLista_zwierzat().isEmpty())
-            return getLista_zwierzat().getFirst().getClass().getName();
+            return getLista_zwierzat().getFirst().getNazwa();
         return null;
     }
     //===================================================================================

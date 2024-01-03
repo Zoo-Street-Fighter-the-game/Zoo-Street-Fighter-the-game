@@ -33,13 +33,13 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
        // this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setLayout(new FlowLayout());
         this.setPreferredSize(new Dimension( 250, 0));
-        kupJedzenie = new JButton("Kup jedzenie");
+        kupJedzenie = new JButton("Kup Jedzenie");
 
         kupWybieg = new JButton("Kup Wybieg");
-        kupPracownika = new JButton("Kup pracownika");
-        sprzedajJedzenie = new JButton("sprzedaj jedzenie");
+        kupPracownika = new JButton("Kup Pracownika");
+        sprzedajJedzenie = new JButton("Sprzedaj Jedzenie");
 
-        sprzedajPracownika = new JButton("sprzedaj Pracownika");
+        sprzedajPracownika = new JButton("Sprzedaj Pracownika");
 
         setsettingsforbutton(kupJedzenie);
         setsettingsforbutton(kupPracownika);
