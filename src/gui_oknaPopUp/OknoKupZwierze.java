@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class OknoKupZwierze extends JFrame {
 
@@ -24,6 +25,8 @@ public class OknoKupZwierze extends JFrame {
 
     private JTextField imieTextField;
 
+    private String [] imiona = {"Fafik", "Puszek", "Leon", "Lolek", "Bolek", "Tysiu", "Misiek", "Pypeć", "Miszor", "Klaus", "Berni", "Gwiazdor", "Król", "Cezar", "Pimpek", "Malec", "Słodziak", "Kluska", "Pikuś", "Rezi", "Gimper", "Multi", "Merghani", "Blowek", "Naruciak", "Vertez", "Pan Śmietanka", "Dremu", "Maniek"};
+
     JButton kupZwierzeButton;
     public OknoKupZwierze (Sklep sklep, Wybieg_podstawowy wybieg)
     {
@@ -34,7 +37,9 @@ public class OknoKupZwierze extends JFrame {
         panelRadio = new JPanel();
         text = new JLabel("Wybierz zwierze: ");
 
-        imieTextField = new JTextField("Fafik");
+        Random gen = new Random();
+
+        imieTextField = new JTextField(imiona[gen.nextInt(imiona.length)]);
         imieTextField.setPreferredSize(new Dimension(200, 30));
 
         kupZwierzeButton = new JButton("Kup zwierze");

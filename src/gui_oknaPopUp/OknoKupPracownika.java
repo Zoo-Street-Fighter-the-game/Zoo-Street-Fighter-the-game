@@ -9,6 +9,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class OknoKupPracownika extends JFrame implements ActionListener, ChangeListener {
     private JTextField imieField;
@@ -17,9 +18,11 @@ public class OknoKupPracownika extends JFrame implements ActionListener, ChangeL
     private JButton kupButton;
     private Sklep sklepik;
     private JLabel buttonLabel;
-
+    private String [] imiona = {"Michał", "Maciej", "Dawid", "Krzysztof", "Jan", "Kamil", "Dominik", "Robert", "Franciszek", "Pankracy", "Paweł", "Szymon", "Lech", "Aleksander", "Janusz", "Miłosz", "Mikołaj", "Jakub", "Kryspin", "Krystian", "Daniel", "Ełzebiusz", "Damian", "Ignacy", "Grzegorz", "Julian", "Dariusz", "Mariusz", "Szczepan", "Władysław", "Hubert", "Filip", "Przemek", "Eryk"};
+    private String [] nazwiska ={"Grzyb", "Kowlaski", "Nowak", "Wiśniewski", "Kamiński", "Lewandowski", "Zieliński", "Szymański", "Mazur", "Dąbrowski", "Kwiatkowski", "Jankowski", "Krawczyk", "Kaczmarek", "Zając", "Król", "Wojsciechowski", "Bielczyk", "Glik", "Szczęsny", "Błaszczykowski", "Krychowiak", "Piszczek", "Wawrzyniak", "Fabiański", "Kędziora", "Pazdan", "Puchacz", "Balcerowski", "Ponitka", "Sochan", "Podziemski", "Pacura", "Chmiel", "Tarlicki", "Kraniecki"};
     public OknoKupPracownika(Sklep sklep) {
         this.sklepik = sklep;
+        Random gen = new Random();
 
         JLabel text = new JLabel("Kup Pracownika");
         this.setTitle("Kup Pracownika");
@@ -30,12 +33,12 @@ public class OknoKupPracownika extends JFrame implements ActionListener, ChangeL
         panel.setLayout(new GridLayout(0,1));
 
         // Utworzenie pól tekstowych
-        imieField = new JTextField(10);
+        imieField = new JTextField(imiona[gen.nextInt(imiona.length)],15);
         panel.add(new JLabel("  Imie:"));
         panel.getComponent(panel.getComponentCount()-1).setFont(new Font(null, Font.ITALIC, 20));
         panel.add(imieField);
 
-        nazwiskoField = new JTextField(10);
+        nazwiskoField = new JTextField(nazwiska[gen.nextInt(nazwiska.length)],15);
         panel.add(new JLabel("  Nazwisko:"));
         panel.getComponent(panel.getComponentCount()-1).setFont(new Font(null, Font.ITALIC, 20));
         panel.add(nazwiskoField);

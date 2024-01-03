@@ -2,6 +2,7 @@ package gui_package;
 
 import DzienneZooPakiet.DzienneZoo;
 import Wybieg_package.Wybieg_podstawowy;
+import enumy.rodzaj_srodowiska_enum;
 import gui_oknaPopUp.OknoNakarmZwierzeta;
 import interfejsy.ObserwujacyPracownikGUI_interface;
 import interfejsy.UpdateGUI;
@@ -57,11 +58,26 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
         wyczyscButton.setEnabled(false);
         nakarmButton.setEnabled(false);
 
-        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg " + wybieg.getRodzaj_srodowiska());
-        wybiegLabel.setForeground(Color.white);
+        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg pusty");
 
-        this.setBackground(Color.blue);
+        if(wybieg.getRodzaj_srodowiska()== rodzaj_srodowiska_enum.LADOWY)
+        {
+            this.setBackground(new Color(0x0E9A07));
+            wybiegLabel.setForeground(Color.white);
+        }
+        if(wybieg.getRodzaj_srodowiska()== rodzaj_srodowiska_enum.WODNY)
+        {
+            this.setBackground(new Color(0x024177));
+            wybiegLabel.setForeground(Color.white);
+        }
+        if(wybieg.getRodzaj_srodowiska()== rodzaj_srodowiska_enum.POWIETRZNY)
+        {
+            this.setBackground(new Color(0xCAF8F4));
+            wybiegLabel.setForeground(Color.black);
+        }
+
         this.setPreferredSize(new Dimension(200, 200));
+        this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -108,7 +124,13 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
 
     @Override
     public void updateGUI() {
-        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg " + wybieg.getRodzaj_srodowiska());
+        if(wybieg.getLista_zwierzat().isEmpty()) {
+            wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg pusty");
+        }
+        else
+        {
+            wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg dla " + wybieg.getLista_zwierzat().getFirst().getNazwa());
+        }
         this.repaint();
         this.revalidate();
     }
@@ -164,7 +186,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            sklep.sprzedaj_wybieg(wybieg);
+            sklep.sprzedaj_wybieg(wybieg, PanelWybieg.this);
             ((PanelDzienWybiegi)PanelWybieg.this.getParent()).usunWybieg(PanelWybieg.this);
         }
     }

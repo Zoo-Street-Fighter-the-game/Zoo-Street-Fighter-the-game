@@ -74,10 +74,12 @@ public class Sklep {
 
 
 
-    public void sprzedaj_wybieg(Wybieg_podstawowy wybieg) {
+    public void sprzedaj_wybieg(Wybieg_podstawowy wybieg, ObserwujacyPracownikGUI_interface panelWybieg) {
 
         // Logika sprzedaży wybiegu
+        panelDzienPracownicy.getListaObserwatorow().remove(panelWybieg);
         zoo.usunWybieg(wybieg);
+
 
         // Wzrost stanu konta po sprzedaży
         int cenaWybiegu = (int) wybieg.getCena();

@@ -44,10 +44,11 @@ public class PanelWybiegBezdomni extends JPanel implements UpdateGUI, Obserwujac
 
         nakarmButton.setEnabled(false);
 
-        wybiegLabel.setText(0 +". Wybieg dla bezdomnych");
+        wybiegLabel.setText("Wybieg dla bezdomnych");
         wybiegLabel.setForeground(Color.white);
 
-        this.setBackground(Color.blue);
+        this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        this.setBackground(new Color(0xF19D9D));
         this.setPreferredSize(new Dimension(200, 200));
 
         this.setLayout(new GridBagLayout());
