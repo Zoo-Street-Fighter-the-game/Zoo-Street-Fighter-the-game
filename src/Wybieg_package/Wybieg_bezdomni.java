@@ -49,9 +49,8 @@ public class Wybieg_bezdomni extends Wybieg_abstract{
     }
     @Override
     public  void usun_zwierze(Zwierze obiekt) {
-        obiekt.release();
-        obiekt = null;
-        getLista_zwierzat().remove( null);
+        getLista_zwierzat().remove(obiekt);
+        System.out.println("usunieto zwierze metoda w wybiegu bezdomni");
     }
 
     public String toString(){

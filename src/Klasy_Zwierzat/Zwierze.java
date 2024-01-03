@@ -50,12 +50,6 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
         if(wskaznik_glodu>100) wskaznik_glodu=100;
     }
 
-    //Jeszcze pusta metoda wypuszczania zwierzat
-    public void release()
-    {
-        //tu bedzie funkcja release
-    }
-
     public Zwierze deep_clone() {
         return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
     }

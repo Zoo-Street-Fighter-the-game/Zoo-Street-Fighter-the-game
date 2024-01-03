@@ -62,7 +62,6 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         if (getLista_zwierzat().contains(obiekt)){
             setWolne_miejsce_w_wybiegu( getWolne_miejsce_w_wybiegu() + obiekt.getWielkosc() );
             usun_obserwatora(obiekt);
-            obiekt.release();
             getLista_zwierzat().remove( obiekt);
 
             System.gc();
