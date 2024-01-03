@@ -250,7 +250,6 @@ public class Sklep {
     public void nakarmZwierzeta(Pracownik pracownik, Wybieg_abstract wybieg, int ilosc)
     {
         boolean czyGlodne = false;
-
         for(Zwierze zwierze : wybieg.getLista_zwierzat())
         {
             if(zwierze.getWskaznik_glodu()<100) {

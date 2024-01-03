@@ -4,32 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Uzyto tostringa zwierzat do pokazywania w gui">
-      <change afterPath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ikony/IkonaExp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ikony/IkonaJedzenie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ikony/IkonaMonety.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ikony/IkonaPracownik.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ikony/IkonaPracownikWybrany.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_17_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_17_38__Changes_.xml" beforeDir="false" />
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Działa całe dzienne zoo gui oprocz wybiegow ez">
+      <change afterPath="$PROJECT_DIR$/src/ikony/ShopImage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPokazZwierzeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPokazZwierzeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/MyFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +77,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "GUIBranch",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hcyta/OneDrive/Dokumenty/IST sem 1/Programowanie Strukturalne i Obiektowe/Zoo-Street-Fighter-the-game/src/ikony",
+    "last_opened_file_path": "C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,16 +92,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\ikony" />
+      <recent name="C:\Users\kamil\OneDrive\Dokumenty\GitHub\Zoo-Street-Fighter-the-game\src\ikony" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\ikony" />
+      <recent name="C:\Users\kamil\OneDrive\Dokumenty\GitHub\Zoo-Street-Fighter-the-game\src\ikony" />
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\gui_package" />
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src" />
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="gui_package" />
       <recent name="gui_oknaPopUp" />
     </key>
   </component>
@@ -163,12 +142,15 @@
       <workItem from="1703942493136" duration="5124000" />
       <workItem from="1703951260679" duration="9239000" />
       <workItem from="1703966702575" duration="3466000" />
-      <workItem from="1703971136463" duration="4041000" />
-      <workItem from="1704033228610" duration="219000" />
-      <workItem from="1704197030006" duration="4589000" />
-      <workItem from="1704203767767" duration="294000" />
-      <workItem from="1704227615257" duration="56000" />
-      <workItem from="1704228151640" duration="10000000" />
+      <workItem from="1703971136463" duration="4275000" />
+      <workItem from="1704024458922" duration="236000" />
+      <workItem from="1704128190425" duration="177000" />
+      <workItem from="1704144565460" duration="1016000" />
+      <workItem from="1704146088676" duration="210000" />
+      <workItem from="1704207392456" duration="631000" />
+      <workItem from="1704225527793" duration="1114000" />
+      <workItem from="1704293941201" duration="453000" />
+      <workItem from="1704309259905" duration="1694000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -242,31 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703940527816</updated>
     </task>
-    <task id="LOCAL-00010" summary="Działa całe gui :D">
+    <task id="LOCAL-00010" summary="Działa całe dzienne zoo gui oprocz wybiegow ez">
       <option name="closed" value="true" />
-      <created>1704032689684</created>
+      <created>1703975408646</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1704032689685</updated>
+      <updated>1703975408647</updated>
     </task>
-    <task id="LOCAL-00011" summary="Uzyto tostringa zwierzat do pokazywania w gui">
-      <option name="closed" value="true" />
-      <created>1704033443342</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1704033443342</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Uzyto tostringa zwierzat do pokazywania w gui">
-      <option name="closed" value="true" />
-      <created>1704201627553</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1704201627553</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,9 +259,8 @@
     <MESSAGE value="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI" />
     <MESSAGE value="Działa kupowanie zwierzat&#10;Działa wyświetlanie zwierzat w radioboxie" />
     <MESSAGE value="Działa sprzedawanie zwierząt" />
-    <MESSAGE value="Działa całe gui :D" />
-    <MESSAGE value="Uzyto tostringa zwierzat do pokazywania w gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uzyto tostringa zwierzat do pokazywania w gui" />
+    <MESSAGE value="Działa całe dzienne zoo gui oprocz wybiegow ez" />
+    <option name="LAST_COMMIT_MESSAGE" value="Działa całe dzienne zoo gui oprocz wybiegow ez" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

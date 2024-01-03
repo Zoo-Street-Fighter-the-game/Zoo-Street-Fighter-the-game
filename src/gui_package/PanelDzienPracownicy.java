@@ -27,7 +27,15 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         this.zoo = sklep.getZoo();
         sklep.dodajObsewatoraGUI(this);
         sklep.setPanelDzienPracownicy(this);
+
+        JLabel logo = new JLabel();
+        logo.setIcon( new ImageIcon("src/ikony/EmployessImage.png"));
+        this.add(logo);
         zaznaczNie.addActionListener(new Odzaznaczanie());
+
+        zaznaczNie.setFont(new Font("Comic Sans",Font.BOLD,15));
+        zaznaczNie.setForeground(Color.BLACK);
+        zaznaczNie.setBackground(new Color(0xe3e2de));
         this.add(zaznaczNie);
         listaObserwatorow =new ArrayList<>();
 

@@ -28,7 +28,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         this.zoo = sklep.getZoo();
 
         JLabel logosklepu = new JLabel();
-        logosklepu.setText("Sklep (tu bedzie grafika)");
+        logosklepu.setIcon( new ImageIcon("src/ikony/ShopImage.png"));
         this.setBackground(new Color(0xd3f3e3));
        // this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setLayout(new FlowLayout());

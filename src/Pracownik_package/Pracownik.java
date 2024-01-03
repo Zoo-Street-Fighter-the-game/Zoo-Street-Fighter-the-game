@@ -58,7 +58,7 @@ public class Pracownik{
         return
                  imie +
                 " " + nazwisko +
-                " " + jakoscUslug+" jakosci" ;
+                " " + jakoscUslug+" jakosci";
     }
 
 
