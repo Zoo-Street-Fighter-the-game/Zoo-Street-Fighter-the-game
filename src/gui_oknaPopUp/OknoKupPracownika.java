@@ -32,10 +32,12 @@ public class OknoKupPracownika extends JFrame implements ActionListener, ChangeL
         // Utworzenie pól tekstowych
         imieField = new JTextField(10);
         panel.add(new JLabel("  Imie:"));
+        panel.getComponent(panel.getComponentCount()-1).setFont(new Font(null, Font.ITALIC, 20));
         panel.add(imieField);
 
         nazwiskoField = new JTextField(10);
         panel.add(new JLabel("  Nazwisko:"));
+        panel.getComponent(panel.getComponentCount()-1).setFont(new Font(null, Font.ITALIC, 20));
         panel.add(nazwiskoField);
 
         // Utworzenie suwaka
@@ -51,7 +53,10 @@ public class OknoKupPracownika extends JFrame implements ActionListener, ChangeL
         // Utworzenie przycisku
         kupButton = new JButton("Kup Pracownika");
         buttonLabel = new JLabel(String.valueOf(jakoscSlider.getValue()*sklepik.getCenaPracownika()));
-        kupButton.add(buttonLabel);
+        buttonLabel.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
+        buttonLabel.setFont(new Font(null, Font.PLAIN, 24));
+        buttonLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.add(buttonLabel);
         panel.add(kupButton);
         kupButton.addActionListener(this);
 

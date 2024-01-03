@@ -43,7 +43,7 @@ public class Pracownik{
 
     }
 
-    public void nakarmZwierze(int ilosc, Wybieg_podstawowy wybieg){
+    public void nakarmZwierze(int ilosc, Wybieg_abstract wybieg){
         for(Zwierze zwierze : wybieg.getLista_zwierzat())
         {
             zasoby.zmienJedzenie(-ilosc);

@@ -29,7 +29,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
 
         JLabel logosklepu = new JLabel();
         logosklepu.setText("Sklep (tu bedzie grafika)");
-        this.setBackground(Color.yellow);
+        this.setBackground(new Color(0xd3f3e3));
        // this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setLayout(new FlowLayout());
         this.setPreferredSize(new Dimension( 250, 0));
@@ -143,7 +143,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         button.setFont(new Font("Comic Sans",Font.BOLD,15));
 
         button.setForeground(Color.BLACK);
-        button.setBackground(Color.lightGray);
+        button.setBackground(new Color(0xe3e2de));
     }
 
 

@@ -1,6 +1,7 @@
 package gui_package;
 
 import DzienneZooPakiet.DzienneZoo;
+import Wybieg_package.Wybieg_bezdomni;
 import Wybieg_package.Wybieg_podstawowy;
 import gui_oknaPopUp.OknoNakarmZwierzeta;
 import interfejsy.ObserwujacyPracownikGUI_interface;
@@ -12,26 +13,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
+public class PanelWybiegBezdomni extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
 
     private DzienneZoo zoo;
     private Sklep sklep;
-    private Wybieg_podstawowy wybieg;
+    private Wybieg_bezdomni wybieg;
     private JLabel wybiegLabel;
-
-    private WybiegButton kupZwierzeButton;
-
     private WybiegButton sprzedajZwierzeButton;
-
-    private WybiegButton sprzedajWybiegButton;
 
     private WybiegButton nakarmButton;
 
-    private WybiegButton wyczyscButton;
-
     private WybiegButton pokazZwierzetaButton;
 
-    public PanelWybieg(DzienneZoo zoo, Sklep sklep, Wybieg_podstawowy wybieg)
+    public PanelWybiegBezdomni(DzienneZoo zoo, Sklep sklep, Wybieg_bezdomni wybieg)
     {
         sklep.dodajObsewatoraGUI(this);
 
@@ -40,24 +34,17 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
         this.wybieg = wybieg;
 
         wybiegLabel = new JLabel("Wybieg", SwingConstants.CENTER);
-        kupZwierzeButton = new WybiegButton("Kup zwierze");
         sprzedajZwierzeButton = new WybiegButton("Sprzedaj zwierze");
-        sprzedajWybiegButton = new WybiegButton("Sprzedaj wybieg");
         nakarmButton = new WybiegButton("Nakarm zwierzeta");
-        wyczyscButton = new WybiegButton("Wyczysc wybieg");
         pokazZwierzetaButton = new WybiegButton("Pokaz zwierzeta");
 
-        kupZwierzeButton.addActionListener(new ReakcjaKupZwierze());
         sprzedajZwierzeButton.addActionListener(new ReakcjaSprzedajZwierze());
-        sprzedajWybiegButton.addActionListener(new ReakcjaSprzedajWybieg());
         nakarmButton.addActionListener(new ReakcjaNakarm());
-        wyczyscButton.addActionListener(new ReakcjaWyczysc());
         pokazZwierzetaButton.addActionListener(new ReakcjaPokazZwierzeta());
 
-        wyczyscButton.setEnabled(false);
         nakarmButton.setEnabled(false);
 
-        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg " + wybieg.getRodzaj_srodowiska());
+        wybiegLabel.setText(0 +". Wybieg dla bezdomnych");
         wybiegLabel.setForeground(Color.white);
 
         this.setBackground(Color.blue);
@@ -81,34 +68,19 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        this.add(kupZwierzeButton, gbc);
+        this.add(sprzedajZwierzeButton, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 1;
-        this.add(sprzedajZwierzeButton, gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 2;
         this.add(pokazZwierzetaButton, gbc);
 
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        this.add(sprzedajWybiegButton, gbc);
-
         gbc.gridx = 0;
-        gbc.gridy = 3;
+        gbc.gridy = 2;
         this.add(nakarmButton, gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 3;
-        this.add(wyczyscButton, gbc);
-
-
     }
 
     @Override
     public void updateGUI() {
-        wybiegLabel.setText((zoo.getListaWybiegow().indexOf(wybieg)+1) +". Wybieg " + wybieg.getRodzaj_srodowiska());
         this.repaint();
         this.revalidate();
     }
@@ -116,40 +88,23 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
     @Override
     public void reakcjaZaznaczenie() {
         if(((PanelDzien)this.getParent().getParent()).getPanelPracownicy().getZaznaczonyPracownik().getIloscakcji()>0) {
-            this.kupZwierzeButton.setEnabled(false);
-            this.sprzedajWybiegButton.setEnabled(false);
             this.sprzedajZwierzeButton.setEnabled(false);
             this.pokazZwierzetaButton.setEnabled(false);
             this.nakarmButton.setEnabled(true);
-            this.wyczyscButton.setEnabled(true);
         }
         else
         {
-            this.kupZwierzeButton.setEnabled(false);
-            this.sprzedajWybiegButton.setEnabled(false);
             this.sprzedajZwierzeButton.setEnabled(false);
             this.pokazZwierzetaButton.setEnabled(false);
             this.nakarmButton.setEnabled(false);
-            this.wyczyscButton.setEnabled(false);
         }
     }
 
     @Override
     public void reakcjaOdznaczenie() {
-        this.kupZwierzeButton.setEnabled(true);
-        this.sprzedajWybiegButton.setEnabled(true);
         this.sprzedajZwierzeButton.setEnabled(true);
         this.pokazZwierzetaButton.setEnabled(true);
         this.nakarmButton.setEnabled(false);
-        this.wyczyscButton.setEnabled(false);
-    }
-
-    class ReakcjaKupZwierze implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-                new gui_oknaPopUp.OknoKupZwierze(sklep, wybieg);
-        }
     }
 
     class ReakcjaSprzedajZwierze implements ActionListener
@@ -160,29 +115,11 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
         }
     }
 
-    class ReakcjaSprzedajWybieg implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            sklep.sprzedaj_wybieg(wybieg);
-            ((PanelDzienWybiegi)PanelWybieg.this.getParent()).usunWybieg(PanelWybieg.this);
-        }
-    }
-
     class ReakcjaNakarm implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new OknoNakarmZwierzeta(sklep, ((PanelDzien)PanelWybieg.this.getParent().getParent()).getPanelPracownicy().getZaznaczonyPracownik(), wybieg);
-        }
-    }
-
-    class ReakcjaWyczysc implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            sklep.wyczyscWybieg(((PanelDzien)PanelWybieg.this.getParent().getParent()).getPanelPracownicy().getZaznaczonyPracownik(),wybieg);
-
+            new OknoNakarmZwierzeta(sklep, ((PanelDzien) PanelWybiegBezdomni.this.getParent().getParent()).getPanelPracownicy().getZaznaczonyPracownik(), wybieg);
         }
     }
 

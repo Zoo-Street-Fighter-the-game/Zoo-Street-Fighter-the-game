@@ -21,21 +21,25 @@ public class OknoKupJedzenie extends JFrame implements ActionListener, DocumentL
     public OknoKupJedzenie (Sklep sklep)
     {
         this.sklepik=sklep;
-        JLabel text = new JLabel("Kup Jedzenie");
+        JLabel icon = new JLabel(new ImageIcon("src/ikony/IkonaJedzenie.png"));
 
         this.setTitle("Kup Jedzenie");
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        this.add(text);
         JPanel panel = new JPanel();
         getContentPane().add(panel);
+        panel.add(icon);
+        panel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 20));
 
         // Utworzenie pola tekstowego
         iloscField = new JTextField(10);
+        iloscField.setPreferredSize(new Dimension(60,30));
+        iloscField.setFont(new Font(null, Font.PLAIN, 20));
         panel.add(iloscField);
         iloscField.getDocument().addDocumentListener(this);
 
         //Utworzenie labelu kosztu
         buttonLabel = new JLabel();
+        buttonLabel.setFont(new Font(null, Font.PLAIN, 24));
         panel.add(buttonLabel);
 
         // Utworzenie przycisku
@@ -66,10 +70,11 @@ public class OknoKupJedzenie extends JFrame implements ActionListener, DocumentL
     @Override
     public void insertUpdate(DocumentEvent e) {
         try {
-            buttonLabel.setText("Koszt: " + Sklep.getCena_sztuka_jedzenie() * Integer.parseInt(iloscField.getText()));
+            buttonLabel.setText("" + Sklep.getCena_sztuka_jedzenie() * Integer.parseInt(iloscField.getText()));
+            buttonLabel.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
         } catch(Exception ex)
         {
-            buttonLabel.setText("Koszt: NaN");
+            buttonLabel.setText("NaN");
         }
         this.pack();
     }
@@ -77,7 +82,8 @@ public class OknoKupJedzenie extends JFrame implements ActionListener, DocumentL
     @Override
     public void removeUpdate(DocumentEvent e) {
         try {
-            buttonLabel.setText("Koszt: " + Sklep.getCena_sztuka_jedzenie() * Integer.parseInt(iloscField.getText()));
+            buttonLabel.setText("" + Sklep.getCena_sztuka_jedzenie() * Integer.parseInt(iloscField.getText()));
+            buttonLabel.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
         } catch(Exception ex)
         {
             buttonLabel.setText("");
@@ -88,10 +94,11 @@ public class OknoKupJedzenie extends JFrame implements ActionListener, DocumentL
     @Override
     public void changedUpdate(DocumentEvent e) {
             try {
-                buttonLabel.setText("Koszt: " + Sklep.getCena_sztuka_jedzenie() * Integer.parseInt(iloscField.getText()));
+                buttonLabel.setText("" + Sklep.getCena_sztuka_jedzenie() * Integer.parseInt(iloscField.getText()));
+                buttonLabel.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
             } catch(Exception ex)
             {
-                buttonLabel.setText("Koszt: NaN");
+                buttonLabel.setText("NaN");
             }
         this.pack();
     }

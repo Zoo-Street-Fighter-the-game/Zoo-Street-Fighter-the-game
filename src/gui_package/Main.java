@@ -8,5 +8,4 @@ public class Main {
         MyFrame Frame = new MyFrame(new Sklep(DzienneZoo.getInstance()));
     }
     //trzeba zrobic polaczenie miedzy wskaznikiem glodu zwierzecia a jego smierci
-
 }

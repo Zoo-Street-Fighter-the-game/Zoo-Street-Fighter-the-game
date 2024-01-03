@@ -32,7 +32,7 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         listaObserwatorow =new ArrayList<>();
 
 
-        this.setBackground(Color.red);
+        this.setBackground(new Color(0xd3f3e3));
         this.setPreferredSize(new Dimension(250, 0));
 
 
@@ -67,6 +67,9 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
     public void dodajPracownika(Pracownik p)
     {
         listaprzyciskow.add(new JRadioButton(p.toString()));
+        listaprzyciskow.getLast().setBackground(new Color(0xe3e2de));
+        listaprzyciskow.getLast().setIcon(new ImageIcon("src/ikony/IkonaPracownik.png"));
+        listaprzyciskow.getLast().setSelectedIcon(new ImageIcon("src/ikony/IkonaPracownikWybrany.png"));
         this.add(listaprzyciskow.getLast());
         grupapracownikow.add(listaprzyciskow.getLast());
         listaprzyciskow.getLast().addActionListener(new Zaznaczanie() );

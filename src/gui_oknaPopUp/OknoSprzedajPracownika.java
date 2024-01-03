@@ -41,7 +41,10 @@ public class OknoSprzedajPracownika extends JFrame implements ActionListener, Ch
 
         przycisk = new JButton("Pokaż wartość");
         buttonLabel = new JLabel(String.valueOf(sklep.getZoo().getListaPracownikow().get(slider.getValue()-1).getJakoscUslug()*sklep.getCenaPracownika()));
-        przycisk.add(buttonLabel);
+        buttonLabel.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
+        buttonLabel.setFont(new Font(null, Font.PLAIN, 24));
+        buttonLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.add(buttonLabel);
         panel.add(przycisk);
         przycisk.addActionListener(this);
 

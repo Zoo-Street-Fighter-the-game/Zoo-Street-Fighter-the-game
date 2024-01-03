@@ -28,6 +28,7 @@ public class PanelDzien extends JPanel implements UpdateGUI {
         panelPracownicy = new PanelDzienPracownicy(sklep);
 
         panelPracownicy.getListaObserwatorow().add(panelSklep);
+        panelPracownicy.getListaObserwatorow().add(panelWybiegi.getWybiegBezdomni());
 
         this.setBackground(Color.white);
         this.setLayout(new BorderLayout());

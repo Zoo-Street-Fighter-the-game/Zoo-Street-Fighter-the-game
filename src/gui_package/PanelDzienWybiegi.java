@@ -6,16 +6,23 @@ import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
+
+    private PanelWybiegBezdomni wybiegBezdomni;
+
     public PanelDzienWybiegi(Sklep sklep)
     {
         sklep.dodajObsewatoraGUI(this);
         sklep.setPanelDzienWybiegi(this);
 
-        this.setBackground(Color.lightGray);
+        this.setBackground(new Color(0xffffff));
+        this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         this.setLayout(new FlowLayout(FlowLayout.LEADING));
+        wybiegBezdomni = new PanelWybiegBezdomni(sklep.getZoo(), sklep, sklep.getZoo().getWybiegDlaBezdomnych());
+        this.add(wybiegBezdomni);
     }
 
     public void usunWybieg(PanelWybieg W)
@@ -36,5 +43,9 @@ public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
 
         revalidate();
         repaint();
+    }
+
+    public PanelWybiegBezdomni getWybiegBezdomni() {
+        return wybiegBezdomni;
     }
 }

@@ -2,6 +2,7 @@ package gui_oknaPopUp;
 
 import DzienneZooPakiet.DzienneZoo;
 import Pracownik_package.Pracownik;
+import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import pakiet_sklep.Sklep;
 
@@ -17,9 +18,9 @@ public class OknoNakarmZwierzeta extends JFrame implements ActionListener, Chang
     private JButton przycisk;
     private Sklep sklep;
     private Pracownik pracownik;
-    private Wybieg_podstawowy wybieg;
+    private Wybieg_abstract wybieg;
     private JLabel buttonLabel;
-    public OknoNakarmZwierzeta(Sklep sklep, Pracownik pracownik, Wybieg_podstawowy wybieg) {
+    public OknoNakarmZwierzeta(Sklep sklep, Pracownik pracownik, Wybieg_abstract wybieg) {
         this.sklep=sklep;
         this.pracownik=pracownik;
         this.wybieg=wybieg;

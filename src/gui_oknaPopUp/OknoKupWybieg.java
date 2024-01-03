@@ -66,7 +66,9 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
 
         kupButton = new JButton("Kup wybieg");
         buttonLabel = new JLabel();
-        kupButton.add(buttonLabel);
+        buttonLabel.setFont(new Font(null, Font.PLAIN, 24));
+        buttonLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        this.add(buttonLabel);
 
         kupButton.addActionListener(this);
         malyButton.addActionListener(this);
@@ -124,7 +126,8 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
     {
         if(wielkosc!=null)
         {
-            buttonLabel.setText("Koszt: " + wielkosc.getLiczbowa_Cena_Wybiegu());
+            buttonLabel.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
+            buttonLabel.setText("" + wielkosc.getLiczbowa_Cena_Wybiegu());
         }
         else buttonLabel.setText("Podaj wielkosc wybiegu");
         this.pack();

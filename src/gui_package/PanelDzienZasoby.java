@@ -7,9 +7,6 @@ import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
 public class PanelDzienZasoby extends JPanel implements UpdateGUI {
-    JLabel monety;
-    JLabel jedzenie;
-    JLabel exp;
     JLabel zasobymonety;
     JLabel jedzenieIkonka;
     JLabel expIkonka;
@@ -22,38 +19,34 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI {
         sklep.dodajObsewatoraGUI(this);
 
         this.zoo=sklep.getZoo();
-        monety = new JLabel(String.valueOf(zoo.getZmiennaZasoby().getMonety()));
-        monety.setFont(new Font(null, Font.PLAIN, 30));
-        jedzenie = new JLabel(String.valueOf(zoo.getZmiennaZasoby().getJedzenie()));
-        jedzenie.setFont(new Font(null, Font.PLAIN, 30));
-        exp = new JLabel(String.valueOf(zoo.getZmiennaZasoby().getExp()));
-        exp.setFont(new Font(null, Font.PLAIN, 30));
-        zasobymonety = new JLabel("Monety: ");
-        zasobymonety.setFont(new Font(null, Font.PLAIN, 30));
-        jedzenieIkonka = new JLabel("Jedzenie: ");
-        jedzenieIkonka.setFont(new Font(null, Font.PLAIN, 30));
-        expIkonka = new JLabel("exp: ");
-        expIkonka.setFont(new Font(null, Font.PLAIN, 30));
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 30, 10));
+
+        zasobymonety = new JLabel("Monety: " + zoo.getZmiennaZasoby().getMonety());
+        zasobymonety.setIcon(new ImageIcon("src/ikony/IkonaMonety.png"));
+        zasobymonety.setFont(new Font(null, Font.ITALIC, 40));
+        jedzenieIkonka = new JLabel("Jedzenie: " + zoo.getZmiennaZasoby().getJedzenie());
+        jedzenieIkonka.setIcon(new ImageIcon("src/ikony/IkonaJedzenie.png"));
+        jedzenieIkonka.setFont(new Font(null, Font.ITALIC, 40));
+        expIkonka = new JLabel("Exp: " + zoo.getZmiennaZasoby().getExp());
+        expIkonka.setIcon(new ImageIcon("src/ikony/IkonaExp.png"));
+        expIkonka.setFont(new Font(null, Font.ITALIC, 40));
 
         this.add(zasobymonety);
-        this.add(monety);
         this.add(jedzenieIkonka);
-        this.add(jedzenie);
         this.add(expIkonka);
-        this.add(exp);
 
 
 
-        this.setBackground(Color.green);
+        this.setBackground(new Color(0xD3F3E3));
         this.setPreferredSize(new Dimension(0, 75));
 
     }
 
     @Override
     public void updateGUI() {
-        monety.setText(String.valueOf(zoo.getZmiennaZasoby().getMonety()));
-        jedzenie.setText(String.valueOf(zoo.getZmiennaZasoby().getJedzenie()));
-        exp.setText(String.valueOf(zoo.getZmiennaZasoby().getExp()));
+        zasobymonety.setText("Monety: " +zoo.getZmiennaZasoby().getMonety());
+        jedzenieIkonka.setText("Jedzenie: " +zoo.getZmiennaZasoby().getJedzenie());
+        expIkonka.setText("Exp: " + zoo.getZmiennaZasoby().getExp());
         repaint();
         revalidate();
     }

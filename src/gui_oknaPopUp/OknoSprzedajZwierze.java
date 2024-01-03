@@ -1,6 +1,7 @@
 package gui_oknaPopUp;
 
 import Klasy_Zwierzat.Zwierze;
+import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import pakiet_sklep.Sklep;
 
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 public class OknoSprzedajZwierze extends JFrame {
 
     private Sklep sklep;
-    private Wybieg_podstawowy wybieg;
+    private Wybieg_abstract wybieg;
     private JPanel panelMain;
     private JPanel panelRadio;
     private JLabel text;
@@ -21,7 +22,7 @@ public class OknoSprzedajZwierze extends JFrame {
     private Zwierze wybrany;
     private JButton sprzedajZwierzeButton;
     ButtonGroup group;
-    public OknoSprzedajZwierze(Sklep sklep, Wybieg_podstawowy wybieg)
+    public OknoSprzedajZwierze(Sklep sklep, Wybieg_abstract wybieg)
     {
         this.sklep = sklep;
         this.wybieg = wybieg;

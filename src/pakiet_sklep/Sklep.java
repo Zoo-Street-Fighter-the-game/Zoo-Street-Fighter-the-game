@@ -4,6 +4,7 @@ import java.util.*;
 import DzienneZooPakiet.*;
 import Klasy_Zwierzat.Zwierze;
 import Pracownik_package.Pracownik;
+import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
@@ -101,7 +102,7 @@ public class Sklep {
         updateGUI();
     }
 
-    public void sprzedaj_zwierze(Wybieg_podstawowy wybieg, Zwierze zwierze) {
+    public void sprzedaj_zwierze(Wybieg_abstract wybieg, Zwierze zwierze) {
         /*
         Scanner scanner = new Scanner(System.in);
 
@@ -246,7 +247,7 @@ public class Sklep {
 
     }
 
-    public void nakarmZwierzeta(Pracownik pracownik, Wybieg_podstawowy wybieg, int ilosc)
+    public void nakarmZwierzeta(Pracownik pracownik, Wybieg_abstract wybieg, int ilosc)
     {
         boolean czyGlodne = false;
 
