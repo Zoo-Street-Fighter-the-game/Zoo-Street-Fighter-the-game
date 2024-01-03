@@ -2,11 +2,13 @@ package tests;
 
 import DzienneZooPakiet.*;
 //import Klasy_Zwierzat.ZwierzeLadowe;
+import Przedmioty.*;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import enumy.zwierzeta_enum;
 import pakiet_zasoby.Zasoby;
 import pakiet_sklep.*;
+import Przedmioty.Adidasy;
 
 import java.util.NoSuchElementException;
 
@@ -17,8 +19,10 @@ public class test1 {
         DzienneZoo Zoo = DzienneZoo.getInstance();
 
         Sklep sklepik = new Sklep(Zoo);
+        sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY);
+        sklepik.kup_zwierze(zwierzeta_enum.LOS);
 
-        System.out.println(Zoo);
+/*        System.out.println(Zoo);
         sklepik.kup_wybieg(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY);
         System.out.println(Zoo);
         sklepik.kup_pracownika("Hubert", "Cytar", 1);
@@ -33,7 +37,14 @@ public class test1 {
         sklepik.sprzedaj_zwierze();
         sklepik.sprzedaj_pracownika();
         System.out.println(Zoo);
-        Zoo.getWybiegDlaBezdomnych().toString();
+        Zoo.getWybiegDlaBezdomnych().toString();*/
+
+
+        // ja bym przedmioty przerobil tez na enumu zebu uniknac tych inicalizacji przedmitow
+        Miecz Miecz = new Miecz();
+        Patyk Patyk = new Patyk();
+        sklepik.kup_bron(Miecz);
+        sklepik.kup_bron(Patyk);
 
 /*
 <<<<<<< HEAD

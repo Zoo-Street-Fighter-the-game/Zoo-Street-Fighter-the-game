@@ -3,6 +3,7 @@ import java.util.*;
 import DzienneZooPakiet.*;
 import Klasy_Zwierzat.Zwierze;
 import Pracownik_package.Pracownik;
+import Przedmioty.Przedmiot;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
@@ -269,7 +270,136 @@ public class Sklep {
 
 
 
-    //public  void kup_bron(){} do zrobienia
+    public void kup_bron(Przedmiot nazwa_przedmiotu) {
+        try {
+            if (nazwa_przedmiotu.getCena() > zoo.getZmiennaZasoby().getMonety()) {
+                throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Kup inne zwierzę lub zbierz więcej środków");
+            }
+
+            zoo.getZmiennaZasoby().zmienMonety(-nazwa_przedmiotu.getCena());
+            System.out.println("Zakup udany");
+
+            // Przypisanie broni do zwierzęcia
+            System.out.println("Przypisz do jakiego zwierzecia ma należeć broń:");
+
+            // Wyświetlanie dostępnych wybiegów
+            System.out.println("Dostępne wybiegi:");
+            ArrayList<Wybieg_podstawowy> listaWybiegow = zoo.getListaWybiegow();
+
+            while (true) {
+                // Wybór numeru wybiegu
+                System.out.print("Wybierz numer wybiegu: ");
+                Scanner scanner = new Scanner(System.in);
+                int numerWybiegu = scanner.nextInt();
+
+                // Sprawdzenie poprawności wyboru
+                if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
+                    System.out.println("Błędny numer wybiegu. Spróbuj ponownie.");
+                } else {
+                    // Wybranie konkretnego wybiegu
+                    Wybieg_podstawowy wybranyWybieg = listaWybiegow.get(numerWybiegu - 1);
+
+                    // Wyświetlanie zwierząt w wybranym wybiegu
+                    System.out.println("Zwierzęta w wybranym wybiegu:");
+                    List<Zwierze> zwierzetaWybiegu = wybranyWybieg.getLista_zwierzat();
+
+                    for (int i = 0; i < zwierzetaWybiegu.size(); i++) {
+                        System.out.println((i + 1) + ". " + zwierzetaWybiegu.get(i));
+                    }
+
+                    // Wybór numeru zwierzęcia
+                    System.out.print("Wybierz numer zwierzęcia: ");
+                    int numerZwierzecia = scanner.nextInt();
+
+                    // Sprawdzenie poprawności wyboru
+                    if (numerZwierzecia < 1 || numerZwierzecia > zwierzetaWybiegu.size()) {
+                        System.out.println("Błędny numer zwierzęcia. Spróbuj ponownie.");
+                    } else {
+                        // Wybranie konkretnego zwierzęcia
+                        Zwierze zwierzeDoPrzypisaniaBroni = zwierzetaWybiegu.get(numerZwierzecia - 1);
+
+                        // Sprawdzenie, czy zwierzę już posiada broń
+                        if (zwierzeDoPrzypisaniaBroni.getPrzedmiot() != null) {
+                            System.out.println("To zwierzę już posiada broń. Wybierz inne zwierzę.");
+                        } else {
+                            // Przypisanie broni do zwierzęcia
+                            zwierzeDoPrzypisaniaBroni.setPrzedmiot(nazwa_przedmiotu);
+                            System.out.println("Broń przypisana do zwierzęcia: " + zwierzeDoPrzypisaniaBroni);
+                            break; // Wyjście z pętli, gdy przypisanie broni powiodło się
+                        }
+                    }
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Błędny format danych. Wprowadź poprawny numer.");
+        } catch (IllegalArgumentException | BrakSrodkowException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void sprzedaj_bron() {
+        try {
+            // Wyświetlanie dostępnych wybiegów
+            System.out.println("Dostępne wybiegi:");
+            ArrayList<Wybieg_podstawowy> listaWybiegow = zoo.getListaWybiegow();
+
+            // Wybór numeru wybiegu
+            while (true) {
+                try {
+                    System.out.print("Wybierz numer wybiegu: ");
+                    Scanner scanner = new Scanner(System.in);
+                    int numerWybiegu = scanner.nextInt();
+
+
+                    if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
+                        System.out.println("Błędny numer wybiegu. Spróbuj ponownie.");
+                    } else {
+                        // Wybranie konkretnego wybiegu
+                        Wybieg_podstawowy wybranyWybieg = listaWybiegow.get(numerWybiegu - 1);
+
+                        // Wyświetlanie zwierząt w wybranym wybiegu
+                        System.out.println("Zwierzęta w wybranym wybiegu:");
+                        List<Zwierze> zwierzetaWybiegu = wybranyWybieg.getLista_zwierzat();
+
+                        for (int i = 0; i < zwierzetaWybiegu.size(); i++) {
+                            System.out.println((i + 1) + ". " + zwierzetaWybiegu.get(i));
+                        }
+
+
+                        System.out.print("Wybierz numer zwierzęcia: ");
+                        int numerZwierzecia = scanner.nextInt();
+
+
+                        if (numerZwierzecia < 1 || numerZwierzecia > zwierzetaWybiegu.size()) {
+                            System.out.println("Błędny numer zwierzęcia. Spróbuj ponownie.");
+                        } else {
+                            // Wybranie konkretnego zwierzęcia
+                            Zwierze zwierzeDoSprzedazy = zwierzetaWybiegu.get(numerZwierzecia - 1);
+
+                            // Sprawdzenie, czy zwierzę posiada broń
+                            Przedmiot bronZwierzecia = zwierzeDoSprzedazy.getPrzedmiot();
+                            if (bronZwierzecia == null) {
+                                throw new IllegalArgumentException("To zwierzę nie posiada broni do sprzedania.");
+                            }
+
+
+                            int cenaBroni = bronZwierzecia.getCena();
+                            zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaBroni);
+                            zwierzeDoSprzedazy.setPrzedmiot(null); // Usunięcie broni ze zwierzęcia
+
+                            System.out.println("Broń została pomyślnie sprzedana.");
+                            break;
+                        }
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Błędny format danych. Wprowadź poprawny numer.");
+                }
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
 
     public static Thread startMessageSenderThread() {
         Thread thread = new Thread(() -> {

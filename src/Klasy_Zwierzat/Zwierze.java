@@ -1,5 +1,6 @@
 package Klasy_Zwierzat;
 
+import Przedmioty.Przedmiot;
 import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 
@@ -19,6 +20,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
+    private Przedmiot przedmiot;
 
     //===========================================================================
     //KONSTRUKTOR
@@ -151,5 +153,13 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
 
     public void setMnoznik_pieniedzy(float mnoznik_pieniedzy) {
         this.mnoznik_pieniedzy = mnoznik_pieniedzy;
+    }
+
+    public Przedmiot getPrzedmiot() {
+        return przedmiot;
+    }
+
+    public void setPrzedmiot(Przedmiot przedmiot) {
+        this.przedmiot = przedmiot;
     }
 }

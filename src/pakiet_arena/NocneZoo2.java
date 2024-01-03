@@ -2,6 +2,7 @@ package pakiet_arena;
 
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
+import Przedmioty.Miecz;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
@@ -42,10 +43,12 @@ public class NocneZoo2 {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        Miecz Miecz = new Miecz();
 
         int wybor;
         przeciwnik.setZycie(100);
         przeciwnik.setSila(20);
+        twoje_zwierze.setPrzedmiot(Miecz);
 
         do {
             // Wybór akcji przez gracza
