@@ -10,7 +10,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze() {
-            return new Zwierze("Pingwin", 20, 10, 4, 5, 10, rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze("Kowalski","Pingwin", 20, 10, 10,10,4, 10,5, 5,10, 10, rodzaj_srodowiska_enum.WODNY);
         }
     },
     NIEDZWIEDZ {
@@ -20,7 +20,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze() {
-            return new Zwierze("Niedźwiedź", 20, 10, 1, 1, 10, rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze("XYZ", "Niedźwiedź", 20, 10, 2,2,5, 1, 10,3,10,10, rodzaj_srodowiska_enum.LADOWY);
         }
     },
     LOS {
@@ -31,7 +31,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
 
         @Override
         public Zwierze stworzZwierze() {
-            return new Zwierze("Łoś", 1, 1, 10, 1, 10, rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze("YZX","Łoś", 1, 1, 1,2,10, 5,5,5,1, 10, rodzaj_srodowiska_enum.LADOWY);
         }
     };
 

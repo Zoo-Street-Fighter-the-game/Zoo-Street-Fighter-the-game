@@ -46,7 +46,7 @@ public class MainFrame {
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.DUZY));
-        zoo.getListaWybiegow().getLast().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
+        zoo.getListaWybiegow().getLast().dodaj_zwierze(new Zwierze("xyz", "kshsjsk",100, 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
         zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
         zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
         Sklep sklep = new Sklep(zoo);
