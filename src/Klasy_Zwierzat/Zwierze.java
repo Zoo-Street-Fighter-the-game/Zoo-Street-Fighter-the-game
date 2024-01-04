@@ -79,6 +79,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
                 ", rodzaj=" + this.getRodzaj() +
                 '}';
     }
+
     //===========================================================================
     //SETTERY I GETTERY
     //===========================================================================

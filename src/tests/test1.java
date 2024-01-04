@@ -2,6 +2,7 @@ package tests;
 
 import DzienneZooPakiet.*;
 //import Klasy_Zwierzat.ZwierzeLadowe;
+import Klasy_Zwierzat.Zwierze;
 import Przedmioty.*;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
@@ -43,6 +44,7 @@ public class test1 {
         // ja bym przedmioty przerobil tez na enumu zebu uniknac tych inicalizacji przedmitow
         Miecz Miecz = new Miecz();
         Patyk Patyk = new Patyk();
+
         sklepik.kup_bron(Miecz);
         sklepik.kup_bron(Patyk);
 

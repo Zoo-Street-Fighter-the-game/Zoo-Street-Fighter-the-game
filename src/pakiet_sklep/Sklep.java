@@ -325,6 +325,7 @@ public class Sklep {
                             // Przypisanie broni do zwierzęcia
                             zwierzeDoPrzypisaniaBroni.setPrzedmiot(nazwa_przedmiotu);
                             System.out.println("Broń przypisana do zwierzęcia: " + zwierzeDoPrzypisaniaBroni);
+                            zwierzeDoPrzypisaniaBroni.setZycie(zwierzeDoPrzypisaniaBroni.getZycie()+nazwa_przedmiotu.getZycie());
                             break; // Wyjście z pętli, gdy przypisanie broni powiodło się
                         }
                     }
@@ -373,10 +374,10 @@ public class Sklep {
                             System.out.println("Błędny numer zwierzęcia. Spróbuj ponownie.");
                         } else {
                             // Wybranie konkretnego zwierzęcia
-                            Zwierze zwierzeDoSprzedazy = zwierzetaWybiegu.get(numerZwierzecia - 1);
+                            Zwierze zwierzeDoSprzedazyPrzedmiotu = zwierzetaWybiegu.get(numerZwierzecia - 1);
 
                             // Sprawdzenie, czy zwierzę posiada broń
-                            Przedmiot bronZwierzecia = zwierzeDoSprzedazy.getPrzedmiot();
+                            Przedmiot bronZwierzecia = zwierzeDoSprzedazyPrzedmiotu.getPrzedmiot();
                             if (bronZwierzecia == null) {
                                 throw new IllegalArgumentException("To zwierzę nie posiada broni do sprzedania.");
                             }
@@ -384,9 +385,11 @@ public class Sklep {
 
                             int cenaBroni = bronZwierzecia.getCena();
                             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaBroni);
-                            zwierzeDoSprzedazy.setPrzedmiot(null); // Usunięcie broni ze zwierzęcia
+                            zwierzeDoSprzedazyPrzedmiotu.setPrzedmiot(null); // Usunięcie broni ze zwierzęcia
 
                             System.out.println("Broń została pomyślnie sprzedana.");
+
+                            zwierzeDoSprzedazyPrzedmiotu.setZycie(zwierzeDoSprzedazyPrzedmiotu.getZycie()-bronZwierzecia.getZycie());
                             break;
                         }
                     }
