@@ -4,11 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="" />
+    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/enumy/przedmioty_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Adidasy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Miecz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Patyk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/PistoletNaWode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/RekawiceBokserskie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Topor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Wuwuzela.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Zbroja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dominik__branch&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "SuperExtraUltimateNocnyBranch",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -47,6 +70,7 @@
       <workItem from="1703158796736" duration="9000" />
       <workItem from="1703158920413" duration="936000" />
       <workItem from="1704375881070" duration="4772000" />
+      <workItem from="1704407359109" duration="308000" />
     </task>
     <servers />
   </component>

@@ -3,12 +3,10 @@ package propozycja_nocne_gui;
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import Przedmioty.Przedmiot;
-import Przedmioty.Topor;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import pakiet_sklep.Sklep;
-import pakiet_zasoby.Zasoby;
 
 import javax.swing.*;
 import java.awt.*;

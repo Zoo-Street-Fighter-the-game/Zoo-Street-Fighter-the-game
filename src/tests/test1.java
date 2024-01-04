@@ -2,16 +2,12 @@ package tests;
 
 import DzienneZooPakiet.*;
 //import Klasy_Zwierzat.ZwierzeLadowe;
-import Klasy_Zwierzat.Zwierze;
 import Przedmioty.*;
+import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import enumy.zwierzeta_enum;
-import pakiet_zasoby.Zasoby;
 import pakiet_sklep.*;
-import Przedmioty.Adidasy;
-
-import java.util.NoSuchElementException;
 
 
 public class test1 {
@@ -42,8 +38,8 @@ public class test1 {
 
 
         // ja bym przedmioty przerobil tez na enumu zebu uniknac tych inicalizacji przedmitow
-        Miecz Miecz = new Miecz();
-        Patyk Patyk = new Patyk();
+        Przedmiot Miecz =  przedmioty_enum.MIECZ.stworzPrzedmiot();
+        Przedmiot Patyk = przedmioty_enum.PATYK.stworzPrzedmiot();
 
         sklepik.kup_bron(Miecz);
         sklepik.kup_bron(Patyk);

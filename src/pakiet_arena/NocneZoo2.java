@@ -2,14 +2,11 @@ package pakiet_arena;
 
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
-import Przedmioty.Miecz;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import noc_walka.Atak;
 import noc_walka.Leczenie;
-import pakiet_arena.Arena;
-import pakiet_arena.Poziom_trudnosci;
 
 import java.io.*;
 import java.util.Random;
@@ -29,7 +26,7 @@ public class NocneZoo2 {
 
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 20, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum);
 
         Poziom_trudnosci poziom_trudnosci = new Poziom_trudnosci();
         poziom_trudnosci.ustaw_poziom_trudnosci();
