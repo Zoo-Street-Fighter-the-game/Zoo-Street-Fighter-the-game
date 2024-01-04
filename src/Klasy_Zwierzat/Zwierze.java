@@ -1,5 +1,6 @@
 package Klasy_Zwierzat;
 
+import Przedmioty.Przedmiot;
 import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 
@@ -13,6 +14,8 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     private String nazwa;
     private int zycie;
     private int sila;
+    private int szybkosc;
+    private int szczescie;
     private int wielkosc;
     private int wskaznik_glodu;
     private int przezyte_dni = 0;
@@ -20,14 +23,20 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
 
+
+    private Przedmiot przedmiot;
+
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String imie, String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int cena, rodzaj_srodowiska_enum rodzaj){
-        this.imie = imie;
+
+    public Zwierze(String imie, String nazwa, int zycie, int sila,int szybkosc, int szczescie, int wielkosc, int wskaznik_glodu, int cena,rodzaj_srodowiska_enum rodzaj){
+        this.imie=imie;
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
+        this.szybkosc=szybkosc;
+        this.szczescie=szczescie;
         this.wielkosc = wielkosc;
         this.wskaznik_glodu = wskaznik_glodu;
         this.cena = cena;
@@ -51,9 +60,8 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     }
 
     public Zwierze deep_clone() {
-        return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
+        return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(),getSzybkosc(),getSzczescie(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
     }
-
 
 
     //===========================================================================
@@ -71,13 +79,43 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
                 "Najedzony w " + getWskaznik_glodu() +" procentach\n"+
                 "Przezyl " + getPrzezyte_dni() +" dni\n"+
                 "Cena to: " + getCena() +"\n"+
-                "Rodzaj to: " + getRodzaj() +" \n";
+                "Rodzaj to: " + getRodzaj() +" \n"+
+                "Szybkosc to: " + this.getSzybkosc() +"\n"+
+                "Szczescie to: " + this.getSzczescie() +"\n";
+
+
     }
+
     //===========================================================================
     //SETTERY I GETTERY
     //===========================================================================
 
-    public String getImie() {return imie;}
+
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public int getSzybkosc() {
+        return szybkosc;
+    }
+
+    public void setSzybkosc(int szybkosc) {
+        this.szybkosc = szybkosc;
+    }
+
+    public int getSzczescie() {
+        return szczescie;
+    }
+
+    public void setSzczescie(int szczescie) {
+        this.szczescie = szczescie;
+    }
+
+
     public String getNazwa() {
         return nazwa;
     }
@@ -148,5 +186,14 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
 
     public void setMnoznik_pieniedzy(float mnoznik_pieniedzy) {
         this.mnoznik_pieniedzy = mnoznik_pieniedzy;
+    }
+
+
+    public Przedmiot getPrzedmiot() {
+        return przedmiot;
+    }
+
+    public void setPrzedmiot(Przedmiot przedmiot) {
+        this.przedmiot = przedmiot;
     }
 }

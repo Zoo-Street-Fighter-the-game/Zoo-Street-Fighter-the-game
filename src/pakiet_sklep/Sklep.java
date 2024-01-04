@@ -18,6 +18,7 @@ import gui_package.PanelDzienWybiegi;
 import gui_package.PanelWybieg;
 import interfejsy.ObserwujacyPracownikGUI_interface;
 import interfejsy.UpdateGUI;
+import Przedmioty.Przedmiot;
 
 
 public class Sklep {
@@ -28,7 +29,6 @@ public class Sklep {
     private PanelDzienWybiegi panelDzienWybiegi;
     private PanelDzienPracownicy panelDzienPracownicy;
     private DzienneZoo zoo;
-
 
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;
@@ -50,7 +50,6 @@ public class Sklep {
     public void sprzedaj_jedzenie(int ilosc) {
 
 
-
         try {
             if (ilosc <= 0) {
                 throw new IllegalArgumentException("Błędna wartość. Wprowadź liczbę większą niż 0.");
@@ -66,6 +65,7 @@ public class Sklep {
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
             updateGUI();
+
         } catch (InputMismatchException e) {
             System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
 
@@ -86,6 +86,7 @@ public class Sklep {
 
         // Wzrost stanu konta po sprzedaży
         int cenaWybiegu = (int) wybieg.getCena();
+
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaWybiegu);
 
         System.out.println("Wybieg został pomyślnie sprzedany. Stan konta wzrósł o " + cenaWybiegu + " monet.");
@@ -108,51 +109,7 @@ public class Sklep {
     }
 
     public void sprzedaj_zwierze(Wybieg_abstract wybieg, Zwierze zwierze) {
-        /*
-        Scanner scanner = new Scanner(System.in);
 
-        // Wyświetlanie dostępnych wybiegów
-        System.out.println("Dostępne wybiegi:");
-        ArrayList<Wybieg_podstawowy> listaWybiegow = zoo.getListaWybiegow();
-
-        for (int i = 0; i < listaWybiegow.size(); i++) {
-            System.out.println((i + 1) + ". " + listaWybiegow.get(i));
-        }
-
-        // Wybór numeru wybiegu
-        System.out.print("Wybierz numer wybiegu: ");
-        int numerWybiegu = scanner.nextInt();
-
-        // Sprawdzenie poprawności wyboru
-        if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
-            System.out.println("Błędny numer wybiegu.");
-            return;
-        }
-
-        // Wybranie konkretnego wybiegu
-        Wybieg_podstawowy wybranyWybieg = listaWybiegow.get(numerWybiegu - 1);
-
-        // Wyświetlanie zwierząt w wybranym wybiegu
-        System.out.println("Zwierzęta w wybranym wybiegu:");
-        List<Zwierze> zwierzetaWybiegu = wybranyWybieg.getLista_zwierzat();
-
-        for (int i = 0; i < zwierzetaWybiegu.size(); i++) {
-            System.out.println((i + 1) + ". " + zwierzetaWybiegu.get(i));
-        }
-
-        // Wybór numeru zwierzęcia do sprzedaży
-        System.out.print("Wybierz numer zwierzęcia do sprzedaży: ");
-        int numerZwierzecia = scanner.nextInt();
-
-        // Sprawdzenie poprawności wyboru
-        if (numerZwierzecia < 1 || numerZwierzecia > zwierzetaWybiegu.size()) {
-            System.out.println("Błędny numer zwierzęcia.");
-            return;
-        }
-
-        // Wybranie konkretnego zwierzęcia
-        Zwierze zwierzeDoSprzedazy = zwierzetaWybiegu.get(numerZwierzecia - 1);
-*/
         // Logika sprzedaży zwierzęcia
         wybieg.usun_zwierze(zwierze);
 
@@ -160,13 +117,12 @@ public class Sklep {
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + zwierze.getCena());
         updateGUI();
 
+
         System.out.println("Zwierzę zostało pomyślnie sprzedane. Stan konta wzrósł o " + zwierze.getCena() + " monet.");
     }
 
 
     public  void kup_jedzenie(int ilosc) {
-
-
 
 
         int koszt = ilosc * getCena_sztuka_jedzenie();
@@ -189,6 +145,7 @@ public class Sklep {
 
             if (cenaPracownika*jakosc > zoo.getZmiennaZasoby().getMonety()) {
                 OknoKupPracownika.brakSrodkow();
+
             }
             else{
             zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*jakosc);
@@ -196,8 +153,6 @@ public class Sklep {
             zoo.dodajPracownika(new Pracownik(imie,nazwisko,jakosc, getZoo().getZmiennaZasoby()));
             panelDzienPracownicy.dodajPracownika(zoo.getListaPracownikow().getLast());
             updateGUI();
-
-
 
         }
 
@@ -257,6 +212,7 @@ public class Sklep {
                 o.reakcjaZaznaczenie();
             }
             updateGUI();
+
         }
     }
 
@@ -287,42 +243,136 @@ public class Sklep {
         }
     }
 
-
-
-    //public  void kup_bron(){} do zrobienia
-/*
-    public static Thread startMessageSenderThread() {
-        Thread thread = new Thread(() -> {
-            try {
-                while (true) {
-                    sendMessage();
-                    Thread.sleep(30000); // Czekaj 10 sekund
-                }
-            } catch (InterruptedException e) {
-                // Przerwanie wątku
-                System.out.println("Wątek przerwany.");
+    public void kup_bron(Przedmiot nazwa_przedmiotu) {
+        try {
+            if (nazwa_przedmiotu.getCena() > zoo.getZmiennaZasoby().getMonety()) {
+                throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Kup inne zwierzę lub zbierz więcej środków");
             }
-        });
 
-        thread.start();
-        return thread;
+            zoo.getZmiennaZasoby().zmienMonety(-nazwa_przedmiotu.getCena());
+            System.out.println("Zakup udany");
+
+            // Przypisanie broni do zwierzęcia
+            System.out.println("Przypisz do jakiego zwierzecia ma należeć broń:");
+
+            // Wyświetlanie dostępnych wybiegów
+            System.out.println("Dostępne wybiegi:");
+            ArrayList<Wybieg_podstawowy> listaWybiegow = zoo.getListaWybiegow();
+
+            while (true) {
+                // Wybór numeru wybiegu
+                System.out.print("Wybierz numer wybiegu: ");
+                Scanner scanner = new Scanner(System.in);
+                int numerWybiegu = scanner.nextInt();
+
+                // Sprawdzenie poprawności wyboru
+                if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
+                    System.out.println("Błędny numer wybiegu. Spróbuj ponownie.");
+                } else {
+                    // Wybranie konkretnego wybiegu
+                    Wybieg_podstawowy wybranyWybieg = listaWybiegow.get(numerWybiegu - 1);
+
+                    // Wyświetlanie zwierząt w wybranym wybiegu
+                    System.out.println("Zwierzęta w wybranym wybiegu:");
+                    List<Zwierze> zwierzetaWybiegu = wybranyWybieg.getLista_zwierzat();
+
+                    for (int i = 0; i < zwierzetaWybiegu.size(); i++) {
+                        System.out.println((i + 1) + ". " + zwierzetaWybiegu.get(i));
+                    }
+
+                    // Wybór numeru zwierzęcia
+                    System.out.print("Wybierz numer zwierzęcia: ");
+                    int numerZwierzecia = scanner.nextInt();
+
+                    // Sprawdzenie poprawności wyboru
+                    if (numerZwierzecia < 1 || numerZwierzecia > zwierzetaWybiegu.size()) {
+                        System.out.println("Błędny numer zwierzęcia. Spróbuj ponownie.");
+                    } else {
+                        // Wybranie konkretnego zwierzęcia
+                        Zwierze zwierzeDoPrzypisaniaBroni = zwierzetaWybiegu.get(numerZwierzecia - 1);
+
+                        // Sprawdzenie, czy zwierzę już posiada broń
+                        if (zwierzeDoPrzypisaniaBroni.getPrzedmiot() != null) {
+                            System.out.println("To zwierzę już posiada broń. Wybierz inne zwierzę.");
+                        } else {
+                            // Przypisanie broni do zwierzęcia
+                            zwierzeDoPrzypisaniaBroni.setPrzedmiot(nazwa_przedmiotu);
+                            System.out.println("Broń przypisana do zwierzęcia: " + zwierzeDoPrzypisaniaBroni);
+                            zwierzeDoPrzypisaniaBroni.setZycie(zwierzeDoPrzypisaniaBroni.getZycie()+nazwa_przedmiotu.getZycie());
+                            break; // Wyjście z pętli, gdy przypisanie broni powiodło się
+                        }
+                    }
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Błędny format danych. Wprowadź poprawny numer.");
+        } catch (IllegalArgumentException | BrakSrodkowException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void sprzedaj_bron() {
+        try {
+            // Wyświetlanie dostępnych wybiegów
+            System.out.println("Dostępne wybiegi:");
+            ArrayList<Wybieg_podstawowy> listaWybiegow = zoo.getListaWybiegow();
+
+            // Wybór numeru wybiegu
+            while (true) {
+                try {
+                    System.out.print("Wybierz numer wybiegu: ");
+                    Scanner scanner = new Scanner(System.in);
+                    int numerWybiegu = scanner.nextInt();
+
+
+                    if (numerWybiegu < 1 || numerWybiegu > listaWybiegow.size()) {
+                        System.out.println("Błędny numer wybiegu. Spróbuj ponownie.");
+                    } else {
+                        // Wybranie konkretnego wybiegu
+                        Wybieg_podstawowy wybranyWybieg = listaWybiegow.get(numerWybiegu - 1);
+
+                        // Wyświetlanie zwierząt w wybranym wybiegu
+                        System.out.println("Zwierzęta w wybranym wybiegu:");
+                        List<Zwierze> zwierzetaWybiegu = wybranyWybieg.getLista_zwierzat();
+
+                        for (int i = 0; i < zwierzetaWybiegu.size(); i++) {
+                            System.out.println((i + 1) + ". " + zwierzetaWybiegu.get(i));
+                        }
+
+
+                        System.out.print("Wybierz numer zwierzęcia: ");
+                        int numerZwierzecia = scanner.nextInt();
+
+
+                        if (numerZwierzecia < 1 || numerZwierzecia > zwierzetaWybiegu.size()) {
+                            System.out.println("Błędny numer zwierzęcia. Spróbuj ponownie.");
+                        } else {
+                            // Wybranie konkretnego zwierzęcia
+                            Zwierze zwierzeDoSprzedazyPrzedmiotu = zwierzetaWybiegu.get(numerZwierzecia - 1);
+
+                            // Sprawdzenie, czy zwierzę posiada broń
+                            Przedmiot bronZwierzecia = zwierzeDoSprzedazyPrzedmiotu.getPrzedmiot();
+                            if (bronZwierzecia == null) {
+                                throw new IllegalArgumentException("To zwierzę nie posiada broni do sprzedania.");
+                            }
+
+
+                            int cenaBroni = bronZwierzecia.getCena();
+                            zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaBroni);
+                            zwierzeDoSprzedazyPrzedmiotu.setPrzedmiot(null); // Usunięcie broni ze zwierzęcia
+
+                            System.out.println("Broń została pomyślnie sprzedana.");
+
+                            zwierzeDoSprzedazyPrzedmiotu.setZycie(zwierzeDoSprzedazyPrzedmiotu.getZycie()-bronZwierzecia.getZycie());
+                            break;
+                        }
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Błędny format danych. Wprowadź poprawny numer.");
+                }
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    private static void sendMessage() {
-        String[] messages = {
-                "To jest losowa wiadomość 1",
-                "To jest losowa wiadomość 2",
-                "To jest losowa wiadomość 3"
-        };
-
-        Random random = new Random();
-        int index = random.nextInt(messages.length);
-        String message = messages[index];
-        System.out.println();
-        System.out.println("   .------.");
-        System.out.println("  | o  o |  " + message);
-        System.out.println("  |  ^   | ");
-        System.out.println("   '-----'");
-        System.out.println();
-    }*/
 }

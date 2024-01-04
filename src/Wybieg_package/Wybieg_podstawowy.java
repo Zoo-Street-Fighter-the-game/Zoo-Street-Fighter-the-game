@@ -36,6 +36,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wolne_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
         this.cena = wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu();
+
     }
 
     //=====================================================================================
@@ -62,6 +63,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         if (getLista_zwierzat().contains(obiekt)){
             setWolne_miejsce_w_wybiegu( getWolne_miejsce_w_wybiegu() + obiekt.getWielkosc() );
             usun_obserwatora(obiekt);
+
             getLista_zwierzat().remove( obiekt);
 
             System.gc();
@@ -125,6 +127,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
             zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni()+1);
         }
     }
+
     //=========================================================================================
 
 
@@ -260,6 +263,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     public String getRodzaj_zwierzecia_w_wybiegu(){
         if (!getLista_zwierzat().isEmpty())
             return getLista_zwierzat().getFirst().getNazwa();
+
         return null;
     }
     //===================================================================================

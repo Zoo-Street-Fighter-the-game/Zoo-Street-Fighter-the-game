@@ -10,7 +10,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Pingwin", 20, 10, 3, 50, 10, rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze(imie,"Pingwin", 20, 10, 10,50,3, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
         }
     },
     NIEDZWIEDZ {
@@ -20,7 +20,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Niedźwiedź", 20, 10, 20, 50, 10, rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"Niedźwiedź", 20, 10, 10,50,20, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     },
     LOS {
@@ -31,11 +31,12 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Łoś", 1, 1, 10, 50, 10, rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"Łoś", 1, 1,10,50, 10, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     };
 
     public abstract Zwierze stworzZwierze(String imie);
 
     public abstract int getCena();
+
 }
