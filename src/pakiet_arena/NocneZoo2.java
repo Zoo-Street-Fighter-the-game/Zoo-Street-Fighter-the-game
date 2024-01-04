@@ -7,6 +7,7 @@ import Wybieg_package.Wybieg_podstawowy;
 import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
+import enumy.zwierzeta_enum;
 import noc_walka.Atak;
 import noc_walka.Leczenie;
 
@@ -28,7 +29,7 @@ public class NocneZoo2 {
 
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 20, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze());
 
         Poziom_trudnosci poziom_trudnosci = new Poziom_trudnosci();
         poziom_trudnosci.ustaw_poziom_trudnosci();
