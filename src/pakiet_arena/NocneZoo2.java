@@ -2,14 +2,13 @@ package pakiet_arena;
 
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
-import Przedmioty.Miecz;
+import Przedmioty.Przedmiot;
 import Wybieg_package.Wybieg_podstawowy;
+import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import noc_walka.Atak;
 import noc_walka.Leczenie;
-import pakiet_arena.Arena;
-import pakiet_arena.Poziom_trudnosci;
 
 import java.io.*;
 import java.util.Random;
@@ -43,7 +42,7 @@ public class NocneZoo2 {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        Miecz Miecz = new Miecz();
+        Przedmiot Miecz = przedmioty_enum.MIECZ.stworzPrzedmiot();
 
         int wybor;
         przeciwnik.setZycie(100);

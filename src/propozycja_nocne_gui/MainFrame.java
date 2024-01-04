@@ -3,12 +3,11 @@ package propozycja_nocne_gui;
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import Przedmioty.Przedmiot;
-import Przedmioty.Topor;
 import Wybieg_package.Wybieg_podstawowy;
+import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import pakiet_sklep.Sklep;
-import pakiet_zasoby.Zasoby;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,7 +50,7 @@ public class MainFrame {
         zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
         Sklep sklep = new Sklep(zoo);
 
-        Przedmiot Topor = new Topor();
+        Przedmiot Topor = przedmioty_enum.TOPOR.stworzPrzedmiot();
         sklep.kup_bron(Topor);
 
         new MainFrame().createAndShowGUI();

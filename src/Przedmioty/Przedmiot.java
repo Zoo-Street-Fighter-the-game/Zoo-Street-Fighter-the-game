@@ -1,6 +1,6 @@
 package Przedmioty;
 
-abstract public class Przedmiot {
+public class Przedmiot {
 private String nazwa;
 private String opis;
 private int zycie;
@@ -8,6 +8,16 @@ private int sila;
 private int szybkosc;
 private int szczescie;
 private int cena;
+
+    public Przedmiot(String nazwa, String opis,int cena,int sila,int szczescie,int szybkosc, int zycie) {
+        this.nazwa = nazwa;
+        this.opis = opis;
+        this.zycie = zycie;
+        this.sila = sila;
+        this.szybkosc = szybkosc;
+        this.szczescie = szczescie;
+        this.cena = cena;
+    }
 
     public String getNazwa() {
         return nazwa;
