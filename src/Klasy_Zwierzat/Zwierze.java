@@ -30,7 +30,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String imie, String nazwa, int zycie, int sila,int szybkosc, int szczescie, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,rodzaj_srodowiska_enum rodzaj){
+    public Zwierze(String imie, String nazwa, int zycie, int sila,int szybkosc, int szczescie, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int cena,rodzaj_srodowiska_enum rodzaj){
         this.imie=imie;
         this.nazwa = nazwa;
         this.zycie = zycie;
@@ -41,7 +41,6 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
         this.wskaznik_glodu = wskaznik_glodu;
         this.zmeczenie = zmeczenie;
         this.zadowolenie = zadowolenie;
-        this.przezyte_dni = przezyte_dni;
         this.cena = cena;
         this.rodzaj=rodzaj;
     }
@@ -68,7 +67,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     }
 
     public Zwierze deep_clone() {
-        return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(),getSzybkosc(),getSzczescie(), getWielkosc(), getWskaznik_glodu(),getZmeczenie(), getZadowolenie(), getPrzezyte_dni(), getCena(), getRodzaj());
+        return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(),getSzybkosc(),getSzczescie(), getWielkosc(), getWskaznik_glodu(),getZmeczenie(), getZadowolenie(), getCena(), getRodzaj());
     }
 
 

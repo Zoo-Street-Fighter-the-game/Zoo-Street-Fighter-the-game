@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/enumy/przedmioty_enum.java" afterDir="false" />
+    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="cos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Adidasy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Miecz.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Patyk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/PistoletNaWode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/RekawiceBokserskie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Topor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Wuwuzela.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Zbroja.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfejsy/Obserwujacy_ZwierzeWybieg_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/Obserwujacy_ZwierzeWybieg_interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Atak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Atak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Leczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Leczenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/MenuAkcji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/MenuAkcji.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="noc_walka" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -50,6 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "SuperExtraUltimateNocnyBranch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -76,5 +77,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cos" />
+    <option name="LAST_COMMIT_MESSAGE" value="cos" />
   </component>
 </project>

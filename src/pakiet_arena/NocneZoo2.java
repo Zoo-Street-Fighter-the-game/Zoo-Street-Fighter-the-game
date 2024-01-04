@@ -2,9 +2,12 @@ package pakiet_arena;
 
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
+import Przedmioty.Przedmiot;
 import Wybieg_package.Wybieg_podstawowy;
+import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
+import enumy.zwierzeta_enum;
 import noc_walka.Atak;
 import noc_walka.Leczenie;
 
@@ -26,8 +29,7 @@ public class NocneZoo2 {
 
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum);
-
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze());
         Poziom_trudnosci poziom_trudnosci = new Poziom_trudnosci();
         poziom_trudnosci.ustaw_poziom_trudnosci();
         Arena arena = new Arena();
@@ -40,7 +42,7 @@ public class NocneZoo2 {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        Miecz Miecz = new Miecz();
+        Przedmiot Miecz = przedmioty_enum.MIECZ.stworzPrzedmiot();
 
         int wybor;
         przeciwnik.setZycie(100);
@@ -76,16 +78,7 @@ public class NocneZoo2 {
             }
 
             // Sprawdzenie warunków zakończenia walki
-            if (twoje_zwierze.getZycie() <= 0) {
-                System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, 10); // agent otrzymuje nagrode za to ze doproawdzil do przegrania przez nas gry
-                break;
-            } else if (przeciwnik.getZycie() <= 0) {
-                System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, -10);  // agent otrzymuje kare za to ze doproawdzil do przegrania przez nas gry
-
-                break;
-            }
+            if (warunki_zakonczenia_walki(agent, twoje_zwierze, przeciwnik)) break;
 
             // Wybór akcji przez przeciwnika na podstawie agenta Q-learningu
             int actionPrzeciwnika = agent.chooseAction(1);
@@ -99,15 +92,6 @@ public class NocneZoo2 {
                 System.out.println("Przeciwnik zaatakował!");
 
                 // Sprawdzenie warunków zakończenia walki
-                if (twoje_zwierze.getZycie() <= 0) {
-                    System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, 10);
-                    break;
-                } else if (przeciwnik.getZycie() <= 0) {
-                    System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, -10);
-                    break;
-                }
 
             } else {
                 // Przeciwnik wykonuje leczenie
@@ -119,17 +103,9 @@ public class NocneZoo2 {
                 agent.learn(1, actionPrzeciwnika, 1, 5);
 
                 // Sprawdzenie warunków zakończenia walki
-                if (twoje_zwierze.getZycie() <= 0) {
-                    System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, 10);
-                    break;
-                } else if (przeciwnik.getZycie() <= 0) {
-                    System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, -10);
-                    break;
-                }
 
             }
+            if (warunki_zakonczenia_walki(agent, twoje_zwierze, przeciwnik)) break;
 
 
             if (twoje_zwierze.getZycie() <= 0) {
@@ -149,6 +125,20 @@ public class NocneZoo2 {
         // Zapisanie tabeli Q do pliku po zakończeniu gry
         agent.saveQTableToFile(Q_TABLE_FILE);
 
+    }
+
+    private static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik) {
+        if (twoje_zwierze.getZycie() <= 0) {
+            System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
+            agent.learn(1, 0, 1, 10); // agent otrzymuje nagrode za to ze doproawdzil do przegrania przez nas gry
+            return true;
+        } else if (przeciwnik.getZycie() <= 0) {
+            System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
+            agent.learn(1, 0, 1, -10);  // agent otrzymuje kare za to ze doproawdzil do przegrania przez nas gry
+
+            return true;
+        }
+        return false;
     }
 }
 

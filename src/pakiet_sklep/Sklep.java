@@ -251,12 +251,12 @@ public class Sklep {
 
     public void kup_zwierze(zwierzeta_enum typ) {
         try{
-            if(typ.podajCene() > zoo.getZmiennaZasoby().getMonety())
+            if(typ.stworzZwierze().getCena() > zoo.getZmiennaZasoby().getMonety())
             {
                 throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Kup inne zwierze lub zbierz więcej środków");
             }
 
-            zoo.getZmiennaZasoby().zmienMonety(-typ.podajCene());
+            zoo.getZmiennaZasoby().zmienMonety(-typ.stworzZwierze().getCena());
             System.out.println("Zakup udany");
             zoo.getListaWybiegow().get(zoo.wybierzWybiegi()-1).dodaj_zwierze(typ.stworzZwierze());
 
