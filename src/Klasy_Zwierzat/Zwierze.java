@@ -10,27 +10,38 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //===========================================================================
     //POLA ZWIERZĄT
     //===========================================================================
-
+    private String imie;
     private String nazwa;
     private int zycie;
     private int sila;
+    private int szybkosc;
+    private int szczescie;
     private int wielkosc;
     private int wskaznik_glodu;
+    private int zmeczenie;
+    private int zadowolenie;
     private int przezyte_dni = 0;
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
+
     private Przedmiot przedmiot;
 
     //===========================================================================
     //KONSTRUKTOR
     //===========================================================================
-    public Zwierze(String nazwa, int zycie, int sila, int wielkosc, int wskaznik_glodu, int cena, rodzaj_srodowiska_enum rodzaj){
+    public Zwierze(String imie, String nazwa, int zycie, int sila,int szybkosc, int szczescie, int wielkosc, int wskaznik_glodu, int zmeczenie, int zadowolenie, int przezyte_dni, int cena,rodzaj_srodowiska_enum rodzaj){
+        this.imie=imie;
         this.nazwa = nazwa;
         this.zycie = zycie;
         this.sila = sila;
+        this.szybkosc=szybkosc;
+        this.szczescie=szczescie;
         this.wielkosc = wielkosc;
         this.wskaznik_glodu = wskaznik_glodu;
+        this.zmeczenie = zmeczenie;
+        this.zadowolenie = zadowolenie;
+        this.przezyte_dni = przezyte_dni;
         this.cena = cena;
         this.rodzaj=rodzaj;
     }
@@ -57,7 +68,7 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     }
 
     public Zwierze deep_clone() {
-        return new Zwierze(getNazwa(), getZycie(), getSila(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
+        return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(),getSzybkosc(),getSzczescie(), getWielkosc(), getWskaznik_glodu(),getZmeczenie(), getZadowolenie(), getPrzezyte_dni(), getCena(), getRodzaj());
     }
 
 
@@ -69,11 +80,16 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     @Override
     public String toString() {
         return "Zwierze{" +
+                "imie="+this.getImie()+
                 "nazwa=" + this.getNazwa() +
                 ", zycie=" + this.getZycie() +
                 ", sila=" + this.getSila() +
+                ", szybkosc=" + this.getSzybkosc() +
+                ", szczescie=" + this.getSzczescie() +
                 ", wielkosc=" + this.getWielkosc() +
                 ", wskaznik_glodu=" + this.getWskaznik_glodu() +
+                ", zmeczenie=" + this.getZmeczenie() +
+                ", zadowolenie=" + this.getZadowolenie() +
                 ", przezyte_dni=" + this.getPrzezyte_dni() +
                 ", cena=" + this.getCena() +
                 ", rodzaj=" + this.getRodzaj() +
@@ -83,6 +99,46 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
     //===========================================================================
     //SETTERY I GETTERY
     //===========================================================================
+
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public int getSzybkosc() {
+        return szybkosc;
+    }
+
+    public void setSzybkosc(int szybkosc) {
+        this.szybkosc = szybkosc;
+    }
+
+    public int getSzczescie() {
+        return szczescie;
+    }
+
+    public void setSzczescie(int szczescie) {
+        this.szczescie = szczescie;
+    }
+
+    public int getZmeczenie() {
+        return zmeczenie;
+    }
+
+    public void setZmeczenie(int zmeczenie) {
+        this.zmeczenie = zmeczenie;
+    }
+
+    public int getZadowolenie() {
+        return zadowolenie;
+    }
+
+    public void setZadowolenie(int zadowolenie) {
+        this.zadowolenie = zadowolenie;
+    }
 
     public String getNazwa() {
         return nazwa;
