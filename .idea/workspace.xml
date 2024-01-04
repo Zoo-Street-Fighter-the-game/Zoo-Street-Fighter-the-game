@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Ikonki dla pracownikow, algorytm Dominika ze sprawdzaniem typu zwierzecia w wybiegu">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_12_2023_22_02_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_12_2023_22_02__Changes_.xml" beforeDir="false" />
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dzienne gui is ready,ezzz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;GUIBranch&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hcyta/OneDrive/Dokumenty/IST sem 1/Programowanie Strukturalne i Obiektowe/Zoo-Street-Fighter-the-game/src/ikony&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -91,11 +91,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\ikony" />
       <recent name="C:\Users\kamil\OneDrive\Dokumenty\GitHub\Zoo-Street-Fighter-the-game\src\ikony" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\ikony" />
       <recent name="C:\Users\kamil\OneDrive\Dokumenty\GitHub\Zoo-Street-Fighter-the-game\src\ikony" />
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\gui_package" />
       <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src" />
@@ -151,8 +149,8 @@
       <workItem from="1704207392456" duration="631000" />
       <workItem from="1704225527793" duration="1114000" />
       <workItem from="1704293941201" duration="453000" />
-      <workItem from="1704309259905" duration="1694000" />
-      <workItem from="1704318144440" duration="819000" />
+      <workItem from="1704309259905" duration="2284000" />
+      <workItem from="1704382883608" duration="481000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -234,23 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703975408647</updated>
     </task>
-    <task id="LOCAL-00011" summary="Naprawiono błąd z karmieniem wybiegu bezdomnych&#10;Dodano kolorki do wybiegów&#10;Dodano nazwy nad wybiegami&#10;Dodano losowanie sie nazwisk imion pracownikow&#10;Dodano losowanie sie imion zwierzat">
+    <task id="LOCAL-00011" summary="Dzienne gui is ready,ezzz">
       <option name="closed" value="true" />
-      <created>1704314641491</created>
+      <created>1704311481315</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1704314641491</updated>
+      <updated>1704311481315</updated>
     </task>
-    <task id="LOCAL-00012" summary="Ikonki dla pracownikow, algorytm Dominika ze sprawdzaniem typu zwierzecia w wybiegu">
-      <option name="closed" value="true" />
-      <created>1704317522717</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1704317522717</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,9 +268,8 @@
     <MESSAGE value="Działa kupowanie zwierzat&#10;Działa wyświetlanie zwierzat w radioboxie" />
     <MESSAGE value="Działa sprzedawanie zwierząt" />
     <MESSAGE value="Działa całe dzienne zoo gui oprocz wybiegow ez" />
-    <MESSAGE value="Naprawiono błąd z karmieniem wybiegu bezdomnych&#10;Dodano kolorki do wybiegów&#10;Dodano nazwy nad wybiegami&#10;Dodano losowanie sie nazwisk imion pracownikow&#10;Dodano losowanie sie imion zwierzat" />
-    <MESSAGE value="Ikonki dla pracownikow, algorytm Dominika ze sprawdzaniem typu zwierzecia w wybiegu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ikonki dla pracownikow, algorytm Dominika ze sprawdzaniem typu zwierzecia w wybiegu" />
+    <MESSAGE value="Dzienne gui is ready,ezzz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dzienne gui is ready,ezzz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

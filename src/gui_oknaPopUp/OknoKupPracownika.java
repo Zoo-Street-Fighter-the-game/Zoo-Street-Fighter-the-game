@@ -82,4 +82,11 @@ public class OknoKupPracownika extends JFrame implements ActionListener, ChangeL
             buttonLabel.setText(String.valueOf(jakoscSlider.getValue()*sklepik.getCenaPracownika()));
         }
     }
+    public static void brakSrodkow()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Nie masz wystarczajaco duzo monet!",
+                "Brak Srodkow",
+                JOptionPane.ERROR_MESSAGE);
+    }
 }

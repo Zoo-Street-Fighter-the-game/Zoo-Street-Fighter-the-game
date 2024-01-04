@@ -102,5 +102,12 @@ public class OknoKupJedzenie extends JFrame implements ActionListener, DocumentL
             }
         this.pack();
     }
+    public static void brakSrodkow()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Nie masz wystarczajaco duzo monet!",
+                "Brak Srodkow",
+                JOptionPane.ERROR_MESSAGE);
+    }
 }
 

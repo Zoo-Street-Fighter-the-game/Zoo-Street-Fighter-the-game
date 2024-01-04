@@ -8,6 +8,9 @@ import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
+import gui_oknaPopUp.OknoKupJedzenie;
+import gui_oknaPopUp.OknoKupPracownika;
+import gui_oknaPopUp.OknoKupWybieg;
 import gui_oknaPopUp.OknoKupZwierze;
 import enumy.zwierzeta_enum;
 import gui_package.PanelDzienPracownicy;
@@ -161,43 +164,33 @@ public class Sklep {
     }
 
 
-    public  void kup_jedzenie(int ilosc){
+    public  void kup_jedzenie(int ilosc) {
 
 
-            try {
 
 
-                if (ilosc <= 0) {
-                    throw new IllegalArgumentException("Błędna wartość. Wprowadź liczbę większą niż 0.");
-                }
+        int koszt = ilosc * getCena_sztuka_jedzenie();
 
-                int koszt = ilosc * getCena_sztuka_jedzenie();
+        if (koszt > zoo.getZmiennaZasoby().getMonety()) {
+            OknoKupJedzenie.brakSrodkow();
+        }
+        else {
+        zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
+        zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
+        updateGUI();
+        System.out.println("zakup udany");
 
-                if (koszt > zoo.getZmiennaZasoby().getMonety()) {
-                    throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Wybierz mniejszą ilość.");
-                }
-
-                zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
-                zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
-                updateGUI();
-                System.out.println("zakup udany");
-
-            } catch (InputMismatchException e) {
-                System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
-
-            } catch (IllegalArgumentException | BrakSrodkowException e) {
-                System.out.println(e.getMessage());
-            }
+        }
     }
     public void kup_pracownika(String imie, String nazwisko, int jakosc) {
 
         System.out.println("Obecna cena za pracownika to: " + cenaPracownika*jakosc);
 
-        try {
-            if (cenaPracownika*jakosc > zoo.getZmiennaZasoby().getMonety()) {
-                throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Wybierz tańszego pracownika lub zebrać więcej środków.");
-            }
 
+            if (cenaPracownika*jakosc > zoo.getZmiennaZasoby().getMonety()) {
+                OknoKupPracownika.brakSrodkow();
+            }
+            else{
             zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*jakosc);
             System.out.println("zakup pracownika udany");
             zoo.dodajPracownika(new Pracownik(imie,nazwisko,jakosc, getZoo().getZmiennaZasoby()));
@@ -205,32 +198,30 @@ public class Sklep {
             updateGUI();
 
 
-        } catch (BrakSrodkowException e) {
-            System.out.println(e.getMessage());
+
         }
 
     }
 
     public void kup_wybieg(rodzaj_srodowiska_enum rodzajSrodowiska, wielkosc_wybiegu_enum wielkosc_wybiegu) {
-        try {
+
 
             if (wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu() > zoo.getZmiennaZasoby().getMonety()) {
-                throw new BrakSrodkowException("Nie masz wystarczająco dużo pieniędzy. Wybierz mniejszy wybieg lub zbierz więcej środków.");
+                OknoKupWybieg.brakSrodkow();
             }
+            else {
 
-            zoo.getZmiennaZasoby().zmienMonety(-wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu());
-            System.out.println("Zakup wybiegu udany");
+                zoo.getZmiennaZasoby().zmienMonety(-wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu());
+                System.out.println("Zakup wybiegu udany");
 
 
-            zoo.dodajWybieg(new Wybieg_podstawowy(rodzajSrodowiska, wielkosc_wybiegu));
-            PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
-            panelDzienWybiegi.dodajWybieg(panelWybieg);
-            panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
-            updateGUI();
+                zoo.dodajWybieg(new Wybieg_podstawowy(rodzajSrodowiska, wielkosc_wybiegu));
+                PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+                panelDzienWybiegi.dodajWybieg(panelWybieg);
+                panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+                updateGUI();
 
-        } catch (BrakSrodkowException e) {
-            System.out.println(e.getMessage());
-        }
+            }
 
     }
 

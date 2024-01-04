@@ -132,4 +132,11 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
         else buttonLabel.setText("Podaj wielkosc wybiegu");
         this.pack();
     }
+    public static void brakSrodkow()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Nie masz wystarczajaco duzo monet!",
+                "Brak Srodkow",
+                JOptionPane.ERROR_MESSAGE);
+    }
 }
