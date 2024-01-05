@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Atak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Atak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Leczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Leczenie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_arena/Wybor_zwierzecia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/Wybor_zwierzecia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +73,7 @@
       <workItem from="1704475819304" duration="7598000" />
       <workItem from="1704483557933" duration="103000" />
       <workItem from="1704483751145" duration="126000" />
-      <workItem from="1704487590103" duration="872000" />
+      <workItem from="1704487590103" duration="5417000" />
     </task>
     <servers />
   </component>

@@ -51,35 +51,114 @@ public class Wybor_zwierzecia {
 
     public static Zwierze stworzenie_zwierzecia_walczacego(Zwierze zwierze,Arena arena) {
         Zwierze walczace_zwierze = zwierze.deep_clone();
+       if(zwierze.getPrzedmiot()!=null){
+           walczace_zwierze.setSila(walczace_zwierze.getSila()+zwierze.getPrzedmiot().getSila());
+           walczace_zwierze.setSzybkosc(walczace_zwierze.getSzybkosc()+zwierze.getPrzedmiot().getSzybkosc());
+           walczace_zwierze.setZycie(walczace_zwierze.getZycie()+zwierze.getPrzedmiot().getZycie());
+           walczace_zwierze.setSzczescie(walczace_zwierze.getSzczescie()+zwierze.getPrzedmiot().getSzczescie());
+       }
+
         double m_zal = 0;
         double m_wod = 0;
         double m_wia = 0;
         double m_nas = 0;
         double m_temp = 0;
-        switch (walczace_zwierze.getRodzaj()) {
-            case rodzaj_srodowiska_enum.LADOWY:
-                m_zal = 0.5;
-                m_wod = 0.1;
-                m_wia = -0.2;
-                m_nas = -0.2;
+        switch (walczace_zwierze.getNazwa()) {
+            case "Pingwin":
+                m_zal = -0.2* arena.getZalesienie();
+                m_wod = arena.getWodyPowierzchniowe()*0.5;
+                m_wia = -0.2*arena.getWiatr();
+                m_nas = -0.2* arena.getNaslonecznienie();
+                m_temp = -1*arena.getTemperatura();
                 break;
-            case rodzaj_srodowiska_enum.POWIETRZNY:
-                m_zal = -0.2;
-                m_wod = -0.2;
-                m_nas = -0.2;
-                m_wia = 1;
+            case "Żółw":
+                m_zal = -0.1* arena.getZalesienie();
+                m_wod = arena.getWodyPowierzchniowe()*0.7;
+                m_wia = -0.1*arena.getWiatr();
+                m_nas = 0.2* arena.getNaslonecznienie();
+                m_temp = 0.3*arena.getTemperatura();
                 break;
-            case rodzaj_srodowiska_enum.WODNY:
-                m_zal = -0.2;
-                m_wod = 0.8;
-                m_nas = 0;
-                m_wia = -0.2;
-                break;
-        }
-        double ogolna_wartosc = arena.getTemperatura()*m_temp +arena.getZalesienie()*m_zal + arena.getNaslonecznienie()*m_nas + arena.getWiatr()*m_wia + arena.getWodyPowierzchniowe()*m_wod;
-        walczace_zwierze.setSila( walczace_zwierze.getSila() + (int)ogolna_wartosc);
-        walczace_zwierze.setZycie(walczace_zwierze.getZycie() + (int)ogolna_wartosc);
 
+            case "Rekin":
+                m_zal = -0.2* arena.getZalesienie();
+                m_wod = arena.getWodyPowierzchniowe();
+                m_wia = -0.1*arena.getWiatr();
+                m_nas = 0.1* arena.getNaslonecznienie();
+                m_temp = 0.4*arena.getTemperatura();
+                break;
+            case "Orka":
+                m_zal = -0.3* arena.getZalesienie();
+                m_wod = arena.getWodyPowierzchniowe();
+                m_wia = -0.1*arena.getWiatr();
+                m_nas = -0.1* arena.getNaslonecznienie();
+                m_temp = -0.1*arena.getTemperatura();
+                break;
+            case "Niedźwiedź":
+                m_zal = 0.75*arena.getZalesienie();
+                m_wod = 0.1*arena.getWodyPowierzchniowe();
+                m_wia = -0.3*arena.getWiatr();
+                m_nas = 0.2* arena.getNaslonecznienie();
+                m_temp = 0.5*arena.getTemperatura();
+                break;
+            case "Łoś":
+                m_zal = arena.getZalesienie();
+                m_wod = -0.1*arena.getWodyPowierzchniowe();
+                m_wia = 0.1*arena.getWiatr();
+                m_nas = 0.3* arena.getNaslonecznienie();
+                m_temp = 0.4*arena.getTemperatura();
+                break;
+            case "Niedźwiedź polarny":
+                m_zal = -0.1* arena.getZalesienie();
+                m_wod = 0.3*arena.getWodyPowierzchniowe();
+                m_wia = -0.1*arena.getWiatr();
+                m_nas = -0.1* arena.getNaslonecznienie();
+                m_temp = -1*arena.getTemperatura();
+                break;
+            case "Lew":
+                m_zal = 0.2* arena.getZalesienie();
+                m_wod = -0.3*arena.getWodyPowierzchniowe();
+                m_wia = 0.1*arena.getWiatr();
+                m_nas = 0.75* arena.getNaslonecznienie();
+                m_temp = arena.getTemperatura();
+                break;
+                case "Orzeł":
+                m_zal = 0.5* arena.getZalesienie();
+                m_wod = 0.1*arena.getWodyPowierzchniowe();
+                m_wia = arena.getWiatr();
+                m_nas = 0.5* arena.getNaslonecznienie();
+                m_temp = 0.3*arena.getTemperatura();
+                break;
+
+            case "Papuga":
+                m_zal = 0.6* arena.getZalesienie();
+                m_wod = -0.2*arena.getWodyPowierzchniowe();
+                m_wia = 0.5*arena.getWiatr();
+                m_nas = 0.5* arena.getNaslonecznienie();
+                m_temp = 0.5*arena.getTemperatura();
+                break;
+
+            case "Paw":
+                m_zal = 0.6* arena.getZalesienie();
+                m_wod = -0.1*arena.getWodyPowierzchniowe();
+                m_wia = 0.2*arena.getWiatr();
+                m_nas = 0.3* arena.getNaslonecznienie();
+                m_temp = 0.2*arena.getTemperatura();
+                break;
+
+            case "Nietoperz":
+                m_zal = 0.3* arena.getZalesienie();
+                m_wod = 0.1*arena.getWodyPowierzchniowe();
+                m_wia = 0.7*arena.getWiatr();
+                m_nas = 100*(1/ arena.getNaslonecznienie());
+                m_temp = 0.1*arena.getTemperatura();
+                break;
+
+        }
+
+        walczace_zwierze.setSila((int)( walczace_zwierze.getSila() + m_wod));
+        walczace_zwierze.setZycie((int)(walczace_zwierze.getZycie() + m_temp));
+        walczace_zwierze.setSzczescie((int)(walczace_zwierze.getSzczescie()+m_nas+m_zal));
+        walczace_zwierze.setSzybkosc((int)(walczace_zwierze.getSzybkosc()+m_wia));
 
         return walczace_zwierze;
     }
