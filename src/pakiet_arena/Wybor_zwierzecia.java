@@ -55,6 +55,7 @@ public class Wybor_zwierzecia {
         double m_wod = 0;
         double m_wia = 0;
         double m_nas = 0;
+        double m_temp = 0;
         switch (walczace_zwierze.getRodzaj()) {
             case rodzaj_srodowiska_enum.LADOWY:
                 m_zal = 0.5;
@@ -75,7 +76,7 @@ public class Wybor_zwierzecia {
                 m_wia = -0.2;
                 break;
         }
-        double ogolna_wartosc = arena.getZalesienie()*m_zal + arena.getNaslonecznienie()*m_nas + arena.getWiatr()*m_wia + arena.getWodyPowierzchniowe()*m_wod;
+        double ogolna_wartosc = arena.getTemperatura()*m_temp +arena.getZalesienie()*m_zal + arena.getNaslonecznienie()*m_nas + arena.getWiatr()*m_wia + arena.getWodyPowierzchniowe()*m_wod;
         walczace_zwierze.setSila( walczace_zwierze.getSila() + (int)ogolna_wartosc);
         walczace_zwierze.setZycie(walczace_zwierze.getZycie() + (int)ogolna_wartosc);
 
