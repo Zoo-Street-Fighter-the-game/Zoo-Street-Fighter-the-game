@@ -19,7 +19,7 @@ import static pakiet_arena.Wybor_zwierzecia.*;
 import static pakiet_arena.Wybor_zwierzecia.stworzenie_zwierzecia_walczacego;
 
 public class NocneZoo2 {
-    private static final String Q_TABLE_FILE = "q_table_new.ser";
+    public static final String Q_TABLE_FILE = "q_table_new.ser";
 
     public static void main(String[] args) {
         QLearningAgent agent = new QLearningAgent(2, 2);
@@ -29,8 +29,7 @@ public class NocneZoo2 {
 
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze());
-
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze("bob"));
         Poziom_trudnosci poziom_trudnosci = new Poziom_trudnosci();
         poziom_trudnosci.ustaw_poziom_trudnosci();
         Arena arena = new Arena();
@@ -79,16 +78,7 @@ public class NocneZoo2 {
             }
 
             // Sprawdzenie warunków zakończenia walki
-            if (twoje_zwierze.getZycie() <= 0) {
-                System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, 10); // agent otrzymuje nagrode za to ze doproawdzil do przegrania przez nas gry
-                break;
-            } else if (przeciwnik.getZycie() <= 0) {
-                System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                agent.learn(1, 0, 1, -10);  // agent otrzymuje kare za to ze doproawdzil do przegrania przez nas gry
-
-                break;
-            }
+            if (warunki_zakonczenia_walki(agent, twoje_zwierze, przeciwnik)) break;
 
             // Wybór akcji przez przeciwnika na podstawie agenta Q-learningu
             int actionPrzeciwnika = agent.chooseAction(1);
@@ -102,15 +92,6 @@ public class NocneZoo2 {
                 System.out.println("Przeciwnik zaatakował!");
 
                 // Sprawdzenie warunków zakończenia walki
-                if (twoje_zwierze.getZycie() <= 0) {
-                    System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, 10);
-                    break;
-                } else if (przeciwnik.getZycie() <= 0) {
-                    System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, -10);
-                    break;
-                }
 
             } else {
                 // Przeciwnik wykonuje leczenie
@@ -122,17 +103,9 @@ public class NocneZoo2 {
                 agent.learn(1, actionPrzeciwnika, 1, 5);
 
                 // Sprawdzenie warunków zakończenia walki
-                if (twoje_zwierze.getZycie() <= 0) {
-                    System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, 10);
-                    break;
-                } else if (przeciwnik.getZycie() <= 0) {
-                    System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
-                    agent.learn(1, 0, 1, -10);
-                    break;
-                }
 
             }
+            if (warunki_zakonczenia_walki(agent, twoje_zwierze, przeciwnik)) break;
 
 
             if (twoje_zwierze.getZycie() <= 0) {
@@ -153,94 +126,20 @@ public class NocneZoo2 {
         agent.saveQTableToFile(Q_TABLE_FILE);
 
     }
+
+    private static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik) {
+        if (twoje_zwierze.getZycie() <= 0) {
+            System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
+            agent.learn(1, 0, 1, 10); // agent otrzymuje nagrode za to ze doproawdzil do przegrania przez nas gry
+            return true;
+        } else if (przeciwnik.getZycie() <= 0) {
+            System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
+            agent.learn(1, 0, 1, -10);  // agent otrzymuje kare za to ze doproawdzil do przegrania przez nas gry
+
+            return true;
+        }
+        return false;
+    }
 }
 
 // Klasa agenta Q-learningu
-class QLearningAgent {
-    // Tabela Q przechowująca wartości dla stanów i akcji
-    private double[][] qTable;
-    private double learningRate;
-    private double discountFactor;
-    // Parametr epsilon używany do eksploracji losowej
-    private double epsilon;
-
-
-    public QLearningAgent(int stateSize, int actionSize) {
-        // Inicjalizacja tablicy Q
-        qTable = new double[stateSize][actionSize];
-
-        learningRate = 0.15;
-        discountFactor = 0.9999;
-        epsilon = 0.2;
-    }
-
-    // Metoda do wyboru akcji przez agenta z uwzględnieniem eksploracji losowej
-    public int chooseAction(int state) {
-        if (Math.random() < epsilon) {
-            // Wybór losowej akcji z pewnym prawdopodobieństwem epsilon
-            return new Random().nextInt(qTable[state].length);
-        } else {
-            // Wybór akcji na podstawie wartości Q
-            int bestAction = 0;
-            for (int i = 1; i < qTable[state].length; i++) {
-                if (qTable[state][i] > qTable[state][bestAction]) {
-                    bestAction = i;
-                }
-            }
-
-            // Dodatkowa eksploracja - zamiana akcji 1 na 0 z pewnym prawdopodobieństwem (1 -leczenie 0 - atak)
-            // oslabienie leczenia, poniewaz najkorzystniejszym wyborem zawsze bedzie leczenie
-            if (bestAction == 1 && Math.random() < 0.5) {
-                return 0;
-            } else {
-                return bestAction;
-            }
-        }
-    }
-
-    // Metoda do nauki agenta na podstawie otrzymanych nagród
-    public void learn(int state, int action, int nextState, int reward) {
-        double predict = qTable[state][action];
-        double target = discountFactor * maxQValue(nextState);
-        qTable[state][action] += learningRate * (reward + target - predict);
-    }
-
-    // Metoda zwracająca maksymalną wartość Q dla danego stanu
-    private double maxQValue(int state) {
-        double maxQ = qTable[state][0];
-        for (int i = 1; i < qTable[state].length; i++) {
-            if (qTable[state][i] > maxQ) {
-                maxQ = qTable[state][i];
-            }
-        }
-        return maxQ;
-    }
-
-    // Metoda do zapisu tabeli Q do pliku
-    public void saveQTableToFile(String fileName) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            oos.writeObject(qTable);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Metoda do wczytania tabeli Q z pliku
-    public void loadQTableFromFile(String fileName) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-            qTable = (double[][]) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Metoda do wyświetlenia zawartości tabeli Q
-    public void displayQTable() {
-        for (int i = 0; i < qTable.length; i++) {
-            for (int j = 0; j < qTable[i].length; j++) {
-                System.out.print(qTable[i][j] + "\t");
-            }
-            System.out.println();
-        }
-    }
-}

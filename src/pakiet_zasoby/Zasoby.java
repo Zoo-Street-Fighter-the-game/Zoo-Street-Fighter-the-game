@@ -49,6 +49,6 @@ public class Zasoby {
 
     @Override
     public String toString(){
-        return "Twoje zasoby: \n Exp: "+getExp()+" , Monety: "+getMonety()+" , Jedzenie: "+ getJedzenie();
+        return "Twoje zasoby: \nExp: "+getExp()+" , Monety: "+getMonety()+" , Jedzenie: "+ getJedzenie();
     }
 }

@@ -35,7 +35,8 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         this.rodzaj_srodowiska = rodzaj_wybiegu;
         this.wielkosc_wybiegu = wielkosc_wybiegu;
         this.wolne_miejsce_w_wybiegu = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu();
-        this.cena = wielkosc_wybiegu.getLiczbowa_Wielkosc_Wybiegu()*10;
+        this.cena = wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu();
+
     }
 
     //=====================================================================================
@@ -62,7 +63,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         if (getLista_zwierzat().contains(obiekt)){
             setWolne_miejsce_w_wybiegu( getWolne_miejsce_w_wybiegu() + obiekt.getWielkosc() );
             usun_obserwatora(obiekt);
-            obiekt.release();
+
             getLista_zwierzat().remove( obiekt);
 
             System.gc();
@@ -84,7 +85,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
 
     public  boolean czy_wybieg_ma_ten_rodzaj_zwierzecia(Zwierze obiekt){
         if (!getLista_zwierzat().isEmpty()){
-            return obiekt.getClass().getName().equals(getRodzaj_zwierzecia_w_wybiegu());
+            return obiekt.getNazwa().equals(getRodzaj_zwierzecia_w_wybiegu());
         }
         return true;
     }
@@ -117,6 +118,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     public void brudzenie_zwierzat(){
         for (Zwierze zwierze : getLista_zwierzat()){
            setCzystosc(getCzystosc() - zwierze.getWielkosc()*5);
+           powiadom_obserwatorow();
         }
     }
 
@@ -125,6 +127,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
             zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni()+1);
         }
     }
+
     //=========================================================================================
 
 
@@ -186,7 +189,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //                                  gettery i settery oraz toString
     //-------------------------------------------------------------------------------------
     public String  toString(){
-        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " \n" +
+        StringBuilder status = new StringBuilder("Wybieg " + getRodzaj_srodowiska().toString() + " " +
                 getWielkosc_wybiegu().toString() + " \n" +
                 "dla : " + getRodzaj_zwierzecia_w_wybiegu() + " \n" +
                 "czystosc: " + getCzystosc() + " \n" +
@@ -259,7 +262,8 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //--------------------------------------------------------------
     public String getRodzaj_zwierzecia_w_wybiegu(){
         if (!getLista_zwierzat().isEmpty())
-            return getLista_zwierzat().getFirst().getClass().getName();
+            return getLista_zwierzat().getFirst().getNazwa();
+
         return null;
     }
     //===================================================================================

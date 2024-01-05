@@ -1,7 +1,6 @@
 package noc_walka;
 
 import Klasy_Zwierzat.Zwierze;
-import pakiet_arena.Arena;
 
 public class Leczenie implements MenuAkcji{
     @Override

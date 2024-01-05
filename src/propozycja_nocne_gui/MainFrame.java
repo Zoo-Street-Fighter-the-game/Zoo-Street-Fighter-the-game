@@ -3,11 +3,13 @@ package propozycja_nocne_gui;
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import Przedmioty.Przedmiot;
+
 import Wybieg_package.Wybieg_podstawowy;
-import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
+import enumy.zwierzeta_enum;
 import pakiet_sklep.Sklep;
+import pakiet_zasoby.Zasoby;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,16 +45,15 @@ public class MainFrame {
 
     public static void main(String[] args) {
         DzienneZoo zoo = DzienneZoo.getInstance();
-        zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
-        zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.DUZY));
-        zoo.getListaWybiegow().getLast().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(new Zwierze("1", 100, 100, 1, 1, 1, rodzaj_srodowiska_enum.POWIETRZNY));
+        zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.SREDNI));
+        zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY));
+        zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze("Marek"));
+
         Sklep sklep = new Sklep(zoo);
 
-        Przedmiot Topor = przedmioty_enum.TOPOR.stworzPrzedmiot();
+  /*      Przedmiot Topor = new Topor();
         sklep.kup_bron(Topor);
-
+*/
         new MainFrame().createAndShowGUI();
 
     }

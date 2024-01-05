@@ -9,7 +9,7 @@ private int szybkosc;
 private int szczescie;
 private int cena;
 
-    public Przedmiot(String nazwa, String opis,int cena,int sila,int szczescie,int szybkosc, int zycie) {
+    public Przedmiot(String nazwa, String opis, int cena, int sila, int szczescie, int szybkosc,int zycie) {
         this.nazwa = nazwa;
         this.opis = opis;
         this.zycie = zycie;
