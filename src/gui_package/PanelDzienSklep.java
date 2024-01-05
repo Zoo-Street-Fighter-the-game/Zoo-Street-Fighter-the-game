@@ -112,7 +112,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
     class ReakcjaZapiszGre implements ActionListener
    {
        public void actionPerformed(ActionEvent e) {
-           sklep.zapiszGre(zoo);
+           sklep.zapiszGre();
        }
     }
     class ReakcjaWczytajGre implements ActionListener

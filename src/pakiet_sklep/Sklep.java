@@ -313,21 +313,36 @@ public class Sklep {
         }
     }
 
-    public void zapiszGre(DzienneZoo zoo){
-        zoo = this.zoo;
+    public void zapiszGre(){
         try (ObjectOutputStream so = new ObjectOutputStream(new FileOutputStream("Plik.ser"))) {
-            so.writeObject(zoo);
+            so.writeObject(getZoo());
 
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println("Zapis wykonany");
-        System.out.println(zoo.toString());
+        System.out.println(getZoo().toString());
     }
     public void wczytajGre() {
         System.out.println(zoo.toString());
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
-            zoo = (DzienneZoo) is.readObject();
+            DzienneZoo zoo2 = (DzienneZoo) is.readObject();
+            zoo.getZmiennaZasoby().setMonety(zoo2.getZmiennaZasoby().getMonety());
+            zoo.getZmiennaZasoby().setJedzenie(zoo2.getZmiennaZasoby().getJedzenie());
+            zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
+            zoo.setDniCounter(zoo2.getDniCounter());
+            for(int i = 0; i<(zoo2.getListaWybiegow()).size(); i++){
+                zoo.dodajWybieg( new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
+                PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+                panelDzienWybiegi.dodajWybieg(panelWybieg);
+                panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+            }
+            for(int i = 0; i<(zoo2.getListaPracownikow()).size(); i++){
+                zoo.dodajPracownika(new Pracownik(zoo2.getListaPracownikow().get(i).getImie(),zoo2.getListaPracownikow().get(i).getNazwisko(),zoo2.getListaPracownikow().get(i).getJakoscUslug(), getZoo().getZmiennaZasoby()));
+                panelDzienPracownicy.dodajPracownika(zoo.getListaPracownikow().getLast());
+            }
+
+
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

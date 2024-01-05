@@ -49,6 +49,5 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI {
         expIkonka.setText("Exp: " + zoo.getZmiennaZasoby().getExp());
         repaint();
         revalidate();
-        System.out.println("apdejt zasobow");
     }
 }
