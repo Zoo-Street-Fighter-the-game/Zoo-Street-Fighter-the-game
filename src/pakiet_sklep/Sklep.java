@@ -322,14 +322,17 @@ public class Sklep {
             e.printStackTrace();
         }
         System.out.println("Zapis wykonany");
+        System.out.println(zoo.toString());
     }
     public void wczytajGre() {
+        System.out.println(zoo.toString());
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
             zoo = (DzienneZoo) is.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         System.out.println("Import");
+        System.out.println(zoo.toString());
     }
     public void sprzedaj_bron() {
         try {
