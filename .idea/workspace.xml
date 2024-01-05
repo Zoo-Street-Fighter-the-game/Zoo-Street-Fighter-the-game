@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="" />
+    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pakiet_arena/Walka.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pakiet_arena/nr_wybiegu_Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Atak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Atak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/Wybor_zwierzecia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/Wybor_zwierzecia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +27,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -30,23 +43,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "noc__walka",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/oloja/OneDrive/Pulpit/night_zoo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mechanika__nocy__bez__gui&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oloja/OneDrive/Pulpit/night_zoo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,6 +72,10 @@
       <workItem from="1703158920413" duration="936000" />
       <workItem from="1704404747604" duration="2378000" />
       <workItem from="1704455888963" duration="18000" />
+      <workItem from="1704462217958" duration="2075000" />
+      <workItem from="1704475819304" duration="7598000" />
+      <workItem from="1704483557933" duration="103000" />
+      <workItem from="1704483751145" duration="126000" />
     </task>
     <servers />
   </component>

@@ -15,7 +15,7 @@ public class Atak implements MenuAkcji{
             System.out.println("Atakuje za: "+ obrazenia);
         }
         else{
-            int obrazenia = (int) ((zwierze.getSila())*0.4);
+            int obrazenia = (int) ((zwierze.getSila())*0.5);
             przeciwnik.setZycie(przeciwnik.getZycie() - obrazenia);
             System.out.println("Atakuje za: "+ obrazenia);
         }

@@ -12,15 +12,14 @@ import java.util.Scanner;
 
 public class Wybor_zwierzecia {
 
-    public static Zwierze wybor_zwierzecia(){
+    public static nr_wybiegu_Zwierze wybor_zwierzecia(){
         DzienneZoo zoo = DzienneZoo.getInstance();
-        Zwierze zwierze = null;
+        nr_wybiegu_Zwierze wynik = null;
         Scanner scanner = new Scanner(System.in);
 
         boolean powtorz_petle = true;
         while (powtorz_petle) {
             powtorz_petle = false;
-            System.out.println("twoje zwierzeta: ");
             zoo.wypisz_zwierzeta();
 
             System.out.println("napisz numer wybiegu");
@@ -38,7 +37,8 @@ public class Wybor_zwierzecia {
             int indeks_zwierzecia = scanner.nextInt();
 
             try {
-                 zwierze = zoo.getListaWybiegow().get(indeks_wybiegu).getLista_zwierzat().get(indeks_zwierzecia);
+                Zwierze zwierze = zoo.getListaWybiegow().get(indeks_wybiegu).getLista_zwierzat().get(indeks_zwierzecia);
+                wynik = new nr_wybiegu_Zwierze(indeks_wybiegu,zwierze);
 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Wybrales niepoprawne zwierze lub wybieg. Spróbuj ponownie.");
@@ -46,8 +46,7 @@ public class Wybor_zwierzecia {
             }
 
         }
-
-        return zwierze;
+        return wynik;
     }
 
     public static Zwierze stworzenie_zwierzecia_walczacego(Zwierze zwierze,Arena arena) {
@@ -80,6 +79,7 @@ public class Wybor_zwierzecia {
         walczace_zwierze.setSila( walczace_zwierze.getSila() + (int)ogolna_wartosc);
         walczace_zwierze.setZycie(walczace_zwierze.getZycie() + (int)ogolna_wartosc);
 
+
         return walczace_zwierze;
     }
 
@@ -97,4 +97,5 @@ public class Wybor_zwierzecia {
         zwierze.setSila((int) (zwierze.getSila() * poziom_trudnosci.getMnoznik()));
         zwierze.setZycie((int) (zwierze.getZycie()*poziom_trudnosci.getMnoznik()));
     }
+
 }

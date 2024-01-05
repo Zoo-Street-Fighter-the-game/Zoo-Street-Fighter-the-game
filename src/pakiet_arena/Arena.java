@@ -11,10 +11,10 @@ public class Arena {
 
 
     public Arena(){
-        this.zalesienie=(int)(Math.random()*10);
-        this.wodyPowierzchniowe=(int)(Math.random()*10);
-        this.wiatr=(int)(Math.random()*10);
-        this.naslonecznienie=(int)(Math.random()*10);
+        this.zalesienie=(int)(Math.random()*5);
+        this.wodyPowierzchniowe=(int)(Math.random()*5);
+        this.wiatr=(int)(Math.random()*5);
+        this.naslonecznienie=(int)(Math.random()*5);
     }
 
 

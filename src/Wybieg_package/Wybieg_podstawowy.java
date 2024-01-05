@@ -69,7 +69,8 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
             System.gc();
             System.out.println("usunieto zwierze");
         }
-        System.out.println("nie udalo sie usunac zwierzecia");
+        else
+            System.out.println("nie udalo sie usunac zwierzecia");
     }
 
 

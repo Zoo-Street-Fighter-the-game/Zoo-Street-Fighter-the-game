@@ -31,7 +31,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Łoś", 1, 1,10,50, 10, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"Łoś", 10, 10,10,50, 10, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     };
 
