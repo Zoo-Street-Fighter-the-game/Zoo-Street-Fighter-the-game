@@ -24,7 +24,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Zolw", 75, 20, 15,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze(imie,"Żółw", 75, 20, 15,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
         }
     },
     REKIN {
@@ -103,7 +103,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Orzel", 45, 50, 70,50,5, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Orzeł", 45, 50, 70,50,5, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     },
     PAPUGA {
