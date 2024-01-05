@@ -17,6 +17,7 @@
     import java.awt.event.MouseEvent;
     import java.util.ArrayList;
     import java.util.List;
+    import java.util.Objects;
 
     import static pakiet_arena.NocneZoo2.Q_TABLE_FILE;
     import static pakiet_arena.Wybor_zwierzecia.*;
@@ -85,13 +86,13 @@
 
                             switch (zwierze.getNazwa()) {
                                 case "Łoś":
-                                    imageIcon = new ImageIcon("los.png");
+                                    imageIcon = new ImageIcon(Objects.requireNonNull(BusinessLogic1.class.getResource("/obrazki/los.png")));
                                     break;
                                 case "Pingwin":
-                                    imageIcon = new ImageIcon("pingwin.png");
+                                    imageIcon = new ImageIcon(Objects.requireNonNull(BusinessLogic1.class.getResource("/obrazki/pingwin.jpg")));
                                     break;
                                 case "Niedźwiedź":
-                                    imageIcon = new ImageIcon("bear.png");
+                                    imageIcon = new ImageIcon(Objects.requireNonNull(BusinessLogic1.class.getResource("/obrazki/bear.jpg")));
                                     break;
                                 default:
                                     // Domyślny obraz, gdy rodzaj zwierzaka nie jest rozpoznany
@@ -208,6 +209,8 @@
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     atak(zwierze, finalPrzeciwnik1);
+
+
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
@@ -350,21 +353,23 @@
 
             switch (zwierze.getNazwa()) {
                 case "Łoś":
-                    imageIcon = new ImageIcon("los.png");
+                    System.out.println(BusinessLogic1.class.getResource("/obrazki/mis2.gif"));
+                    imageIcon = new ImageIcon(Objects.requireNonNull(BusinessLogic1.class.getResource("/obrazki/mis.gif")));
                     break;
                 case "Pingwin":
-                    imageIcon = new ImageIcon("pingwin.png");
+                    imageIcon = new ImageIcon(Objects.requireNonNull(BusinessLogic1.class.getResource("/obrazki/pingwin.png")));
                     break;
                 case "Niedźwiedź":
-                    imageIcon = new ImageIcon("bear.png");
+                    imageIcon = new ImageIcon(Objects.requireNonNull(BusinessLogic1.class.getResource("/obrazki/bear.png")));
                     break;
                 default:
                     // Domyślny obraz, gdy rodzaj zwierzaka nie jest rozpoznany
                     imageIcon = new ImageIcon("default.png");
             }
 
-            Image newImage = imageIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-            JLabel imageLabel = new JLabel(zwierze.getNazwa(), new ImageIcon(newImage), JLabel.CENTER);
+            //Image newImage = imageIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+            //JLabel imageLabel = new JLabel(zwierze.getNazwa(), new ImageIcon(newImage), JLabel.CENTER);
+            JLabel imageLabel = new JLabel(zwierze.getNazwa(), imageIcon, JLabel.CENTER);
             imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
             imageLabel.setHorizontalTextPosition(JLabel.CENTER);
             imageLabel.setFont(new Font("Arial", Font.PLAIN, 16));

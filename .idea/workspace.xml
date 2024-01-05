@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/enumy/przedmioty_enum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Adidasy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Miecz.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Patyk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/PistoletNaWode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/RekawiceBokserskie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Topor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Wuwuzela.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Zbroja.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test1.java" beforeDir="false" />
-    </list>
+    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,10 +36,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "noc__walka",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/oloja/OneDrive/Pulpit/night_zoo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
@@ -75,6 +58,7 @@
       <workItem from="1703158796736" duration="9000" />
       <workItem from="1703158920413" duration="936000" />
       <workItem from="1704404747604" duration="2378000" />
+      <workItem from="1704455888963" duration="18000" />
     </task>
     <servers />
   </component>

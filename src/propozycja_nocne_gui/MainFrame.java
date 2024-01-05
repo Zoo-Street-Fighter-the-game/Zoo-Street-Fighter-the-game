@@ -48,12 +48,6 @@ public class MainFrame {
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.SREDNI));
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.DUZY));
         zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze("Marek"));
-
-        Sklep sklep = new Sklep(zoo);
-
-  /*      Przedmiot Topor = new Topor();
-        sklep.kup_bron(Topor);
-*/
         new MainFrame().createAndShowGUI();
 
     }
