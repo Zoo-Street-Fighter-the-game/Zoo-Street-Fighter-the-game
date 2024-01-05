@@ -9,6 +9,7 @@
     import pakiet_arena.Arena;
     import pakiet_arena.QLearningAgent;
 
+
     import javax.swing.*;
     import java.awt.*;
     import java.awt.event.ActionEvent;
@@ -37,6 +38,21 @@
 
 
         // Klasa do wyświetlania informacji o zwierzęciu
+        public static void startLoading(DzienneZoo zoo) {
+            //opoznanie wlaczenia aplikacji, zabeczpieczenie przed nie załadowaniem sie potrzebnych kompomentow
+            Thread loadingThread = new Thread(() -> {
+                try {
+                    for (int i = 0; i <= 100; i++) {
+                        Thread.sleep(55);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+
+                }
+                WybiegInfoPanel.showMainApplication(zoo);
+            });
+            loadingThread.start();
+        }
         public static class ZwierzeInfoPanel {
             public static void showZwierzeInfo(JFrame parent, Zwierze zwierze) {
                 JOptionPane.showMessageDialog(parent,
@@ -143,14 +159,15 @@
                             @Override
                             public void mouseClicked(MouseEvent e) {
                                 if (e.getClickCount() == 2) {
-                                    int index = infoList.locationToIndex(e.getPoint());
-                                    if (index >= 0) {
-                                        Zwierze selectedZwierze = infoList.getModel().getElementAt(index);
-                                        ZwierzeInfoPanel.showZwierzeInfo(infoFrame, selectedZwierze);
+                                    int selectedIndex = infoList.locationToIndex(e.getPoint());
+                                    if (selectedIndex >= 0) {
+                                        Zwierze selectedZwierze = infoList.getModel().getElementAt(selectedIndex);
+
                                     }
                                 }
                             }
                         });
+
 
                         infoPanel.add(scrollPane, BorderLayout.CENTER);
                         infoPanel.add(imagePanel, BorderLayout.SOUTH);
@@ -168,20 +185,7 @@
         private static boolean titleLabelVisible = false;
 
         // Metoda do rozpoczęcia procesu ładowania opoznia proces wlaczenia okna aby zapobiec zamrozeniu aplikacji
-        public static void startLoading(DzienneZoo zoo) {
-            //opoznanie wlaczenia aplikacji, zabeczpieczenie przed nie załadowaniem sie potrzebnych kompomentow
-            Thread loadingThread = new Thread(() -> {
-                try {
-                    for (int i = 0; i <= 100; i++) {
-                        Thread.sleep(55);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                WybiegInfoPanel.showMainApplication(zoo);
-            });
-            loadingThread.start();
-        }
+
 
         public static void wyslij_na_arene(Zwierze zwierze, int wybieg) {
             Window[] windows = Window.getWindows();
@@ -242,7 +246,10 @@
 
 // to jest odpowiedzialne  za umieszcxzenie zdj zwierzat na przeciwko siebie
             JPanel playerLabel = createAnimalPanel(zwierze);
+
             JPanel opponentLabel = createAnimalPanel(przeciwnik);
+            // tutaj trzeba zmienic createAnimalPanel zeby zrobic nowy dla przeciwnika bo trzeba odbic lustrzanie zdjecie przeciwnika
+
 
             panelZwierzat.add(playerLabel, BorderLayout.WEST);
             panelZwierzat.add(opponentLabel, BorderLayout.EAST);
