@@ -39,4 +39,6 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
 
     public abstract int getCena();
 
+
+
 }

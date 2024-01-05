@@ -332,7 +332,11 @@ public class Sklep {
             zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
             zoo.setDniCounter(zoo2.getDniCounter());
             for(int i = 0; i<(zoo2.getListaWybiegow()).size(); i++){
-                zoo.dodajWybieg( new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
+                zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
+                for(int j = 0; j<zoo2.getListaWybiegow().get(i).getLista_zwierzat().size();j++){
+                    zoo.getListaWybiegow().get(i).dodaj_zwierze(new Zwierze(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getImie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getNazwa(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getZycie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getSila(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getSzybkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getSzczescie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getWielkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getWskaznik_glodu(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getCena(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(i).getRodzaj()));
+                }
+
                 PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
                 panelDzienWybiegi.dodajWybieg(panelWybieg);
                 panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
