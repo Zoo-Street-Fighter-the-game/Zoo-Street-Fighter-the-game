@@ -3,8 +3,9 @@ package Klasy_Zwierzat;
 import Przedmioty.Przedmiot;
 import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
+import java.io.Serializable;
 
-public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface {
+public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
 
 
     //===========================================================================

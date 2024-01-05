@@ -3,12 +3,12 @@ import Klasy_Zwierzat.*;
 import pakiet_zasoby.*;
 import Wybieg_package.*;
 import Pracownik_package.*;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class DzienneZoo {
+public class DzienneZoo implements Serializable{
 
 
     //ZMIENNNE --------------------------------------------------------------

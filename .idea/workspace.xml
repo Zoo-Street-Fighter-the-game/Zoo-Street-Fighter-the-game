@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dzienne gui is ready,ezzz">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_12_2023_21_28_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_12_2023_21_28__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfejsy/ObserwujacyPracownikGUI_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/ObserwujacyPracownikGUI_interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfejsy/UpdateGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfejsy/UpdateGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_abstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_bezdomni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_zasoby/Zasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_zasoby/Zasoby.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +156,7 @@
       <workItem from="1704293941201" duration="453000" />
       <workItem from="1704309259905" duration="2284000" />
       <workItem from="1704382883608" duration="481000" />
+      <workItem from="1704452752870" duration="2152000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />

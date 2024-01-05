@@ -2,10 +2,11 @@ package Pracownik_package;
 import Wybieg_package.*;
 import Klasy_Zwierzat.Zwierze;
 import pakiet_zasoby.Zasoby;
+import java.io.Serializable;
 
 
 
-public class Pracownik {
+public class Pracownik implements Serializable{
 
     //INICJOWANIE SKLADOWYCH
     private String imie;
