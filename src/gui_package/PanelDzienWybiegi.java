@@ -43,6 +43,7 @@ public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
 
         revalidate();
         repaint();
+        System.out.println("apdejt wybiegów");
     }
 
     public PanelWybiegBezdomni getWybiegBezdomni() {

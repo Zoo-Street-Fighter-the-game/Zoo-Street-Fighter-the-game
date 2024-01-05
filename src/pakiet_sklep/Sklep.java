@@ -332,7 +332,9 @@ public class Sklep {
             e.printStackTrace();
         }
         System.out.println("Import");
+        updateGUI();
         System.out.println(zoo.toString());
+
     }
     public void sprzedaj_bron() {
         try {

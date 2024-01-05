@@ -120,6 +120,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         public void actionPerformed(ActionEvent e) {
             sklep.wczytajGre();
         }
+
     }
     class ReakcjaKupWybieg implements ActionListener
     {
