@@ -17,6 +17,9 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
     private JButton kupPracownika;
     private JButton sprzedajJedzenie ;
     private JButton sprzedajPracownika;
+
+    private JButton zapiszGre;
+    private JButton wczytajGre;
     private Sklep sklep;
 
     private DzienneZoo zoo;
@@ -40,6 +43,8 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         sprzedajJedzenie = new JButton("Sprzedaj Jedzenie");
 
         sprzedajPracownika = new JButton("Sprzedaj Pracownika");
+        zapiszGre = new JButton("Zapisz Gre");
+        wczytajGre = new JButton("Wczytaj Poprzednia Gre");
 
         setsettingsforbutton(kupJedzenie);
         setsettingsforbutton(kupPracownika);
@@ -47,6 +52,8 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
 
         setsettingsforbutton(sprzedajJedzenie);
         setsettingsforbutton(sprzedajPracownika);
+        setsettingsforbutton(zapiszGre);
+        setsettingsforbutton(wczytajGre);
 
 
         kupWybieg.addActionListener(new ReakcjaKupWybieg());
@@ -54,6 +61,8 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         kupPracownika.addActionListener(new ReakcjaKupPracownika());
         sprzedajJedzenie.addActionListener(new ReakcjaSprzedajJedzenie());
         sprzedajPracownika.addActionListener(new ReakcjaSprzedajPracownika());
+       // zapiszGre.addActionListener(new ReakcjaZapiszGre());
+        //wczytajGre.addActionListener(new ReakcjaWczytajGre());
 
         this.add(logosklepu);
         this.add(kupJedzenie);
@@ -62,6 +71,8 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
 
         this.add(sprzedajJedzenie);
         this.add(sprzedajPracownika);
+        this.add(zapiszGre);
+        this.add(wczytajGre);
 
 
 
@@ -84,6 +95,8 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         kupWybieg.setEnabled(false);
         sprzedajJedzenie.setEnabled(false);
         sprzedajPracownika.setEnabled(false);
+        zapiszGre.setEnabled(false);
+        wczytajGre.setEnabled(false);
     }
 
     @Override
@@ -93,8 +106,17 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         kupWybieg.setEnabled(true);
         sprzedajJedzenie.setEnabled(true);
         sprzedajPracownika.setEnabled(true);
+        zapiszGre.setEnabled(true);
+        wczytajGre.setEnabled(true);
     }
+   // class ReakcjaZapiszGre implements ActionListener
+   // {
 
+   // }
+    //class ReakcjaWczytajGre implements ActionListener
+    //{
+
+   // }
     class ReakcjaKupWybieg implements ActionListener
     {
         @Override

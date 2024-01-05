@@ -313,23 +313,22 @@ public class Sklep {
         }
     }
 
-    public void zapiszGre(DzienneZoo dzienneZoo){
+    public void zapiszGre(DzienneZoo zoo){
         try (ObjectOutputStream so = new ObjectOutputStream(new FileOutputStream("Plik.ser"))) {
-            so.writeObject(dzienneZoo);
+            so.writeObject(zoo);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     public static DzienneZoo wczytajGre() {
-        DzienneZoo dzienneZoo = null;
+        DzienneZoo zoo = null;
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
-            dzienneZoo = (DzienneZoo) is.readObject();
+            zoo = (DzienneZoo) is.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return dzienneZoo;
+        return zoo;
     }
     public void sprzedaj_bron() {
         try {

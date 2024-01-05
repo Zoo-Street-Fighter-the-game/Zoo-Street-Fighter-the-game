@@ -46,9 +46,9 @@ public class MainFrame {
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.DUZY));
-        zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
+        //zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
+        //zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
+        //zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
         Sklep sklep = new Sklep(zoo);
 
         Przedmiot Topor = przedmioty_enum.TOPOR.stworzPrzedmiot();
