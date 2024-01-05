@@ -1,5 +1,7 @@
 package pakiet_sklep;
+import java.io.ObjectOutputStream;
 import java.util.*;
+import java.io.*;
 
 import DzienneZooPakiet.*;
 import Klasy_Zwierzat.Zwierze;
@@ -309,6 +311,25 @@ public class Sklep {
         } catch (IllegalArgumentException | BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void zapiszGre(DzienneZoo dzienneZoo){
+        try (ObjectOutputStream so = new ObjectOutputStream(new FileOutputStream("Plik.ser"))) {
+            so.writeObject(dzienneZoo);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static DzienneZoo wczytajGre() {
+        DzienneZoo dzienneZoo = null;
+        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
+            dzienneZoo = (DzienneZoo) is.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return dzienneZoo;
     }
     public void sprzedaj_bron() {
         try {
