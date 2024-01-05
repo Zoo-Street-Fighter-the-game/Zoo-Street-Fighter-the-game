@@ -314,21 +314,22 @@ public class Sklep {
     }
 
     public void zapiszGre(DzienneZoo zoo){
+        zoo = this.zoo;
         try (ObjectOutputStream so = new ObjectOutputStream(new FileOutputStream("Plik.ser"))) {
             so.writeObject(zoo);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Zapis wykonany");
     }
-    public static DzienneZoo wczytajGre() {
-        DzienneZoo zoo = null;
+    public void wczytajGre() {
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
             zoo = (DzienneZoo) is.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return zoo;
+        System.out.println("Import");
     }
     public void sprzedaj_bron() {
         try {

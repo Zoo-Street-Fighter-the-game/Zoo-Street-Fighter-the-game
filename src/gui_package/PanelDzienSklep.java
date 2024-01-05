@@ -61,8 +61,8 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         kupPracownika.addActionListener(new ReakcjaKupPracownika());
         sprzedajJedzenie.addActionListener(new ReakcjaSprzedajJedzenie());
         sprzedajPracownika.addActionListener(new ReakcjaSprzedajPracownika());
-       // zapiszGre.addActionListener(new ReakcjaZapiszGre());
-        //wczytajGre.addActionListener(new ReakcjaWczytajGre());
+        zapiszGre.addActionListener(new ReakcjaZapiszGre());
+        wczytajGre.addActionListener(new ReakcjaWczytajGre());
 
         this.add(logosklepu);
         this.add(kupJedzenie);
@@ -109,14 +109,18 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         zapiszGre.setEnabled(true);
         wczytajGre.setEnabled(true);
     }
-   // class ReakcjaZapiszGre implements ActionListener
-   // {
-
-   // }
-    //class ReakcjaWczytajGre implements ActionListener
-    //{
-
-   // }
+    class ReakcjaZapiszGre implements ActionListener
+   {
+       public void actionPerformed(ActionEvent e) {
+           sklep.zapiszGre(zoo);
+       }
+    }
+    class ReakcjaWczytajGre implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e) {
+            sklep.wczytajGre();
+        }
+    }
     class ReakcjaKupWybieg implements ActionListener
     {
         @Override
