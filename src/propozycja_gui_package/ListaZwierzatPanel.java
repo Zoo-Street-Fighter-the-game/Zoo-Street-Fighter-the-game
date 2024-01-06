@@ -62,7 +62,7 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
             JPanel wybiegPanel = new JPanel(new BorderLayout());
             tabbedPane.addTab("Wybieg " + (i + 1), wybiegPanel);
 
-            dodajZwierzetaDoPanelu(wybiegPanel, wybieg);
+            dodajZwierzetaDoPanelu(wybiegPanel, wybieg, i);
 
             centralPanel.add(tabbedPane);
         }
@@ -72,7 +72,7 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
         this.add(poziomTrudnosciPanel, BorderLayout.NORTH);
     }
 
-    private void dodajZwierzetaDoPanelu(JPanel wybiegPanel, Wybieg_podstawowy wybieg) {
+    private void dodajZwierzetaDoPanelu(JPanel wybiegPanel, Wybieg_podstawowy wybieg,int numerWybiegu) {
         ArrayList<Zwierze> listaZwierzat = new ArrayList<>(wybieg.getLista_zwierzat());
 
         DefaultListModel<Zwierze> listModel = new DefaultListModel<>();
@@ -132,7 +132,7 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
                 imageLabel.setHorizontalTextPosition(JLabel.CENTER);
                 imageLabel.setFont(new Font("Arial", Font.PLAIN, 16));
 
-                int finalI = 1;
+                int finalI = numerWybiegu + 1;
                 imageLabel.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {

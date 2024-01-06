@@ -289,6 +289,7 @@ public class WalkaPanel extends JPanel {
                     System.out.println(twoje_zwierze.getNazwa());
                     nowyDialog.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, twoje_zwierze.getNazwa());
+                    new MainFrame(zoo);
                 } else {
                     System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
                     agent.learn(1, 0, 1, -10);
@@ -296,7 +297,9 @@ public class WalkaPanel extends JPanel {
                     int wynik = (int) (50 * poziomTrudnosci.getMnoznik());
                     zoo.getZmiennaZasoby().dodajExp(wynik);
                     zoo.getZmiennaZasoby().zmienMonety(wynik);
+
                     nowyDialog.dispose();
+
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, przeciwnik.getNazwa());
                 }
             }
