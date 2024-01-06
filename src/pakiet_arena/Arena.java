@@ -4,6 +4,7 @@ package pakiet_arena;
 
 
 public class Arena {
+    private int temperatura;
     private int zalesienie;
     private int wodyPowierzchniowe;
     private int wiatr;
@@ -11,10 +12,11 @@ public class Arena {
 
 
     public Arena(){
-        this.zalesienie=(int)(Math.random()*10);
-        this.wodyPowierzchniowe=(int)(Math.random()*10);
-        this.wiatr=(int)(Math.random()*10);
-        this.naslonecznienie=(int)(Math.random()*10);
+        this.temperatura=(int)((Math.random()*100)-50);
+        this.zalesienie=(int)((Math.random()*100)+1);
+        this.wodyPowierzchniowe=(int)((Math.random()*100)+1);
+        this.wiatr=(int)((Math.random()*100)+1);
+        this.naslonecznienie=(int)((Math.random()*100)+1);
     }
 
 
@@ -45,13 +47,15 @@ public class Arena {
     public void setNaslonecznienie(int naslonecznienie) {
         this.naslonecznienie = naslonecznienie;
     }
+    public int getTemperatura() {return temperatura;}
+    public void setTemperatura(int temperatura) {this.temperatura = temperatura;}
 
-
-    //getStan
+//getStan
 
     @Override
     public String toString() {
         return "Arena: " +
+                ", temperatura=" + temperatura +
                 ", zalesienie=" + zalesienie +
                 ", wodyPowierzchniowe=" + wodyPowierzchniowe +
                 ", wiatr=" + wiatr +

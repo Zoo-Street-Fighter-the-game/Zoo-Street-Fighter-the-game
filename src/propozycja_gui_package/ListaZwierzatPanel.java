@@ -3,7 +3,18 @@ package propozycja_gui_package;
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import Wybieg_package.Wybieg_podstawowy;
-import propozycja_nocne_gui.BusinessLogic1;
+import enumy.poziom_trudnosci_enum;
+import noc_walka.Atak;
+import noc_walka.Leczenie;
+import pakiet_arena.Poziom_trudnosci;
+import pakiet_arena.QLearningAgent;
+import pakiet_arena.Walka;
+import pakiet_arena.nr_wybiegu_Zwierze;
+import propozycja_gui_package.NazwyWybiegowPanel;
+import propozycja_gui_package.PopUpPanelZwierzeInfo;
+import propozycja_gui_package.PoziomTrudnosciPanel;
+
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,11 +22,25 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import static pakiet_arena.NocneZoo2.Q_TABLE_FILE;
 
-import static propozycja_nocne_gui.BusinessLogic1.wyslij_na_arene;
 
-public class ListaZwierzatPanel extends JPanel {
+public class ListaZwierzatPanel extends JPanel implements HealthObserver{
     private NazwyWybiegowPanel nazwyWybiegowPanel;
+    private PoziomTrudnosciPanel poziomTrudnosciPanel;
+    private static int wybiegzmienna;
+    private JProgressBar healthBar;
+    public ListaZwierzatPanel(JProgressBar healthBar) {
+        this.healthBar = healthBar;
+    }
+    @Override
+    public void updateHealth(int newHealth) {
+        healthBar.setValue(newHealth);
+    }
+
+
 
     public ListaZwierzatPanel(DzienneZoo zoo, NazwyWybiegowPanel nazwyWybiegowPanel) {
         this.nazwyWybiegowPanel = nazwyWybiegowPanel;
@@ -32,7 +57,6 @@ public class ListaZwierzatPanel extends JPanel {
 
         JPanel centralPanel = new JPanel(new GridLayout(1, 1));
 
-
         for (int i = 0; i < zoo.getListaWybiegow().size(); i++) {
             Wybieg_podstawowy wybieg = zoo.getListaWybiegow().get(i);
             JPanel wybiegPanel = new JPanel(new BorderLayout());
@@ -43,11 +67,10 @@ public class ListaZwierzatPanel extends JPanel {
             centralPanel.add(tabbedPane);
         }
         this.add(centralPanel, BorderLayout.CENTER);
+
+        poziomTrudnosciPanel = new PoziomTrudnosciPanel();
+        this.add(poziomTrudnosciPanel, BorderLayout.NORTH);
     }
-
-
-
-
 
     private void dodajZwierzetaDoPanelu(JPanel wybiegPanel, Wybieg_podstawowy wybieg) {
         ArrayList<Zwierze> listaZwierzat = new ArrayList<>(wybieg.getLista_zwierzat());
@@ -59,7 +82,7 @@ public class ListaZwierzatPanel extends JPanel {
 
         JList<Zwierze> infoList = new JList<>(listModel);
         JScrollPane scrollPane = new JScrollPane(infoList);
-        // Ustawienia renderera dla JList - domyslu sposob zeby tylko bylo wyswietlane imie zwierzaka
+
         infoList.setCellRenderer(new DefaultListCellRenderer() {
             @Override
             public Component getListCellRendererComponent(JList<?> list, Object value, int index,
@@ -68,10 +91,8 @@ public class ListaZwierzatPanel extends JPanel {
 
                 if (value instanceof Zwierze) {
                     Zwierze zwierze = (Zwierze) value;
-
                     JLabel label = new JLabel(zwierze.getNazwa());
                     label.setFont(new Font("Arial", Font.BOLD, 16));
-
                     panel.add(label, BorderLayout.CENTER);
                 }
 
@@ -79,7 +100,6 @@ public class ListaZwierzatPanel extends JPanel {
             }
         });
 
-        // Customize the width of the cells
         infoList.setFixedCellWidth(200);
 
         infoList.addMouseListener(new MouseAdapter() {
@@ -101,10 +121,8 @@ public class ListaZwierzatPanel extends JPanel {
             }
         });
 
-
         JPanel imagePanel = new JPanel(new GridLayout(0, 2, 10, 10));
 
-        // Iteracja przez listę zwierząt na wybiegu
         for (Zwierze zwierze : wybieg.getLista_zwierzat()) {
             ImageIcon imageIcon = getImageIconForZwierze(zwierze);
             if (imageIcon != null) {
@@ -114,11 +132,12 @@ public class ListaZwierzatPanel extends JPanel {
                 imageLabel.setHorizontalTextPosition(JLabel.CENTER);
                 imageLabel.setFont(new Font("Arial", Font.PLAIN, 16));
 
-                int finalI = 1; // Załóżmy, że istnieje tylko jedna zakładka - można dostosować w przyszłości
+                int finalI = 1;
                 imageLabel.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                        wyslij_na_arene(zwierze, finalI);
+                        WalkaPanel walkaPanel = new WalkaPanel(zwierze,finalI,poziomTrudnosciPanel);
+                        WalkaPanel.wyslij_na_arene(zwierze,finalI);
                     }
                 });
 
@@ -132,23 +151,44 @@ public class ListaZwierzatPanel extends JPanel {
 
     private ImageIcon getImageIconForZwierze(Zwierze zwierze) {
         String imageName = getImageNameForZwierze(zwierze);
-        URL imageUrl = BusinessLogic1.class.getResource(imageName);
+        URL imageUrl = getClass().getResource(imageName);
         if (imageUrl != null) {
             return new ImageIcon(imageUrl);
         }
         return null;
     }
 
+
     private String getImageNameForZwierze(Zwierze zwierze) {
         switch (zwierze.getNazwa()) {
+            case "Pingwin":
+                return "/obrazki/pingiwn.png";
+            case "Żółw":
+                return "/obrazki/zolw.png";
+            case "Rekin":
+                return "/obrazki/rekin.png";
+            case "Orka":
+                return "/obrazki/orka.png";
             case "Łoś":
                 return "/obrazki/los.png";
-            case "Pingwin":
-                return "/obrazki/pingwin.png";
             case "Niedźwiedź":
-                return "/obrazki/bear.png";
+                return "/obrazki/mis.png";
+            case "Niedźiedź polarny":
+                return "/obrazki/mispolarny.png";
+            case "Lew":
+                return "/obrazki/lew.png";
+            case "Orzeł":
+                return "/obrazki/orzel.png";
+            case "Papuga":
+                return "/obrazki/papuga.png";
+            case "Paw":
+                return "/obrazki/paw.png";
+            case "Nietoperz":
+                return "/obrazki/nietoperz.png";
             default:
                 return "/obrazki/default.png";
         }
     }
+
+
 }

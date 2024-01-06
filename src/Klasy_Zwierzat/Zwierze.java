@@ -3,7 +3,7 @@ package Klasy_Zwierzat;
 import Przedmioty.Przedmiot;
 import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
-import propozycja_nocne_gui.HealthSubject;
+import propozycja_gui_package.HealthSubject;
 
 public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface {
 
@@ -23,6 +23,12 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
+
+
+// Gettery i settery
+
+
+
 
 
     private Przedmiot przedmiot;

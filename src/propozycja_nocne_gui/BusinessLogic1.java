@@ -5,9 +5,9 @@
     import Wybieg_package.Wybieg_podstawowy;
     import enumy.poziom_trudnosci_enum;
     import noc_walka.Atak;
-    import noc_walka.Leczenie;
     import pakiet_arena.Arena;
     import pakiet_arena.QLearningAgent;
+    import propozycja_gui_package.HealthObserver;
 
 
     import javax.swing.*;
@@ -26,6 +26,16 @@
     public class BusinessLogic1 implements HealthObserver {
         private static List<JFrame> openedWindows = new ArrayList<>();
         private JProgressBar healthBar;
+        private  int wybiegzmienna;
+
+        public int getWybiegzmienna() {
+            return wybiegzmienna;
+        }
+
+        public void setWybiegzmienna(int wybiegzmienna) {
+            this.wybiegzmienna = wybiegzmienna;
+        }
+
         public BusinessLogic1(JProgressBar healthBar) {
             this.healthBar = healthBar;
         }
@@ -38,6 +48,7 @@
 
 
         // Klasa do wyświetlania informacji o zwierzęciu
+
         public static void startLoading(DzienneZoo zoo) {
             //opoznanie wlaczenia aplikacji, zabeczpieczenie przed nie załadowaniem sie potrzebnych kompomentow
             Thread loadingThread = new Thread(() -> {
@@ -264,7 +275,10 @@
             nowyDialog.setModal(true);
         }
 
-        private static void ruchPrzeciwnik(Zwierze finalPrzeciwnik, Zwierze zwierze, int wybieg) {
+        public static void ruchPrzeciwnik(Zwierze finalPrzeciwnik, Zwierze zwierze, int wybieg) {
+
+
+
             DzienneZoo zoo = DzienneZoo.getInstance();
             QLearningAgent agent = new QLearningAgent(2, 2);
             System.out.println("xdd"+zwierze.getZycie());
