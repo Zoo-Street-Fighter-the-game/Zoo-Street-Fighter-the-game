@@ -114,14 +114,14 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
        public void actionPerformed(ActionEvent e) {
            sklep.zapiszGre();
            new gui_oknaPopUp.OknoZapis();
-         //  wczytajGre.setEnabled(true);
+           wczytajGre.setEnabled(true);
        }
     }
     class ReakcjaWczytajGre implements ActionListener
     {
         public void actionPerformed(ActionEvent e) {
             sklep.wczytajGre();
-           // wczytajGre.setEnabled(false);
+         wczytajGre.setEnabled(false);
         }
 
     }

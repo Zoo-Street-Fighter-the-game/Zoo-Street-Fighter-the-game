@@ -344,9 +344,7 @@ public class Sklep {
                     zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
                 }
 
-
-                ////////////////////////////Tutaj musze napisac usuwanie paneli skrrrt////////////
-
+                panelDzienWybiegi.Wyczysc(this);
                 zoo.getListaWybiegow().clear();
 
 
