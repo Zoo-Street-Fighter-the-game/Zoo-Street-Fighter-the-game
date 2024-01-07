@@ -338,7 +338,7 @@ public class Sklep {
                 b--;
 
             }
-
+                zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
 
                 for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
                     zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
@@ -347,6 +347,9 @@ public class Sklep {
                 panelDzienWybiegi.Wyczysc(this);
                 zoo.getListaWybiegow().clear();
 
+            for(int i = 0; i<(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().size()); i++){
+                zoo.getWybiegDlaBezdomnych().dodaj_zwierze(new Zwierze(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getImie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getNazwa(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getZycie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSila(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzybkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzczescie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWielkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWskaznik_glodu(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getCena(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getRodzaj()));
+            }
 
             for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
                 zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
