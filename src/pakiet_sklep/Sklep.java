@@ -341,13 +341,13 @@ public class Sklep {
 
 
                 for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
-                    System.out.println("Usuwam: " + zoo.getListaWybiegow().get(a).toString());
-                    zoo.usunWybieg(zoo.getListaWybiegow().get(a));
-                    PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
-                    panelDzienWybiegi.usunWybieg(panelWybieg);
-                    a--;
-
+                    zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
                 }
+
+
+                ////////////////////////////Tutaj musze napisac usuwanie paneli skrrrt////////////
+
+                zoo.getListaWybiegow().clear();
 
 
             for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
