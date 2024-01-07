@@ -321,16 +321,35 @@ public class Sklep {
             e.printStackTrace();
         }
         System.out.println("Zapis wykonany");
-        System.out.println(getZoo().toString());
     }
     public void wczytajGre() {
         System.out.println(zoo.toString());
+        System.out.println("Import");
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
             DzienneZoo zoo2 = (DzienneZoo) is.readObject();
             zoo.getZmiennaZasoby().setMonety(zoo2.getZmiennaZasoby().getMonety());
             zoo.getZmiennaZasoby().setJedzenie(zoo2.getZmiennaZasoby().getJedzenie());
             zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
             zoo.setDniCounter(zoo2.getDniCounter());
+
+            for(int b = 0; b<((zoo.getListaPracownikow()).size()); b++){
+                zoo.usunPracownika(zoo.getListaPracownikow().get(b));
+                panelDzienPracownicy.usunPracownika(b);
+                b--;
+
+            }
+
+
+                for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
+                    System.out.println("Usuwam: " + zoo.getListaWybiegow().get(a).toString());
+                    zoo.usunWybieg(zoo.getListaWybiegow().get(a));
+                    panelDzienWybiegi.usunWybieg(PanelWybieg a);
+
+                    a--;
+
+                }
+
+
             for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
                 zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
                 for(int j = 0; j<(zoo2.getListaWybiegow().get(i).getLista_zwierzat().size());j++){
@@ -350,7 +369,6 @@ public class Sklep {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println("Import");
         updateGUI();
         System.out.println(zoo.toString());
 
