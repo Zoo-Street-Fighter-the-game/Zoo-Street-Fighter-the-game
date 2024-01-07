@@ -343,8 +343,8 @@ public class Sklep {
                 for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
                     System.out.println("Usuwam: " + zoo.getListaWybiegow().get(a).toString());
                     zoo.usunWybieg(zoo.getListaWybiegow().get(a));
-                    panelDzienWybiegi.usunWybieg(PanelWybieg a);
-
+                    PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+                    panelDzienWybiegi.usunWybieg(panelWybieg);
                     a--;
 
                 }
