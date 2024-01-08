@@ -46,7 +46,8 @@ public class Animacja extends JFrame {
                     zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.SREDNI));
                     zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.WODNY, wielkosc_wybiegu_enum.SREDNI));
                     zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.LOS.stworzZwierze("bob"));
-                    zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze("bob"));
+                    zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.ZOLW.stworzZwierze("bob"));
+
                     new MainFrame(zoo);
                 }
             }

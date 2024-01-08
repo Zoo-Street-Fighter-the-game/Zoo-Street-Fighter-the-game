@@ -9,7 +9,7 @@ import java.awt.*;
 public class PanelNoc extends JPanel {
     private NazwyWybiegowPanel panelWybiegi;
     private ListaZwierzatPanel panelNazwy;
-    private WalkaPanel walkaPanel;
+
 
 
 
