@@ -1,17 +1,15 @@
 package gui_package;
 
-import DzienneZooPakiet.DzienneZoo;
-import Wybieg_package.Wybieg_podstawowy;
+
 import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
 
-    private PanelWybiegBezdomni wybiegBezdomni;
+    private final PanelWybiegBezdomni wybiegBezdomni;
 
     public PanelDzienWybiegi(Sklep sklep)
     {

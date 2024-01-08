@@ -12,20 +12,20 @@ import java.util.Random;
 
 public class OknoKupZwierze extends JFrame {
 
-    private Sklep sklep;
-    private Wybieg_podstawowy wybieg;
-    private JPanel panelMain;
-    private JPanel panelRadio;
-    private JLabel text;
-    private ZwierzeRadioButton pingwin;
-    private ZwierzeRadioButton niedzwiedz;
-    private ZwierzeRadioButton los;
-    private ButtonGroup group;
+    private final Sklep sklep;
+    private final Wybieg_podstawowy wybieg;
+    private final JPanel panelMain;
+    private final JPanel panelRadio;
+    private final JLabel text;
+    private final ZwierzeRadioButton pingwin;
+    private final ZwierzeRadioButton niedzwiedz;
+    private final ZwierzeRadioButton los;
+    private final ButtonGroup group;
     private ZwierzeRadioButton wybrany;
 
-    private JTextField imieTextField;
+    private final JTextField imieTextField;
 
-    private String [] imiona = {"Fafik", "Puszek", "Leon", "Lolek", "Bolek", "Tysiu", "Misiek", "Pypeć", "Miszor", "Klaus", "Berni", "Gwiazdor", "Król", "Cezar", "Pimpek", "Malec", "Słodziak", "Kluska", "Pikuś", "Rezi", "Gimper", "Multi", "Merghani", "Blowek", "Naruciak", "Vertez", "Pan Śmietanka", "Dremu", "Maniek"};
+    private final String [] imiona = {"Fafik", "Puszek", "Leon", "Lolek", "Bolek", "Tysiu", "Misiek", "Pypeć", "Miszor", "Klaus", "Berni", "Gwiazdor", "Król", "Cezar", "Pimpek", "Malec", "Słodziak", "Kluska", "Pikuś", "Rezi", "Gimper", "Multi", "Merghani", "Blowek", "Naruciak", "Vertez", "Pan Śmietanka", "Dremu", "Maniek"};
 
     JButton kupZwierzeButton;
     public OknoKupZwierze (Sklep sklep, Wybieg_podstawowy wybieg)

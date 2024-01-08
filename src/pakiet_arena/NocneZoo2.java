@@ -61,12 +61,12 @@ public class NocneZoo2 {
             switch (wybor) {
                 case 1:
                     Atak atak = new Atak();
-                    atak.MenuAkcji(twoje_zwierze, przeciwnik);
+                    atak.menuAkcji(twoje_zwierze, przeciwnik);
                     break;
                 case 2:
 
                     Leczenie leczenie = new Leczenie();
-                    leczenie.MenuAkcji(twoje_zwierze, przeciwnik);
+                    leczenie.menuAkcji(twoje_zwierze, przeciwnik);
                     break;
                 case 3:
 
@@ -88,7 +88,7 @@ public class NocneZoo2 {
             if (actionPrzeciwnika == 0) {
                 // Przeciwnik wykonuje atak
                 Atak atakPrzeciwnika = new Atak();
-                atakPrzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
+                atakPrzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
                 System.out.println("Przeciwnik zaatakował!");
 
                 // Sprawdzenie warunków zakończenia walki
@@ -96,7 +96,7 @@ public class NocneZoo2 {
             } else {
                 // Przeciwnik wykonuje leczenie
                 Leczenie leczenieprzeciwnika = new Leczenie();
-                leczenieprzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
+                leczenieprzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
                 System.out.println("Przeciwnik się leczy.");
 
 

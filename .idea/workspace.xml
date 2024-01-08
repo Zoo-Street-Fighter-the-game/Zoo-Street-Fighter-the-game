@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dzienne gui is ready,ezzz">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPokazZwierzeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPokazZwierzeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Atak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Atak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/Leczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Leczenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noc_walka/MenuAkcji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/MenuAkcji.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/NocneZoo2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +96,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Enum__Zwierzeta",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony",
     "node.js.detected.package.eslint": "true",
@@ -147,6 +173,7 @@
       <workItem from="1704293941201" duration="453000" />
       <workItem from="1704309259905" duration="2284000" />
       <workItem from="1704382883608" duration="481000" />
+      <workItem from="1704734101223" duration="2212000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />

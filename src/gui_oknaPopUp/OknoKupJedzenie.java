@@ -1,11 +1,8 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
@@ -14,9 +11,9 @@ import java.awt.event.ActionListener;
 
 
 public class OknoKupJedzenie extends JFrame implements ActionListener, DocumentListener {
-    private JTextField iloscField;
-    private Sklep sklepik;
-    private JLabel buttonLabel;
+    private final JTextField iloscField;
+    private final Sklep sklepik;
+    private final JLabel buttonLabel;
 
     public OknoKupJedzenie (Sklep sklep)
     {

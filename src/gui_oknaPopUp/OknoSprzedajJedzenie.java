@@ -1,6 +1,5 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
@@ -12,9 +11,9 @@ import java.awt.event.ActionListener;
 
 
 public class OknoSprzedajJedzenie extends JFrame implements ActionListener, DocumentListener {
-    private JTextField iloscField;
-    private Sklep sklepik;
-    private JLabel buttonLabel;
+    private final JTextField iloscField;
+    private final Sklep sklepik;
+    private final JLabel buttonLabel;
 
     public OknoSprzedajJedzenie (Sklep sklepik)
     {
@@ -99,6 +98,14 @@ public class OknoSprzedajJedzenie extends JFrame implements ActionListener, Docu
             buttonLabel.setText("NaN");
         }
         this.pack();
+    }
+
+    public static void brakJedzenia()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Nie masz wystarczajaco duzo jedzenia!",
+                "Brak Jedzenia",
+                JOptionPane.ERROR_MESSAGE);
     }
 }
 

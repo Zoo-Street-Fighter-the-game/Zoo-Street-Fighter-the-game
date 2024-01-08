@@ -1,6 +1,5 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import pakiet_sklep.Sklep;
 import enumy.*;
 
@@ -10,20 +9,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OknoKupWybieg extends JFrame implements ActionListener {
-    private DzienneZoo zoo;
-    private Sklep sklepik;
-    private JButton kupButton;
-    private JRadioButton powietrznyButton;
-    private JRadioButton wodnyButton ;
-    private JRadioButton ladowyButton;
-    private JRadioButton malyButton;
-    private JRadioButton sredniButton;
-    private JRadioButton duzyButton;
-    private ButtonGroup rodzajWybieguGroup;
-    private ButtonGroup wielkoscWybieguGroup;
+    private final Sklep sklepik;
+    private final JButton kupButton;
+    private final JRadioButton powietrznyButton;
+    private final JRadioButton wodnyButton ;
+    private final JRadioButton ladowyButton;
+    private final JRadioButton malyButton;
+    private final JRadioButton sredniButton;
+    private final JRadioButton duzyButton;
+    private final ButtonGroup rodzajWybieguGroup;
+    private final ButtonGroup wielkoscWybieguGroup;
     private wielkosc_wybiegu_enum wielkosc;
     private rodzaj_srodowiska_enum rodzaj;
-    private JLabel buttonLabel;
+    private final JLabel buttonLabel;
 
     public OknoKupWybieg(Sklep sklep) {
         this.sklepik = sklep;

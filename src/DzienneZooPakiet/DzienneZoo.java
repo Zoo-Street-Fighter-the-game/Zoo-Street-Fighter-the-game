@@ -68,7 +68,6 @@ public class DzienneZoo {
 
     public void rozpocznijDzien()
     {
-        ArrayList <Zwierze> pom ;
         setDniCounter(getDniCounter()+1);
         System.out.println("Rozpoczynamy dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
@@ -195,7 +194,7 @@ public class DzienneZoo {
             listaPracownikow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
     else
         status.append("nie masz żadnych pracowników\n");
-     status.append(zmiennaZasoby.toString()).append(" \n"); //daria musi dodac metode tostring!!!
+     status.append(zmiennaZasoby).append(" \n"); //daria musi dodac metode tostring!!!
 
      return status.toString();
  }

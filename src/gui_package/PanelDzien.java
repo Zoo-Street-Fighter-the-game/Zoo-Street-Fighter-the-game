@@ -1,9 +1,6 @@
 package gui_package;
 
-import DzienneZooPakiet.DzienneZoo;
-import Wybieg_package.Wybieg_podstawowy;
-import enumy.rodzaj_srodowiska_enum;
-import enumy.wielkosc_wybiegu_enum;
+
 import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
@@ -12,10 +9,10 @@ import java.awt.*;
 
 public class PanelDzien extends JPanel implements UpdateGUI {
 
-    private PanelDzienZasoby panelZasoby;
-    private PanelDzienPracownicy panelPracownicy;
-    private PanelDzienWybiegi panelWybiegi;
-    private PanelDzienSklep panelSklep;
+    private final PanelDzienZasoby panelZasoby;
+    private final PanelDzienPracownicy panelPracownicy;
+    private final PanelDzienWybiegi panelWybiegi;
+    private final PanelDzienSklep panelSklep;
 
 
     public PanelDzien(Sklep sklep) //konstruktor domyslny

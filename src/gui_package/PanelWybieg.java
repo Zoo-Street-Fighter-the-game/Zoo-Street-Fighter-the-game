@@ -15,22 +15,20 @@ import java.awt.event.ActionListener;
 
 public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
 
-    private DzienneZoo zoo;
-    private Sklep sklep;
-    private Wybieg_podstawowy wybieg;
-    private JLabel wybiegLabel;
+    private final DzienneZoo zoo;
+    private final Sklep sklep;
+    private final Wybieg_podstawowy wybieg;
+    private final JLabel wybiegLabel;
+    private final WybiegButton kupZwierzeButton;
+    private final WybiegButton sprzedajZwierzeButton;
 
-    private WybiegButton kupZwierzeButton;
+    private final WybiegButton sprzedajWybiegButton;
 
-    private WybiegButton sprzedajZwierzeButton;
+    private final WybiegButton nakarmButton;
 
-    private WybiegButton sprzedajWybiegButton;
+    private final WybiegButton wyczyscButton;
 
-    private WybiegButton nakarmButton;
-
-    private WybiegButton wyczyscButton;
-
-    private WybiegButton pokazZwierzetaButton;
+    private final WybiegButton pokazZwierzetaButton;
 
     public PanelWybieg(DzienneZoo zoo, Sklep sklep, Wybieg_podstawowy wybieg)
     {

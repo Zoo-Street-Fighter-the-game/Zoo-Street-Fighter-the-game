@@ -12,14 +12,14 @@ import pakiet_sklep.Sklep;
 
 
 public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
-    private JButton kupJedzenie;
-    private JButton kupWybieg;
-    private JButton kupPracownika;
-    private JButton sprzedajJedzenie ;
-    private JButton sprzedajPracownika;
+    private final JButton kupJedzenie;
+    private final JButton kupWybieg;
+    private final JButton kupPracownika;
+    private final JButton sprzedajJedzenie ;
+    private final JButton sprzedajPracownika;
     private Sklep sklep;
 
-    private DzienneZoo zoo;
+    private final DzienneZoo zoo;
     public PanelDzienSklep(Sklep sklep)
     {
         sklep.dodajObsewatoraGUI(this);
