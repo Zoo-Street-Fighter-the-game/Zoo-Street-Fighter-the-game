@@ -9,6 +9,8 @@ public class OknoZapis extends JFrame {
        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
        JLabel text = new JLabel("Wykonano zapis!");
        this.add(text);
+      text.setHorizontalAlignment(JLabel.CENTER);
+	   text.setVerticalAlignment(JLabel.CENTER);
        this.setVisible(true);
    }
 }
