@@ -67,12 +67,12 @@ public class Walka {
             switch (wybor) {
                 case 1:
                     Atak atak = new Atak();
-                    atak.MenuAkcji(twoje_zwierze, przeciwnik);
+                    atak.menuAkcji(twoje_zwierze,przeciwnik);
                     break;
                 case 2:
 
                     Leczenie leczenie = new Leczenie();
-                    leczenie.MenuAkcji(twoje_zwierze, przeciwnik);
+                    leczenie.menuAkcji(twoje_zwierze, przeciwnik);
                     break;
                 default:
                     System.out.println("Nieprawidłowy wybór. Spróbuj ponownie.");
@@ -92,12 +92,12 @@ public class Walka {
         switch (actionPrzeciwnika){
             case 0:
                 Atak atakPrzeciwnika = new Atak();
-                atakPrzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
+                atakPrzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
                 System.out.println("Przeciwnik zaatakował!");
                 break;
             case 1:
                 Leczenie leczenieprzeciwnika = new Leczenie();
-                leczenieprzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
+                leczenieprzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
                 System.out.println("Przeciwnik się leczy.");
 
                 agent.learn(1, actionPrzeciwnika, 1, 5);
