@@ -10,7 +10,7 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI {
     JLabel zasobymonety;
     JLabel jedzenieIkonka;
     JLabel expIkonka;
-    private DzienneZoo zoo;
+    private final DzienneZoo zoo;
 
 
 

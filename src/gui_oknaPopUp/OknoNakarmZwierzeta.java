@@ -1,9 +1,7 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import Pracownik_package.Pracownik;
 import Wybieg_package.Wybieg_abstract;
-import Wybieg_package.Wybieg_podstawowy;
 import pakiet_sklep.Sklep;
 
 import javax.swing.*;
@@ -14,12 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OknoNakarmZwierzeta extends JFrame implements ActionListener, ChangeListener {
-    private JSlider slider;
-    private JButton przycisk;
-    private Sklep sklep;
-    private Pracownik pracownik;
-    private Wybieg_abstract wybieg;
-    private JLabel buttonLabel;
+    private final JSlider slider;
+    private final JButton przycisk;
+    private final Sklep sklep;
+    private final Pracownik pracownik;
+    private final Wybieg_abstract wybieg;
+    private final JLabel buttonLabel;
     public OknoNakarmZwierzeta(Sklep sklep, Pracownik pracownik, Wybieg_abstract wybieg) {
         this.sklep=sklep;
         this.pracownik=pracownik;
@@ -53,7 +51,7 @@ public class OknoNakarmZwierzeta extends JFrame implements ActionListener, Chang
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == przycisk) {;
+        if (e.getSource() == przycisk) {
             sklep.nakarmZwierzeta(pracownik, wybieg, slider.getValue());
             this.dispose();
         }

@@ -2,7 +2,6 @@ package gui_oknaPopUp;
 
 import Klasy_Zwierzat.Zwierze;
 import Wybieg_package.Wybieg_abstract;
-import Wybieg_package.Wybieg_podstawowy;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,9 +11,9 @@ import javax.swing.*;
 
 public class OknoPokazZwierzeta extends JFrame {
 
-    private Wybieg_abstract wybieg;
+    private final Wybieg_abstract wybieg;
 
-    private ArrayList<JButton> listaZwierzeButton;
+    private final ArrayList<JButton> listaZwierzeButton;
     public OknoPokazZwierzeta(Wybieg_abstract wybieg)
     {
         this.wybieg = wybieg;
