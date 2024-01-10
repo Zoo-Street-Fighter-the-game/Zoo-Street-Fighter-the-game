@@ -20,6 +20,15 @@ public class OknoKupZwierze extends JFrame {
     private final ZwierzeRadioButton pingwin;
     private final ZwierzeRadioButton niedzwiedz;
     private final ZwierzeRadioButton los;
+    private final ZwierzeRadioButton rekin;
+    private final ZwierzeRadioButton niedzwiedz_polarny;
+    private final ZwierzeRadioButton orka;
+    private final ZwierzeRadioButton lew;
+    private final ZwierzeRadioButton zolw;
+    private final ZwierzeRadioButton papuga;
+    private final ZwierzeRadioButton paw;
+    private final ZwierzeRadioButton orzel;
+    private final ZwierzeRadioButton nietoperz;
     private final ButtonGroup group;
     private ZwierzeRadioButton wybrany;
 
@@ -49,17 +58,55 @@ public class OknoKupZwierze extends JFrame {
         pingwin = new ZwierzeRadioButton("pingwin", zwierzeta_enum.PINGWIN);
         pingwin.addActionListener(new ReakcjaZwierzeRadioButton());
 
+        zolw = new ZwierzeRadioButton("zolw", zwierzeta_enum.ZOLW);
+        zolw.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        rekin = new ZwierzeRadioButton("rekin", zwierzeta_enum.REKIN);
+        rekin.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        orka = new ZwierzeRadioButton("orka", zwierzeta_enum.ORKA);
+        orka.addActionListener(new ReakcjaZwierzeRadioButton());
+
         niedzwiedz = new ZwierzeRadioButton("niedzwiedz", zwierzeta_enum.NIEDZWIEDZ);
         niedzwiedz.addActionListener(new ReakcjaZwierzeRadioButton());
 
         los = new ZwierzeRadioButton("los", zwierzeta_enum.LOS);
         los.addActionListener(new ReakcjaZwierzeRadioButton());
 
+        niedzwiedz_polarny = new ZwierzeRadioButton("niedzwiedz_polarny", zwierzeta_enum.NIEDZWIEDZ_POLARNY);
+        niedzwiedz_polarny.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        lew = new ZwierzeRadioButton("lew", zwierzeta_enum.LEW);
+        lew.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        orzel = new ZwierzeRadioButton("orzel", zwierzeta_enum.ORZEL);
+        orzel.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        papuga = new ZwierzeRadioButton("papuga", zwierzeta_enum.PAPUGA);
+        papuga.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        paw = new ZwierzeRadioButton("paw", zwierzeta_enum.PAW);
+        paw.addActionListener(new ReakcjaZwierzeRadioButton());
+
+        nietoperz = new ZwierzeRadioButton("nietoperz", zwierzeta_enum.NIETOPERZ);
+        nietoperz.addActionListener(new ReakcjaZwierzeRadioButton());
+
         group = new ButtonGroup();
 
         group.add(pingwin);
+        group.add(zolw);
+        group.add(rekin);
+        group.add(orka);
+
         group.add(niedzwiedz);
         group.add(los);
+        group.add(niedzwiedz_polarny);
+        group.add(lew);
+
+        group.add(orzel);
+        group.add(papuga);
+        group.add(paw);
+        group.add(nietoperz);
 
 
         this.setTitle("Kup Zwierze");
@@ -68,8 +115,19 @@ public class OknoKupZwierze extends JFrame {
         kupZwierzeButton.setFocusable(false);
 
         panelRadio.add(pingwin);
+        panelRadio.add(zolw);
+        panelRadio.add(rekin);
+        panelRadio.add(orka);
+
         panelRadio.add(niedzwiedz);
         panelRadio.add(los);
+        panelRadio.add(niedzwiedz_polarny);
+        panelRadio.add(lew);
+
+        panelRadio.add(orzel);
+        panelRadio.add(papuga);
+        panelRadio.add(paw);
+        panelRadio.add(nietoperz);
 
         panelRadio.setLayout(new FlowLayout());
         panelMain.setLayout(new GridBagLayout());
