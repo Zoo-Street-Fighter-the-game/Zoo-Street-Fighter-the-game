@@ -137,19 +137,14 @@ public class DzienneZoo {
     }
 
     //METODA PRZENOSZĄCA ZWIERZE Z WYBIEGU BEZDOMNI
-    public void przeniesZwierze_bezdomni()
+    public void przeniesZwierze_bezdomni(Wybieg_podstawowy wybieg, Zwierze zwierze)
     {
-        int zwierze;
-        zwierze = wybiegDlaBezdomnych.wybierzZwierze();
-
-        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!");
-        int wybieranie = wybierzWybiegi();
 
         //DODAJEMY ZWIERZE DO WYBIEGU
-        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieranie)).getLista_zwierzat()).get(zwierze));
+        wybieg.dodaj_zwierze(zwierze);
 
         //USUWAMY ZWIERZE Z WYBIEGU
-        wybiegDlaBezdomnych.usun_zwierze(wybiegDlaBezdomnych.getLista_zwierzat().get(zwierze));
+        wybiegDlaBezdomnych.usun_zwierze(zwierze);
     }
 
     public void usunWybieg(Wybieg_podstawowy x)

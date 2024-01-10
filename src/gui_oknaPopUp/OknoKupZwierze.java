@@ -129,7 +129,7 @@ public class OknoKupZwierze extends JFrame {
         panelRadio.add(paw);
         panelRadio.add(nietoperz);
 
-        panelRadio.setLayout(new FlowLayout());
+        panelRadio.setLayout(new GridLayout(3,4));
         panelMain.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 

@@ -42,13 +42,13 @@ public class MainFrame {
             "                \"Giermek sprzedawany oddzielnie."};
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.SREDNI));
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.POWIETRZNY, wielkosc_wybiegu_enum.DUZY));
-        zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
-        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze());
+        zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze(""));
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze(""));
+        zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.PINGWIN.stworzZwierze(""));
         Sklep sklep = new Sklep(zoo);
 
         Przedmiot Topor = przedmioty_enum.TOPOR.stworzPrzedmiot();
@@ -56,7 +56,7 @@ public class MainFrame {
 
         new MainFrame().createAndShowGUI();
 
-    }
+    }*/
 
     private void createAndShowGUI() {
         frame = new JFrame("Loading Screen Example");
