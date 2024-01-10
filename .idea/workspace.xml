@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dzienne gui is ready,ezzz">
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="c">
+      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPrzeniesZwierze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2024_21_35__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2024_21_35__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/propozycja_nocne_gui/BusinessLogic1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_nocne_gui/BusinessLogic1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_nocne_gui/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +64,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2ZdZg0kMcapsZ4Q4wwFbMxC2Vr6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,13 +76,14 @@
     "Application.Hello.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.MainFrame.executor": "Run",
     "Application.NocneZoo.executor": "Run",
     "Application.test1.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "GUI__ENUM",
+    "git-widget-placeholder": "GUIBranch",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony",
     "node.js.detected.package.eslint": "true",
@@ -269,7 +280,8 @@
     <MESSAGE value="Działa sprzedawanie zwierząt" />
     <MESSAGE value="Działa całe dzienne zoo gui oprocz wybiegow ez" />
     <MESSAGE value="Dzienne gui is ready,ezzz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dzienne gui is ready,ezzz" />
+    <MESSAGE value="c" />
+    <option name="LAST_COMMIT_MESSAGE" value="c" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
