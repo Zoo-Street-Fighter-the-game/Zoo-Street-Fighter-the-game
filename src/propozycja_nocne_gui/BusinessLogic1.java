@@ -287,7 +287,7 @@
                 Atak atakPrzeciwnika = new Atak();
                 atakPrzeciwnika.menuAkcji(finalPrzeciwnik, zwierze);
                 System.out.println("Przeciwnik zaatakował!");
-                zwierze.setHealth(zwierze.getZycie());
+                zwierze.setZycie(zwierze.getZycie());
                 zwierze.notifyObservers();
 
                 // Sprawdzenie warunków zakończenia walki
@@ -303,7 +303,7 @@
                 }
             } else {
                 // Przeciwnik wykonuje leczenie
-                finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie()+10);
+                finalPrzeciwnik.setZycie(finalPrzeciwnik.getZycie()+10);
                 finalPrzeciwnik.notifyObservers();
                 System.out.println("Przeciwnik się leczy.");
                 agent.learn(1, actionPrzeciwnika, 1, 5);
@@ -336,7 +336,7 @@
         }
 
         private static void leczenie(Zwierze zwierze, Zwierze finalPrzeciwnik) {
-            zwierze.setHealth(zwierze.getZycie()+10);
+            zwierze.setZycie(zwierze.getZycie()+10);
             zwierze.notifyObservers();
         }
 
@@ -344,7 +344,7 @@
         private static void atak(Zwierze zwierze, Zwierze finalPrzeciwnik) {
             Atak atak = new Atak();
             atak.menuAkcji(zwierze, finalPrzeciwnik);
-            finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie());
+            finalPrzeciwnik.setZycie(finalPrzeciwnik.getZycie());
             finalPrzeciwnik.notifyObservers();
         }
 
