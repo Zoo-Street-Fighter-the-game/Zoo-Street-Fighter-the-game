@@ -5,12 +5,9 @@ import Klasy_Zwierzat.Zwierze;
 import Przedmioty.Przedmiot;
 
 import Wybieg_package.Wybieg_podstawowy;
-import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import enumy.zwierzeta_enum;
-import noc_walka.Atak;
-import noc_walka.Leczenie;
 
 
 
@@ -33,6 +30,7 @@ public class NocneZoo2 {
         poziom_trudnosci.ustaw_poziom_trudnosci();
         Arena arena = new Arena();
         System.out.println(arena);
+
         nr_wybiegu_Zwierze wybieg_zwierze = wybor_zwierzecia();
         Zwierze wybrane_zwierze = wybieg_zwierze.zwierze();
         Zwierze przeciwnik = wybor_przeciwnika(poziom_trudnosci.getTrudnosc());

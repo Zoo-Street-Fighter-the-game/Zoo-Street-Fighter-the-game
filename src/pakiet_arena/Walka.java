@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import static pakiet_arena.NocneZoo2.Q_TABLE_FILE;
 
+
 public class Walka {
     private static final QLearningAgent agent = new QLearningAgent(2, 2);
     private static Zwierze twoje_zwierze;
@@ -42,6 +43,7 @@ public class Walka {
     }
 
     private static boolean warunki_zakonczenia_walki() {
+
         if (twoje_zwierze.getZycie() <= 0) {
         return false;
         } else if (przeciwnik.getZycie() <= 0) {
@@ -51,6 +53,7 @@ public class Walka {
     }
 
     private static void atak_twojego_zwierzecia() {
+
         boolean powtorzenie_petli = true;
         Scanner scanner = new Scanner(System.in);
         while(powtorzenie_petli){
@@ -68,11 +71,13 @@ public class Walka {
                 case 1:
                     Atak atak = new Atak();
                     atak.menuAkcji(twoje_zwierze,przeciwnik);
+
                     break;
                 case 2:
 
                     Leczenie leczenie = new Leczenie();
                     leczenie.menuAkcji(twoje_zwierze, przeciwnik);
+
                     break;
                 default:
                     System.out.println("Nieprawidłowy wybór. Spróbuj ponownie.");
@@ -86,6 +91,7 @@ public class Walka {
 
     private static void atak_wrogiego_zwierzecia(){
 
+
         int actionPrzeciwnika = agent.chooseAction(1);
         // 0 akcja atak
         // 1 akcja leczenie
@@ -93,11 +99,13 @@ public class Walka {
             case 0:
                 Atak atakPrzeciwnika = new Atak();
                 atakPrzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
+
                 System.out.println("Przeciwnik zaatakował!");
                 break;
             case 1:
                 Leczenie leczenieprzeciwnika = new Leczenie();
                 leczenieprzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
+
                 System.out.println("Przeciwnik się leczy.");
 
                 agent.learn(1, actionPrzeciwnika, 1, 5);
@@ -120,6 +128,7 @@ public class Walka {
 
     private static void przegrana(nr_wybiegu_Zwierze wybieg_zwierze){
         System.out.println("Przegrałeś! Twój zwierzak ma zerowe zdrowie.");
+
         agent.learn(1, 0, 1, 10); // agent otrzymuje nagrode za to ze doproawdzil do przegrania przez nas gry
         DzienneZoo zoo = DzienneZoo.getInstance();
         zoo.getListaWybiegow().get(wybieg_zwierze.nr_wybiegu()).usun_zwierze(wybieg_zwierze.zwierze());

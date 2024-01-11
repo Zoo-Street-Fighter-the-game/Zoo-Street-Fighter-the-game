@@ -3,6 +3,7 @@ package Klasy_Zwierzat;
 import Przedmioty.Przedmiot;
 import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
+import propozycja_gui_package.HealthSubject;
 
 import java.io.Serializable;
 
@@ -24,6 +25,12 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializab
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
+
+
+// Gettery i settery
+
+
+
 
 
     private Przedmiot przedmiot;

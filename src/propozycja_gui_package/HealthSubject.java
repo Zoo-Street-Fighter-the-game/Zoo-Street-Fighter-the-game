@@ -1,4 +1,6 @@
-package propozycja_nocne_gui;
+package propozycja_gui_package;
+
+import propozycja_gui_package.HealthObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,7 @@ public class HealthSubject {
         observers.remove(observer);
     }
 
-    protected void notifyObservers() {
+    public void notifyObservers() {
         for (HealthObserver observer : observers) {
             observer.updateHealth(health);
         }
