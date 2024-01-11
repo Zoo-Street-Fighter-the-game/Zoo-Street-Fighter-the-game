@@ -215,6 +215,11 @@ public class Sklep {
         }
     }
 
+    public void przeniesZwierzeBezdomni(Wybieg_podstawowy wybieg, Zwierze zwierze)
+    {
+        zoo.przeniesZwierze_bezdomni(wybieg, zwierze);
+    }
+
     //obserwator GUI
 
     public void dodajObsewatoraGUI(UpdateGUI G)
