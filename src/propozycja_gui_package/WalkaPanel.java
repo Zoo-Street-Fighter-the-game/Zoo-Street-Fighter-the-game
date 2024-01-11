@@ -142,7 +142,7 @@ public class WalkaPanel extends JPanel {
 
     static void atak(Zwierze zwierze, Zwierze finalPrzeciwnik) {
         Atak atak = new Atak();
-        atak.MenuAkcji(zwierze, finalPrzeciwnik);
+        atak.menuAkcji(zwierze, finalPrzeciwnik);
         finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie());
         finalPrzeciwnik.notifyObservers();
 
@@ -164,7 +164,7 @@ public class WalkaPanel extends JPanel {
         if (actionPrzeciwnika == 0) {
             // Przeciwnik wykonuje atak
             Atak atakPrzeciwnika = new Atak();
-            atakPrzeciwnika.MenuAkcji(finalPrzeciwnik, zwierze);
+            atakPrzeciwnika.menuAkcji(finalPrzeciwnik, zwierze);
             System.out.println("Przeciwnik zaatakował!");
             zwierze.setHealth(zwierze.getZycie());
             zwierze.notifyObservers();

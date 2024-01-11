@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi" />
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi">
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +156,7 @@
       <workItem from="1704737212673" duration="94000" />
       <workItem from="1704892911143" duration="43000" />
       <workItem from="1704975493395" duration="203000" />
-      <workItem from="1704975858267" duration="310000" />
+      <workItem from="1704975858267" duration="505000" />
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />

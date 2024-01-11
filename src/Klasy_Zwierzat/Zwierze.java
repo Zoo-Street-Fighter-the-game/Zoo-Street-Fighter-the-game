@@ -7,7 +7,7 @@ import propozycja_gui_package.HealthSubject;
 
 import java.io.Serializable;
 
-public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
+public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
 
 
     //===========================================================================
