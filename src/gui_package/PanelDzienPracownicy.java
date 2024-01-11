@@ -101,7 +101,6 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         grupapracownikow.remove(listaprzyciskow.get(numer));
         listaprzyciskow.remove(numer);
 
-
     }
 
     public Pracownik getZaznaczonyPracownik() {

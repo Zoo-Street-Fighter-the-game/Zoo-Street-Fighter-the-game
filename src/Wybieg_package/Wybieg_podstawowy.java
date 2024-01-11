@@ -5,11 +5,11 @@ import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import interfejsy.Obserwowany_interface;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface {
+public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_interface, Serializable{
 
 
 
