@@ -205,4 +205,5 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializab
     public void setPrzedmiot(Przedmiot przedmiot) {
         this.przedmiot = przedmiot;
     }
+    //
 }
