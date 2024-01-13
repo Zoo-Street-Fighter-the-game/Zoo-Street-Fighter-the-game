@@ -29,6 +29,7 @@ public class WalkaPanel extends JPanel {
     private static boolean tytulWidzialny;
     private static JLabel titleLabel;
     private static JDialog nowyDialog;
+    private static JFrame walka;
     private static boolean koniecWalkiPanelWyswietlony = false;
 
 
@@ -38,15 +39,17 @@ public class WalkaPanel extends JPanel {
         titleLabel = new JLabel("Koniec walki");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(new Color(0, 0, 0, 0)); // Transparent initially
-        nowyDialog = new JDialog();
+       // nowyDialog = new JDialog();
+        walka = new JFrame();
 
 
     }
     public static void wyslij_na_arene(Zwierze zwierze,int wybieg1) {
-        nowyDialog.setTitle("Arena");
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        nowyDialog.setSize(screenSize.width, screenSize.height);
-
+        //nowyDialog.setTitle("Arena");
+        walka.setTitle("Arena");
+       // Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        //nowyDialog.setSize(screenSize.width, screenSize.height);
+        walka.setSize(2000,1000);
         poziom_trudnosci_enum wybranyPoziom = poziomTrudnosciPanel.getWybranyPoziomTrudnosci();
         Zwierze przeciwnik = wybor_przeciwnika(wybranyPoziom);
         przeciwnik_global = przeciwnik;
@@ -119,21 +122,25 @@ public class WalkaPanel extends JPanel {
 
         JPanel playerLabel = createAnimalPanel1(zwierze);
         JPanel opponentLabel = createOpponentPanel1(przeciwnik);
-        JPanel playerAttackLabel = createAnimalPanel2(zwierze);
-        JPanel opponentAttackLabel = createOpponentPanel2(przeciwnik);
-        // tutaj trzeba zmienic createAnimalPanel zeby zrobic nowy dla przeciwnika bo trzeba odbic lustrzanie zdjecie przeciwnika
+       // JPanel playerAttackLabel = createAnimalPanel2(zwierze);
+       // JPanel opponentAttackLabel = createOpponentPanel2(przeciwnik);
+
 
         panelZwierzat.add(playerLabel, BorderLayout.WEST);
         panelZwierzat.add(opponentLabel, BorderLayout.EAST);
 
-        nowyDialog.add(panelPrzyciskow, BorderLayout.NORTH);
-        nowyDialog.add(panelZwierzat, BorderLayout.CENTER);
-        ///
+
+
+        walka.add(panelPrzyciskow, BorderLayout.NORTH);
+        walka.add(panelZwierzat, BorderLayout.CENTER);
+        //nowyDialog.add(panelPrzyciskow, BorderLayout.NORTH);
+        //nowyDialog.add(panelZwierzat, BorderLayout.CENTER);
 
         // Ustawienia okna
-        nowyDialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
-        nowyDialog.setVisible(true);
-        nowyDialog.setModal(true);
+        //nowyDialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+       walka.setVisible(true);
+        //nowyDialog.setVisible(true);
+        //nowyDialog.setModal(true);
     }
     static void leczenie(Zwierze zwierze, Zwierze finalPrzeciwnik) {
         zwierze.setHealth(zwierze.getZycie()+10);
@@ -266,12 +273,10 @@ public class WalkaPanel extends JPanel {
         JPanel animalPanel = new JPanel(new BorderLayout());
         animalPanel.add(imageLabel, BorderLayout.CENTER);
         animalPanel.add(healthBar, BorderLayout.SOUTH);
+        animalPanel.setBackground(new Color(0,0,0,0));
 
-        // Nowy panel nad zdjęciem z dodatkowymi informacjami
-        JPanel infoPanel = new JPanel(new BorderLayout());
-        infoPanel.add(animalPanel, BorderLayout.CENTER);
 
-        return infoPanel;
+        return animalPanel;
     }
 
     static JPanel createAnimalPanel2(Zwierze zwierze) {
@@ -356,12 +361,10 @@ public class WalkaPanel extends JPanel {
         JPanel animalPanel = new JPanel(new BorderLayout());
         animalPanel.add(imageLabel, BorderLayout.CENTER);
         animalPanel.add(healthBar, BorderLayout.SOUTH);
+        animalPanel.setBackground(new Color(0,0,0,0));
 
-        // Nowy panel nad zdjęciem z dodatkowymi informacjami
-        JPanel infoPanel = new JPanel(new BorderLayout());
-        infoPanel.add(animalPanel, BorderLayout.CENTER);
 
-        return infoPanel;
+        return animalPanel;
     }
     static JPanel createOpponentPanel1(Zwierze zwierze) {
         ImageIcon imageIcon;
@@ -442,12 +445,10 @@ public class WalkaPanel extends JPanel {
         JPanel animalPanel = new JPanel(new BorderLayout());
         animalPanel.add(imageLabel, BorderLayout.CENTER);
         animalPanel.add(healthBar, BorderLayout.SOUTH);
+        animalPanel.setBackground(new Color(0,0,0,0));
 
-        // Nowy panel nad zdjęciem z dodatkowymi informacjami
-        JPanel infoPanel = new JPanel(new BorderLayout());
-        infoPanel.add(animalPanel, BorderLayout.CENTER);
 
-        return infoPanel;
+        return animalPanel;
     }
 
     static JPanel createOpponentPanel2(Zwierze zwierze) {
@@ -532,12 +533,10 @@ public class WalkaPanel extends JPanel {
         JPanel animalPanel = new JPanel(new BorderLayout());
         animalPanel.add(imageLabel, BorderLayout.CENTER);
         animalPanel.add(healthBar, BorderLayout.SOUTH);
+        animalPanel.setBackground(new Color(0,0,0,0));
 
-        // Nowy panel nad zdjęciem z dodatkowymi informacjami
-        JPanel infoPanel = new JPanel(new BorderLayout());
-        infoPanel.add(animalPanel, BorderLayout.CENTER);
 
-        return infoPanel;
+        return animalPanel;
     }
     private static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik, int wybieg) {
         poziom_trudnosci_enum poziomTrudnosci = poziomTrudnosciPanel.getWybranyPoziomTrudnosci();
