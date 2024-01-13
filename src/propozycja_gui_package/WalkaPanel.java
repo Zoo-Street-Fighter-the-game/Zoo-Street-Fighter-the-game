@@ -31,6 +31,7 @@ public class WalkaPanel extends JPanel {
     private static JDialog nowyDialog;
     private static JFrame walka;
     private static boolean koniecWalkiPanelWyswietlony = false;
+    private static Timer healingTimer;
 
 
 
@@ -74,9 +75,23 @@ public class WalkaPanel extends JPanel {
 
 
         //przyciski
-        JPanel panelPrzyciskow = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JButton atakButton = new JButton("Atak");
-        JButton leczenieButton = new JButton("Leczenie");
+        JPanel panelPrzyciskow = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10)); // Odstęp poziomy: 20, odstęp pionowy: 10
+        RoundButton atakButton = new RoundButton("Atak");
+        RoundButton leczenieButton = new RoundButton("Leczenie");
+
+// Ustawienie przycisków jako przezroczystych
+        atakButton.setOpaque(false);
+        atakButton.setContentAreaFilled(false);
+        atakButton.setBorderPainted(false);
+
+        leczenieButton.setOpaque(false);
+        leczenieButton.setContentAreaFilled(false);
+        leczenieButton.setBorderPainted(false);
+
+// Ustawienie preferowanej wielkości dla guzików
+        Dimension buttonSize = new Dimension(120, 50); // Dostosuj szerokość i wysokość według potrzeb
+        atakButton.setPreferredSize(buttonSize);
+        leczenieButton.setPreferredSize(buttonSize);
 
         Zwierze finalPrzeciwnik1 = przeciwnik;
 
@@ -164,6 +179,7 @@ public class WalkaPanel extends JPanel {
         zwierze.setHealth(zwierze.getZycie()+10);
         zwierze.notifyObservers();
     }
+
 
 
     static void atak(Zwierze zwierze, Zwierze finalPrzeciwnik) {
@@ -271,6 +287,7 @@ public class WalkaPanel extends JPanel {
 
         //Image newImage = imageIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         //JLabel imageLabel = new JLabel(zwierze.getNazwa(), new ImageIcon(newImage), JLabel.CENTER);
+
         JLabel imageLabel = new JLabel(zwierze.getNazwa(), imageIcon, JLabel.CENTER);
         imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
         imageLabel.setHorizontalTextPosition(JLabel.CENTER);
@@ -281,24 +298,41 @@ public class WalkaPanel extends JPanel {
         healthBar.setStringPainted(true);
         healthBar.setValue(zwierze.getZycie());
 
+        healthBar.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        healthBar.setOpaque(false);
+
 
         healthBar.setStringPainted(true); // Wyświetlanie wartości numerycznej na pasku zdrowia // obserwator pasek obsrewuje zwierze
         ListaZwierzatPanel healthBarObserver = new ListaZwierzatPanel(healthBar);
 
         zwierze.addObserver(healthBarObserver);  // nasze jak i przeciwnika
 
-
-        JPanel animalPanel = new JPanel(new BorderLayout());
+        JPanel animalPanel = new JPanel(new GridBagLayout());
         animalPanel.setBackground(new Color(0, 0, 0, 0));
-        animalPanel.add(imageLabel, BorderLayout.CENTER);
-        animalPanel.add(healthBar, BorderLayout.SOUTH);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0; // Kolumna dla obrazka zwierzęcia
+        gbc.gridy = 12; // Wiersz dla obrazka zwierzęcia (przesunięcie o 2 w dół)
+        gbc.weightx = 1.0; // Waga dla obrazka zwierzęcia
+        gbc.anchor = GridBagConstraints.SOUTH; // Ustaw anchor na środek
+
+        animalPanel.add(imageLabel, gbc);
+
+// Dodaj odstęp pionowy między obrazkiem a paskiem zdrowia
+        gbc.gridy = 3; // Wiersz dla odstępu (przesunięcie o 1 w dół)
+        gbc.weighty = 0.1; // Waga dla odstępu, aby można było kontrolować przestrzeń
+        animalPanel.add(Box.createVerticalGlue(), gbc);
+
+// Dodaj pasek zdrowia pod obrazkiem zwierzęcia
+        gbc.gridy = 4; // Wiersz dla paska zdrowia (przesunięcie o 1 w dół)
+        gbc.weighty = 0.0; // Resetuj wagę
+        gbc.anchor = GridBagConstraints.CENTER; // Ustaw anchor na środek
+        animalPanel.add(healthBar, gbc);
+
         animalPanel.setOpaque(false);
 
-        /*animalPanel.setOpaque(false);
-*/
-
-
         return animalPanel;
+
     }
 
 
@@ -368,8 +402,12 @@ public class WalkaPanel extends JPanel {
 
         // Dodanie paska zdrowia
         JProgressBar healthBar = new JProgressBar(SwingConstants.HORIZONTAL, 0, 600);
+
         healthBar.setStringPainted(true);
         healthBar.setValue(zwierze.getZycie());
+
+        healthBar.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        healthBar.setOpaque(false);
 
 
         healthBar.setStringPainted(true); // Wyświetlanie wartości numerycznej na pasku zdrowia // obserwator pasek obsrewuje zwierze
@@ -377,18 +415,27 @@ public class WalkaPanel extends JPanel {
 
         zwierze.addObserver(healthBarObserver);  // nasze jak i przeciwnika
 
-
-        JPanel animalPanel = new JPanel(new BorderLayout());
-        animalPanel.add(imageLabel, BorderLayout.CENTER);
-        animalPanel.add(healthBar, BorderLayout.SOUTH);
+        JPanel animalPanel = new JPanel(new GridBagLayout());
         animalPanel.setBackground(new Color(0, 0, 0, 0));
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0; // Kolumna dla obrazka zwierzęcia
+        gbc.gridy = 0; // Wiersz dla obrazka zwierzęcia (bez przesunięcia w dół)
+        gbc.weightx = 1.0; // Waga dla obrazka zwierzęcia
+        gbc.anchor = GridBagConstraints.CENTER; // Ustaw anchor na środek
+
+        animalPanel.add(imageLabel, gbc);
+
+// Dodaj pasek zdrowia pod obrazkiem zwierzęcia
+        gbc.gridy = 1; // Wiersz dla paska zdrowia (przesunięcie o 1 w dół)
+        gbc.weighty = 0.0; // Resetuj wagę
+        gbc.anchor = GridBagConstraints.CENTER; // Ustaw anchor na środek
+        animalPanel.add(healthBar, gbc);
+
         animalPanel.setOpaque(false);
-/*        animalPanel.setBackground(new Color(0,0,0,0));
-        animalPanel.setOpaque(false);*/
-
-
 
         return animalPanel;
+
     }
 
 
