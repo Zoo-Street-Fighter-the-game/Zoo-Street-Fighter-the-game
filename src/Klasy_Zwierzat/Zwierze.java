@@ -203,4 +203,5 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
     public void setPrzedmiot(Przedmiot przedmiot) {
         this.przedmiot = przedmiot;
     }
+    //
 }
