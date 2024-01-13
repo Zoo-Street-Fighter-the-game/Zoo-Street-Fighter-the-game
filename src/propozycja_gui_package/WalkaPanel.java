@@ -120,6 +120,7 @@ public class WalkaPanel extends JPanel {
 
         panelPrzyciskow.add(atakButton);
         panelPrzyciskow.add(leczenieButton);
+        panelPrzyciskow.setOpaque(false);
 
 
         // to jest odpowiedzialne  za umieszcxzenie zdj zwierzat na przeciwko siebie
@@ -132,30 +133,31 @@ public class WalkaPanel extends JPanel {
         panelZwierzat.setOpaque(false);
 
 
+// Existing code...
+
         JPanel wygladgui = new JPanel(new BorderLayout());
         wygladgui.add(panelPrzyciskow, BorderLayout.NORTH);
         wygladgui.add(panelZwierzat, BorderLayout.CENTER);
-        wygladgui.setBackground(new Color(0,0,0,0));
         wygladgui.setSize(1400,900);
         wygladgui.setOpaque(false);
-        ImageIcon arenka = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/arena.gif")));
-        JLabel arenaa = new JLabel(arenka);
-        JLayeredPane xd = new JLayeredPane();
-        xd.setSize(2000,100);
-        xd.add(arenaa, JLayeredPane.DEFAULT_LAYER);
-        xd.add(wygladgui, JLayeredPane.DRAG_LAYER);
-        xd.setBackground(new Color(0,0,0,0));
-        xd.setOpaque(false);
-        walka.add(xd);
-        walka.add(arenaa);
+
+        JLayeredPane layeredPane = new JLayeredPane() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                ImageIcon arenka = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/arena.gif")));
+                g.drawImage(arenka.getImage(), 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+
+        layeredPane.setSize(2000, 1000);
+        layeredPane.add(wygladgui, JLayeredPane.DRAG_LAYER);
+
+        walka.setContentPane(layeredPane);
         walka.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-///////////////////////////////////////////////////////////
-
-
-////////////////////////////////////////////////////////////////////////////
-
         walka.setVisible(true);
+
 
     }
     static void leczenie(Zwierze zwierze, Zwierze finalPrzeciwnik) {
@@ -287,11 +289,13 @@ public class WalkaPanel extends JPanel {
 
 
         JPanel animalPanel = new JPanel(new BorderLayout());
+        animalPanel.setBackground(new Color(0, 0, 0, 0));
         animalPanel.add(imageLabel, BorderLayout.CENTER);
         animalPanel.add(healthBar, BorderLayout.SOUTH);
-        animalPanel.setBackground(new Color(0,0,0,0));
         animalPanel.setOpaque(false);
 
+        /*animalPanel.setOpaque(false);
+*/
 
 
         return animalPanel;
@@ -377,8 +381,10 @@ public class WalkaPanel extends JPanel {
         JPanel animalPanel = new JPanel(new BorderLayout());
         animalPanel.add(imageLabel, BorderLayout.CENTER);
         animalPanel.add(healthBar, BorderLayout.SOUTH);
-        animalPanel.setBackground(new Color(0,0,0,0));
+        animalPanel.setBackground(new Color(0, 0, 0, 0));
         animalPanel.setOpaque(false);
+/*        animalPanel.setBackground(new Color(0,0,0,0));
+        animalPanel.setOpaque(false);*/
 
 
 

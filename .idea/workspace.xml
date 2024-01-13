@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
