@@ -25,7 +25,7 @@ public class WalkaPanel extends JPanel {
     private static Zwierze twoje_zwierze;
     private static Zwierze przeciwnik_global;
     private static poziom_trudnosci_enum poziomTrudnosci;
-    private  static PoziomTrudnosciPanel poziomTrudnosciPanel;
+    private static PoziomTrudnosciPanel poziomTrudnosciPanel;
     private static boolean tytulWidzialny;
     private static JLabel titleLabel;
     private static JDialog nowyDialog;
@@ -87,7 +87,7 @@ public class WalkaPanel extends JPanel {
                     atak(twoje_zwierze, finalPrzeciwnik1);
 
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -106,7 +106,7 @@ public class WalkaPanel extends JPanel {
                 if (twoje_zwierze.getZycie() > 0 && finalPrzeciwnik1.getZycie() > 0) {
                     leczenie(zwierze, finalPrzeciwnik);
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -124,15 +124,32 @@ public class WalkaPanel extends JPanel {
 
         // to jest odpowiedzialne  za umieszcxzenie zdj zwierzat na przeciwko siebie
         JPanel panelZwierzat = new JPanel(new BorderLayout());
-
         JPanel playerLabel = createAnimalPanel1(zwierze);
         JPanel opponentLabel = createOpponentPanel1(przeciwnik);
-
         panelZwierzat.add(playerLabel, BorderLayout.WEST);
         panelZwierzat.add(opponentLabel, BorderLayout.EAST);
+        panelZwierzat.setBackground(new Color(0,0,0,0));
+        panelZwierzat.setOpaque(false);
 
-        walka.add(panelPrzyciskow, BorderLayout.NORTH);
-        walka.add(panelZwierzat, BorderLayout.CENTER);
+
+        JPanel wygladgui = new JPanel(new BorderLayout());
+        wygladgui.add(panelPrzyciskow, BorderLayout.NORTH);
+        wygladgui.add(panelZwierzat, BorderLayout.CENTER);
+        wygladgui.setBackground(new Color(0,0,0,0));
+        wygladgui.setSize(1400,900);
+        wygladgui.setOpaque(false);
+        ImageIcon arenka = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/arena.gif")));
+        JLabel arenaa = new JLabel(arenka);
+        JLayeredPane xd = new JLayeredPane();
+        xd.setSize(2000,100);
+        xd.add(arenaa, JLayeredPane.DEFAULT_LAYER);
+        xd.add(wygladgui, JLayeredPane.DRAG_LAYER);
+        xd.setBackground(new Color(0,0,0,0));
+        xd.setOpaque(false);
+        walka.add(xd);
+        walka.add(arenaa);
+        walka.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 ///////////////////////////////////////////////////////////
 
 
@@ -213,14 +230,14 @@ public class WalkaPanel extends JPanel {
                 imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Orka.gif")));
                 break;
             case "Łoś":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Los.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Los.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/LosR.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/LosR.gif")));
                 break;
             case "Niedźwiedź":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/mis2.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Mis.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/mis.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/mis.gif")));
                 break;
-            case "Niedźiedź polarny":
+            case "Niedźwiedź polarny":
                 System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/MisPolarny.gif"));
                 imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/MisPolarny.gif")));
                 break;
@@ -233,12 +250,12 @@ public class WalkaPanel extends JPanel {
                 imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Orzel.gif")));
                 break;
             case "Papuga":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Papuga.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Papuga.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/PapugaR.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/PapugaR.gif")));
                 break;
             case "Paw":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Paw.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Paw.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/PawR.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/PawR.gif")));
                 break;
             case "Nietoperz":
                 System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Nietoperz.gif"));
@@ -289,8 +306,8 @@ public class WalkaPanel extends JPanel {
                 imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Pingwin.gif")));
                 break;
             case "Żółw":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Zolw.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Zolw.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/ZolwL.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/ZolwL.gif")));
                 break;
             case "Rekin":
                 System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Rekin.gif"));
@@ -305,12 +322,12 @@ public class WalkaPanel extends JPanel {
                 imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Los.gif")));
                 break;
             case "Niedźwiedź":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/mis2.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Mis.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/misL.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/MisL.gif")));
                 break;
-            case "Niedźiedź polarny":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/MisPolarny.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/MisPolarny.gif")));
+            case "Niedźwiedź polarny":
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/MisPolarnyL.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/MisPolarnyL.gif")));
                 break;
             case "Lew":
                 System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Lew.gif"));
@@ -329,8 +346,8 @@ public class WalkaPanel extends JPanel {
                 imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Paw.gif")));
                 break;
             case "Nietoperz":
-                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/Nietoperz.gif"));
-                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/Nietoperz.gif")));
+                System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/NietoperzL.gif"));
+                imageIcon = new ImageIcon(Objects.requireNonNull(ListaZwierzatPanel.class.getResource("/obrazki/NietoperzL.gif")));
                 break;
             default:
                 System.out.println(ListaZwierzatPanel.class.getResource("/obrazki/mis2.gif"));
