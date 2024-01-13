@@ -16,7 +16,6 @@ public class QLearningAgent {
     public QLearningAgent(int stateSize, int actionSize) {
         // Inicjalizacja tablicy Q
         qTable = new double[stateSize][actionSize];
-
         learningRate = 0.15;
         discountFactor = 0.9999;
         epsilon = 0.2;
