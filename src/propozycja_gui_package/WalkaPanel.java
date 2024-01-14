@@ -76,9 +76,37 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
         Arena arena = new Arena();
         przeciwnik = stworzenie_zwierzecia_walczacego(przeciwnik, arena);
 
+//////////////
+        JPanel panelArena = new JPanel();
 
+        JLabel temperatura = new JLabel("Temperatura: " + arena.getTemperatura()+"   ");
+        temperatura.setIcon(new ImageIcon(ListaZwierzatPanel.class.getResource("/obrazki/temp.png")));
+        temperatura.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 20));
+        JLabel zalesienie = new JLabel("Zalesienie: " + arena.getZalesienie()+"   ");
+        zalesienie.setIcon(new ImageIcon(ListaZwierzatPanel.class.getResource("/obrazki/tree.png")));
+        zalesienie.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 20));
+        JLabel woda = new JLabel("Wody Powierzchniowe: " + arena.getWodyPowierzchniowe()+"   ");
+        woda.setIcon(new ImageIcon(ListaZwierzatPanel.class.getResource("/obrazki/water.png")));
+        woda.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 20));
+        JLabel sun = new JLabel("Nasłonecznienie: " + arena.getNaslonecznienie()+"   ");
+        sun.setIcon(new ImageIcon(ListaZwierzatPanel.class.getResource("/obrazki/sun.png")));
+        sun.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 20));
+        JLabel wiatr = new JLabel("Wiatr: " + arena.getWiatr()+"   ");
+        wiatr.setIcon(new ImageIcon(ListaZwierzatPanel.class.getResource("/obrazki/wind.png")));
+        wiatr.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 20));
+        panelArena.add(temperatura);
+        panelArena.add(zalesienie);
+        panelArena.add(woda);
+        panelArena.add(wiatr);
+        panelArena.add(sun);
+        panelArena.setBackground(new Color(0x5EABE0));
+        panelArena.setPreferredSize(new Dimension(0, 70));
+        panelArena.setVisible(true);
+
+
+///////////////
         //przyciski
-        JPanel panelPrzyciskow = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10)); // Odstęp poziomy: 20, odstęp pionowy: 10
+        JPanel panelPrzyciskow = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 140)); // Odstęp poziomy: 20, odstęp pionowy: 10
         RoundButton atakButton = new RoundButton("Atak");
         RoundButton leczenieButton = new RoundButton("Leczenie");
 
@@ -118,7 +146,6 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
             panelZwierzat.add(opponentAttackLabel, BorderLayout.EAST);
         }
 
-
         panelZwierzat.setBackground(new Color(0,0,0,0));
         panelZwierzat.setOpaque(false);
 
@@ -128,7 +155,8 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
         JPanel wygladgui = new JPanel(new BorderLayout());
         wygladgui.add(panelPrzyciskow, BorderLayout.NORTH);
         wygladgui.add(panelZwierzat, BorderLayout.CENTER);
-        wygladgui.setSize(1400,900);
+       wygladgui.add(panelArena, BorderLayout.SOUTH);
+        wygladgui.setSize(1430,900);
         wygladgui.setOpaque(false);
 
         JLayeredPane layeredPane = new JLayeredPane() {
@@ -145,7 +173,6 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
 
         walka.setContentPane(layeredPane);
         walka.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
         walka.setVisible(true);
 
         atakButton.addActionListener(new ActionListener() {
