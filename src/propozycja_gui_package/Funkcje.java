@@ -15,11 +15,7 @@ public class Funkcje implements UpdateGUI{
         listaGUI = new ArrayList<>();
     }
 
-    public void zmienZwierze(Zwierze twoje_zwierze, Zwierze finalPrzeciwnik1, JPanel panelZwierzat) {
-        JPanel playerAttackLabel = createAnimalPanel2(twoje_zwierze);
-        JPanel opponentAttackLabel = createOpponentPanel2(finalPrzeciwnik1);
-        panelZwierzat.add(playerAttackLabel, BorderLayout.WEST);
-        panelZwierzat.add(opponentAttackLabel, BorderLayout.EAST);
+    public void zmienZwierze() {
         UpdateGUI();
     }
     public void dodajObsewatoraGUI(UpdateGUI G)

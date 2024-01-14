@@ -79,7 +79,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Niedźwiedź polarny", 300, 80, 20,50,7, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"NiedźwiedźPolarny", 300, 80, 20,50,7, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     },
     LEW {
