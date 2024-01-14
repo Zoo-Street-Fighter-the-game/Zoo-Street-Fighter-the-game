@@ -148,8 +148,8 @@ public class WalkaPanel extends JPanel {
         panelZwierzat.setOpaque(false);
 
         ultimatePanel = new JPanel(new CardLayout());
-        ultimatePanel.add(panelZwierzat);
-        ultimatePanel.add(panelZwierzat2);
+        ultimatePanel.add(panelZwierzat, "panel1");
+        ultimatePanel.add(panelZwierzat2, "panel2");
         ultimatePanel.setBackground(new Color(0,0,0,0));
         ultimatePanel.setOpaque(false);
 
@@ -187,7 +187,7 @@ public class WalkaPanel extends JPanel {
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
-                    switchPanels();
+                    switchPanels1();
                     ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
                 }
 
@@ -207,6 +207,7 @@ public class WalkaPanel extends JPanel {
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
+                    switchPanels2();
                     ruchPrzeciwnik(finalPrzeciwnik, zwierze, wybiegzmienna);
 
 
@@ -724,9 +725,15 @@ public class WalkaPanel extends JPanel {
         return false;
     }
 
-    private static void switchPanels() {
+    private static void switchPanels1() {
         CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
-        cardLayout.next(ultimatePanel);
+        cardLayout.show(ultimatePanel,"panel2");
     }
+
+    private static void switchPanels2() {
+        CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
+        cardLayout.show(ultimatePanel,"panel1");
+    }
+
 
 }
