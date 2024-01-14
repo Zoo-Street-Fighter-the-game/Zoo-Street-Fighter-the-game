@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class WalkaPanel extends JPanel implements UpdateGUI{
+public class WalkaPanel extends JPanel {
 
     private static int wybiegzmienna;
     private static final QLearningAgent agent = new QLearningAgent(2, 2);
@@ -33,13 +33,11 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
     private static JFrame walka;
     private static boolean koniecWalkiPanelWyswietlony = false;
     private static Timer healingTimer;
-    private static Funkcje funkcje;
     private static JPanel panelZwierzat;
-    private static boolean x;
+    private static JPanel ultimatePanel;
 
     public WalkaPanel(Zwierze zoo, int wybieg, PoziomTrudnosciPanel poziomTrudnosciPanel) {
-        funkcje = new Funkcje();
-        funkcje.dodajObsewatoraGUI(this);
+
         this.poziomTrudnosciPanel = poziomTrudnosciPanel;
         titleLabel = new JLabel("Koniec walki");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
@@ -134,27 +132,30 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
 
         // to jest odpowiedzialne  za umieszcxzenie zdj zwierzat na przeciwko siebie
         panelZwierzat = new JPanel(new BorderLayout());
+        JPanel panelZwierzat2 = new JPanel(new BorderLayout());
         JPanel playerLabel = createAnimalPanel1(zwierze);
         JPanel opponentLabel = createOpponentPanel1(przeciwnik);
         JPanel playerAttackLabel = createAnimalPanel2(zwierze);
         JPanel opponentAttackLabel = createOpponentPanel2(przeciwnik);
         panelZwierzat.add(playerLabel, BorderLayout.WEST);
         panelZwierzat.add(opponentLabel, BorderLayout.EAST);
-        x = false;
-        if(x){
-            panelZwierzat.add(playerAttackLabel, BorderLayout.WEST);
-            panelZwierzat.add(opponentAttackLabel, BorderLayout.EAST);
-        }
+        panelZwierzat2.add(playerAttackLabel, BorderLayout.WEST);
+        panelZwierzat2.add(opponentAttackLabel, BorderLayout.EAST);
 
+        panelZwierzat2.setBackground(new Color(0,0,0,0));
+        panelZwierzat2.setOpaque(false);
         panelZwierzat.setBackground(new Color(0,0,0,0));
         panelZwierzat.setOpaque(false);
 
-
-// Existing code...
+        ultimatePanel = new JPanel(new CardLayout());
+        ultimatePanel.add(panelZwierzat);
+        ultimatePanel.add(panelZwierzat2);
+        ultimatePanel.setBackground(new Color(0,0,0,0));
+        ultimatePanel.setOpaque(false);
 
         JPanel wygladgui = new JPanel(new BorderLayout());
         wygladgui.add(panelPrzyciskow, BorderLayout.NORTH);
-        wygladgui.add(panelZwierzat, BorderLayout.CENTER);
+        wygladgui.add(ultimatePanel, BorderLayout.CENTER);
        wygladgui.add(panelArena, BorderLayout.SOUTH);
         wygladgui.setSize(1430,900);
         wygladgui.setOpaque(false);
@@ -180,16 +181,13 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
             public void actionPerformed(ActionEvent e) {
                 if (twoje_zwierze.getZycie() > 0 && finalPrzeciwnik1.getZycie() > 0) {
                     atak(twoje_zwierze, finalPrzeciwnik1);
-                    x=true;
-                    funkcje.zmienZwierze();
 
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
-
-
+                    switchPanels();
                     ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
                 }
 
@@ -726,10 +724,9 @@ public class WalkaPanel extends JPanel implements UpdateGUI{
         return false;
     }
 
-    public void UpdateGUI()
-    {
-        repaint();
-        revalidate();
+    private static void switchPanels() {
+        CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
+        cardLayout.next(ultimatePanel);
     }
 
 }
