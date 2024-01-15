@@ -223,7 +223,7 @@ public class WalkaPanel extends JPanel {
                     timer2.setRepeats(false);
                     timer2.start();
 
-                    Timer timer3 = new Timer(2300, new ActionListener() {
+                    Timer timer3 = new Timer(2500, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent arg0) {
                             int a= twoje_zwierze.getZycie();
@@ -239,7 +239,7 @@ public class WalkaPanel extends JPanel {
                     timer3.setRepeats(false);
                     timer3.start();
 
-                    Timer timer4 = new Timer(4700, new ActionListener() {
+                    Timer timer4 = new Timer(4900, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent arg0) {
                             switchPanels1();
