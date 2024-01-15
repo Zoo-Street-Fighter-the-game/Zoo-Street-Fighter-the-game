@@ -19,7 +19,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-
 public class WalkaPanel extends JPanel {
 
     private static int wybiegzmienna;
@@ -33,9 +32,7 @@ public class WalkaPanel extends JPanel {
     private static JDialog nowyDialog;
     private static JFrame walka;
     private static boolean koniecWalkiPanelWyswietlony = false;
-
-    private JLabel informacjaLabel;
-    private Timer informacjaTimer;
+    private static Timer healingTimer;
     private static JPanel panelZwierzat;
     private static JPanel ultimatePanel;
 
@@ -136,15 +133,36 @@ public class WalkaPanel extends JPanel {
         // to jest odpowiedzialne  za umieszcxzenie zdj zwierzat na przeciwko siebie
         panelZwierzat = new JPanel(new BorderLayout());
         JPanel panelZwierzat2 = new JPanel(new BorderLayout());
+        JPanel panelZwierzat3 = new JPanel(new BorderLayout());
+        JPanel panelZwierzat4 = new JPanel(new BorderLayout());
+
+
         JPanel playerLabel = createAnimalPanel1(zwierze);
         JPanel opponentLabel = createOpponentPanel1(przeciwnik);
         JPanel playerAttackLabel = createAnimalPanel2(zwierze);
         JPanel opponentAttackLabel = createOpponentPanel2(przeciwnik);
+        JPanel playerLabel2 = createAnimalPanel1(zwierze);
+        JPanel opponentLabel2 = createOpponentPanel1(przeciwnik);
+        JPanel playerAttackLabel2 = createAnimalPanel2(zwierze);
+        JPanel opponentAttackLabel2 = createOpponentPanel2(przeciwnik);
         panelZwierzat.add(playerLabel, BorderLayout.WEST);
         panelZwierzat.add(opponentLabel, BorderLayout.EAST);
+
         panelZwierzat2.add(playerAttackLabel, BorderLayout.WEST);
         panelZwierzat2.add(opponentAttackLabel, BorderLayout.EAST);
 
+        panelZwierzat3.add(playerLabel2, BorderLayout.WEST);
+        panelZwierzat3.add(opponentAttackLabel2, BorderLayout.EAST);
+
+        panelZwierzat4.add(playerAttackLabel2, BorderLayout.WEST);
+        panelZwierzat4.add(opponentLabel2, BorderLayout.EAST);
+
+
+
+        panelZwierzat4.setBackground(new Color(0,0,0,0));
+        panelZwierzat4.setOpaque(false);
+        panelZwierzat3.setBackground(new Color(0,0,0,0));
+        panelZwierzat3.setOpaque(false);
         panelZwierzat2.setBackground(new Color(0,0,0,0));
         panelZwierzat2.setOpaque(false);
         panelZwierzat.setBackground(new Color(0,0,0,0));
@@ -153,13 +171,15 @@ public class WalkaPanel extends JPanel {
         ultimatePanel = new JPanel(new CardLayout());
         ultimatePanel.add(panelZwierzat, "panel1");
         ultimatePanel.add(panelZwierzat2, "panel2");
+        ultimatePanel.add(panelZwierzat3, "panel3");
+        ultimatePanel.add(panelZwierzat4, "panel4");
         ultimatePanel.setBackground(new Color(0,0,0,0));
         ultimatePanel.setOpaque(false);
 
         JPanel wygladgui = new JPanel(new BorderLayout());
         wygladgui.add(panelPrzyciskow, BorderLayout.NORTH);
         wygladgui.add(ultimatePanel, BorderLayout.CENTER);
-       wygladgui.add(panelArena, BorderLayout.SOUTH);
+        wygladgui.add(panelArena, BorderLayout.SOUTH);
         wygladgui.setSize(1430,900);
         wygladgui.setOpaque(false);
 
@@ -185,42 +205,53 @@ public class WalkaPanel extends JPanel {
                 if (twoje_zwierze.getZycie() > 0 && finalPrzeciwnik1.getZycie() > 0) {
                     atak(twoje_zwierze, finalPrzeciwnik1);
 
-                    Timer timer = new Timer(20, new ActionListener() {
+                    Timer timer1 = new Timer(100, new ActionListener() {
                         @Override
-                        public void actionPerformed(ActionEvent e) {
+                        public void actionPerformed(ActionEvent arg0) {
+                            switchPanels4();
+                        }
+                    });
+                    timer1.setRepeats(false);
+                    timer1.start();
+
+                    Timer timer2 = new Timer(2500, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent arg0) {
                             switchPanels1();
                         }
                     });
+                    timer2.setRepeats(false);
+                    timer2.start();
 
-                    timer.setRepeats(false);
-                    timer.addActionListener(new ActionListener() {
+                    Timer timer3 = new Timer(2300, new ActionListener() {
                         @Override
-                        public void actionPerformed(ActionEvent e) {
-                            Timer timer2 = new Timer(2000, new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    switchPanels2();
-
-                                    Timer timer3 = new Timer(1500, new ActionListener() {
-                                        @Override
-                                        public void actionPerformed(ActionEvent e) {
-                                            ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
-                                        }
-                                    });
-
-                                    timer3.setRepeats(false);
-                                    timer3.start();
-                                }
-                            });
-                            timer2.setRepeats(false);
-                            timer2.start();
+                        public void actionPerformed(ActionEvent arg0) {
+                            int a= twoje_zwierze.getZycie();
+                            // czekaj 1 sekunda
+                            ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
+                            int b= twoje_zwierze.getZycie();
+                            if(b<a){
+                                switchPanels3();
+                            }
+                            //switchPanels3();
                         }
                     });
+                    timer3.setRepeats(false);
+                    timer3.start();
 
-                    timer.start();
+                    Timer timer4 = new Timer(4700, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent arg0) {
+                            switchPanels1();
+                        }
+                    });
+                    timer4.setRepeats(false);
+                    timer4.start();
                 }
             }
         });
+
+
 
         Zwierze finalPrzeciwnik = przeciwnik;
 
@@ -230,18 +261,33 @@ public class WalkaPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 if (twoje_zwierze.getZycie() > 0 && finalPrzeciwnik1.getZycie() > 0) {
                     leczenie(zwierze, finalPrzeciwnik);
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                    //switchPanels2();
-                    ruchPrzeciwnik(finalPrzeciwnik, zwierze, wybiegzmienna);
 
+                    Timer timer1 = new Timer(100, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent arg0) {
+                            int c = twoje_zwierze.getZycie();
+                            ruchPrzeciwnik(finalPrzeciwnik, zwierze, wybiegzmienna);
+                            int d = twoje_zwierze.getZycie();
+                            if (d < c) {
+                                switchPanels3();
 
+                                Timer timer2 = new Timer(3000, new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent arg0) {
+                                        switchPanels1();
+                                    }
+                                });
+                                timer2.setRepeats(false);
+                                timer2.start();
+                            }
+                        }
+                    });
+                    timer1.setRepeats(false);
+                    timer1.start();
                 }
             }
         });
+
 
 
 
@@ -255,7 +301,7 @@ public class WalkaPanel extends JPanel {
 
 
 
-     static void atak(Zwierze zwierze, Zwierze finalPrzeciwnik) {
+    static void atak(Zwierze zwierze, Zwierze finalPrzeciwnik) {
         Atak atak = new Atak();
         atak.MenuAkcji(zwierze, finalPrzeciwnik);
         finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie());
@@ -755,15 +801,22 @@ public class WalkaPanel extends JPanel {
 
     private static void switchPanels1() {
         CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
-        cardLayout.show(ultimatePanel,"panel2");
+        cardLayout.show(ultimatePanel,"panel1");
     }
 
     private static void switchPanels2() {
         CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
-        cardLayout.show(ultimatePanel,"panel1");
+        cardLayout.show(ultimatePanel,"panel2");
     }
 
+    private static void switchPanels3() {
+        CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
+        cardLayout.show(ultimatePanel,"panel3");
+    }
 
-
+    private static void switchPanels4() {
+        CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
+        cardLayout.show(ultimatePanel,"panel4");
+    }
 
 }
