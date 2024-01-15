@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
+
 public class WalkaPanel extends JPanel {
 
     private static int wybiegzmienna;
@@ -32,7 +33,9 @@ public class WalkaPanel extends JPanel {
     private static JDialog nowyDialog;
     private static JFrame walka;
     private static boolean koniecWalkiPanelWyswietlony = false;
-    private static Timer healingTimer;
+
+    private JLabel informacjaLabel;
+    private Timer informacjaTimer;
     private static JPanel panelZwierzat;
     private static JPanel ultimatePanel;
 
@@ -182,18 +185,43 @@ public class WalkaPanel extends JPanel {
                 if (twoje_zwierze.getZycie() > 0 && finalPrzeciwnik1.getZycie() > 0) {
                     atak(twoje_zwierze, finalPrzeciwnik1);
 
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                    switchPanels1();
-                    ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
+                    Timer timer = new Timer(20, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            switchPanels1();
+                        }
+                    });
+
+                    timer.setRepeats(false);
+                    timer.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            Timer timer2 = new Timer(2000, new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    switchPanels2();
+
+                                    Timer timer3 = new Timer(1500, new ActionListener() {
+                                        @Override
+                                        public void actionPerformed(ActionEvent e) {
+                                            ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
+                                        }
+                                    });
+
+                                    timer3.setRepeats(false);
+                                    timer3.start();
+                                }
+                            });
+                            timer2.setRepeats(false);
+                            timer2.start();
+                        }
+                    });
+
+                    timer.start();
                 }
-
-
             }
         });
+
         Zwierze finalPrzeciwnik = przeciwnik;
 
 
@@ -207,7 +235,7 @@ public class WalkaPanel extends JPanel {
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
-                    switchPanels2();
+                    //switchPanels2();
                     ruchPrzeciwnik(finalPrzeciwnik, zwierze, wybiegzmienna);
 
 
@@ -734,6 +762,8 @@ public class WalkaPanel extends JPanel {
         CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
         cardLayout.show(ultimatePanel,"panel1");
     }
+
+
 
 
 }
