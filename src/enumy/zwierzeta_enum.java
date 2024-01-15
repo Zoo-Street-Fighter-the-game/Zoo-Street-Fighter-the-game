@@ -114,7 +114,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Papuga", 150, 5,80,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Papuga", 150, 35,80,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     },
     PAW {
@@ -124,7 +124,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Paw", 200, 10, 40,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Paw", 200, 15, 40,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     },
     NIETOPERZ {
@@ -135,7 +135,7 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Nietoperz", 100, 15,75,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Nietoperz", 100, 25,75,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     };
     public abstract Zwierze stworzZwierze(String imie);

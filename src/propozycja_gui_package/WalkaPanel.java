@@ -100,6 +100,16 @@ public class WalkaPanel extends JPanel {
         panelArena.setBackground(new Color(0x5EABE0));
         panelArena.setPreferredSize(new Dimension(0, 70));
         panelArena.setVisible(true);
+        Timer timer = new Timer(10000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Hide the panel after 10 seconds
+                panelArena.setVisible(false);
+            }
+        });
+
+        // Start the timer
+        timer.start();
 
 
 ///////////////
@@ -229,7 +239,7 @@ public class WalkaPanel extends JPanel {
                             int a= twoje_zwierze.getZycie();
                             // czekaj 1 sekunda
                             ruchPrzeciwnik(finalPrzeciwnik1, zwierze, wybiegzmienna);
-                            int b= twoje_zwierze.getZycie();
+                            int b = twoje_zwierze.getZycie();
                             if(b<a){
                                 switchPanels3();
                             }
@@ -317,36 +327,39 @@ public class WalkaPanel extends JPanel {
         agent.loadQTableFromFile(Q_TABLE_FILE);
         // Sprawdzenie warunków zakończenia walki
 
-        if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik,wybieg)) ;
-        // Wybór akcji przez przeciwnika na podstawie agenta Q-learningu
-        int actionPrzeciwnika = agent.chooseAction(1);
-        // 0 akcja atak
-        // 1 akcja leczenie
+        if (!warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg)) ;
+        {
+            // Wybór akcji przez przeciwnika na podstawie agenta Q-learningu
+            int actionPrzeciwnika = agent.chooseAction(1);
+            // 0 akcja atak
+            // 1 akcja leczenie
 
-        if (actionPrzeciwnika == 0) {
-            // Przeciwnik wykonuje atak
-            Atak atakPrzeciwnika = new Atak();
-            atakPrzeciwnika.MenuAkcji(finalPrzeciwnik, zwierze);
-            System.out.println("Przeciwnik zaatakował!");
-            zwierze.setHealth(zwierze.getZycie());
-            zwierze.notifyObservers();
+            if (actionPrzeciwnika == 0) {
+                // Przeciwnik wykonuje atak
+                Atak atakPrzeciwnika = new Atak();
+                atakPrzeciwnika.MenuAkcji(finalPrzeciwnik, zwierze);
+                System.out.println("Przeciwnik zaatakował!");
+                System.out.println(twoje_zwierze.getZycie());
+                System.out.println(finalPrzeciwnik.getZycie());
+                zwierze.setHealth(zwierze.getZycie());
+                zwierze.notifyObservers();
 
-            // Sprawdzenie warunków zakończenia walki
-            if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik,wybieg)) ;
-        } else {
-            // Przeciwnik wykonuje leczenie
-            finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie()+10);
-            finalPrzeciwnik.notifyObservers();
-            System.out.println("Przeciwnik się leczy.");
-            agent.learn(1, actionPrzeciwnika, 1, 5);
+                // Sprawdzenie warunków zakończenia walki
+                if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg)) ;
+            } else {
+                // Przeciwnik wykonuje leczenie
+                finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie() + 10);
+                finalPrzeciwnik.notifyObservers();
+                System.out.println("Przeciwnik się leczy.");
+                agent.learn(1, actionPrzeciwnika, 1, 5);
 
-            // Sprawdzenie warunków zakończenia walki
-            if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik,wybieg));
+                // Sprawdzenie warunków zakończenia walki
+                if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg)) ;
+            }
+
+
+            agent.saveQTableToFile(Q_TABLE_FILE);
         }
-
-
-
-        agent.saveQTableToFile(Q_TABLE_FILE);
     }
     static JPanel createAnimalPanel1(Zwierze zwierze) {
         ImageIcon imageIcon;
@@ -788,10 +801,15 @@ public class WalkaPanel extends JPanel {
                     int wynik = (int) (50 * poziomTrudnosci.getMnoznik());
                     zoo.getZmiennaZasoby().dodajExp(wynik);
                     zoo.getZmiennaZasoby().zmienMonety(wynik);
+                    twoje_zwierze.setPrzezyte_dni(twoje_zwierze.getPrzezyte_dni()+1);
+                    twoje_zwierze.setZycie(twoje_zwierze.getZycie());
+
 
                     walka.dispose();
-
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, przeciwnik.getNazwa());
+                    new MainFrame(zoo);
+
+
                 }
             }
             return true;
