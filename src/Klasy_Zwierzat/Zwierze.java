@@ -7,7 +7,7 @@ import propozycja_gui_package.HealthSubject;
 
 import java.io.Serializable;
 
-public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
+public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable, Comparable<Zwierze>{
 
 
     //===========================================================================
@@ -204,6 +204,11 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
 
     public void setPrzedmiot(Przedmiot przedmiot) {
         this.przedmiot = przedmiot;
+    }
+
+    @Override
+    public int compareTo(Zwierze o) {
+        return this.getImie().compareTo( o.getImie());
     }
     //
 }

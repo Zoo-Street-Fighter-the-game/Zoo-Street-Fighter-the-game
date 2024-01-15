@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.*;
 
 public class OknoPokazZwierzeta extends JFrame {
@@ -30,6 +31,8 @@ public class OknoPokazZwierzeta extends JFrame {
 
     public void stworzPrzyciski()
     {
+        Collections.sort(wybieg.getLista_zwierzat());
+
         for(Zwierze zwierze : wybieg.getLista_zwierzat())
         {
             listaZwierzeButton.add(new JButton(zwierze.getNazwa()+" "+zwierze.getImie()));
