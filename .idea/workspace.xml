@@ -7,6 +7,7 @@
     <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Dzienne gui is ready,ezzz">
       <change beforePath="$PROJECT_DIR$/Plik.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Plik.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +57,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2ZdZg0kMcapsZ4Q4wwFbMxC2Vr6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,13 +69,14 @@
     &quot;Application.Hello.executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFrame.executor&quot;: &quot;Run&quot;,
     &quot;Application.NocneZoo.executor&quot;: &quot;Run&quot;,
     &quot;Application.test1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;GUIBranch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -103,7 +108,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
     </attachedChunks>
   </component>
@@ -155,6 +160,7 @@
       <workItem from="1704644768731" duration="6915000" />
       <workItem from="1704658041606" duration="3541000" />
       <workItem from="1704662193992" duration="4797000" />
+
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
@@ -244,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704311481315</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi">
+      <option name="closed" value="true" />
+      <created>1704892950999</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704892950999</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +287,9 @@
     <MESSAGE value="Działa sprzedawanie zwierząt" />
     <MESSAGE value="Działa całe dzienne zoo gui oprocz wybiegow ez" />
     <MESSAGE value="Dzienne gui is ready,ezzz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dzienne gui is ready,ezzz" />
+    <MESSAGE value="c" />
+    <MESSAGE value="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,5 @@
 package gui_oknaPopUp;
 
-import DzienneZooPakiet.DzienneZoo;
 import pakiet_sklep.Sklep;
 
 
@@ -12,10 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OknoSprzedajPracownika extends JFrame implements ActionListener, ChangeListener {
-    private JSlider slider;
-    private JButton przycisk;
-    private Sklep sklep;
-    private JLabel buttonLabel;
+    private final JSlider slider;
+    private final JButton przycisk;
+    private final Sklep sklep;
+    private final JLabel buttonLabel;
 
     public OknoSprzedajPracownika(Sklep sklep) {
         this.sklep=sklep;
@@ -65,7 +64,7 @@ public class OknoSprzedajPracownika extends JFrame implements ActionListener, Ch
     public void stateChanged(ChangeEvent e) {
         if(e.getSource()==slider)
         {
-            buttonLabel.setText(String.valueOf(String.valueOf(sklep.getZoo().getListaPracownikow().get(slider.getValue()-1).getJakoscUslug()*sklep.getCenaPracownika())));
+            buttonLabel.setText(String.valueOf(sklep.getZoo().getListaPracownikow().get(slider.getValue() - 1).getJakoscUslug() * sklep.getCenaPracownika()));
         }
     }
 }

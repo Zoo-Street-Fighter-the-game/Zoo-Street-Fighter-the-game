@@ -10,10 +10,7 @@ import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
-import gui_oknaPopUp.OknoKupJedzenie;
-import gui_oknaPopUp.OknoKupPracownika;
-import gui_oknaPopUp.OknoKupWybieg;
-import gui_oknaPopUp.OknoKupZwierze;
+import gui_oknaPopUp.*;
 import enumy.zwierzeta_enum;
 import gui_package.PanelDzienPracownicy;
 import gui_package.PanelDzienWybiegi;
@@ -26,11 +23,11 @@ import Przedmioty.Przedmiot;
 public class Sklep {
     final private static int cena_sztuka_jedzenie = 1;
     final private static int cenaPracownika =10;
-    private ArrayList<UpdateGUI> listaGUI;
+    private final ArrayList<UpdateGUI> listaGUI;
 
     private PanelDzienWybiegi panelDzienWybiegi;
     private PanelDzienPracownicy panelDzienPracownicy;
-    private DzienneZoo zoo;
+    private final DzienneZoo zoo;
 
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;
@@ -51,28 +48,16 @@ public class Sklep {
     //METODY KLASY
     public void sprzedaj_jedzenie(int ilosc) {
 
+        int przychod = ilosc * getCena_sztuka_jedzenie();
 
-        try {
-            if (ilosc <= 0) {
-                throw new IllegalArgumentException("Błędna wartość. Wprowadź liczbę większą niż 0.");
-            }
-
-            int przychod = ilosc * getCena_sztuka_jedzenie();
-
-            if (ilosc > zoo.getZmiennaZasoby().getJedzenie()) {
-                throw new BrakSrodkowException("Nie masz wystarczająco dużo jedzenia. Wybierz mniejszą ilość.");
-            }
-
+        if (ilosc > zoo.getZmiennaZasoby().getJedzenie()) {
+            OknoSprzedajJedzenie.brakJedzenia();
+        }
+        else {
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
             updateGUI();
-
-        } catch (InputMismatchException e) {
-            System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
-
-        } catch (IllegalArgumentException | BrakSrodkowException e) {
-            System.out.println(e.getMessage());
         }
     }
 
@@ -87,7 +72,7 @@ public class Sklep {
 
 
         // Wzrost stanu konta po sprzedaży
-        int cenaWybiegu = (int) wybieg.getCena();
+        int cenaWybiegu =  wybieg.getCena();
 
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaWybiegu);
 
@@ -228,6 +213,11 @@ public class Sklep {
             }
             updateGUI();
         }
+    }
+
+    public void przeniesZwierzeBezdomni(Wybieg_podstawowy wybieg, Zwierze zwierze)
+    {
+        zoo.przeniesZwierze_bezdomni(wybieg, zwierze);
     }
 
     //obserwator GUI

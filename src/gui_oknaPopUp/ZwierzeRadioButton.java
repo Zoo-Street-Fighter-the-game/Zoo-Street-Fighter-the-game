@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class ZwierzeRadioButton extends JRadioButton {
 
-    private zwierzeta_enum typ;
+    private final zwierzeta_enum typ;
 
     public ZwierzeRadioButton(String str, zwierzeta_enum typ)
     {

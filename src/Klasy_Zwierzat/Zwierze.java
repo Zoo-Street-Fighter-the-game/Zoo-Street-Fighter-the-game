@@ -8,6 +8,7 @@ import java.io.Serializable;
 public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
 
 
+
     //===========================================================================
     //POLA ZWIERZĄT
     //===========================================================================
@@ -23,6 +24,12 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializab
     private int cena;
     private rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
+
+
+// Gettery i settery
+
+
+
 
 
     private Przedmiot przedmiot;
@@ -197,4 +204,5 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializab
     public void setPrzedmiot(Przedmiot przedmiot) {
         this.przedmiot = przedmiot;
     }
+    //
 }

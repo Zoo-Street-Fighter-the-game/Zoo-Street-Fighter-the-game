@@ -18,11 +18,12 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
     private JButton sprzedajJedzenie ;
     private JButton sprzedajPracownika;
 
+
     private JButton zapiszGre;
     private JButton wczytajGre;
     private Sklep sklep;
 
-    private DzienneZoo zoo;
+    private final DzienneZoo zoo;
     public PanelDzienSklep(Sklep sklep)
     {
         sklep.dodajObsewatoraGUI(this);
@@ -116,6 +117,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
            new gui_oknaPopUp.OknoZapis();
        }
     }
+
     class ReakcjaWczytajGre implements ActionListener
     {
         public void actionPerformed(ActionEvent e) {
