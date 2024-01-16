@@ -208,7 +208,7 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
 
     @Override
     public int compareTo(Zwierze o) {
-        return this.getImie().compareTo( o.getImie());
+        return this.toString().compareTo( o.toString());
     }
     //
 }
