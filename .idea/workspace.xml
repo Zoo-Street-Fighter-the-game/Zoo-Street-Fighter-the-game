@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi">
+    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Sortowanie pokazywania zwierzat po imionach :*">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
 
     </list>
@@ -40,7 +42,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="HubertBranch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,31 +67,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Hello.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MainFrame.executor": "Run",
-    "Application.NocneZoo.executor": "Run",
-    "Application.test1.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Przycisk__Gui",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Hello.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NocneZoo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YourFavBranch&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   }
 }]]></component>
   <component name="RecentsManager">
@@ -154,13 +157,18 @@
       <workItem from="1704293941201" duration="453000" />
       <workItem from="1704309259905" duration="2284000" />
       <workItem from="1704382883608" duration="481000" />
-      <workItem from="1704452752870" duration="7362000" />
-      <workItem from="1704472908676" duration="3830000" />
-      <workItem from="1704477140356" duration="7616000" />
-      <workItem from="1704485686277" duration="821000" />
-      <workItem from="1704644768731" duration="6915000" />
-      <workItem from="1704658041606" duration="3541000" />
-      <workItem from="1704662193992" duration="4797000" />
+      <workItem from="1704734101223" duration="2212000" />
+      <workItem from="1704737212673" duration="94000" />
+      <workItem from="1704892911143" duration="43000" />
+      <workItem from="1704975493395" duration="203000" />
+      <workItem from="1704975858267" duration="505000" />
+      <workItem from="1705237377869" duration="10000" />
+      <workItem from="1705237515756" duration="10000" />
+      <workItem from="1705344032201" duration="427000" />
+      <workItem from="1705344527611" duration="1680000" />
+      <workItem from="1705351687811" duration="1288000" />
+      <workItem from="1705390025466" duration="1391000" />
+      <workItem from="1705393724662" duration="938000" />
 
     </task>
     <task id="LOCAL-00001" summary="zmiana">
@@ -259,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704892950999</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Sortowanie pokazywania zwierzat po imionach :*">
+      <option name="closed" value="true" />
+      <created>1705345130258</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1705345130258</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +306,8 @@
     <MESSAGE value="Dzienne gui is ready,ezzz" />
     <MESSAGE value="c" />
     <MESSAGE value="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi" />
+    <MESSAGE value="Sortowanie pokazywania zwierzat po imionach :*" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sortowanie pokazywania zwierzat po imionach :*" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

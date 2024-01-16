@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
@@ -21,6 +23,7 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
     private Pracownik zaznaczonyPracownik;
     private JRadioButton zaznaczonyRadioButton;
     private final ArrayList<ObserwujacyPracownikGUI_interface> listaObserwatorow;
+    private HashMap<Pracownik,JRadioButton> HS= new HashMap<>();
 
     ImageIcon wybrany3 = new ImageIcon("src/ikony/IkonaPracownikWybrany3.png");
     ImageIcon wybrany2 = new ImageIcon("src/ikony/IkonaPracownikWybrany2.png");
@@ -53,6 +56,20 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         this.setBackground(new Color(0xd3f3e3));
         this.setPreferredSize(new Dimension(250, 0));
 
+
+    }
+
+    public void sortujprzyciski()
+    {
+        for(int i=0; i<listaprzyciskow.size();i++)
+        {
+            this.remove(listaprzyciskow.get(i));
+        }
+        Collections.sort(zoo.getListaPracownikow());
+        for (int i=0; i<listaprzyciskow.size();i++)
+        {
+            this.add(HS.get(zoo.getListaPracownikow().get(i)));
+        }
 
     }
     class Zaznaczanie implements ActionListener
@@ -93,13 +110,17 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         this.add(listaprzyciskow.getLast());
         grupapracownikow.add(listaprzyciskow.getLast());
         listaprzyciskow.getLast().addActionListener(new Zaznaczanie() );
+        HS.put(p, listaprzyciskow.getLast());
+        sortujprzyciski();
+
     }
     public void usunPracownika(int numer)
     {
 
-        this.remove(listaprzyciskow.get(numer));
+        this.remove(HS.get(zoo.getListaPracownikow().get(numer)));
         grupapracownikow.remove(listaprzyciskow.get(numer));
         listaprzyciskow.remove(numer);
+        HS.remove(zoo.getListaPracownikow().get(numer));
 
     }
 

@@ -5,7 +5,7 @@ import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 import java.io.Serializable;
 
-public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
+public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable, Comparable<Zwierze>{
 
 
 
@@ -203,6 +203,11 @@ public  class Zwierze implements Obserwujacy_ZwierzeWybieg_interface, Serializab
 
     public void setPrzedmiot(Przedmiot przedmiot) {
         this.przedmiot = przedmiot;
+    }
+
+    @Override
+    public int compareTo(Zwierze o) {
+        return this.toString().compareTo( o.toString());
     }
     //
 }
