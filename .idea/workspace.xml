@@ -7,31 +7,9 @@
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DzienneZooPakiet/DzienneZoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pracownik_package/Pracownik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupJedzenie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupPracownika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupWybieg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoNakarmZwierzeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPokazZwierzeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoPokazZwierzeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajJedzenie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajZwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienWybiegi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybieg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelWybiegBezdomni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/Animacja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/Animacja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +78,7 @@
       <workItem from="1705315255664" duration="1397000" />
       <workItem from="1705345327659" duration="8921000" />
       <workItem from="1705399973321" duration="165000" />
-      <workItem from="1705408400500" duration="8517000" />
+      <workItem from="1705408400500" duration="16002000" />
     </task>
     <servers />
   </component>

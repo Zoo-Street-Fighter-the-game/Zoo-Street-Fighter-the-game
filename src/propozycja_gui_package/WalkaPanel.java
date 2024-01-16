@@ -5,6 +5,7 @@ import enumy.poziom_trudnosci_enum;
 import gui_package.MyFrame;
 import gui_package.PanelDzien;
 import gui_package.PanelWybieg;
+import interfejsy.UpdateGUI;
 import noc_walka.Atak;
 import pakiet_arena.Arena;
 import Klasy_Zwierzat.Zwierze;
@@ -23,7 +24,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class WalkaPanel extends JPanel {
+public class WalkaPanel extends JPanel{
 
     private static int wybiegzmienna;
     private static final QLearningAgent agent = new QLearningAgent(2, 2);
@@ -782,8 +783,9 @@ public class WalkaPanel extends JPanel {
 
     }
 
-    private static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik, int wybieg) {
+    public static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik, int wybieg) {
         poziom_trudnosci_enum poziomTrudnosci = poziomTrudnosciPanel.getWybranyPoziomTrudnosci();
+        Sklep s = new Sklep(DzienneZoo.getInstance());
 
 
 
@@ -796,13 +798,14 @@ public class WalkaPanel extends JPanel {
                     agent.learn(1, 0, 1, 10);
                     DzienneZoo zoo = DzienneZoo.getInstance();
                     zoo.getListaWybiegow().get(wybieg - 1).usun_zwierze(twoje_zwierze);
-                    Sklep s = new Sklep(DzienneZoo.getInstance());
                     System.out.println(twoje_zwierze.getNazwa());
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, twoje_zwierze.getNazwa());
 
-                    new MyFrame(s);
-                    s.updateGUI();
+
+
+
+
 
                     //new MainFrame(zoo);
                 } else {
@@ -814,12 +817,12 @@ public class WalkaPanel extends JPanel {
                     zoo.getZmiennaZasoby().zmienMonety(wynik);
                     twoje_zwierze.setPrzezyte_dni(twoje_zwierze.getPrzezyte_dni()+1);
                     twoje_zwierze.setZycie(twoje_zwierze.getZycie());
-                    Sklep s = new Sklep(DzienneZoo.getInstance());
 
 
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, przeciwnik.getNazwa());
-                    new MyFrame(s);
+                    new MyFrame(s).getPanelDzien().getPanelWybiegi().updateGUI();
+
 
 
 
@@ -852,5 +855,6 @@ public class WalkaPanel extends JPanel {
         CardLayout cardLayout = (CardLayout) ultimatePanel.getLayout();
         cardLayout.show(ultimatePanel,"panel4");
     }
+
 
 }

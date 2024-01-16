@@ -1,5 +1,6 @@
 package pakiet_zasoby;
-public class Zasoby {
+import java.io.Serializable;
+public class Zasoby implements Serializable{
     private int exp;
     private int monety;
     private int jedzenie;
