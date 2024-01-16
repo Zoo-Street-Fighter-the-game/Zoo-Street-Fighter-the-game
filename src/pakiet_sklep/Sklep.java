@@ -84,6 +84,7 @@ public class Sklep {
     public void sprzedaj_pracownika(int numerPracownika) {
 
         // Wzrost stanu konta po sprzedaży
+
         (zoo.getZmiennaZasoby()).setMonety(zoo.getZmiennaZasoby().getMonety() + cenaPracownika*zoo.getListaPracownikow().get(numerPracownika).getJakoscUslug());
 
 

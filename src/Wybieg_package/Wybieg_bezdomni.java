@@ -1,8 +1,8 @@
 package Wybieg_package;
 
 import Klasy_Zwierzat.Zwierze;
-
-public class Wybieg_bezdomni extends Wybieg_abstract{
+import java.io.Serializable;
+public class Wybieg_bezdomni extends Wybieg_abstract implements Serializable{
 
 
     //======================================================

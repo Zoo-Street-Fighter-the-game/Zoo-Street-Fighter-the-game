@@ -7,6 +7,7 @@ import gui_package.PanelDzien;
 import gui_package.PanelWybieg;
 import interfejsy.UpdateGUI;
 import noc_walka.Atak;
+import noc_walka.MenuAkcji;
 import pakiet_arena.Arena;
 import Klasy_Zwierzat.Zwierze;
 import pakiet_arena.QLearningAgent;
@@ -318,7 +319,7 @@ public class WalkaPanel extends JPanel{
 
     static void atak(Zwierze zwierze, Zwierze finalPrzeciwnik) {
         Atak atak = new Atak();
-        atak.MenuAkcji(zwierze, finalPrzeciwnik);
+        atak.menuAkcji(zwierze, finalPrzeciwnik);
         finalPrzeciwnik.setHealth(finalPrzeciwnik.getZycie());
         finalPrzeciwnik.notifyObservers();
 
@@ -342,7 +343,7 @@ public class WalkaPanel extends JPanel{
             if (actionPrzeciwnika == 0) {
                 // Przeciwnik wykonuje atak
                 Atak atakPrzeciwnika = new Atak();
-                atakPrzeciwnika.MenuAkcji(finalPrzeciwnik, zwierze);
+                atakPrzeciwnika.menuAkcji(finalPrzeciwnik, zwierze);
                 System.out.println("Przeciwnik zaatakował!");
                 System.out.println(twoje_zwierze.getZycie());
                 System.out.println(finalPrzeciwnik.getZycie());

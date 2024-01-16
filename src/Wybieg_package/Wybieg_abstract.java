@@ -1,12 +1,12 @@
 package Wybieg_package;
 
 import Klasy_Zwierzat.Zwierze;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class Wybieg_abstract {
+public abstract class Wybieg_abstract implements Serializable{
     private List<Zwierze> lista_zwierzat =
             new ArrayList<>();
 

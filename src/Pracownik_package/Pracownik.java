@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 
 
-public class Pracownik implements Serializable{
+public class Pracownik implements Serializable, Comparable<Pracownik>{
 
     //INICJOWANIE SKLADOWYCH
     private String imie;
@@ -104,5 +104,11 @@ public class Pracownik implements Serializable{
 
     public void setZasoby(Zasoby zasoby) {
         this.zasoby = zasoby;
+    }
+
+    @Override
+    public int compareTo(Pracownik o) {
+        return this.getImie().compareTo( o.getImie());
+
     }
 }

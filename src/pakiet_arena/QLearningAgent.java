@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.Random;
 
 public class QLearningAgent {
-
+    // Tabela Q przechowująca wartości dla stanów i akcji
     private double[][] qTable;
     private double learningRate;
     private double discountFactor;
@@ -16,6 +16,7 @@ public class QLearningAgent {
     public QLearningAgent(int stateSize, int actionSize) {
         // Inicjalizacja tablicy Q
         qTable = new double[stateSize][actionSize];
+
         learningRate = 0.15;
         discountFactor = 0.9999;
         epsilon = 0.2;

@@ -2,10 +2,13 @@ package pakiet_arena;
 
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
+import Przedmioty.Przedmiot;
+
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import enumy.zwierzeta_enum;
+
 
 
 import static pakiet_arena.Walka.podsumowanie;
@@ -18,6 +21,7 @@ public class NocneZoo2 {
 
     public static void main(String[] args) {
         DzienneZoo zoo = DzienneZoo.getInstance();
+
         zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY,wielkosc_wybiegu_enum.DUZY));
         zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.NIEDZWIEDZ.stworzZwierze("bob"));
         //
@@ -25,14 +29,16 @@ public class NocneZoo2 {
         Poziom_trudnosci poziom_trudnosci = new Poziom_trudnosci();
         poziom_trudnosci.ustaw_poziom_trudnosci();
         Arena arena = new Arena();
-        System.out.println(arena.toString());
+        System.out.println(arena);
+
         nr_wybiegu_Zwierze wybieg_zwierze = wybor_zwierzecia();
         Zwierze wybrane_zwierze = wybieg_zwierze.zwierze();
         Zwierze przeciwnik = wybor_przeciwnika(poziom_trudnosci.getTrudnosc());
 
         Zwierze twoje_zwierze = stworzenie_zwierzecia_walczacego(wybrane_zwierze, arena);
-        System.out.println(twoje_zwierze.toString());
+        System.out.println(twoje_zwierze);
         przeciwnik = stworzenie_zwierzecia_walczacego(przeciwnik, arena);
+
 
         walka(twoje_zwierze,przeciwnik);
 

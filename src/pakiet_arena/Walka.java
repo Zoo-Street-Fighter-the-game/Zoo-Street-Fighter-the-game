@@ -42,7 +42,8 @@ public class Walka {
 
     }
 
-    public static boolean warunki_zakonczenia_walki() {
+    private static boolean warunki_zakonczenia_walki() {
+
         if (twoje_zwierze.getZycie() <= 0) {
         return false;
         } else if (przeciwnik.getZycie() <= 0) {
@@ -51,7 +52,8 @@ public class Walka {
         return true;
     }
 
-    public static void atak_twojego_zwierzecia() {
+    private static void atak_twojego_zwierzecia() {
+
         boolean powtorzenie_petli = true;
         Scanner scanner = new Scanner(System.in);
         while(powtorzenie_petli){
@@ -68,12 +70,14 @@ public class Walka {
             switch (wybor) {
                 case 1:
                     Atak atak = new Atak();
-                    atak.MenuAkcji(twoje_zwierze, przeciwnik);
+                    atak.menuAkcji(twoje_zwierze,przeciwnik);
+
                     break;
                 case 2:
 
                     Leczenie leczenie = new Leczenie();
-                    leczenie.MenuAkcji(twoje_zwierze, przeciwnik);
+                    leczenie.menuAkcji(twoje_zwierze, przeciwnik);
+
                     break;
                 default:
                     System.out.println("Nieprawidłowy wybór. Spróbuj ponownie.");
@@ -85,7 +89,8 @@ public class Walka {
         System.out.println("zycie przeciwnika: " + przeciwnik.getZycie());
     }
 
-    public static void atak_wrogiego_zwierzecia(){
+    private static void atak_wrogiego_zwierzecia(){
+
 
         int actionPrzeciwnika = agent.chooseAction(1);
         // 0 akcja atak
@@ -93,12 +98,14 @@ public class Walka {
         switch (actionPrzeciwnika){
             case 0:
                 Atak atakPrzeciwnika = new Atak();
-                atakPrzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
+                atakPrzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
+
                 System.out.println("Przeciwnik zaatakował!");
                 break;
             case 1:
                 Leczenie leczenieprzeciwnika = new Leczenie();
-                leczenieprzeciwnika.MenuAkcji(przeciwnik, twoje_zwierze);
+                leczenieprzeciwnika.menuAkcji(przeciwnik, twoje_zwierze);
+
                 System.out.println("Przeciwnik się leczy.");
 
                 agent.learn(1, actionPrzeciwnika, 1, 5);
