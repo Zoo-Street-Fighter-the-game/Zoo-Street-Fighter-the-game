@@ -7,10 +7,7 @@
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/noc_walka/Atak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/noc_walka/Atak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pakiet_arena/QLearningAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_arena/QLearningAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/Animacja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/Animacja.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,9 @@
       <workItem from="1704455888963" duration="18000" />
       <workItem from="1705148719572" duration="6323000" />
       <workItem from="1705315255664" duration="1397000" />
-      <workItem from="1705345327659" duration="8302000" />
+      <workItem from="1705345327659" duration="8921000" />
+      <workItem from="1705399973321" duration="165000" />
+      <workItem from="1705408400500" duration="1819000" />
     </task>
     <servers />
   </component>
