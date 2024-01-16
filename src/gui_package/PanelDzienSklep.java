@@ -78,6 +78,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
 
 
 
+
     }
 
     public Sklep getSklep() {

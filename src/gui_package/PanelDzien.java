@@ -34,6 +34,7 @@ public class PanelDzien extends JPanel implements UpdateGUI {
         this.add(panelPracownicy, BorderLayout.EAST);
         this.add(panelZasoby, BorderLayout.NORTH);
         this.add(panelSklep, BorderLayout.WEST);
+        sklep.wczytajGre();
 
     }
 

@@ -786,10 +786,8 @@ public class WalkaPanel extends JPanel{
 
     public static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik, int wybieg) {
         poziom_trudnosci_enum poziomTrudnosci = poziomTrudnosciPanel.getWybranyPoziomTrudnosci();
+
         Sklep s = new Sklep(DzienneZoo.getInstance());
-
-
-
         if (twoje_zwierze.getZycie() <= 0 || przeciwnik.getZycie() <= 0) {
             if (!koniecWalkiPanelWyswietlony) {
                 koniecWalkiPanelWyswietlony = true; // Ustawienie flagi na true po pierwszym wyświetleniu
@@ -802,11 +800,8 @@ public class WalkaPanel extends JPanel{
                     System.out.println(twoje_zwierze.getNazwa());
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, twoje_zwierze.getNazwa());
-
-
-
-
-
+                    //s.zapiszGre();
+                    new MyFrame(new Sklep(zoo));
 
                     //new MainFrame(zoo);
                 } else {
@@ -818,23 +813,19 @@ public class WalkaPanel extends JPanel{
                     zoo.getZmiennaZasoby().zmienMonety(wynik);
                     twoje_zwierze.setPrzezyte_dni(twoje_zwierze.getPrzezyte_dni()+1);
                     twoje_zwierze.setZycie(twoje_zwierze.getZycie());
-
-
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, przeciwnik.getNazwa());
-                    new MyFrame(s).getPanelDzien().getPanelWybiegi().updateGUI();
-
-
-
+                    s.zapiszGre();
+                    new MyFrame(new Sklep(zoo));
 
                     //new MainFrame(zoo);
-
-
                 }
             }
             return true;
         }
+        koniecWalkiPanelWyswietlony = false;
         return false;
+
     }
 
     private static void switchPanels1() {

@@ -10,42 +10,42 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
     PINGWIN {
         @Override
         public int getCena() {
-            return 3;
+            return 30;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Pingwin", 25, 25, 55,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze(imie,"Pingwin", 150, 25, 55,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
         }
     },
     ZOLW {
         @Override
         public int getCena() {
-            return 3;
+            return 30;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Żółw", 75, 20, 15,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze(imie,"Żółw", 330, 20, 15,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
         }
     },
     REKIN {
         @Override
         public int getCena() {
-            return 7;
+            return 70;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Rekin", 60, 50, 35,50,7, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze(imie,"Rekin", 135, 50, 35,50,7, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
         }
     },
     ORKA {
         @Override
         public int getCena() {
-            return 9;
+            return 90;
         }
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Orka", 80, 70,30,50, 10, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
+            return new Zwierze(imie,"Orka", 150, 70,30,50, 10, 50, this.getCena(), rodzaj_srodowiska_enum.WODNY);
         }
     },
     //===========================================================================
@@ -54,43 +54,43 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
     NIEDZWIEDZ {
         @Override
         public int getCena() {
-            return 9;
+            return 90;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Niedźwiedź", 75, 75,30,50, 6, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"Niedźwiedź", 300, 75,30,50, 6, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     },
     LOS {
         @Override
         public int getCena() {
-            return 7;
+            return 70;
         }
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Łoś", 65, 35,50,50, 6, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"Łoś", 265, 35,50,50, 6, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     },
     NIEDZWIEDZ_POLARNY {
         @Override
         public int getCena() {
-            return 8;
+            return 80;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Niedźwiedź polarny", 80, 80, 20,50,7, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"NiedźwiedźPolarny", 300, 80, 20,50,7, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     },
     LEW {
         @Override
         public int getCena() {
-            return 7;
+            return 70;
         }
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Lew", 60, 70,40,50, 6, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
+            return new Zwierze(imie,"Lew", 300, 70,40,50, 6, 50, this.getCena(), rodzaj_srodowiska_enum.LADOWY);
         }
     },
     //===========================================================================
@@ -99,49 +99,47 @@ public enum zwierzeta_enum { //przy tworzeniu nowych zwierzat, trzeba dodac opcj
     ORZEL {
         @Override
         public int getCena() {
-            return 6;
+            return 60;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Orzeł", 45, 50, 70,50,5, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Orzeł", 250, 50, 70,50,5, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     },
     PAPUGA {
         @Override
         public int getCena() {
-            return 3;
+            return 30;
         }
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Papuga", 15, 5,80,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Papuga", 150, 35,80,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     },
     PAW {
         @Override
         public int getCena() {
-            return 2;
+            return 20;
         }
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Paw", 20, 10, 40,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Paw", 200, 15, 40,50,4, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     },
     NIETOPERZ {
         @Override
         public int getCena() {
-            return 3;
+            return 30;
         }
 
         @Override
         public Zwierze stworzZwierze(String imie) {
-            return new Zwierze(imie,"Nietoperz", 10, 15,75,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
+            return new Zwierze(imie,"Nietoperz", 100, 25,75,50, 3, 50, this.getCena(), rodzaj_srodowiska_enum.POWIETRZNY);
         }
     };
     public abstract Zwierze stworzZwierze(String imie);
 
     public abstract int getCena();
-
-
 
 }

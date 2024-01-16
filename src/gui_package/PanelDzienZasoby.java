@@ -73,13 +73,13 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI, ActionListene
         public void actionPerformed(ActionEvent e) {
             sklep.zakonczDzien();
             //obiekt.przekazZoo();
-            //go_to_night()
+            go_to_night(sklep.getZoo());
         }
     }
-/*    public void go_to_night(){
-        new Animacja();
+    public void go_to_night(DzienneZoo zoo){
+        new Animacja(zoo);
 
-    }*/
+    }
     @Override
     public void updateGUI() {
         zasobymonety.setText("Monety: " +zoo.getZmiennaZasoby().getMonety());
