@@ -2,10 +2,14 @@ package propozycja_gui_package;
 
 import DzienneZooPakiet.DzienneZoo;
 import enumy.poziom_trudnosci_enum;
+import gui_package.MyFrame;
+import gui_package.PanelDzien;
+import gui_package.PanelWybieg;
 import noc_walka.Atak;
 import pakiet_arena.Arena;
 import Klasy_Zwierzat.Zwierze;
 import pakiet_arena.QLearningAgent;
+import pakiet_sklep.Sklep;
 
 
 import static pakiet_arena.NocneZoo2.Q_TABLE_FILE;
@@ -781,6 +785,8 @@ public class WalkaPanel extends JPanel {
     private static boolean warunki_zakonczenia_walki(QLearningAgent agent, Zwierze twoje_zwierze, Zwierze przeciwnik, int wybieg) {
         poziom_trudnosci_enum poziomTrudnosci = poziomTrudnosciPanel.getWybranyPoziomTrudnosci();
 
+
+
         if (twoje_zwierze.getZycie() <= 0 || przeciwnik.getZycie() <= 0) {
             if (!koniecWalkiPanelWyswietlony) {
                 koniecWalkiPanelWyswietlony = true; // Ustawienie flagi na true po pierwszym wyświetleniu
@@ -790,10 +796,15 @@ public class WalkaPanel extends JPanel {
                     agent.learn(1, 0, 1, 10);
                     DzienneZoo zoo = DzienneZoo.getInstance();
                     zoo.getListaWybiegow().get(wybieg - 1).usun_zwierze(twoje_zwierze);
+                    Sklep s = new Sklep(DzienneZoo.getInstance());
                     System.out.println(twoje_zwierze.getNazwa());
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, twoje_zwierze.getNazwa());
-                    new MainFrame(zoo);
+
+                    new MyFrame(s);
+                    s.updateGUI();
+
+                    //new MainFrame(zoo);
                 } else {
                     System.out.println("Gratulacje! Wygrałeś! Przeciwnik ma zerowe zdrowie.");
                     agent.learn(1, 0, 1, -10);
@@ -803,11 +814,16 @@ public class WalkaPanel extends JPanel {
                     zoo.getZmiennaZasoby().zmienMonety(wynik);
                     twoje_zwierze.setPrzezyte_dni(twoje_zwierze.getPrzezyte_dni()+1);
                     twoje_zwierze.setZycie(twoje_zwierze.getZycie());
+                    Sklep s = new Sklep(DzienneZoo.getInstance());
 
 
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, przeciwnik.getNazwa());
-                    new MainFrame(zoo);
+                    new MyFrame(s);
+
+
+
+                    //new MainFrame(zoo);
 
 
                 }

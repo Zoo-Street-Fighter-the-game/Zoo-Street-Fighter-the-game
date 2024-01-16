@@ -14,13 +14,13 @@ import java.util.ArrayList;
 
 public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
-    private ArrayList<JRadioButton> listaprzyciskow=new ArrayList<>();
-    private DzienneZoo zoo;
-    private ButtonGroup grupapracownikow=new ButtonGroup();
-    private JButton zaznaczNie = new JButton("Usun zaznaczenie");
+    private final ArrayList<JRadioButton> listaprzyciskow=new ArrayList<>();
+    private final DzienneZoo zoo;
+    private final ButtonGroup grupapracownikow=new ButtonGroup();
+    private final JButton zaznaczNie = new JButton("Usun zaznaczenie");
     private Pracownik zaznaczonyPracownik;
     private JRadioButton zaznaczonyRadioButton;
-    private ArrayList<ObserwujacyPracownikGUI_interface> listaObserwatorow;
+    private final ArrayList<ObserwujacyPracownikGUI_interface> listaObserwatorow;
 
     ImageIcon wybrany3 = new ImageIcon("src/ikony/IkonaPracownikWybrany3.png");
     ImageIcon wybrany2 = new ImageIcon("src/ikony/IkonaPracownikWybrany2.png");
@@ -100,7 +100,6 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         this.remove(listaprzyciskow.get(numer));
         grupapracownikow.remove(listaprzyciskow.get(numer));
         listaprzyciskow.remove(numer);
-
 
     }
 

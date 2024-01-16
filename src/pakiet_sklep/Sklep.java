@@ -1,5 +1,7 @@
 package pakiet_sklep;
+import java.io.ObjectOutputStream;
 import java.util.*;
+import java.io.*;
 
 import DzienneZooPakiet.*;
 import Klasy_Zwierzat.Zwierze;
@@ -8,10 +10,7 @@ import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
-import gui_oknaPopUp.OknoKupJedzenie;
-import gui_oknaPopUp.OknoKupPracownika;
-import gui_oknaPopUp.OknoKupWybieg;
-import gui_oknaPopUp.OknoKupZwierze;
+import gui_oknaPopUp.*;
 import enumy.zwierzeta_enum;
 import gui_package.PanelDzienPracownicy;
 import gui_package.PanelDzienWybiegi;
@@ -24,11 +23,11 @@ import Przedmioty.Przedmiot;
 public class Sklep {
     final private static int cena_sztuka_jedzenie = 1;
     final private static int cenaPracownika =10;
-    private ArrayList<UpdateGUI> listaGUI;
+    private final ArrayList<UpdateGUI> listaGUI;
 
     private PanelDzienWybiegi panelDzienWybiegi;
     private PanelDzienPracownicy panelDzienPracownicy;
-    private DzienneZoo zoo;
+    private final DzienneZoo zoo;
 
     public static int getCena_sztuka_jedzenie() {
         return cena_sztuka_jedzenie;
@@ -49,28 +48,16 @@ public class Sklep {
     //METODY KLASY
     public void sprzedaj_jedzenie(int ilosc) {
 
+        int przychod = ilosc * getCena_sztuka_jedzenie();
 
-        try {
-            if (ilosc <= 0) {
-                throw new IllegalArgumentException("Błędna wartość. Wprowadź liczbę większą niż 0.");
-            }
-
-            int przychod = ilosc * getCena_sztuka_jedzenie();
-
-            if (ilosc > zoo.getZmiennaZasoby().getJedzenie()) {
-                throw new BrakSrodkowException("Nie masz wystarczająco dużo jedzenia. Wybierz mniejszą ilość.");
-            }
-
+        if (ilosc > zoo.getZmiennaZasoby().getJedzenie()) {
+            OknoSprzedajJedzenie.brakJedzenia();
+        }
+        else {
             zoo.getZmiennaZasoby().zmienJedzenie(-ilosc);
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + przychod);
             System.out.println("Sprzedaż jedzenia udana. Zarobiłeś: " + przychod + " monet");
             updateGUI();
-
-        } catch (InputMismatchException e) {
-            System.out.println("Błędny format danych. Wprowadź liczbę całkowitą.");
-
-        } catch (IllegalArgumentException | BrakSrodkowException e) {
-            System.out.println(e.getMessage());
         }
     }
 
@@ -85,7 +72,7 @@ public class Sklep {
 
 
         // Wzrost stanu konta po sprzedaży
-        int cenaWybiegu = (int) wybieg.getCena();
+        int cenaWybiegu =  wybieg.getCena();
 
         zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() + cenaWybiegu);
 
@@ -228,6 +215,15 @@ public class Sklep {
         }
     }
 
+    public void przeniesZwierzeBezdomni(Wybieg_podstawowy wybieg, Zwierze zwierze)
+    {
+        zoo.przeniesZwierze_bezdomni(wybieg, zwierze);
+    }
+
+
+    public void zakonczDzien(){
+        zoo.zakonczDzien();
+    }
     //obserwator GUI
 
     public void dodajObsewatoraGUI(UpdateGUI G)
@@ -309,6 +305,68 @@ public class Sklep {
         } catch (IllegalArgumentException | BrakSrodkowException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void zapiszGre(){
+        try (ObjectOutputStream so = new ObjectOutputStream(new FileOutputStream("Plik.ser"))) {
+            so.writeObject(getZoo());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Zapis wykonany");
+    }
+    public void wczytajGre() {
+        System.out.println(zoo.toString());
+        System.out.println("Import");
+        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
+            DzienneZoo zoo2 = (DzienneZoo) is.readObject();
+            zoo.getZmiennaZasoby().setMonety(zoo2.getZmiennaZasoby().getMonety());
+            zoo.getZmiennaZasoby().setJedzenie(zoo2.getZmiennaZasoby().getJedzenie());
+            zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
+            zoo.setDniCounter(zoo2.getDniCounter());
+
+            for(int b = 0; b<((zoo.getListaPracownikow()).size()); b++){
+                zoo.usunPracownika(zoo.getListaPracownikow().get(b));
+                panelDzienPracownicy.usunPracownika(b);
+                b--;
+
+            }
+                zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
+
+                for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
+                    zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
+                }
+
+                panelDzienWybiegi.Wyczysc(this);
+                zoo.getListaWybiegow().clear();
+
+            for(int i = 0; i<(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().size()); i++){
+                zoo.getWybiegDlaBezdomnych().dodaj_zwierze(new Zwierze(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getImie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getNazwa(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getZycie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSila(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzybkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzczescie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWielkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWskaznik_glodu(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getCena(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getRodzaj()));
+            }
+
+            for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
+                zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
+                for(int j = 0; j<(zoo2.getListaWybiegow().get(i).getLista_zwierzat().size());j++){
+                    zoo.getListaWybiegow().get(i).dodaj_zwierze(new Zwierze(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getImie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getNazwa(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getZycie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSila(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzybkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzczescie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWielkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWskaznik_glodu(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getCena(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getRodzaj()));
+                }
+
+                PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+                panelDzienWybiegi.dodajWybieg(panelWybieg);
+                panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+            }
+            for(int i = 0; i<(zoo2.getListaPracownikow()).size(); i++){
+                zoo.dodajPracownika(new Pracownik(zoo2.getListaPracownikow().get(i).getImie(),zoo2.getListaPracownikow().get(i).getNazwisko(),zoo2.getListaPracownikow().get(i).getJakoscUslug(), getZoo().getZmiennaZasoby()));
+                panelDzienPracownicy.dodajPracownika(zoo.getListaPracownikow().getLast());
+            }
+
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        updateGUI();
+        System.out.println(zoo.toString());
+
     }
     public void sprzedaj_bron() {
         try {

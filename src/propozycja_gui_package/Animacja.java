@@ -4,6 +4,7 @@ import Wybieg_package.Wybieg_podstawowy;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import enumy.zwierzeta_enum;
+import pakiet_sklep.Sklep;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +14,7 @@ import java.awt.event.ActionListener;
 public class Animacja extends JFrame {
     private JLabel koniecDniaLabel;
 
-    public Animacja() {
+    public Animacja(DzienneZoo zoo) {
         // Ustawienie rozmiaru na pełny ekran
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setUndecorated(true);
@@ -42,7 +43,7 @@ public class Animacja extends JFrame {
                 } else {
                     ((Timer) e.getSource()).stop();
                     dispose();
-                    DzienneZoo zoo = DzienneZoo.getInstance();
+                    //DzienneZoo zoo = DzienneZoo.getInstance();
 /*                    zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.SREDNI));
                     zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.WODNY, wielkosc_wybiegu_enum.SREDNI));
                     zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.NIEDZWIEDZ.stworzZwierze("bob"));

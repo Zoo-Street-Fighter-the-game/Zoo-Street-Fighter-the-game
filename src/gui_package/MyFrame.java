@@ -1,14 +1,14 @@
 package gui_package;
 
 import DzienneZooPakiet.DzienneZoo;
-import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
 
 import javax.swing.JFrame;
 
 public class MyFrame extends JFrame {
 
-    private PanelDzien panelDzien;
+    private final PanelDzien panelDzien;
+
     public MyFrame(Sklep sklep) //konstruktor domyslny
     {
         panelDzien = new PanelDzien(sklep);
@@ -19,10 +19,10 @@ public class MyFrame extends JFrame {
 
         this.add(panelDzien);
     }
-
     //GETTERY
     public PanelDzien getPanelDzien() {
         return panelDzien;
     }
+
 
 }

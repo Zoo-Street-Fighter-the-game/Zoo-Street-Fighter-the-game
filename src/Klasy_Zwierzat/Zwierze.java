@@ -5,7 +5,9 @@ import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 import propozycja_gui_package.HealthSubject;
 
-public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface {
+import java.io.Serializable;
+
+public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable{
 
 
     //===========================================================================

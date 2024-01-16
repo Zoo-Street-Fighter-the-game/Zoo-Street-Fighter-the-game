@@ -3,12 +3,12 @@ import Klasy_Zwierzat.*;
 import pakiet_zasoby.*;
 import Wybieg_package.*;
 import Pracownik_package.*;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class DzienneZoo {
+public class DzienneZoo implements Serializable{
 
 
     //ZMIENNNE --------------------------------------------------------------
@@ -68,7 +68,6 @@ public class DzienneZoo {
 
     public void rozpocznijDzien()
     {
-        ArrayList <Zwierze> pom ;
         setDniCounter(getDniCounter()+1);
         System.out.println("Rozpoczynamy dzień "+ getDniCounter());
         for(Wybieg_podstawowy obiekt: listaWybiegow)
@@ -138,19 +137,14 @@ public class DzienneZoo {
     }
 
     //METODA PRZENOSZĄCA ZWIERZE Z WYBIEGU BEZDOMNI
-    public void przeniesZwierze_bezdomni()
+    public void przeniesZwierze_bezdomni(Wybieg_podstawowy wybieg, Zwierze zwierze)
     {
-        int zwierze;
-        zwierze = wybiegDlaBezdomnych.wybierzZwierze();
-
-        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!");
-        int wybieranie = wybierzWybiegi();
 
         //DODAJEMY ZWIERZE DO WYBIEGU
-        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieranie)).getLista_zwierzat()).get(zwierze));
+        wybieg.dodaj_zwierze(zwierze);
 
         //USUWAMY ZWIERZE Z WYBIEGU
-        wybiegDlaBezdomnych.usun_zwierze(wybiegDlaBezdomnych.getLista_zwierzat().get(zwierze));
+        wybiegDlaBezdomnych.usun_zwierze(zwierze);
     }
 
     public void usunWybieg(Wybieg_podstawowy x)
@@ -195,7 +189,7 @@ public class DzienneZoo {
             listaPracownikow.forEach(obiekt -> status.append(obiekt.toString()).append(" \n"));
     else
         status.append("nie masz żadnych pracowników\n");
-     status.append(zmiennaZasoby.toString()).append(" \n"); //daria musi dodac metode tostring!!!
+     status.append(zmiennaZasoby).append(" \n"); //daria musi dodac metode tostring!!!
 
      return status.toString();
  }
