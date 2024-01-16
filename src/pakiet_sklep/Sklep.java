@@ -220,6 +220,10 @@ public class Sklep {
         zoo.przeniesZwierze_bezdomni(wybieg, zwierze);
     }
 
+
+    public void zakonczDzien(){
+        zoo.zakonczDzien();
+    }
     //obserwator GUI
 
     public void dodajObsewatoraGUI(UpdateGUI G)
