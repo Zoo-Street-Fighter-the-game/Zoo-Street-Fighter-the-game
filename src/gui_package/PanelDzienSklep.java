@@ -12,11 +12,12 @@ import pakiet_sklep.Sklep;
 
 
 public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
-    private final JButton kupJedzenie;
-    private final JButton kupWybieg;
-    private final JButton kupPracownika;
-    private final JButton sprzedajJedzenie ;
-    private final JButton sprzedajPracownika;
+    private JButton kupJedzenie;
+    private JButton kupWybieg;
+    private JButton kupPracownika;
+    private JButton sprzedajJedzenie ;
+    private JButton sprzedajPracownika;
+
 
     private JButton zapiszGre;
     private JButton wczytajGre;
@@ -116,6 +117,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
            new gui_oknaPopUp.OknoZapis();
        }
     }
+
     class ReakcjaWczytajGre implements ActionListener
     {
         public void actionPerformed(ActionEvent e) {
