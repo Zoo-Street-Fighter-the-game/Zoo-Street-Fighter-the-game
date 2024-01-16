@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,13 +154,14 @@
       <workItem from="1704293941201" duration="453000" />
       <workItem from="1704309259905" duration="2284000" />
       <workItem from="1704382883608" duration="481000" />
-      <workItem from="1704734101223" duration="2212000" />
-      <workItem from="1704737212673" duration="94000" />
-      <workItem from="1704892911143" duration="43000" />
-      <workItem from="1704975493395" duration="203000" />
-      <workItem from="1704975858267" duration="505000" />
-      <workItem from="1705237377869" duration="10000" />
-      <workItem from="1705237515756" duration="10000" />
+      <workItem from="1704452752870" duration="7362000" />
+      <workItem from="1704472908676" duration="3830000" />
+      <workItem from="1704477140356" duration="7616000" />
+      <workItem from="1704485686277" duration="821000" />
+      <workItem from="1704644768731" duration="6915000" />
+      <workItem from="1704658041606" duration="3541000" />
+      <workItem from="1704662193992" duration="4797000" />
+
     </task>
     <task id="LOCAL-00001" summary="zmiana">
       <option name="closed" value="true" />
