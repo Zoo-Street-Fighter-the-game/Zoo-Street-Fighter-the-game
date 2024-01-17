@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/PrzedmiotRadioButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enumy/przedmioty_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/przedmioty_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,7 @@
       <workItem from="1705315255664" duration="1397000" />
       <workItem from="1705345327659" duration="3022000" />
       <workItem from="1705479620026" duration="122000" />
-      <workItem from="1705479762201" duration="1866000" />
+      <workItem from="1705479762201" duration="8998000" />
     </task>
     <servers />
   </component>
