@@ -326,7 +326,8 @@ public class Sklep {
         }
         System.out.println("Zapis wykonany");
     }
-    public void wczytajGre() {
+
+/*    public void wczytajGre() {
         System.out.println(zoo.toString());
         System.out.println("Import");
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("blank.ser"))) {
@@ -377,7 +378,7 @@ public class Sklep {
         updateGUI();
         System.out.println(zoo.toString());
 
-    }
+    }*/
     public void wczytajGre2() {
         System.out.println(zoo.toString());
         System.out.println("Import");

@@ -37,11 +37,12 @@ public class PanelDzien extends JPanel implements UpdateGUI {
         this.add(panelSklep, BorderLayout.WEST);
         zmienna++;
         if (zmienna == 1) {
-            sklep.wczytajGre();
+            //.wczytajGre();
         } else {
-
             sklep.wczytajGre2();
+
         }
+
     }
 
 

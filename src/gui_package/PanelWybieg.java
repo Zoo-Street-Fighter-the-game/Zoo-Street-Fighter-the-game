@@ -118,6 +118,8 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
         this.add(wyczyscButton, gbc);
 
 
+
+
     }
 
     @Override
@@ -131,6 +133,7 @@ public class PanelWybieg extends JPanel implements UpdateGUI, ObserwujacyPracown
         }
         this.repaint();
         this.revalidate();
+
     }
 
     @Override

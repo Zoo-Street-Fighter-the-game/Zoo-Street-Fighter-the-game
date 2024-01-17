@@ -20,6 +20,9 @@ public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
         this.setLayout(new FlowLayout(FlowLayout.LEADING));
         wybiegBezdomni = new PanelWybiegBezdomni(sklep.getZoo(), sklep, sklep.getZoo().getWybiegDlaBezdomnych());
         this.add(wybiegBezdomni);
+
+
+
     }
     public void Wyczysc(Sklep sklep){
         this.removeAll();
