@@ -173,7 +173,7 @@ public class SklepPrzedmioty extends JFrame {
         JPanel RadioPanel2 = new JPanel();
 
         for (Zwierze zwierze : listaZwierzat) {
-            listaRadioButton.add( new JRadioButton(zwierze.getNazwa()));
+            listaRadioButton.add( new JRadioButton(zwierze.getNazwa()+" "+zwierze.getImie()));
             (listaRadioButton.getLast()).addActionListener(new ReactionRadioButton());
             group.add(listaRadioButton.getLast());
             RadioPanel2.add(listaRadioButton.getLast());
