@@ -249,9 +249,11 @@ public class Sklep {
             zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety()-x.stworzPrzedmiot().getCena());
             updateGUI();
             System.out.println("yeet");
+        } else {
+                SklepPrzedmioty.brakSrodkow();
+            }
         }
 
-    }
 
     public void kup_bron(Przedmiot nazwa_przedmiotu) {
         try {
@@ -430,6 +432,7 @@ public class Sklep {
                 PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
                 panelDzienWybiegi.dodajWybieg(panelWybieg);
                 panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+
             }
             for(int i = 0; i<(zoo2.getListaPracownikow()).size(); i++){
                 zoo.dodajPracownika(new Pracownik(zoo2.getListaPracownikow().get(i).getImie(),zoo2.getListaPracownikow().get(i).getNazwisko(),zoo2.getListaPracownikow().get(i).getJakoscUslug(), getZoo().getZmiennaZasoby()));

@@ -75,7 +75,7 @@ public class ListaZwierzat2 extends JPanel {
 
           for (Zwierze zwierze : listaZwierzat) {
               listaRadioButton.add( new JRadioButton(zwierze.getNazwa()));
-             // (listaRadioButton.getLast()).addActionListener(new SklepPrzedmioty.ReactionRadioButton());
+             (listaRadioButton.getLast()).addActionListener(new ReactionRadioButton());
               group.add(listaRadioButton.getLast());
               RadioPanel2.add(listaRadioButton.getLast());
           }

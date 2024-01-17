@@ -11,7 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.ArrayList;
+import Wybieg_package.*;
 public class SklepPrzedmioty extends JFrame {
     private Sklep sklep;
     private JTabbedPane tabbedPane = new JTabbedPane();
@@ -25,13 +26,18 @@ public class SklepPrzedmioty extends JFrame {
     private final PrzedmiotRadioButton zbroja;
     private final PrzedmiotRadioButton rekawice;
     private ListaWybiegow2 panelWybiegi;
-    private ListaZwierzat2 panelNazwy;
+    private JPanel panelNazwy;
     private final DzienneZoo zoo;
     private JPanel panelMain;
     private JLabel text;
     private JPanel panelRadio;
     private ButtonGroup group;
     private PrzedmiotRadioButton wybranaBron;
+    ///////////
+    private ArrayList<JRadioButton> listaRadioButton;
+    private ButtonGroup grupka;
+    private Wybieg_podstawowy wybieg;
+    private Zwierze wybraneZwierze;
 
 
     public SklepPrzedmioty(Sklep sklep){
@@ -123,7 +129,32 @@ public class SklepPrzedmioty extends JFrame {
         kupPrzedmiotButton.setFocusable(false);
 
         panelWybiegi = new ListaWybiegow2(zoo);
-        panelNazwy = new ListaZwierzat2(zoo, panelWybiegi);
+       // panelNazwy = new ListaZwierzat2(zoo, panelWybiegi);
+////////////////////////
+       panelNazwy = new JPanel();
+       panelNazwy.setLayout(new BorderLayout());
+        listaRadioButton=new ArrayList<>();
+        JTabbedPane tabbedPane = panelWybiegi.getTabbedPane();
+        if (tabbedPane == null) {
+            throw new IllegalStateException("JTabbedPane is null");
+        }
+        tabbedPane.removeAll();
+        JPanel centralPanel = new JPanel(new GridLayout(1, 1));
+        grupka = new ButtonGroup();
+        for (int i = 0; i < zoo.getListaWybiegow().size(); i++) {
+            wybieg = zoo.getListaWybiegow().get(i);
+            JPanel wybiegPanel = new JPanel(new BorderLayout());
+            tabbedPane.addTab("Wybieg " + (i + 1), wybiegPanel);
+
+            dodajZwierzetaDoPanelu(wybiegPanel, wybieg, i, grupka);
+
+            centralPanel.add(tabbedPane);
+        }
+        panelNazwy.add(centralPanel, BorderLayout.CENTER);
+
+
+
+
 
         this.setLayout(new BorderLayout());
         this.add(panelWybiegi, BorderLayout.NORTH);
@@ -136,6 +167,27 @@ public class SklepPrzedmioty extends JFrame {
         this.setVisible(true);
 
     }
+
+    private void dodajZwierzetaDoPanelu(JPanel wybiegPanel, Wybieg_podstawowy wybieg, int numerWybiegu, ButtonGroup group) {
+        ArrayList<Zwierze> listaZwierzat = new ArrayList<>(wybieg.getLista_zwierzat());
+        JPanel RadioPanel2 = new JPanel();
+
+        for (Zwierze zwierze : listaZwierzat) {
+            listaRadioButton.add( new JRadioButton(zwierze.getNazwa()));
+            (listaRadioButton.getLast()).addActionListener(new ReactionRadioButton());
+            group.add(listaRadioButton.getLast());
+            RadioPanel2.add(listaRadioButton.getLast());
+        }
+
+        wybiegPanel.add(RadioPanel2);
+    }
+
+    public class ReactionRadioButton implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            wybraneZwierze =(wybieg.getLista_zwierzat().get(listaRadioButton.indexOf(((JRadioButton)e.getSource()))));
+        }
+    }
+
 
     class ReakcjaPrzedmiotRadioButton implements ActionListener
     {
@@ -150,12 +202,23 @@ public class SklepPrzedmioty extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-          sklep.kupBron(wybranaBron.getTyp(),panelNazwy.getWybraneZwierze());
+         if(wybraneZwierze!=null&&wybranaBron.getTyp()!=null) {
+             sklep.kupBron(wybranaBron.getTyp(), wybraneZwierze);
+         }else {JOptionPane.showMessageDialog(SklepPrzedmioty.this,
+                 "Wybierz prosze wszystkie opcje",
+                 "Błąd",
+                 JOptionPane.ERROR_MESSAGE);}
 
         }
     }
 
-
+    public static void brakSrodkow()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Nie masz wystarczajaco duzo monet!",
+                "Brak Srodkow",
+                JOptionPane.ERROR_MESSAGE);
+    }
 
 
 
