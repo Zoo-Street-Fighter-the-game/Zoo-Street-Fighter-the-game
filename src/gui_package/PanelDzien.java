@@ -13,6 +13,7 @@ public class PanelDzien extends JPanel implements UpdateGUI {
     private final PanelDzienPracownicy panelPracownicy;
     private final PanelDzienWybiegi panelWybiegi;
     private final PanelDzienSklep panelSklep;
+    private static int zmienna;
 
 
     public PanelDzien(Sklep sklep) //konstruktor domyslny
@@ -34,9 +35,16 @@ public class PanelDzien extends JPanel implements UpdateGUI {
         this.add(panelPracownicy, BorderLayout.EAST);
         this.add(panelZasoby, BorderLayout.NORTH);
         this.add(panelSklep, BorderLayout.WEST);
-        sklep.wczytajGre();
+        zmienna++;
+        if (zmienna == 1) {
+            //.wczytajGre();
+        } else {
+            sklep.wczytajGre2();
+
+        }
 
     }
+
 
     //GETTERY
     public PanelDzienZasoby getPanelZasoby() {
