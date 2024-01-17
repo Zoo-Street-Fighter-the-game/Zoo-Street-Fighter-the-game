@@ -83,7 +83,7 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            //zaznaczonyPracownik=zoo.getListaPracownikow().get(listaprzyciskow.indexOf((JRadioButton) e.getSource()));
+
             sortujprzyciski();
             zaznaczonyPracownik= getKeyByValue(HS, (JRadioButton) e.getSource());
             System.out.println(zaznaczonyRadioButton);
