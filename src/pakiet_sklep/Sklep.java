@@ -331,8 +331,8 @@ public class Sklep {
         }
         System.out.println("Zapis wykonany");
     }
-
-/*    public void wczytajGre() {
+/*
+*//*    public void wczytajGre() {
         System.out.println(zoo.toString());
         System.out.println("Import");
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("blank.ser"))) {

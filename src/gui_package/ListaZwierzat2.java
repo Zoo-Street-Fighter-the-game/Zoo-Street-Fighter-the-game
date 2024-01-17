@@ -1,4 +1,4 @@
-package propozycja_gui_package;
+package gui_package;
 
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
@@ -75,7 +75,7 @@ public class ListaZwierzat2 extends JPanel {
 
           for (Zwierze zwierze : listaZwierzat) {
               listaRadioButton.add( new JRadioButton(zwierze.getNazwa()));
-              (listaRadioButton.getLast()).addActionListener(new SklepPrzedmioty.ReactionRadioButton());
+             // (listaRadioButton.getLast()).addActionListener(new SklepPrzedmioty.ReactionRadioButton());
               group.add(listaRadioButton.getLast());
               RadioPanel2.add(listaRadioButton.getLast());
           }
@@ -83,7 +83,7 @@ public class ListaZwierzat2 extends JPanel {
         wybiegPanel.add(RadioPanel2);
     }
 
-   class ReactionRadioButton implements ActionListener{
+   public class ReactionRadioButton implements ActionListener{
         public void actionPerformed(ActionEvent e){
             wybraneZwierze =(wybieg.getLista_zwierzat().get(listaRadioButton.indexOf(((JRadioButton)e.getSource()))));
         }

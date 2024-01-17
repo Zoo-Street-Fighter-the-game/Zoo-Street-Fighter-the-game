@@ -1,10 +1,11 @@
 package gui_oknaPopUp;
 
+import Klasy_Zwierzat.Zwierze;
 import enumy.przedmioty_enum;
 import gui_package.ListaWybiegow2;
 import pakiet_sklep.Sklep;
 import DzienneZooPakiet.*;
-import propozycja_gui_package.ListaZwierzat2;
+import gui_package.ListaZwierzat2;
 
 import javax.swing.*;
 import java.awt.*;
@@ -149,7 +150,7 @@ public class SklepPrzedmioty extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            sklep.kupBron(wybraneZwierze, wybranaBron);
+          //  sklep.kupBron();
 
         }
     }
