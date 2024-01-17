@@ -15,6 +15,8 @@ public class PrzedmiotRadioButton extends JRadioButton {
         this.typ = typ;
     }
 
+
+
     public przedmioty_enum getTyp() {
         return typ;
     }

@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/RadioButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui_package/ListaWybiegow2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui_package/ListaZwierzat2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plik.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Plik.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wybieg_package/Wybieg_podstawowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/PrzedmiotRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/PrzedmiotRadioButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/ListaZwierzatPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/ListaZwierzatPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/ZwierzeRadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_package/ListaZwierzat2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/ListaZwierzat2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +100,7 @@
       <workItem from="1705315255664" duration="1397000" />
       <workItem from="1705345327659" duration="3022000" />
       <workItem from="1705479620026" duration="122000" />
-      <workItem from="1705479762201" duration="19303000" />
+      <workItem from="1705479762201" duration="25919000" />
     </task>
     <servers />
   </component>

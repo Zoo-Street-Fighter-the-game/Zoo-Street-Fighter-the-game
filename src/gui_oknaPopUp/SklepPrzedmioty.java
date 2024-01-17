@@ -1,15 +1,10 @@
 package gui_oknaPopUp;
 
-import Przedmioty.Przedmiot;
 import enumy.przedmioty_enum;
-import enumy.zwierzeta_enum;
 import gui_package.ListaWybiegow2;
 import pakiet_sklep.Sklep;
 import DzienneZooPakiet.*;
-import Wybieg_package.*;
 import propozycja_gui_package.ListaZwierzat2;
-import propozycja_gui_package.ListaZwierzatPanel;
-import propozycja_gui_package.NazwyWybiegowPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,6 +30,8 @@ public class SklepPrzedmioty extends JFrame {
     private JLabel text;
     private JPanel panelRadio;
     private ButtonGroup group;
+    private PrzedmiotRadioButton wybranaBron;
+
 
     public SklepPrzedmioty(Sklep sklep){
         this.sklep=sklep;
@@ -47,31 +44,31 @@ public class SklepPrzedmioty extends JFrame {
 
         kupPrzedmiotButton = new JButton("Kup przedmiot");
         kupPrzedmiotButton.setEnabled(false);
-        kupPrzedmiotButton.addActionListener(new SklepPrzedmioty.ReakcjaKupZwierzeButton());
+        kupPrzedmiotButton.addActionListener(new ReakcjaKupPrzedmiotButton());
 
         miecz = new PrzedmiotRadioButton("miecz", przedmioty_enum.MIECZ);
-        miecz.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        miecz.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         wuwuzela = new PrzedmiotRadioButton("wuwuzela", przedmioty_enum.WUWUZELA);
-        wuwuzela.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        wuwuzela.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         topor = new PrzedmiotRadioButton("topór", przedmioty_enum.TOPOR);
-        topor.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        topor.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         adidasy = new PrzedmiotRadioButton("adidasy", przedmioty_enum.ADIDASY);
-        adidasy.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        adidasy.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         pnw = new PrzedmiotRadioButton("pistolet na wode", przedmioty_enum.PISTOLET_NA_WODE);
-        pnw.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        pnw.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         patyk = new PrzedmiotRadioButton("patyk", przedmioty_enum.PATYK);
-        patyk.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        patyk.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         zbroja = new PrzedmiotRadioButton("zbroja", przedmioty_enum.ZBROJA);
-        zbroja.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        zbroja.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         rekawice = new PrzedmiotRadioButton("rękawice bokserskie", przedmioty_enum.REKAWICE_BOKSERSKIE);
-        rekawice.addActionListener(new SklepPrzedmioty.ReakcjaZwierzeRadioButton());
+        rekawice.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
         group = new ButtonGroup();
 
@@ -139,20 +136,21 @@ public class SklepPrzedmioty extends JFrame {
 
     }
 
-    class ReakcjaZwierzeRadioButton implements ActionListener
+    class ReakcjaPrzedmiotRadioButton implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
             kupPrzedmiotButton.setEnabled(true);
-
+            wybranaBron = (PrzedmiotRadioButton)e.getSource();
         }
     }
 
-    class ReakcjaKupZwierzeButton implements ActionListener
+    class ReakcjaKupPrzedmiotButton implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            SklepPrzedmioty.this.dispose();
+            sklep.kupBron(wybraneZwierze, wybranaBron);
+
         }
     }
 

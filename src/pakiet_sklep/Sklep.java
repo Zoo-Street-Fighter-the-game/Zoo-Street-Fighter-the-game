@@ -240,6 +240,11 @@ public class Sklep {
         }
     }
 
+
+    public void kupBron(Przedmiot x, Zwierze y){
+        y.setPrzedmiot(x);
+    }
+
     public void kup_bron(Przedmiot nazwa_przedmiotu) {
         try {
             if (nazwa_przedmiotu.getCena() > zoo.getZmiennaZasoby().getMonety()) {
