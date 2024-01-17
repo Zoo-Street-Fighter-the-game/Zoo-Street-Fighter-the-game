@@ -89,5 +89,7 @@ public class ListaZwierzat2 extends JPanel {
         }
     }
 
-
+    public Zwierze getWybraneZwierze() {
+        return wybraneZwierze;
+    }
 }

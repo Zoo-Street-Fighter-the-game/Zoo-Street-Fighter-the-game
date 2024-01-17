@@ -150,7 +150,7 @@ public class SklepPrzedmioty extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-          //  sklep.kupBron();
+          sklep.kupBron(wybranaBron.getTyp(),panelNazwy.getWybraneZwierze());
 
         }
     }

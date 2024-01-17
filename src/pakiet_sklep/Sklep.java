@@ -8,6 +8,7 @@ import Klasy_Zwierzat.Zwierze;
 import Pracownik_package.Pracownik;
 import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
+import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import gui_oknaPopUp.*;
@@ -241,8 +242,15 @@ public class Sklep {
     }
 
 
-    public void kupBron(Przedmiot x, Zwierze y){
-        y.setPrzedmiot(x);
+    public void kupBron(przedmioty_enum x, Zwierze y){
+
+        if(x.stworzPrzedmiot().getCena()<=zoo.getZmiennaZasoby().getMonety()) {
+            y.setPrzedmiot(x.stworzPrzedmiot());
+            zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety()-x.stworzPrzedmiot().getCena());
+            updateGUI();
+            System.out.println("yeet");
+        }
+
     }
 
     public void kup_bron(Przedmiot nazwa_przedmiotu) {
