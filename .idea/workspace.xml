@@ -7,11 +7,12 @@
     <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plik.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Plik.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/podstawka.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/q_table_new.ser" beforeDir="false" afterPath="$PROJECT_DIR$/q_table_new.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumy/zwierzeta_enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Plik.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzien.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienSklep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienZasoby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pakiet_sklep/Sklep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/propozycja_gui_package/WalkaPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,24 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "noc__walka",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/oloja/OneDrive/Pulpit/projekt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;noc__walka&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oloja/OneDrive/Pulpit/projekt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,6 +82,7 @@
       <workItem from="1705345327659" duration="8921000" />
       <workItem from="1705399973321" duration="165000" />
       <workItem from="1705408400500" duration="20799000" />
+      <workItem from="1705485970221" duration="5541000" />
     </task>
     <servers />
   </component>
