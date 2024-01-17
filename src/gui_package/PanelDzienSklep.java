@@ -47,7 +47,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         sprzedajPracownika = new JButton("Sprzedaj Pracownika");
         zapiszGre = new JButton("Zapisz Gre");
         wczytajGre = new JButton("Wczytaj Poprzednia Gre");
-        kupBron = new JButton("Kup przedmioty");
+        kupBron = new JButton("Kup Przedmioty");
 
         setsettingsforbutton(kupJedzenie);
         setsettingsforbutton(kupPracownika);

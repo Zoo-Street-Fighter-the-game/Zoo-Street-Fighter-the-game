@@ -3,7 +3,13 @@ package gui_oknaPopUp;
 import Przedmioty.Przedmiot;
 import enumy.przedmioty_enum;
 import enumy.zwierzeta_enum;
+import gui_package.ListaWybiegow2;
 import pakiet_sklep.Sklep;
+import DzienneZooPakiet.*;
+import Wybieg_package.*;
+import propozycja_gui_package.ListaZwierzat2;
+import propozycja_gui_package.ListaZwierzatPanel;
+import propozycja_gui_package.NazwyWybiegowPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +18,7 @@ import java.awt.event.ActionListener;
 
 public class SklepPrzedmioty extends JFrame {
     private Sklep sklep;
+    private JTabbedPane tabbedPane = new JTabbedPane();
     private JButton kupPrzedmiotButton;
     private final PrzedmiotRadioButton miecz;
     private final PrzedmiotRadioButton wuwuzela;
@@ -21,6 +28,9 @@ public class SklepPrzedmioty extends JFrame {
     private final PrzedmiotRadioButton pnw;
     private final PrzedmiotRadioButton zbroja;
     private final PrzedmiotRadioButton rekawice;
+    private ListaWybiegow2 panelWybiegi;
+    private ListaZwierzat2 panelNazwy;
+    private final DzienneZoo zoo;
     private JPanel panelMain;
     private JLabel text;
     private JPanel panelRadio;
@@ -28,9 +38,11 @@ public class SklepPrzedmioty extends JFrame {
 
     public SklepPrzedmioty(Sklep sklep){
         this.sklep=sklep;
+        this.zoo=sklep.getZoo();
         panelMain = new JPanel();
         panelRadio = new JPanel();
         text = new JLabel("Wybierz broń: ");
+        this.setLayout(new GridLayout(1, 1));
 
 
         kupPrzedmiotButton = new JButton("Kup przedmiot");
@@ -85,8 +97,6 @@ public class SklepPrzedmioty extends JFrame {
         panelMain.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
-        this.add(panelMain);
-
         gbc.insets=new Insets(10,10,10,10);
 
         gbc.gridwidth=3;
@@ -109,13 +119,20 @@ public class SklepPrzedmioty extends JFrame {
         panelMain.add(kupPrzedmiotButton, gbc);
 
 
-
-
-
         this.setTitle("Kup Przedmiot");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         kupPrzedmiotButton.setFocusable(false);
+
+        panelWybiegi = new ListaWybiegow2(zoo);
+        panelNazwy = new ListaZwierzat2(zoo, panelWybiegi);
+
+        this.setLayout(new BorderLayout());
+        this.add(panelWybiegi, BorderLayout.NORTH);
+        this.add(panelNazwy, BorderLayout.CENTER);
+        this.add(panelMain, BorderLayout.SOUTH);
+
+
 
         this.pack();
         this.setVisible(true);

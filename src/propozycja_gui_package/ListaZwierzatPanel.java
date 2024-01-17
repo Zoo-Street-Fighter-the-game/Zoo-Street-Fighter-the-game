@@ -173,7 +173,7 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
                 return "/obrazki/los.png";
             case "Niedźwiedź":
                 return "/obrazki/mis.png";
-            case "Niedźiedź polarny":
+            case "NiedźwiedźPolarny":
                 return "/obrazki/mispolarny.png";
             case "Lew":
                 return "/obrazki/lew.png";

@@ -1,6 +1,8 @@
 package Przedmioty;
 
-public class Przedmiot {
+import java.io.Serializable;
+
+public class Przedmiot implements Serializable {
 private String nazwa;
 private String opis;
 private int zycie;

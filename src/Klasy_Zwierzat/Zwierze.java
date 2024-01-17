@@ -207,6 +207,7 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
         this.przedmiot = przedmiot;
     }
 
+
     @Override
     public int compareTo(Zwierze o) {
         return this.toString().compareTo( o.toString());
