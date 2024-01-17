@@ -17,7 +17,6 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
     private JButton kupPracownika;
     private JButton sprzedajJedzenie ;
     private JButton sprzedajPracownika;
-    private JButton kupBron;
 
 
     private JButton zapiszGre;
@@ -47,12 +46,11 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         sprzedajPracownika = new JButton("Sprzedaj Pracownika");
         zapiszGre = new JButton("Zapisz Gre");
         wczytajGre = new JButton("Wczytaj Poprzednia Gre");
-        kupBron = new JButton("Kup przedmioty");
 
         setsettingsforbutton(kupJedzenie);
         setsettingsforbutton(kupPracownika);
         setsettingsforbutton(kupWybieg);
-        setsettingsforbutton(kupBron);
+
         setsettingsforbutton(sprzedajJedzenie);
         setsettingsforbutton(sprzedajPracownika);
         setsettingsforbutton(zapiszGre);
@@ -66,13 +64,12 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         sprzedajPracownika.addActionListener(new ReakcjaSprzedajPracownika());
         zapiszGre.addActionListener(new ReakcjaZapiszGre());
         wczytajGre.addActionListener(new ReakcjaWczytajGre());
-        kupBron.addActionListener(new ReakcjaKupBron());
 
         this.add(logosklepu);
         this.add(kupJedzenie);
         this.add(kupPracownika);
         this.add(kupWybieg);
-        this.add(kupBron);
+
         this.add(sprzedajJedzenie);
         this.add(sprzedajPracownika);
         this.add(zapiszGre);
@@ -130,15 +127,6 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         }
 
     }
-
-    class ReakcjaKupBron implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e) {
-            new gui_oknaPopUp.SklepPrzedmioty(getSklep());
-        }
-    }
-
-
     class ReakcjaKupWybieg implements ActionListener
     {
         @Override
