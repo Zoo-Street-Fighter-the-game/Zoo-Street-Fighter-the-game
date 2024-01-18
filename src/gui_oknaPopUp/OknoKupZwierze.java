@@ -145,8 +145,6 @@ public class OknoKupZwierze extends JFrame {
 
         panelMain.add(kupZwierzeButton, gbc);
 
-
-
         this.pack();
         this.setVisible(true);
     }
