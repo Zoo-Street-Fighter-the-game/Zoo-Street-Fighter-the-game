@@ -10,9 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 
 public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
@@ -35,7 +33,8 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
     ImageIcon odznaczony1 = new ImageIcon("src/ikony/IkonaPracownik1.png");
     ImageIcon odznaczony0 = new ImageIcon("src/ikony/IkonaPracownik0.png");
 
-    public PanelDzienPracownicy(Sklep sklep) {
+    public PanelDzienPracownicy(Sklep sklep)
+    {
         this.zoo = sklep.getZoo();
         sklep.dodajObsewatoraGUI(this);
         sklep.setPanelDzienPracownicy(this);
@@ -71,12 +70,23 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         }
 
     }
+    public <K, V> K getKeyByValue(HashMap<K, V> map, V value) {
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            if (Objects.equals(entry.getValue(), value)) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
     class Zaznaczanie implements ActionListener
     {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            zaznaczonyPracownik=zoo.getListaPracownikow().get(listaprzyciskow.indexOf((JRadioButton) e.getSource()));
+
+            sortujprzyciski();
+            zaznaczonyPracownik= getKeyByValue(HS, (JRadioButton) e.getSource());
+            System.out.println(zaznaczonyRadioButton);
             zaznaczonyRadioButton=(JRadioButton) e.getSource();
             for(ObserwujacyPracownikGUI_interface o : listaObserwatorow)
             {
@@ -90,13 +100,13 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-                grupapracownikow.clearSelection();
-                zaznaczonyPracownik=null;
-                zaznaczonyRadioButton=null;
-                for(ObserwujacyPracownikGUI_interface o : listaObserwatorow)
-                {
+            grupapracownikow.clearSelection();
+            zaznaczonyPracownik=null;
+            zaznaczonyRadioButton=null;
+            for(ObserwujacyPracownikGUI_interface o : listaObserwatorow)
+            {
                 o.reakcjaOdznaczenie();
-                }
+            }
 
         }
     }
@@ -112,27 +122,26 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         HS.put(p, listaprzyciskow.getLast());
         sortujprzyciski();
 
-
     }
- /*   public void usunPracownika(int numer)
+/*    public void usunPracownika(int numer)
     {
 
         this.remove(HS.get(zoo.getListaPracownikow().get(numer)));
-        grupapracownikow.remove(listaprzyciskow.get(numer));
-        listaprzyciskow.remove(numer);
+        grupapracownikow.remove(HS.get(zoo.getListaPracownikow().get(numer)));
+        listaprzyciskow.remove(HS.get(zoo.getListaPracownikow().get(numer)));
         HS.remove(zoo.getListaPracownikow().get(numer));
 
     }*/
- public void usunPracownika(int numer)
- {
-     if (numer >= 0 && numer < listaprzyciskow.size()) {
-         this.remove(HS.get(zoo.getListaPracownikow().get(numer)));
-         grupapracownikow.remove(listaprzyciskow.get(numer));
-         listaprzyciskow.remove(numer);
-         HS.remove(zoo.getListaPracownikow().get(numer));
-     }
- }
 
+    public void usunPracownika(int numer)
+    {
+        if (numer >= 0 && numer < listaprzyciskow.size()) {
+            this.remove(HS.get(zoo.getListaPracownikow().get(numer)));
+            grupapracownikow.remove(listaprzyciskow.get(numer));
+            listaprzyciskow.remove(numer);
+            HS.remove(zoo.getListaPracownikow().get(numer));
+        }
+    }
 
     public Pracownik getZaznaczonyPracownik() {
         return zaznaczonyPracownik;

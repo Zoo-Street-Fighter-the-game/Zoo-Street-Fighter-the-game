@@ -333,7 +333,7 @@ public class WalkaPanel extends JPanel{
         agent.loadQTableFromFile(Q_TABLE_FILE);
         // Sprawdzenie warunków zakończenia walki
 
-        if (!warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg)) ;
+        if (!warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg));
         {
             // Wybór akcji przez przeciwnika na podstawie agenta Q-learningu
             int actionPrzeciwnika = agent.chooseAction(1);
@@ -360,7 +360,7 @@ public class WalkaPanel extends JPanel{
                 agent.learn(1, actionPrzeciwnika, 1, 5);
 
                 // Sprawdzenie warunków zakończenia walki
-                if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg)) ;
+              if (warunki_zakonczenia_walki(agent, zwierze, finalPrzeciwnik, wybieg)) ;
             }
 
 
@@ -814,8 +814,6 @@ public class WalkaPanel extends JPanel{
 
 
                     twoje_zwierze.setPrzezyte_dni(twoje_zwierze.getPrzezyte_dni()+1);
-
-
                     twoje_zwierze.setZycie(twoje_zwierze.getZycie());
                     walka.dispose();
                     new KoniecWalkiPanel(twoje_zwierze.getZycie() > 0, przeciwnik.getNazwa());
