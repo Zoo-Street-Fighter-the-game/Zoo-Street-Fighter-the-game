@@ -100,6 +100,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         kupWybieg.setEnabled(false);
         sprzedajJedzenie.setEnabled(false);
         sprzedajPracownika.setEnabled(false);
+        kupBron.setEnabled(false);
         zapiszGre.setEnabled(false);
         wczytajGre.setEnabled(false);
     }
@@ -111,6 +112,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
         kupWybieg.setEnabled(true);
         sprzedajJedzenie.setEnabled(true);
         sprzedajPracownika.setEnabled(true);
+        kupBron.setEnabled(true);
         zapiszGre.setEnabled(true);
         wczytajGre.setEnabled(true);
     }

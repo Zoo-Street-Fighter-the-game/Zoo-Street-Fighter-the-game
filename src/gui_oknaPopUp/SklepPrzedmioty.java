@@ -200,20 +200,29 @@ public class SklepPrzedmioty extends JFrame {
         }
     }
 
-    class ReakcjaKupPrzedmiotButton implements ActionListener
-    {
+    class ReakcjaKupPrzedmiotButton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-         if(wybraneZwierze!=null&&wybranaBron.getTyp()!=null) {
-             sklep.kupBron(wybranaBron.getTyp(), wybraneZwierze);
-         }else {JOptionPane.showMessageDialog(SklepPrzedmioty.this,
-                 "Wybierz prosze wszystkie opcje",
-                 "Błąd",
-                 JOptionPane.ERROR_MESSAGE);}
+            if (wybraneZwierze == null || wybranaBron.getTyp() == null) {
+                JOptionPane.showMessageDialog(SklepPrzedmioty.this,
+                        "Wybierz proszę wszystkie opcje",
+                        "Błąd",
+                        JOptionPane.ERROR_MESSAGE);
+            } else if (wybranaBron.getTyp().stworzPrzedmiot().getCena() > zoo.getZmiennaZasoby().getMonety()) {
+                JOptionPane.showMessageDialog(SklepPrzedmioty.this,
+                        "Za mało środków",
+                        "Błąd",
+                        JOptionPane.ERROR_MESSAGE);
+            } else {
+                sklep.kupBron(wybranaBron.getTyp(), wybraneZwierze);
+                JOptionPane.showMessageDialog(SklepPrzedmioty.this,
+                        "Zakup Udany",
+                        "Zakup",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
 
         }
     }
-
     public static void brakSrodkow()
     {
         JOptionPane.showMessageDialog(null,

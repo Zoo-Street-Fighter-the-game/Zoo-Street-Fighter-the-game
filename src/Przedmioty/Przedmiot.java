@@ -81,7 +81,6 @@ private int cena;
     public String toString() {
         return "Przedmiot:" +
                 "nazwa='" + getNazwa()+ '\'' +
-                ", opis='" + getOpis() + '\'' +
                 ", zycie=" + getZycie()+
                 ", sila=" + getSila() +
                 ", szybkosc=" + getSzybkosc() +
