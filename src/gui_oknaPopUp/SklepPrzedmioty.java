@@ -134,19 +134,20 @@ public class SklepPrzedmioty extends JFrame {
        panelNazwy = new JPanel();
        panelNazwy.setLayout(new BorderLayout());
         listaRadioButton=new ArrayList<>();
-        JTabbedPane tabbedPane = panelWybiegi.getTabbedPane();
+        tabbedPane = panelWybiegi.getTabbedPane();
         if (tabbedPane == null) {
             throw new IllegalStateException("JTabbedPane is null");
         }
         tabbedPane.removeAll();
         JPanel centralPanel = new JPanel(new GridLayout(1, 1));
         grupka = new ButtonGroup();
+
         for (int i = 0; i < zoo.getListaWybiegow().size(); i++) {
-            wybieg = zoo.getListaWybiegow().get(i);
+           // wybieg = zoo.getListaWybiegow().get(i);
             JPanel wybiegPanel = new JPanel(new BorderLayout());
             tabbedPane.addTab("Wybieg " + (i + 1), wybiegPanel);
 
-            dodajZwierzetaDoPanelu(wybiegPanel, wybieg, i, grupka);
+            dodajZwierzetaDoPanelu(wybiegPanel, zoo.getListaWybiegow().get(i), i, grupka);
 
             centralPanel.add(tabbedPane);
         }
@@ -184,7 +185,8 @@ public class SklepPrzedmioty extends JFrame {
 
     public class ReactionRadioButton implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            wybraneZwierze =(wybieg.getLista_zwierzat().get(listaRadioButton.indexOf(((JRadioButton)e.getSource()))));
+            int selectedTab = tabbedPane.getSelectedIndex();
+           wybraneZwierze =(zoo.getListaWybiegow().get(selectedTab).getLista_zwierzat().get(listaRadioButton.indexOf(((JRadioButton)e.getSource()))));
         }
     }
 
