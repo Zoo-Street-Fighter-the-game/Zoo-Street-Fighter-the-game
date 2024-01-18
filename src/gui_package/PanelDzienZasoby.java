@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import DzienneZooPakiet.*;
 import interfejsy.UpdateGUI;
 import pakiet_sklep.Sklep;
+import propozycja_gui_package.Animacja;
 
 public class PanelDzienZasoby extends JPanel implements UpdateGUI, ActionListener {
     JLabel zasobymonety;
@@ -72,9 +73,14 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI, ActionListene
         public void actionPerformed(ActionEvent e) {
             sklep.zakonczDzien();
             //obiekt.przekazZoo();
+
+            go_to_night(sklep.getZoo());
         }
     }
+    public void go_to_night(DzienneZoo zoo){
+        new Animacja(zoo);
 
+    }
     @Override
     public void updateGUI() {
         zasobymonety.setText("Monety: " +zoo.getZmiennaZasoby().getMonety());

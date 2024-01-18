@@ -1,6 +1,8 @@
 package Przedmioty;
 
-public class Przedmiot {
+import java.io.Serializable;
+
+public class Przedmiot implements Serializable {
 private String nazwa;
 private String opis;
 private int zycie;
@@ -79,7 +81,6 @@ private int cena;
     public String toString() {
         return "Przedmiot:" +
                 "nazwa='" + getNazwa()+ '\'' +
-                ", opis='" + getOpis() + '\'' +
                 ", zycie=" + getZycie()+
                 ", sila=" + getSila() +
                 ", szybkosc=" + getSzybkosc() +

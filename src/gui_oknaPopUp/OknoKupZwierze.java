@@ -189,6 +189,15 @@ public class OknoKupZwierze extends JFrame {
         }
     }
 
+
+    public static void maJuzPrzedmiot()
+    {
+        JOptionPane.showMessageDialog(null,
+                "To zwierze ma juz przedmiot",
+                "Błąd",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
     public static void brakSrodkow()
     {
         JOptionPane.showMessageDialog(null,

@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class KoniecWalkiPanel extends JDialog {
     public KoniecWalkiPanel(boolean isWinner,String lostAnimalType) {
+
         setTitle("Koniec walki");
         setSize(400, 400);
         setLayout(new BorderLayout());
@@ -40,6 +41,7 @@ public class KoniecWalkiPanel extends JDialog {
 
         setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
         setLocationRelativeTo(null);
         setVisible(true);
     }

@@ -8,6 +8,7 @@ import Klasy_Zwierzat.Zwierze;
 import Pracownik_package.Pracownik;
 import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
+import enumy.przedmioty_enum;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
 import gui_oknaPopUp.*;
@@ -240,6 +241,20 @@ public class Sklep {
         }
     }
 
+
+    public void kupBron(przedmioty_enum x, Zwierze y){
+
+        if(x.stworzPrzedmiot().getCena()<=zoo.getZmiennaZasoby().getMonety()) {
+            y.setPrzedmiot(x.stworzPrzedmiot());
+            zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety()-x.stworzPrzedmiot().getCena());
+            updateGUI();
+            System.out.println("yeet");
+        } else {
+                SklepPrzedmioty.brakSrodkow();
+            }
+        }
+
+
     public void kup_bron(Przedmiot nazwa_przedmiotu) {
         try {
             if (nazwa_przedmiotu.getCena() > zoo.getZmiennaZasoby().getMonety()) {
@@ -317,10 +332,127 @@ public class Sklep {
         }
         System.out.println("Zapis wykonany");
     }
-    public void wczytajGre() {
+
+    public void zapiszGre3(){
+        try (ObjectOutputStream so = new ObjectOutputStream(new FileOutputStream("zapis.ser"))) {
+            so.writeObject(getZoo());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Zapis wykonany");
+    }
+/*
+*//*    public void wczytajGre() {
+        System.out.println(zoo.toString());
+        System.out.println("Import");
+        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("blank.ser"))) {
+            DzienneZoo zoo2 = (DzienneZoo) is.readObject();
+            zoo.getZmiennaZasoby().setMonety(zoo2.getZmiennaZasoby().getMonety());
+            zoo.getZmiennaZasoby().setJedzenie(zoo2.getZmiennaZasoby().getJedzenie());
+            zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
+            zoo.setDniCounter(zoo2.getDniCounter());
+
+            for(int b = 0; b<((zoo.getListaPracownikow()).size()); b++){
+                zoo.usunPracownika(zoo.getListaPracownikow().get(b));
+                panelDzienPracownicy.usunPracownika(b);
+                b--;
+
+            }
+                zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
+
+                for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
+                    zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
+                }
+
+                panelDzienWybiegi.Wyczysc(this);
+                zoo.getListaWybiegow().clear();
+
+            for(int i = 0; i<(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().size()); i++){
+                zoo.getWybiegDlaBezdomnych().dodaj_zwierze(new Zwierze(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getImie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getNazwa(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getZycie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSila(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzybkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzczescie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWielkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWskaznik_glodu(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getCena(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getRodzaj()));
+            }
+
+            for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
+                zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
+                for(int j = 0; j<(zoo2.getListaWybiegow().get(i).getLista_zwierzat().size());j++){
+                    zoo.getListaWybiegow().get(i).dodaj_zwierze(new Zwierze(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getImie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getNazwa(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getZycie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSila(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzybkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzczescie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWielkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWskaznik_glodu(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getCena(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getRodzaj()));
+                }
+
+                PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+                panelDzienWybiegi.dodajWybieg(panelWybieg);
+                panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+            }
+            for(int i = 0; i<(zoo2.getListaPracownikow()).size(); i++){
+                zoo.dodajPracownika(new Pracownik(zoo2.getListaPracownikow().get(i).getImie(),zoo2.getListaPracownikow().get(i).getNazwisko(),zoo2.getListaPracownikow().get(i).getJakoscUslug(), getZoo().getZmiennaZasoby()));
+                panelDzienPracownicy.dodajPracownika(zoo.getListaPracownikow().getLast());
+            }
+
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        updateGUI();
+        System.out.println(zoo.toString());
+
+    }*/
+    public void wczytajGre2() {
         System.out.println(zoo.toString());
         System.out.println("Import");
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Plik.ser"))) {
+            DzienneZoo zoo2 = (DzienneZoo) is.readObject();
+            zoo.getZmiennaZasoby().setMonety(zoo2.getZmiennaZasoby().getMonety());
+            zoo.getZmiennaZasoby().setJedzenie(zoo2.getZmiennaZasoby().getJedzenie());
+            zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
+            zoo.setDniCounter(zoo2.getDniCounter());
+
+            for(int b = 0; b<((zoo.getListaPracownikow()).size()); b++){
+                zoo.usunPracownika(zoo.getListaPracownikow().get(b));
+                panelDzienPracownicy.usunPracownika(b);
+                b--;
+
+            }
+                zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
+
+                for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
+                    zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
+                }
+
+                panelDzienWybiegi.Wyczysc(this);
+                zoo.getListaWybiegow().clear();
+
+            for(int i = 0; i<(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().size()); i++){
+                zoo.getWybiegDlaBezdomnych().dodaj_zwierze(new Zwierze(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getImie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getNazwa(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getZycie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSila(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzybkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzczescie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWielkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWskaznik_glodu(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getCena(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getRodzaj()));
+            }
+
+            for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
+                zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
+                for(int j = 0; j<(zoo2.getListaWybiegow().get(i).getLista_zwierzat().size());j++){
+                    zoo.getListaWybiegow().get(i).dodaj_zwierze(new Zwierze(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getImie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getNazwa(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getZycie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSila(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzybkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzczescie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWielkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWskaznik_glodu(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getCena(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getRodzaj()));
+                }
+
+                PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+                panelDzienWybiegi.dodajWybieg(panelWybieg);
+                panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+
+
+            }
+            for(int i = 0; i<(zoo2.getListaPracownikow()).size(); i++){
+                zoo.dodajPracownika(new Pracownik(zoo2.getListaPracownikow().get(i).getImie(),zoo2.getListaPracownikow().get(i).getNazwisko(),zoo2.getListaPracownikow().get(i).getJakoscUslug(), getZoo().getZmiennaZasoby()));
+                panelDzienPracownicy.dodajPracownika(zoo.getListaPracownikow().getLast());
+            }
+
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        updateGUI();
+        System.out.println(zoo.toString());
+
+    }
+    public void wczytajGre3() {
+        System.out.println(zoo.toString());
+        System.out.println("Import");
+        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("zapis.ser"))) {
             DzienneZoo zoo2 = (DzienneZoo) is.readObject();
             zoo.getZmiennaZasoby().setMonety(zoo2.getZmiennaZasoby().getMonety());
             zoo.getZmiennaZasoby().setJedzenie(zoo2.getZmiennaZasoby().getJedzenie());

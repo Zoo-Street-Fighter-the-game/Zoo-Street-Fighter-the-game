@@ -5,6 +5,9 @@ import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 import java.io.Serializable;
 
+
+import java.io.Serializable;
+
 public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable, Comparable<Zwierze>{
 
 
@@ -79,7 +82,7 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
     //toString wyswietlajacy info o zwierzeciu
     @Override
     public String toString() {
-        return "Imie to:" + getImie() +"\n"+
+       if(this.getPrzedmiot()==null) {return "Imie to:" + getImie() +"\n"+
                 "Typ to:" + getNazwa() +"\n"+
                 "Zycie to: " + getZycie() +"\n"+
                 "Sila to: " + getSila() +"\n"+
@@ -89,7 +92,22 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
                 "Cena to: " + getCena() +"\n"+
                 "Rodzaj to: " + getRodzaj() +" \n"+
                 "Szybkosc to: " + this.getSzybkosc() +"\n"+
-                "Szczescie to: " + this.getSzczescie() +"\n";
+                "Szczescie to: " + this.getSzczescie() +"\n";} else{
+           return"Imie to:" + getImie() +"\n"+
+                   "Typ to:" + getNazwa() +"\n"+
+                   "Zycie to: " + getZycie() +"\n"+
+                   "Sila to: " + getSila() +"\n"+
+                   "Wielkosc to: " + getWielkosc() +"\n"+
+                   "Najedzony w " + getWskaznik_glodu() +" procentach\n"+
+                   "Przezyl " + getPrzezyte_dni() +" dni\n"+
+                   "Cena to: " + getCena() +"\n"+
+                   "Rodzaj to: " + getRodzaj() +" \n"+
+                   "Szybkosc to: " + this.getSzybkosc() +"\n"+
+                   "Szczescie to: " + this.getSzczescie() +"\n"+
+                   this.getPrzedmiot().toString();
+
+       }
+
 
 
     }
@@ -204,6 +222,7 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
     public void setPrzedmiot(Przedmiot przedmiot) {
         this.przedmiot = przedmiot;
     }
+
 
     @Override
     public int compareTo(Zwierze o) {

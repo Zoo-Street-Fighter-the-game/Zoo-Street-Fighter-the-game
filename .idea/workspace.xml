@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="Sortowanie pokazywania zwierzat po imionach :*">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2024_21_35__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2024_21_35__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2023_17_39__Changes_.xml" afterDir="false" />
+    <list default="true" id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/OknoSprzedajPracownika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_package/PanelDzienPracownicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klasy_Zwierzat/Zwierze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Przedmioty/Przedmiot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui_oknaPopUp/SklepPrzedmioty.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,305 +18,100 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/gui_oknaPopUp/OknoKupZwierze.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2ZdZg0kMcapsZ4Q4wwFbMxC2Vr6" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2Zqo6Fo9PQXvEl083UHDrwLpNsl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.Hello.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainFrame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.NocneZoo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.test1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;YourFavBranch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;noc__walka&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kamil/OneDrive/Dokumenty/GitHub/Zoo-Street-Fighter-the-game/src/ikony&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oloja/OneDrive/Pulpit/night_zoo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/domin/OneDrive/Pulpit/programy/Zoo-Street-Fighter-the-game/src/Main.java&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kamil\OneDrive\Dokumenty\GitHub\Zoo-Street-Fighter-the-game\src\ikony" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kamil\OneDrive\Dokumenty\GitHub\Zoo-Street-Fighter-the-game\src\ikony" />
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src\gui_package" />
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game\src" />
-      <recent name="C:\Users\hcyta\OneDrive\Dokumenty\IST sem 1\Programowanie Strukturalne i Obiektowe\Zoo-Street-Fighter-the-game" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="gui_oknaPopUp" />
-    </key>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui_package.Main" />
+      <module name="Zoo-Street-Fighter-the-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui_package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a508abf1-45d7-46ab-a4e4-d2fc1096e3d0" name="Changes" comment="" />
-      <created>1702754028112</created>
+      <changelist id="7c5f08c3-43b5-461f-92fd-fcc305f2fa8c" name="Changes" comment="" />
+      <created>1703158795934</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1702754028112</updated>
-      <workItem from="1702754031809" duration="79000" />
-      <workItem from="1702754238271" duration="45000" />
-      <workItem from="1702754309433" duration="13000" />
-      <workItem from="1703345044966" duration="2496000" />
-      <workItem from="1703609428336" duration="6047000" />
-      <workItem from="1703616207568" duration="1072000" />
-      <workItem from="1703619950514" duration="50000" />
-      <workItem from="1703620013389" duration="174000" />
-      <workItem from="1703620204111" duration="1185000" />
-      <workItem from="1703621475426" duration="162000" />
-      <workItem from="1703621656562" duration="255000" />
-      <workItem from="1703621941005" duration="289000" />
-      <workItem from="1703622288362" duration="1966000" />
-      <workItem from="1703625913697" duration="510000" />
-      <workItem from="1703626438992" duration="1566000" />
-      <workItem from="1703628820401" duration="566000" />
-      <workItem from="1703709907133" duration="333000" />
-      <workItem from="1703710280470" duration="3986000" />
-      <workItem from="1703777850279" duration="2499000" />
-      <workItem from="1703929314431" duration="11171000" />
-      <workItem from="1703942493136" duration="5124000" />
-      <workItem from="1703951260679" duration="9239000" />
-      <workItem from="1703966702575" duration="3466000" />
-      <workItem from="1703971136463" duration="4275000" />
-      <workItem from="1704024458922" duration="236000" />
-      <workItem from="1704128190425" duration="177000" />
-      <workItem from="1704144565460" duration="1016000" />
-      <workItem from="1704146088676" duration="210000" />
-      <workItem from="1704207392456" duration="631000" />
-      <workItem from="1704225527793" duration="1114000" />
-      <workItem from="1704293941201" duration="453000" />
-      <workItem from="1704309259905" duration="2284000" />
-      <workItem from="1704382883608" duration="481000" />
-      <workItem from="1704734101223" duration="2212000" />
-      <workItem from="1704737212673" duration="94000" />
-      <workItem from="1704892911143" duration="43000" />
-      <workItem from="1704975493395" duration="203000" />
-      <workItem from="1704975858267" duration="505000" />
-      <workItem from="1705237377869" duration="10000" />
-      <workItem from="1705237515756" duration="10000" />
-      <workItem from="1705344032201" duration="427000" />
-      <workItem from="1705344527611" duration="1680000" />
-      <workItem from="1705351687811" duration="1288000" />
-      <workItem from="1705390025466" duration="1391000" />
-      <workItem from="1705393724662" duration="938000" />
+      <updated>1703158795934</updated>
+      <workItem from="1703158796736" duration="9000" />
+      <workItem from="1703158920413" duration="936000" />
+      <workItem from="1704404747604" duration="2378000" />
+      <workItem from="1704455888963" duration="18000" />
+      <workItem from="1705148719572" duration="6323000" />
+      <workItem from="1705315255664" duration="1397000" />
+      <workItem from="1705345327659" duration="3022000" />
+      <workItem from="1705479620026" duration="122000" />
+      <workItem from="1705479762201" duration="25919000" />
+      <workItem from="1705522778686" duration="2502000" />
     </task>
-    <task id="LOCAL-00001" summary="zmiana">
-      <option name="closed" value="true" />
-      <created>1702754069610</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702754069610</updated>
-    </task>
-    <task id="LOCAL-00002" summary="wstępne modyfikacje do zoo dziennego, sklepu i zwierząt">
-      <option name="closed" value="true" />
-      <created>1703287930704</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1703287930704</updated>
-    </task>
-    <task id="LOCAL-00003" summary="przeredagowany sklep z obiektem zoo">
-      <option name="closed" value="true" />
-      <created>1703289556366</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703289556366</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Dodana metoda przenoszenia zwierzecia miedzy wybiegami">
-      <option name="closed" value="true" />
-      <created>1703358995887</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703358995887</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych">
-      <option name="closed" value="true" />
-      <created>1703616778288</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1703616778288</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Dodano przedrostki private i public przed składowymi klas gui.&#10;Stworzono klasę PanelWybieg.&#10;Wprowadzono małe zmiany w klasie PanelDzienWybiegi.">
-      <option name="closed" value="true" />
-      <created>1703778821268</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1703778821268</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI">
-      <option name="closed" value="true" />
-      <created>1703890217599</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1703890217599</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Działa kupowanie zwierzat&#10;Działa wyświetlanie zwierzat w radioboxie">
-      <option name="closed" value="true" />
-      <created>1703939144633</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1703939144633</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Działa sprzedawanie zwierząt">
-      <option name="closed" value="true" />
-      <created>1703940527816</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1703940527816</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Działa całe dzienne zoo gui oprocz wybiegow ez">
-      <option name="closed" value="true" />
-      <created>1703975408646</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1703975408647</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Dzienne gui is ready,ezzz">
-      <option name="closed" value="true" />
-      <created>1704311481315</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1704311481315</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi">
-      <option name="closed" value="true" />
-      <created>1704892950999</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1704892950999</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Sortowanie pokazywania zwierzat po imionach :*">
-      <option name="closed" value="true" />
-      <created>1705345130258</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1705345130258</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="zmiana" />
-    <MESSAGE value="wstępne modyfikacje do zoo dziennego, sklepu i zwierząt" />
-    <MESSAGE value="przeredagowany sklep z obiektem zoo" />
-    <MESSAGE value="Dodana metoda przenoszenia zwierzecia miedzy wybiegami" />
-    <MESSAGE value="Ostatnie szlify przed wprowadzaniem GUI, jak na razie działają funkcje sklepu, wszystko związane z obserwatorem czystości wybiegów. Niesprawdzone jest jeszcze jedzenie i głód zwierząt. Trzeba dorobić metodę do sprzedawania zwierząt z wybiegu dla bezdomnych" />
-    <MESSAGE value="Dodano przedrostki private i public przed składowymi klas gui.&#10;Stworzono klasę PanelWybieg.&#10;Wprowadzono małe zmiany w klasie PanelDzienWybiegi." />
-    <MESSAGE value="Wprowadzono intefrejs UpdateGUI&#10;Działa sprzedawanie Wybiegów przez GUI" />
-    <MESSAGE value="Działa kupowanie zwierzat&#10;Działa wyświetlanie zwierzat w radioboxie" />
-    <MESSAGE value="Działa sprzedawanie zwierząt" />
-    <MESSAGE value="Działa całe dzienne zoo gui oprocz wybiegow ez" />
-    <MESSAGE value="Dzienne gui is ready,ezzz" />
-    <MESSAGE value="c" />
-    <MESSAGE value="Opcja przenoszenia zwierzat z bezdomnego wybiegu w gui - do przerobienia żeby wybierać zwierzęta, na razie tylko pierwsze sie przenosi" />
-    <MESSAGE value="Sortowanie pokazywania zwierzat po imionach :*" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sortowanie pokazywania zwierzat po imionach :*" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

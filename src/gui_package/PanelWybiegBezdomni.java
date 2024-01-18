@@ -84,6 +84,7 @@ public class PanelWybiegBezdomni extends JPanel implements UpdateGUI, Obserwujac
         gbc.gridx = 1;
         gbc.gridy = 2;
         this.add(przeniesDoWybieguButton, gbc);
+
     }
 
     @Override
@@ -91,6 +92,7 @@ public class PanelWybiegBezdomni extends JPanel implements UpdateGUI, Obserwujac
         przeniesDoWybieguButton.setEnabled(!wybieg.getLista_zwierzat().isEmpty());
         this.repaint();
         this.revalidate();
+
     }
 
     @Override
