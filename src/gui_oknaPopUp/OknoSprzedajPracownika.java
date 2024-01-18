@@ -29,7 +29,7 @@ public class OknoSprzedajPracownika extends JFrame implements ActionListener, Ch
         }
 
         // Utworzenie suwaka
-        slider = new JSlider(1, sklep.getZoo().getListaPracownikow().size()); // Zakres od 0 do 100
+        slider = new JSlider(1, sklep.getZoo().getListaPracownikow().size());
         slider.setMajorTickSpacing(1);
         slider.setMinorTickSpacing(1);
         slider.setPaintTicks(true);
