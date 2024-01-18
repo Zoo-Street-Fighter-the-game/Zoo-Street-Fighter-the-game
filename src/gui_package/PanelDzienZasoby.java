@@ -18,7 +18,7 @@ public class PanelDzienZasoby extends JPanel implements UpdateGUI, ActionListene
 
     JButton zmiana_na_noc_przycisk;
     private final DzienneZoo zoo;
-    private Sklep sklep;
+    private final Sklep sklep;
 
 
     public PanelDzienZasoby(Sklep sklep)

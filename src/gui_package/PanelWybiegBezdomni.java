@@ -1,6 +1,5 @@
 package gui_package;
 
-import DzienneZooPakiet.DzienneZoo;
 import Wybieg_package.Wybieg_bezdomni;
 import gui_oknaPopUp.OknoNakarmZwierzeta;
 import interfejsy.ObserwujacyPracownikGUI_interface;
@@ -16,7 +15,6 @@ public class PanelWybiegBezdomni extends JPanel implements UpdateGUI, Obserwujac
 
     private final Sklep sklep;
     private final Wybieg_bezdomni wybieg;
-    private final JLabel wybiegLabel;
     private final WybiegButton sprzedajZwierzeButton;
 
     private final WybiegButton nakarmButton;
@@ -24,14 +22,14 @@ public class PanelWybiegBezdomni extends JPanel implements UpdateGUI, Obserwujac
     private final WybiegButton pokazZwierzetaButton;
     private final WybiegButton przeniesDoWybieguButton;
 
-    public PanelWybiegBezdomni(DzienneZoo zoo, Sklep sklep, Wybieg_bezdomni wybieg)
+    public PanelWybiegBezdomni( Sklep sklep, Wybieg_bezdomni wybieg)
     {
         sklep.dodajObsewatoraGUI(this);
 
         this.sklep = sklep;
         this.wybieg = wybieg;
 
-        wybiegLabel = new JLabel("Wybieg", SwingConstants.CENTER);
+        JLabel wybiegLabel = new JLabel("Wybieg", SwingConstants.CENTER);
         sprzedajZwierzeButton = new WybiegButton("Sprzedaj zwierze");
         nakarmButton = new WybiegButton("Nakarm zwierzeta");
         pokazZwierzetaButton = new WybiegButton("Pokaz zwierzeta");

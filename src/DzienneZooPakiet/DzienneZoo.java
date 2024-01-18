@@ -5,7 +5,6 @@ import Wybieg_package.*;
 import Pracownik_package.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class DzienneZoo implements Serializable{
@@ -15,8 +14,8 @@ public class DzienneZoo implements Serializable{
     private int dniCounter =0;
     private final Zasoby zmiennaZasoby = new Zasoby(0,1000,100);
     private final Wybieg_bezdomni wybiegDlaBezdomnych = Wybieg_bezdomni.getInstance();
-     private ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
-     private ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
+     private final ArrayList <Wybieg_podstawowy> listaWybiegow = new ArrayList<>();
+     private final ArrayList <Pracownik> listaPracownikow = new ArrayList<>();
     private static DzienneZoo istnieje;
 
      //KONSTRUKTOR
@@ -42,17 +41,13 @@ public class DzienneZoo implements Serializable{
         return listaWybiegow;
     }
 
-    public void setListaWybiegow(ArrayList<Wybieg_podstawowy> listaWybiegow) {
-        this.listaWybiegow = listaWybiegow;
-    }
+
 
     public ArrayList<Pracownik> getListaPracownikow() {
         return listaPracownikow;
     }
 
-    public void setListaPracownikow(ArrayList<Pracownik> listaPracownikow) {
-        this.listaPracownikow = listaPracownikow;
-    }
+
 
     public int getDniCounter() {
         return dniCounter;
@@ -66,17 +61,7 @@ public class DzienneZoo implements Serializable{
 
     //KONIEC SETTEROW I GETTEROW
 
-    public void rozpocznijDzien()
-    {
-        setDniCounter(getDniCounter()+1);
-        System.out.println("Rozpoczynamy dzień "+ getDniCounter());
-        for(Wybieg_podstawowy obiekt: listaWybiegow)
-        {
-            obiekt.rozpoczecie_dnia();
-            zmiennaZasoby.zmienMonety(obiekt.przychody_z_wybiegu());
-        }
 
-    }
     public void zakonczDzien()
     {
         System.out.println("Konczymy dzien numer "+ getDniCounter());
@@ -100,41 +85,6 @@ public class DzienneZoo implements Serializable{
     }
 
 
-    //WYBIERANIE WYBIEGU SPOŚRÓD DOSTĘPNYCH
-    public int wybierzWybiegi()
-    {
-        Scanner sc = new Scanner(System.in);
-        int wybieg_zabieranie;
-        //WYŚWIETLANIE WYBIEGU
-        System.out.println("Wybiegi do wyboru: " );
-        for(int i=0;i<listaWybiegow.size();i++)
-        {
-            System.out.println("Wybieg " + i + ": " + listaWybiegow.get(i));
-        }
-        System.out.println("Podaj wybieg, ktory chcesz wybrac!" );
-        wybieg_zabieranie=sc.nextInt();
-
-        return wybieg_zabieranie;
-    }
-
-    //PRZENOSZENIE ZWIERZĄT MIĘDZY WYBIEGAMI
-    public void przeniesZwierze_Wybiegi()
-    {
-        int wybieg_zabieranie, zwierze;
-        wybieg_zabieranie = wybierzWybiegi();
-        zwierze = listaWybiegow.get(wybieg_zabieranie).wybierzZwierze();
-
-        System.out.println("Podaj numer wybiegu, do ktorego chcesz je przeniesc!" );
-        int wybieranie = wybierzWybiegi();
-
-        //DODAJEMY ZWIERZE DO WYBIEGU
-        listaWybiegow.get(wybieranie).dodaj_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
-
-
-        //USUWAMY ZWIERZE Z WYBIEGU
-        listaWybiegow.get(wybieg_zabieranie).usun_zwierze(((listaWybiegow.get(wybieg_zabieranie)).getLista_zwierzat()).get(zwierze));
-
-    }
 
     //METODA PRZENOSZĄCA ZWIERZE Z WYBIEGU BEZDOMNI
     public void przeniesZwierze_bezdomni(Wybieg_podstawowy wybieg, Zwierze zwierze)
@@ -166,13 +116,6 @@ public class DzienneZoo implements Serializable{
         else System.out.println("nie udalo sie usunac pracownika");
     }
 
-    public void wypisz_zwierzeta(){
-        for (int i=0;i<getListaWybiegow().size();i++){
-            System.out.println("Wybieg nr" + i+ ": \n" );
-            getListaWybiegow().get(i).wypisz_zwierzeta();
-        }
-
-    }
 
 
     //TOSTRING
@@ -193,21 +136,6 @@ public class DzienneZoo implements Serializable{
 
      return status.toString();
  }
-
-
- //POKAZANIE PRACOWNIKOW I WYBIEGOW
- public void pokazpracownikow()
- {
-     System.out.println("--------------- \n pracownicy:");
-     for(Pracownik obiekt: listaPracownikow)
-         System.out.println(obiekt);
- }
-    public void pokazwybiegi()
-    {
-        System.out.println("--------------- \n wybiegi");
-        for(Wybieg_podstawowy obiekt: listaWybiegow)
-            System.out.println(obiekt);
-    }
 
 
 }

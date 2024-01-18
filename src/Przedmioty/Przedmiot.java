@@ -3,13 +3,13 @@ package Przedmioty;
 import java.io.Serializable;
 
 public class Przedmiot implements Serializable {
-private String nazwa;
-private String opis;
-private int zycie;
-private int sila;
-private int szybkosc;
-private int szczescie;
-private int cena;
+private final String nazwa;
+private final String opis;
+private final int zycie;
+private final int sila;
+private final int szybkosc;
+private final int szczescie;
+private final int cena;
 
     public Przedmiot(String nazwa, String opis, int cena, int sila, int szczescie, int szybkosc,int zycie) {
         this.nazwa = nazwa;
@@ -25,56 +25,24 @@ private int cena;
         return nazwa;
     }
 
-    public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
-    }
-
-    public String getOpis() {
-        return opis;
-    }
-
-    public void setOpis(String opis) {
-        this.opis = opis;
-    }
-
     public int getZycie() {
         return zycie;
-    }
-
-    public void setZycie(int zycie) {
-        this.zycie = zycie;
     }
 
     public int getSila() {
         return sila;
     }
 
-    public void setSila(int sila) {
-        this.sila = sila;
-    }
-
     public int getSzybkosc() {
         return szybkosc;
-    }
-
-    public void setSzybkosc(int szybkosc) {
-        this.szybkosc = szybkosc;
     }
 
     public int getSzczescie() {
         return szczescie;
     }
 
-    public void setSzczescie(int szczescie) {
-        this.szczescie = szczescie;
-    }
-
     public int getCena() {
         return cena;
-    }
-
-    public void setCena(int cena) {
-        this.cena = cena;
     }
 
     @Override

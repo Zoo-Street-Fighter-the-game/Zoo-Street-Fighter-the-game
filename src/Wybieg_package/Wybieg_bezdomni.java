@@ -37,9 +37,6 @@ public class Wybieg_bezdomni extends Wybieg_abstract implements Serializable{
 
     }
 
-    public void koniec_dnia(){
-        usun_zwierzeta();
-    }
     //=========================================================
 
 

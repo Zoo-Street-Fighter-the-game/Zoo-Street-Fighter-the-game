@@ -6,11 +6,13 @@ import java.util.Random;
 
 public class QLearningAgent {
     // Tabela Q przechowująca wartości dla stanów i akcji
+    public static final String Q_TABLE_FILE = "q_table_new.ser";
+
     private double[][] qTable;
-    private double learningRate;
-    private double discountFactor;
+    private final double learningRate;
+    private final double discountFactor;
     // Parametr epsilon używany do eksploracji losowej
-    private double epsilon;
+    private final double epsilon;
 
 
     public QLearningAgent(int stateSize, int actionSize) {
@@ -68,8 +70,7 @@ public class QLearningAgent {
     public void saveQTableToFile(String fileName) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
             oos.writeObject(qTable);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 
@@ -77,18 +78,8 @@ public class QLearningAgent {
     public void loadQTableFromFile(String fileName) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
             qTable = (double[][]) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (IOException | ClassNotFoundException ignored) {
         }
     }
 
-    // Metoda do wyświetlenia zawartości tabeli Q
-    public void displayQTable() {
-        for (int i = 0; i < qTable.length; i++) {
-            for (int j = 0; j < qTable[i].length; j++) {
-                System.out.print(qTable[i][j] + "\t");
-            }
-            System.out.println();
-        }
-    }
 }

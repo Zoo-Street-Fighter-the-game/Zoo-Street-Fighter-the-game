@@ -9,12 +9,12 @@ import java.io.Serializable;
 public class Pracownik implements Serializable, Comparable<Pracownik>{
 
     //INICJOWANIE SKLADOWYCH
-    private String imie;
-    private String nazwisko;
-    private int jakoscUslug; //w skali do 10,
+    private final String imie;
+    private final String nazwisko;
+    private final int jakoscUslug; //w skali do 10,
     //wplywa na metody umyjWybieg i nakarmZwierze
     private int iloscakcji = 3;
-    private Zasoby zasoby;
+    private final Zasoby zasoby;
 
 
     //KONSTRUKTOR
@@ -70,41 +70,18 @@ public class Pracownik implements Serializable, Comparable<Pracownik>{
         return imie;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
-    }
-
     public String getNazwisko() {
         return nazwisko;
-    }
-
-    public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
     }
 
     public int getJakoscUslug() {
         return jakoscUslug;
     }
 
-    public void setJakoscUslug(int jakoscUslug) {
-        this.jakoscUslug = jakoscUslug;
-    }
-
     public int getIloscakcji() {
         return iloscakcji;
     }
 
-    public void setIloscakcji(int iloscakcji) {
-        this.iloscakcji = iloscakcji;
-    }
-
-    public Zasoby getZasoby() {
-        return zasoby;
-    }
-
-    public void setZasoby(Zasoby zasoby) {
-        this.zasoby = zasoby;
-    }
 
     @Override
     public int compareTo(Pracownik o) {

@@ -12,17 +12,17 @@ import pakiet_sklep.Sklep;
 
 
 public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPracownikGUI_interface {
-    private JButton kupJedzenie;
-    private JButton kupWybieg;
-    private JButton kupPracownika;
-    private JButton sprzedajJedzenie ;
-    private JButton sprzedajPracownika;
+    private final JButton kupJedzenie;
+    private final JButton kupWybieg;
+    private final JButton kupPracownika;
+    private final JButton sprzedajJedzenie ;
+    private final JButton sprzedajPracownika;
 
-    private JButton kupBron;
+    private final JButton kupBron;
 
 
-    private JButton zapiszGre;
-    private JButton wczytajGre;
+    private final JButton zapiszGre;
+    private final JButton wczytajGre;
     private Sklep sklep;
     private final DzienneZoo zoo;
     public PanelDzienSklep(Sklep sklep)
@@ -135,6 +135,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
 
     }
 
+
     class ReakcjaKupBron implements ActionListener
     {
         public void actionPerformed(ActionEvent e) {
@@ -143,13 +144,7 @@ public class PanelDzienSklep extends JPanel implements UpdateGUI, ObserwujacyPra
     }
 
 
-    class ReakcjaWczytajGre implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e) {
-            sklep.wczytajGre();
-        }
 
-    }
     class ReakcjaKupWybieg implements ActionListener
     {
         @Override

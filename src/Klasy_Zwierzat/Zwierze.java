@@ -4,10 +4,7 @@ import Przedmioty.Przedmiot;
 import enumy.rodzaj_srodowiska_enum;
 import interfejsy.Obserwujacy_ZwierzeWybieg_interface;
 import java.io.Serializable;
-
-
-import java.io.Serializable;
-
+import  propozycja_gui_package.HealthSubject;
 public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg_interface, Serializable, Comparable<Zwierze>{
 
 
@@ -15,17 +12,17 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
     //===========================================================================
     //POLA ZWIERZĄT
     //===========================================================================
-    private String imie;
-    private String nazwa;
+    private final String imie;
+    private final String nazwa;
     private int zycie;
     private int sila;
     private int szybkosc;
     private int szczescie;
-    private int wielkosc;
+    private final int wielkosc;
     private int wskaznik_glodu;
     private int przezyte_dni = 0;
-    private int cena;
-    private rodzaj_srodowiska_enum rodzaj;
+    private final int cena;
+    private final rodzaj_srodowiska_enum rodzaj;
     private float mnoznik_pieniedzy=1;
 
 
@@ -121,9 +118,6 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
         return imie;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
-    }
 
     public int getSzybkosc() {
         return szybkosc;
@@ -146,9 +140,6 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
         return nazwa;
     }
 
-    public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
-    }
 
     public int getZycie() {
         return zycie;
@@ -170,17 +161,11 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
         return wielkosc;
     }
 
-    public void setWielkosc(int wielkosc) {
-        this.wielkosc = wielkosc;
-    }
 
     public int getWskaznik_glodu() {
         return wskaznik_glodu;
     }
 
-    public void setWskaznik_glodu(int wskaznik_glodu) {
-        this.wskaznik_glodu = wskaznik_glodu;
-    }
 
     public int getPrzezyte_dni() {
         return przezyte_dni;
@@ -194,25 +179,16 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
         return cena;
     }
 
-    public void setCena(int cena) {
-        this.cena = cena;
-    }
 
     public rodzaj_srodowiska_enum getRodzaj() {
         return rodzaj;
     }
 
-    public void setRodzaj(rodzaj_srodowiska_enum rodzaj) {
-        this.rodzaj = rodzaj;
-    }
 
     public float getMnoznik_pieniedzy() {
         return mnoznik_pieniedzy;
     }
 
-    public void setMnoznik_pieniedzy(float mnoznik_pieniedzy) {
-        this.mnoznik_pieniedzy = mnoznik_pieniedzy;
-    }
 
 
     public Przedmiot getPrzedmiot() {

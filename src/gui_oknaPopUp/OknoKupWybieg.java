@@ -17,8 +17,6 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
     private final JRadioButton malyButton;
     private final JRadioButton sredniButton;
     private final JRadioButton duzyButton;
-    private final ButtonGroup rodzajWybieguGroup;
-    private final ButtonGroup wielkoscWybieguGroup;
     private wielkosc_wybiegu_enum wielkosc;
     private rodzaj_srodowiska_enum rodzaj;
     private final JLabel buttonLabel;
@@ -35,7 +33,7 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
 
         // Radio buttons dla rodzaju wybiegu
         JPanel rodzajPanel = new JPanel();
-        rodzajWybieguGroup = new ButtonGroup();
+        ButtonGroup rodzajWybieguGroup = new ButtonGroup();
         powietrznyButton = new JRadioButton("POWIETRZNY");
          wodnyButton = new JRadioButton("WODNY");
          ladowyButton = new JRadioButton("LĄDOWY");
@@ -49,7 +47,7 @@ public class OknoKupWybieg extends JFrame implements ActionListener {
 
         // Radio buttons dla wielkości wybiegu
         JPanel wielkoscPanel = new JPanel();
-        wielkoscWybieguGroup = new ButtonGroup();
+        ButtonGroup wielkoscWybieguGroup = new ButtonGroup();
          malyButton = new JRadioButton("MAŁY");
          sredniButton = new JRadioButton("ŚREDNI");
          duzyButton = new JRadioButton("DUŻY");

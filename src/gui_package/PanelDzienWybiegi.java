@@ -18,13 +18,13 @@ public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
         this.setBackground(new Color(0xffffff));
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         this.setLayout(new FlowLayout(FlowLayout.LEADING));
-        wybiegBezdomni = new PanelWybiegBezdomni(sklep.getZoo(), sklep, sklep.getZoo().getWybiegDlaBezdomnych());
+        wybiegBezdomni = new PanelWybiegBezdomni( sklep, sklep.getZoo().getWybiegDlaBezdomnych());
         this.add(wybiegBezdomni);
 
     }
     public void Wyczysc(Sklep sklep){
         this.removeAll();
-        wybiegBezdomni = new PanelWybiegBezdomni(sklep.getZoo(), sklep, sklep.getZoo().getWybiegDlaBezdomnych());
+        wybiegBezdomni = new PanelWybiegBezdomni( sklep, sklep.getZoo().getWybiegDlaBezdomnych());
         this.add(wybiegBezdomni);
         this.updateGUI();
      }
@@ -38,7 +38,6 @@ public class PanelDzienWybiegi extends JPanel implements UpdateGUI {
         this.add(W);
 
     }
-
 
     @Override
     public void updateGUI() {

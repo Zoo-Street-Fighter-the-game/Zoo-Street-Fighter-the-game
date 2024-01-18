@@ -9,22 +9,19 @@ public class KoniecWalkiPanel extends JDialog {
         setTitle("Koniec walki");
         setSize(400, 400);
         setLayout(new BorderLayout());
+        JLabel resultLabel;
         if(isWinner){
 
-            JLabel resultLabel = new JLabel("Wygrales! Przeciwnik teraz placze");
-            resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
-            resultLabel.setFont(new Font("Arial", Font.BOLD, 18));
-            add(resultLabel, BorderLayout.NORTH);
+            resultLabel = new JLabel("Wygrales! Przeciwnik teraz placze");
 
         }else{
-            JLabel resultLabel = new JLabel("Przegrales! Twój zwierzak placze");
-            resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
-            resultLabel.setFont(new Font("Arial", Font.BOLD, 18));
-            add(resultLabel, BorderLayout.NORTH);
+            resultLabel = new JLabel("Przegrales! Twój zwierzak placze");
 
         }
+        resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        add(resultLabel, BorderLayout.NORTH);
 
- ;
 
         // Construct the path to the corresponding GIF based on the lost animal type
         String gifPath = "/obrazki/" + lostAnimalType + "Dead.gif";

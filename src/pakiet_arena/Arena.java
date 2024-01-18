@@ -4,11 +4,11 @@ package pakiet_arena;
 
 
 public class Arena {
-    private int temperatura;
-    private int zalesienie;
-    private int wodyPowierzchniowe;
-    private int wiatr;
-    private int naslonecznienie;
+    private final int temperatura;
+    private final int zalesienie;
+    private final int wodyPowierzchniowe;
+    private final int wiatr;
+    private final int naslonecznienie;
 
 
     public Arena(){
@@ -26,29 +26,16 @@ public class Arena {
     public int getZalesienie() {
         return zalesienie;
     }
-    public void setZalesienie(int zalesienie) {
-        this.zalesienie = zalesienie;
-    }
     public int getWodyPowierzchniowe() {
         return wodyPowierzchniowe;
-    }
-    public void setWodyPowierzchniowe(int wodyPowierzchniowe) {
-        this.wodyPowierzchniowe = wodyPowierzchniowe;
     }
     public int getWiatr() {
         return wiatr;
     }
-    public void setWiatr(int wiatr) {
-        this.wiatr = wiatr;
-    }
     public int getNaslonecznienie() {
         return naslonecznienie;
     }
-    public void setNaslonecznienie(int naslonecznienie) {
-        this.naslonecznienie = naslonecznienie;
-    }
     public int getTemperatura() {return temperatura;}
-    public void setTemperatura(int temperatura) {this.temperatura = temperatura;}
 
 //getStan
 

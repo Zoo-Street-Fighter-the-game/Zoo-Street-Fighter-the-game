@@ -15,8 +15,7 @@ public  class PopUpPanelZwierzeInfo{
                         "Wielkosc: " + zwierze.getWielkosc() + " \n" +
                         "Glod: " + zwierze.getWskaznik_glodu() + " \n" +
                         "Przezyte dni: " + zwierze.getPrzezyte_dni() + " \n" +
-                        "Rodzaj " + zwierze.getRodzaj() + " \n" +
-                        "");
+                        "Rodzaj " + zwierze.getRodzaj() + " \n");
         Window[] windows = Window.getWindows();
         for (Window window : windows) {
             if (window instanceof JFrame && window != parent) {

@@ -3,17 +3,6 @@ package propozycja_gui_package;
 import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import Wybieg_package.Wybieg_podstawowy;
-import enumy.poziom_trudnosci_enum;
-import noc_walka.Atak;
-import noc_walka.Leczenie;
-import pakiet_arena.Poziom_trudnosci;
-import pakiet_arena.QLearningAgent;
-import pakiet_arena.Walka;
-import pakiet_arena.nr_wybiegu_Zwierze;
-import propozycja_gui_package.NazwyWybiegowPanel;
-import propozycja_gui_package.PopUpPanelZwierzeInfo;
-import propozycja_gui_package.PoziomTrudnosciPanel;
-
 
 
 import javax.swing.*;
@@ -22,15 +11,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import static pakiet_arena.NocneZoo2.Q_TABLE_FILE;
+
 
 
 public class ListaZwierzatPanel extends JPanel implements HealthObserver{
-    private NazwyWybiegowPanel nazwyWybiegowPanel;
     private PoziomTrudnosciPanel poziomTrudnosciPanel;
-    private static int wybiegzmienna;
     private JProgressBar healthBar;
     public ListaZwierzatPanel(JProgressBar healthBar) {
         this.healthBar = healthBar;
@@ -43,7 +28,6 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
 
 
     public ListaZwierzatPanel(DzienneZoo zoo, NazwyWybiegowPanel nazwyWybiegowPanel) {
-        this.nazwyWybiegowPanel = nazwyWybiegowPanel;
 
         setLayout(new BorderLayout());
 
@@ -89,8 +73,7 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
                                                           boolean isSelected, boolean cellHasFocus) {
                 JPanel panel = new JPanel(new BorderLayout());
 
-                if (value instanceof Zwierze) {
-                    Zwierze zwierze = (Zwierze) value;
+                if (value instanceof Zwierze zwierze) {
                     JLabel label = new JLabel(zwierze.getNazwa());
                     label.setFont(new Font("Arial", Font.BOLD, 16));
                     panel.add(label, BorderLayout.CENTER);
@@ -136,7 +119,7 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
                 imageLabel.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                        WalkaPanel walkaPanel = new WalkaPanel(zwierze,finalI,poziomTrudnosciPanel);
+                        WalkaPanel walkaPanel = new WalkaPanel(poziomTrudnosciPanel);
                         WalkaPanel.wyslij_na_arene(zwierze,finalI);
                     }
                 });
@@ -160,34 +143,21 @@ public class ListaZwierzatPanel extends JPanel implements HealthObserver{
 
 
     private String getImageNameForZwierze(Zwierze zwierze) {
-        switch (zwierze.getNazwa()) {
-            case "Pingwin":
-                return "/obrazki/pingiwn.png";
-            case "Żółw":
-                return "/obrazki/zolw.png";
-            case "Rekin":
-                return "/obrazki/rekin.png";
-            case "Orka":
-                return "/obrazki/orka.png";
-            case "Łoś":
-                return "/obrazki/los.png";
-            case "Niedźwiedź":
-                return "/obrazki/mis.png";
-            case "NiedźwiedźPolarny":
-                return "/obrazki/mispolarny.png";
-            case "Lew":
-                return "/obrazki/lew.png";
-            case "Orzeł":
-                return "/obrazki/orzel.png";
-            case "Papuga":
-                return "/obrazki/papuga.png";
-            case "Paw":
-                return "/obrazki/paw.png";
-            case "Nietoperz":
-                return "/obrazki/nietoperz.png";
-            default:
-                return "/obrazki/default.png";
-        }
+        return switch (zwierze.getNazwa()) {
+            case "Pingwin" -> "/obrazki/pingiwn.png";
+            case "Żółw" -> "/obrazki/zolw.png";
+            case "Rekin" -> "/obrazki/rekin.png";
+            case "Orka" -> "/obrazki/orka.png";
+            case "Łoś" -> "/obrazki/los.png";
+            case "Niedźwiedź" -> "/obrazki/mis.png";
+            case "NiedźwiedźPolarny" -> "/obrazki/mispolarny.png";
+            case "Lew" -> "/obrazki/lew.png";
+            case "Orzeł" -> "/obrazki/orzel.png";
+            case "Papuga" -> "/obrazki/papuga.png";
+            case "Paw" -> "/obrazki/paw.png";
+            case "Nietoperz" -> "/obrazki/nietoperz.png";
+            default -> "/obrazki/default.png";
+        };
     }
 
 

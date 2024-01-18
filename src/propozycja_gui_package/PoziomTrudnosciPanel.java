@@ -4,8 +4,7 @@ import enumy.poziom_trudnosci_enum;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class PoziomTrudnosciPanel extends JPanel {
 
@@ -29,24 +28,9 @@ public class PoziomTrudnosciPanel extends JPanel {
         trudnoscGroup.add(trudnyRadioButton);
 
         // Dodajemy słuchacza dla przycisków
-        latwyRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleTrudnoscButtonClick(poziom_trudnosci_enum.LATWY);
-            }
-        });
-        sredniRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleTrudnoscButtonClick(poziom_trudnosci_enum.SREDNI);
-            }
-        });
-        trudnyRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleTrudnoscButtonClick(poziom_trudnosci_enum.TRUDNY);
-            }
-        });
+        latwyRadioButton.addActionListener(e -> handleTrudnoscButtonClick(poziom_trudnosci_enum.LATWY));
+        sredniRadioButton.addActionListener(e -> handleTrudnoscButtonClick(poziom_trudnosci_enum.SREDNI));
+        trudnyRadioButton.addActionListener(e -> handleTrudnoscButtonClick(poziom_trudnosci_enum.TRUDNY));
 
         // Ustawiamy layout dla panelu z przyciskami
         setLayout(new FlowLayout(FlowLayout.CENTER));

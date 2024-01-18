@@ -1,10 +1,6 @@
 package propozycja_gui_package;
 import DzienneZooPakiet.DzienneZoo;
-import Wybieg_package.Wybieg_podstawowy;
-import enumy.rodzaj_srodowiska_enum;
-import enumy.wielkosc_wybiegu_enum;
-import enumy.zwierzeta_enum;
-import pakiet_sklep.Sklep;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Animacja extends JFrame {
-    private JLabel koniecDniaLabel;
+    private final JLabel koniecDniaLabel;
 
     public Animacja(DzienneZoo zoo) {
         // Ustawienie rozmiaru na pełny ekran
@@ -29,8 +25,7 @@ public class Animacja extends JFrame {
         add(koniecDniaLabel, BorderLayout.CENTER);
 
         Timer timer = new Timer(30, new ActionListener() {
-            private int alpha = 0;
-            private long startTime = System.currentTimeMillis();
+            private final long startTime = System.currentTimeMillis();
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,16 +33,11 @@ public class Animacja extends JFrame {
                 long elapsedTime = currentTime - startTime;
 
                 if (elapsedTime < 3000) {
-                    alpha = (int) (255 * (elapsedTime / 3000.0));
+                    int alpha = (int) (255 * (elapsedTime / 3000.0));
                     koniecDniaLabel.setForeground(new Color(0, 0, 0, alpha));
                 } else {
                     ((Timer) e.getSource()).stop();
                     dispose();
-                    //DzienneZoo zoo = DzienneZoo.getInstance();
-/*                    zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.LADOWY, wielkosc_wybiegu_enum.SREDNI));
-                    zoo.dodajWybieg(new Wybieg_podstawowy(rodzaj_srodowiska_enum.WODNY, wielkosc_wybiegu_enum.SREDNI));
-                    zoo.getListaWybiegow().getFirst().dodaj_zwierze(zwierzeta_enum.NIEDZWIEDZ.stworzZwierze("bob"));
-                    zoo.getListaWybiegow().getLast().dodaj_zwierze(zwierzeta_enum.ZOLW.stworzZwierze("bob"));*/
 
                     new MainFrame(zoo);
                 }

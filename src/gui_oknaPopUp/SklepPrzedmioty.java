@@ -5,7 +5,6 @@ import enumy.przedmioty_enum;
 import gui_package.ListaWybiegow2;
 import pakiet_sklep.Sklep;
 import DzienneZooPakiet.*;
-import gui_package.ListaZwierzat2;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,38 +13,22 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import Wybieg_package.*;
 public class SklepPrzedmioty extends JFrame {
-    private Sklep sklep;
-    private JTabbedPane tabbedPane = new JTabbedPane();
-    private JButton kupPrzedmiotButton;
-    private final PrzedmiotRadioButton miecz;
-    private final PrzedmiotRadioButton wuwuzela;
-    private final PrzedmiotRadioButton adidasy;
-    private final PrzedmiotRadioButton topor;
-    private final PrzedmiotRadioButton patyk;
-    private final PrzedmiotRadioButton pnw;
-    private final PrzedmiotRadioButton zbroja;
-    private final PrzedmiotRadioButton rekawice;
-    private ListaWybiegow2 panelWybiegi;
-    private JPanel panelNazwy;
+    private final Sklep sklep;
+    private final JTabbedPane tabbedPane;
+    private final JButton kupPrzedmiotButton;
     private final DzienneZoo zoo;
-    private JPanel panelMain;
-    private JLabel text;
-    private JPanel panelRadio;
-    private ButtonGroup group;
     private PrzedmiotRadioButton wybranaBron;
     ///////////
-    private ArrayList<JRadioButton> listaRadioButton;
-    private ButtonGroup grupka;
-    private Wybieg_podstawowy wybieg;
+    private final ArrayList<JRadioButton> listaRadioButton;
     private Zwierze wybraneZwierze;
 
 
     public SklepPrzedmioty(Sklep sklep){
         this.sklep=sklep;
         this.zoo=sklep.getZoo();
-        panelMain = new JPanel();
-        panelRadio = new JPanel();
-        text = new JLabel("Wybierz broń: ");
+        JPanel panelMain = new JPanel();
+        JPanel panelRadio = new JPanel();
+        JLabel text = new JLabel("Wybierz broń: ");
         this.setLayout(new GridLayout(1, 1));
 
 
@@ -53,31 +36,31 @@ public class SklepPrzedmioty extends JFrame {
         kupPrzedmiotButton.setEnabled(false);
         kupPrzedmiotButton.addActionListener(new ReakcjaKupPrzedmiotButton());
 
-        miecz = new PrzedmiotRadioButton("miecz", przedmioty_enum.MIECZ);
+        PrzedmiotRadioButton miecz = new PrzedmiotRadioButton("miecz", przedmioty_enum.MIECZ);
         miecz.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        wuwuzela = new PrzedmiotRadioButton("wuwuzela", przedmioty_enum.WUWUZELA);
+        PrzedmiotRadioButton wuwuzela = new PrzedmiotRadioButton("wuwuzela", przedmioty_enum.WUWUZELA);
         wuwuzela.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        topor = new PrzedmiotRadioButton("topór", przedmioty_enum.TOPOR);
+        PrzedmiotRadioButton topor = new PrzedmiotRadioButton("topór", przedmioty_enum.TOPOR);
         topor.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        adidasy = new PrzedmiotRadioButton("adidasy", przedmioty_enum.ADIDASY);
+        PrzedmiotRadioButton adidasy = new PrzedmiotRadioButton("adidasy", przedmioty_enum.ADIDASY);
         adidasy.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        pnw = new PrzedmiotRadioButton("pistolet na wode", przedmioty_enum.PISTOLET_NA_WODE);
+        PrzedmiotRadioButton pnw = new PrzedmiotRadioButton("pistolet na wode", przedmioty_enum.PISTOLET_NA_WODE);
         pnw.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        patyk = new PrzedmiotRadioButton("patyk", przedmioty_enum.PATYK);
+        PrzedmiotRadioButton patyk = new PrzedmiotRadioButton("patyk", przedmioty_enum.PATYK);
         patyk.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        zbroja = new PrzedmiotRadioButton("zbroja", przedmioty_enum.ZBROJA);
+        PrzedmiotRadioButton zbroja = new PrzedmiotRadioButton("zbroja", przedmioty_enum.ZBROJA);
         zbroja.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        rekawice = new PrzedmiotRadioButton("rękawice bokserskie", przedmioty_enum.REKAWICE_BOKSERSKIE);
+        PrzedmiotRadioButton rekawice = new PrzedmiotRadioButton("rękawice bokserskie", przedmioty_enum.REKAWICE_BOKSERSKIE);
         rekawice.addActionListener(new ReakcjaPrzedmiotRadioButton());
 
-        group = new ButtonGroup();
+        ButtonGroup group = new ButtonGroup();
 
         group.add(zbroja);
         group.add(patyk);
@@ -128,10 +111,9 @@ public class SklepPrzedmioty extends JFrame {
 
         kupPrzedmiotButton.setFocusable(false);
 
-        panelWybiegi = new ListaWybiegow2(zoo);
-       // panelNazwy = new ListaZwierzat2(zoo, panelWybiegi);
-////////////////////////
-       panelNazwy = new JPanel();
+        ListaWybiegow2 panelWybiegi = new ListaWybiegow2(zoo);
+
+        JPanel panelNazwy = new JPanel();
        panelNazwy.setLayout(new BorderLayout());
         listaRadioButton=new ArrayList<>();
         tabbedPane = panelWybiegi.getTabbedPane();
@@ -140,14 +122,14 @@ public class SklepPrzedmioty extends JFrame {
         }
         tabbedPane.removeAll();
         JPanel centralPanel = new JPanel(new GridLayout(1, 1));
-        grupka = new ButtonGroup();
+        ButtonGroup grupka = new ButtonGroup();
 
         for (int i = 0; i < zoo.getListaWybiegow().size(); i++) {
            // wybieg = zoo.getListaWybiegow().get(i);
             JPanel wybiegPanel = new JPanel(new BorderLayout());
             tabbedPane.addTab("Wybieg " + (i + 1), wybiegPanel);
 
-            dodajZwierzetaDoPanelu(wybiegPanel, zoo.getListaWybiegow().get(i), i, grupka);
+            dodajZwierzetaDoPanelu(wybiegPanel, zoo.getListaWybiegow().get(i), grupka);
 
             centralPanel.add(tabbedPane);
         }
@@ -169,7 +151,7 @@ public class SklepPrzedmioty extends JFrame {
 
     }
 
-    private void dodajZwierzetaDoPanelu(JPanel wybiegPanel, Wybieg_podstawowy wybieg, int numerWybiegu, ButtonGroup group) {
+    private void dodajZwierzetaDoPanelu(JPanel wybiegPanel, Wybieg_podstawowy wybieg, ButtonGroup group) {
         ArrayList<Zwierze> listaZwierzat = new ArrayList<>(wybieg.getLista_zwierzat());
         JPanel RadioPanel2 = new JPanel();
 

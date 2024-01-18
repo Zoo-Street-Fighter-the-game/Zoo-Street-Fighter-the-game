@@ -1,7 +1,6 @@
 package gui_oknaPopUp;
 
 import enumy.przedmioty_enum;
-import enumy.zwierzeta_enum;
 
 import javax.swing.*;
 

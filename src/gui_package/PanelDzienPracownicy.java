@@ -19,11 +19,10 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
     private final ArrayList<JRadioButton> listaprzyciskow=new ArrayList<>();
     private final DzienneZoo zoo;
     private final ButtonGroup grupapracownikow=new ButtonGroup();
-    private final JButton zaznaczNie = new JButton("Usun zaznaczenie");
     private Pracownik zaznaczonyPracownik;
     private JRadioButton zaznaczonyRadioButton;
     private final ArrayList<ObserwujacyPracownikGUI_interface> listaObserwatorow;
-    private HashMap<Pracownik,JRadioButton> HS= new HashMap<>();
+    private final HashMap<Pracownik,JRadioButton> HS= new HashMap<>();
 
     ImageIcon wybrany3 = new ImageIcon("src/ikony/IkonaPracownikWybrany3.png");
     ImageIcon wybrany2 = new ImageIcon("src/ikony/IkonaPracownikWybrany2.png");
@@ -43,6 +42,7 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         JLabel logo = new JLabel();
         logo.setIcon( new ImageIcon("src/ikony/EmployessImage.png"));
         this.add(logo);
+        JButton zaznaczNie = new JButton("Usun zaznaczenie");
         zaznaczNie.addActionListener(new Odzaznaczanie());
 
         zaznaczNie.setFont(new Font("Comic Sans",Font.BOLD,15));
@@ -60,9 +60,8 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
 
     public void sortujprzyciski()
     {
-        for(int i=0; i<listaprzyciskow.size();i++)
-        {
-            this.remove(listaprzyciskow.get(i));
+        for (JRadioButton jRadioButton : listaprzyciskow) {
+            this.remove(jRadioButton);
         }
         Collections.sort(zoo.getListaPracownikow());
         for (int i=0; i<listaprzyciskow.size();i++)

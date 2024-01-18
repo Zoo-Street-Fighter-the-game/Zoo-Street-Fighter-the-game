@@ -1,53 +1,14 @@
 package pakiet_arena;
 
-import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import enumy.poziom_trudnosci_enum;
-import enumy.rodzaj_srodowiska_enum;
 import enumy.zwierzeta_enum;
 
 import java.util.Random;
-import java.util.Scanner;
 
 
 public class Wybor_zwierzecia {
 
-    public static nr_wybiegu_Zwierze wybor_zwierzecia(){
-        DzienneZoo zoo = DzienneZoo.getInstance();
-        nr_wybiegu_Zwierze wynik = null;
-        Scanner scanner = new Scanner(System.in);
-
-        boolean powtorz_petle = true;
-        while (powtorz_petle) {
-            powtorz_petle = false;
-            zoo.wypisz_zwierzeta();
-
-            System.out.println("napisz numer wybiegu");
-            while (!scanner.hasNextInt()) {
-                System.out.println("To nie jest liczba. Wpisz numer wybiegu:");
-                scanner.next();
-            }
-            int indeks_wybiegu = scanner.nextInt();
-
-            System.out.println("napisz numer zwierzeta");
-            while (!scanner.hasNextInt()) {
-                System.out.println("To nie jest liczba. Wpisz numer zwierzecia:");
-                scanner.next();
-            }
-            int indeks_zwierzecia = scanner.nextInt();
-
-            try {
-                Zwierze zwierze = zoo.getListaWybiegow().get(indeks_wybiegu).getLista_zwierzat().get(indeks_zwierzecia);
-                wynik = new nr_wybiegu_Zwierze(indeks_wybiegu,zwierze);
-
-            } catch (IndexOutOfBoundsException e) {
-                System.out.println("Wybrales niepoprawne zwierze lub wybieg. Spróbuj ponownie.");
-                powtorz_petle = true;
-            }
-
-        }
-        return wynik;
-    }
 
     public static Zwierze stworzenie_zwierzecia_walczacego(Zwierze zwierze,Arena arena) {
         Zwierze walczace_zwierze = zwierze.deep_clone();
@@ -149,7 +110,7 @@ public class Wybor_zwierzecia {
                 m_zal = 0.3* arena.getZalesienie();
                 m_wod = 0.1*arena.getWodyPowierzchniowe();
                 m_wia = 0.7*arena.getWiatr();
-                m_nas = 100*(1/ arena.getNaslonecznienie());
+                m_nas = 100*((double) 1 / arena.getNaslonecznienie());
                 m_temp = 0.1*arena.getTemperatura();
                 break;
 

@@ -16,13 +16,13 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //==========================================================================
     //                              zmienne
     //--------------------------------------------------------------------------
-    private List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy = new ArrayList<>();
+    private final List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy = new ArrayList<>();
     private int wolne_miejsce_w_wybiegu;
 
-    private rodzaj_srodowiska_enum rodzaj_srodowiska;
-    private wielkosc_wybiegu_enum wielkosc_wybiegu;
+    private final rodzaj_srodowiska_enum rodzaj_srodowiska;
+    private final wielkosc_wybiegu_enum wielkosc_wybiegu;
     private float czystosc = 100;       //od 0 do 100
-    private int cena;
+    private final int cena;
     //=================================================================================
 
 
@@ -201,20 +201,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
 
         return status.toString();
     }
-    public void wypisz_zwierzeta(){
-        for (int i=0;i<getLista_zwierzat().size();i++){
-            System.out.println("zwierze nr: " + i+ ": ");
-            System.out.println(getLista_zwierzat().get(i).toString()+"\n");
-        }
-    }
 
-    public List<Obserwujacy_ZwierzeWybieg_interface> getobserwujacy() {
-        return obserwujacy;
-    }
-
-    public void setobserwujacy(List<Obserwujacy_ZwierzeWybieg_interface> obserwujacy) {
-        this.obserwujacy = obserwujacy;
-    }
 
     public int getWolne_miejsce_w_wybiegu() {
         return wolne_miejsce_w_wybiegu;
@@ -229,17 +216,11 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
         return rodzaj_srodowiska;
     }
 
-    public void setRodzaj_srodowiska(rodzaj_srodowiska_enum rodzaj_srodowiska) {
-        this.rodzaj_srodowiska = rodzaj_srodowiska;
-    }
 
     public wielkosc_wybiegu_enum getWielkosc_wybiegu() {
         return wielkosc_wybiegu;
     }
 
-    public void setWielkosc_wybiegu(wielkosc_wybiegu_enum wielkosc_wybiegu) {
-        this.wielkosc_wybiegu = wielkosc_wybiegu;
-    }
 
     public float getCzystosc() {
         return czystosc;
@@ -250,14 +231,10 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     }
 
 
-
     public int getCena() {
         return cena;
     }
 
-    public void setCena(int cena) {
-        this.cena = cena;
-    }
 
     //specjalny getter
     //--------------------------------------------------------------

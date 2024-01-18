@@ -14,9 +14,7 @@ public class OknoSprzedajZwierze extends JFrame {
 
     private final Sklep sklep;
     private final Wybieg_abstract wybieg;
-    private final JPanel panelMain;
     private final JPanel panelRadio;
-    private final JLabel text;
     private final ArrayList<JRadioButton> listaRadioButton;
     private Zwierze wybrany;
     private final JButton sprzedajZwierzeButton;
@@ -26,9 +24,9 @@ public class OknoSprzedajZwierze extends JFrame {
         this.sklep = sklep;
         this.wybieg = wybieg;
 
-        panelMain = new JPanel();
+        JPanel panelMain = new JPanel();
         panelRadio = new JPanel();
-        text = new JLabel("Wybierz zwierze: ");
+        JLabel text = new JLabel("Wybierz zwierze: ");
         listaRadioButton = new ArrayList<>();
         sprzedajZwierzeButton = new JButton("Sprzedaj zwierze");
         sprzedajZwierzeButton.setEnabled(false);
@@ -85,12 +83,5 @@ public class OknoSprzedajZwierze extends JFrame {
         }
     }
 
-    public void BrakSrodkow()
-    {
-        JOptionPane.showMessageDialog(this,
-                "Nie masz wystarczajaco duzo monet!",
-                "Brak Srodkow",
-                JOptionPane.ERROR_MESSAGE);
-    }
 
 }

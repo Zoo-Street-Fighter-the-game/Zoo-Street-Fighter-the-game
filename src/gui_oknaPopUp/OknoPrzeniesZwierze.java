@@ -1,7 +1,6 @@
 package gui_oknaPopUp;
 
 import Klasy_Zwierzat.Zwierze;
-import Wybieg_package.Wybieg_abstract;
 import Wybieg_package.Wybieg_podstawowy;
 import pakiet_sklep.Sklep;
 
