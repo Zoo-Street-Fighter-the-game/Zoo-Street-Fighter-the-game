@@ -120,10 +120,10 @@ public class Sklep {
             OknoKupJedzenie.brakSrodkow();
         }
         else {
-        zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
-        zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
-        updateGUI();
-        System.out.println("zakup udany");
+            zoo.getZmiennaZasoby().zmienJedzenie(ilosc);
+            zoo.getZmiennaZasoby().setMonety(zoo.getZmiennaZasoby().getMonety() - koszt);
+            updateGUI();
+            System.out.println("zakup udany");
 
         }
     }
@@ -132,11 +132,11 @@ public class Sklep {
         System.out.println("Obecna cena za pracownika to: " + cenaPracownika*jakosc);
 
 
-            if (cenaPracownika*jakosc > zoo.getZmiennaZasoby().getMonety()) {
-                OknoKupPracownika.brakSrodkow();
+        if (cenaPracownika*jakosc > zoo.getZmiennaZasoby().getMonety()) {
+            OknoKupPracownika.brakSrodkow();
 
-            }
-            else{
+        }
+        else{
             zoo.getZmiennaZasoby().zmienMonety(-cenaPracownika*jakosc);
             System.out.println("zakup pracownika udany");
             zoo.dodajPracownika(new Pracownik(imie,nazwisko,jakosc, getZoo().getZmiennaZasoby()));
@@ -150,37 +150,37 @@ public class Sklep {
     public void kup_wybieg(rodzaj_srodowiska_enum rodzajSrodowiska, wielkosc_wybiegu_enum wielkosc_wybiegu) {
 
 
-            if (wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu() > zoo.getZmiennaZasoby().getMonety()) {
-                OknoKupWybieg.brakSrodkow();
-            }
-            else {
+        if (wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu() > zoo.getZmiennaZasoby().getMonety()) {
+            OknoKupWybieg.brakSrodkow();
+        }
+        else {
 
-                zoo.getZmiennaZasoby().zmienMonety(-wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu());
-                System.out.println("Zakup wybiegu udany");
+            zoo.getZmiennaZasoby().zmienMonety(-wielkosc_wybiegu.getLiczbowa_Cena_Wybiegu());
+            System.out.println("Zakup wybiegu udany");
 
 
-                zoo.dodajWybieg(new Wybieg_podstawowy(rodzajSrodowiska, wielkosc_wybiegu));
-                PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
-                panelDzienWybiegi.dodajWybieg(panelWybieg);
-                panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
-                updateGUI();
+            zoo.dodajWybieg(new Wybieg_podstawowy(rodzajSrodowiska, wielkosc_wybiegu));
+            PanelWybieg panelWybieg = new PanelWybieg(zoo, this, zoo.getListaWybiegow().getLast());
+            panelDzienWybiegi.dodajWybieg(panelWybieg);
+            panelDzienPracownicy.getListaObserwatorow().add(panelWybieg);
+            updateGUI();
 
-            }
+        }
 
     }
 
 
     public void kup_zwierze(zwierzeta_enum typ, Wybieg_podstawowy wybieg, String imie) {
-            if(typ.getCena() > zoo.getZmiennaZasoby().getMonety())
-            {
-                OknoKupZwierze.brakSrodkow();
-            }
-            else {
-                zoo.getZmiennaZasoby().zmienMonety(-typ.getCena());
-                System.out.println("Zakup zwierzecia udany");
-                wybieg.dodaj_zwierze(typ.stworzZwierze(imie));
-                updateGUI();
-            }
+        if(typ.getCena() > zoo.getZmiennaZasoby().getMonety())
+        {
+            OknoKupZwierze.brakSrodkow();
+        }
+        else {
+            zoo.getZmiennaZasoby().zmienMonety(-typ.getCena());
+            System.out.println("Zakup zwierzecia udany");
+            wybieg.dodaj_zwierze(typ.stworzZwierze(imie));
+            updateGUI();
+        }
 
     }
 
@@ -250,9 +250,9 @@ public class Sklep {
             updateGUI();
             System.out.println("yeet");
         } else {
-                SklepPrzedmioty.brakSrodkow();
-            }
+            SklepPrzedmioty.brakSrodkow();
         }
+    }
 
 
     public void kup_bron(Przedmiot nazwa_przedmiotu) {
@@ -341,8 +341,8 @@ public class Sklep {
         }
         System.out.println("Zapis wykonany");
     }
-/*
-*//*    public void wczytajGre() {
+    /*
+     *//*    public void wczytajGre() {
         System.out.println(zoo.toString());
         System.out.println("Import");
         try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("blank.ser"))) {
@@ -404,25 +404,26 @@ public class Sklep {
             zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
             zoo.setDniCounter(zoo2.getDniCounter());
 
-            int dlugosc = ((zoo.getListaPracownikow()).size());
+            int dlugosc = (zoo.getListaPracownikow()).size();
             for(int b = 0; b<dlugosc; b++){
                 panelDzienPracownicy.usunPracownika(0);
                 zoo.usunPracownika(zoo.getListaPracownikow().get(0));
+
             }
-                zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
+            zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
 
             for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
                 for(int j = 0; j<zoo.getListaWybiegow().get(a).getLista_zwierzat().size();j++)
-                zoo.getListaWybiegow().get(a).getLista_zwierzat().get(j).setPrzedmiot(null);
+                    zoo.getListaWybiegow().get(a).getLista_zwierzat().get(j).setPrzedmiot(null);
             }
 
 
-                for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
-                    zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
-                }
+            for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
+                zoo.getListaWybiegow().get(a).getLista_zwierzat().clear();
+            }
 
-                panelDzienWybiegi.Wyczysc(this);
-                zoo.getListaWybiegow().clear();
+            panelDzienWybiegi.Wyczysc(this);
+            zoo.getListaWybiegow().clear();
 
             for(int i = 0; i<(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().size()); i++){
                 Zwierze x = new Zwierze(zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getImie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getNazwa(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getZycie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSila(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzybkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getSzczescie(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWielkosc(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getWskaznik_glodu(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getCena(),zoo2.getWybiegDlaBezdomnych().getLista_zwierzat().get(i).getRodzaj());
@@ -435,7 +436,7 @@ public class Sklep {
             for(int i = 0; i<((zoo2.getListaWybiegow()).size()); i++){
                 zoo.dodajWybieg(new Wybieg_podstawowy(zoo2.getListaWybiegow().get(i).getRodzaj_srodowiska(), zoo2.getListaWybiegow().get(i).getWielkosc_wybiegu()));
                 for(int j = 0; j<(zoo2.getListaWybiegow().get(i).getLista_zwierzat().size());j++){
-                   Zwierze z = new Zwierze(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getImie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getNazwa(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getZycie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSila(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzybkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzczescie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWielkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWskaznik_glodu(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getCena(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getRodzaj());
+                    Zwierze z = new Zwierze(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getImie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getNazwa(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getZycie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSila(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzybkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getSzczescie(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWielkosc(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getWskaznik_glodu(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getCena(),zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getRodzaj());
                     zoo.getListaWybiegow().get(i).dodaj_zwierze(z);
                     if (zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getPrzedmiot()!=null){
                         z.setPrzedmiot(zoo2.getListaWybiegow().get(i).getLista_zwierzat().get(j).getPrzedmiot());
@@ -470,16 +471,12 @@ public class Sklep {
             zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
             zoo.setDniCounter(zoo2.getDniCounter());
 
-            int dlugosc = ((zoo.getListaPracownikow()).size());
+            int dlugosc = (zoo.getListaPracownikow()).size();
             for(int b = 0; b<dlugosc; b++){
-
                 panelDzienPracownicy.usunPracownika(0);
                 zoo.usunPracownika(zoo.getListaPracownikow().get(0));
-
-
-
             }
-                zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
+            zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
 
             for (int a = 0; a < ((zoo.getListaWybiegow()).size()); a++) {
                 for(int j = 0; j<zoo.getListaWybiegow().get(a).getLista_zwierzat().size();j++)
