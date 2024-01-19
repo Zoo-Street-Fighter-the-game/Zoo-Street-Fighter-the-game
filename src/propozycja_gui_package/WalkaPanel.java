@@ -35,6 +35,7 @@ public class WalkaPanel extends JPanel{
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(new Color(0, 0, 0, 0)); // Transparent initially
         walka = new JFrame();
+        setSize(1980,1080);
 
     }
     public static void wyslij_na_arene(Zwierze zwierze, int wybieg1) {

@@ -407,7 +407,7 @@ public class Sklep {
             int dlugosc = (zoo.getListaPracownikow()).size();
             for(int b = 0; b<dlugosc; b++){
                 panelDzienPracownicy.usunPracownika(0);
-                zoo.usunPracownika(zoo.getListaPracownikow().get(0));
+                zoo.usunPracownika(zoo.getListaPracownikow().getFirst());
 
             }
             zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
