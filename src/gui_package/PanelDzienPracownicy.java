@@ -123,25 +123,14 @@ public class PanelDzienPracownicy extends JPanel implements UpdateGUI {
         sortujprzyciski();
 
     }
-/*    public void usunPracownika(int numer)
+  public void usunPracownika(int numer)
     {
-
         this.remove(HS.get(zoo.getListaPracownikow().get(numer)));
         grupapracownikow.remove(HS.get(zoo.getListaPracownikow().get(numer)));
         listaprzyciskow.remove(HS.get(zoo.getListaPracownikow().get(numer)));
         HS.remove(zoo.getListaPracownikow().get(numer));
-
-    }*/
-
-    public void usunPracownika(int numer)
-    {
-        if (numer >= 0 && numer < listaprzyciskow.size()) {
-            this.remove(HS.get(zoo.getListaPracownikow().get(numer)));
-            grupapracownikow.remove(listaprzyciskow.get(numer));
-            listaprzyciskow.remove(numer);
-            HS.remove(zoo.getListaPracownikow().get(numer));
-        }
     }
+
 
     public Pracownik getZaznaczonyPracownik() {
         return zaznaczonyPracownik;

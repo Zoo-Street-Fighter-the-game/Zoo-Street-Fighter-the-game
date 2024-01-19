@@ -404,11 +404,10 @@ public class Sklep {
             zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
             zoo.setDniCounter(zoo2.getDniCounter());
 
-            for(int b = 0; b<((zoo.getListaPracownikow()).size()); b++){
-                zoo.usunPracownika(zoo.getListaPracownikow().get(b));
-                panelDzienPracownicy.usunPracownika(b);
-                b--;
-
+            int dlugosc = ((zoo.getListaPracownikow()).size());
+            for(int b = 0; b<dlugosc; b++){
+                panelDzienPracownicy.usunPracownika(0);
+                zoo.usunPracownika(zoo.getListaPracownikow().get(0));
             }
                 zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
 
@@ -471,10 +470,13 @@ public class Sklep {
             zoo.getZmiennaZasoby().setExp(zoo2.getZmiennaZasoby().getExp());
             zoo.setDniCounter(zoo2.getDniCounter());
 
-            for(int b = 0; b<((zoo.getListaPracownikow()).size()); b++){
-                zoo.usunPracownika(zoo.getListaPracownikow().get(b));
-                panelDzienPracownicy.usunPracownika(b);
-                b--;
+            int dlugosc = ((zoo.getListaPracownikow()).size());
+            for(int b = 0; b<dlugosc; b++){
+
+                panelDzienPracownicy.usunPracownika(0);
+                zoo.usunPracownika(zoo.getListaPracownikow().get(0));
+
+
 
             }
                 zoo.getWybiegDlaBezdomnych().getLista_zwierzat().clear();
