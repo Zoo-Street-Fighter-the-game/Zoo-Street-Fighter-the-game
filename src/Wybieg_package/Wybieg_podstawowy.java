@@ -1,5 +1,6 @@
 package Wybieg_package;
 
+import DzienneZooPakiet.DzienneZoo;
 import Klasy_Zwierzat.Zwierze;
 import enumy.rodzaj_srodowiska_enum;
 import enumy.wielkosc_wybiegu_enum;
@@ -108,12 +109,14 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //========================================================================================
     //                      metody zwiazane z wlasnosciami zwierzat
     //-------------------------------------------------------------------------------------
-    public int przychody_z_wybiegu(){
+    public void przychody_z_wybiegu(){
         int przychod = 0;
+        DzienneZoo zoo = DzienneZoo.getInstance();
         for (Zwierze obiekt : getLista_zwierzat()){
             przychod+= (int)(obiekt.getMnoznik_pieniedzy()*10);
         }
-        return przychod;
+        zoo.getZmiennaZasoby().dodajExp(przychod/10);
+        zoo.getZmiennaZasoby().zmienJedzenie(przychod);
     }
 
     public void brudzenie_zwierzat(){
@@ -183,7 +186,7 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //===============================================================================
     //                          metody zwiazane z porami dnia
     //-------------------------------------------------------------------------------
-    
+
     public void zakonczenie_dnia(){
         przychody_z_wybiegu();
         brudzenie_zwierzat();
