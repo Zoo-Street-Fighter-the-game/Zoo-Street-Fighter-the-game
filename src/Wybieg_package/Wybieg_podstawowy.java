@@ -128,6 +128,14 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
             zwierze.setPrzezyte_dni(zwierze.getPrzezyte_dni()+1);
         }
     }
+    public void nakarm(){
+        for (int i=0;i<getLista_zwierzat().size();i++){
+            getLista_zwierzat().get(i).rozpocznij_dzien();
+            if (getLista_zwierzat().get(i).getWskaznik_glodu()<=0){
+                usun_zwierze(getLista_zwierzat().get(i));
+            }
+        }
+    }
 
     //=========================================================================================
 
@@ -175,13 +183,13 @@ public class Wybieg_podstawowy extends Wybieg_abstract implements Obserwowany_in
     //===============================================================================
     //                          metody zwiazane z porami dnia
     //-------------------------------------------------------------------------------
-    public void rozpoczecie_dnia(){
+    
+    public void zakonczenie_dnia(){
+        przychody_z_wybiegu();
         brudzenie_zwierzat();
+        nakarm();
         powiadom_obserwatorow();
         postarz();
-    }
-    public void zakonczenie_dnia(){
-
     }
 
 

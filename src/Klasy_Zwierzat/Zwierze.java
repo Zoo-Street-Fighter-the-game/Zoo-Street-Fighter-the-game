@@ -70,6 +70,10 @@ public  class Zwierze extends HealthSubject implements Obserwujacy_ZwierzeWybieg
     public Zwierze deep_clone() {
         return new Zwierze(getImie(),getNazwa(), getZycie(), getSila(),getSzybkosc(),getSzczescie(), getWielkosc(), getWskaznik_glodu(), getCena(), getRodzaj());
     }
+    public void rozpocznij_dzien(){
+        wskaznik_glodu = getWskaznik_glodu()-20;
+
+    }
 
 
     //===========================================================================
